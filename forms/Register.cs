@@ -43,8 +43,9 @@ namespace quan_ly_resort_v2.forms
                         }
                         else
                         {
-                            Account registerAccount = AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, passwordTextBox.Text));
+                            AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, passwordTextBox.Text));
                             MessageBox.Show("Đăng kí thành công!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            userNameTextBox.Focus();
                             userNameTextBox.Text = "";
                             passwordTextBox.Text = "";
                             confirmPasswordTextbox.Text = "";
@@ -57,10 +58,8 @@ namespace quan_ly_resort_v2.forms
         private void btn_backToLogin_Click(object sender, EventArgs e)
         {
             var loginForm = new LoginForm();
-            loginForm.Location = this.Location;
-            loginForm.StartPosition = FormStartPosition.Manual;
-            loginForm.FormClosing += delegate { this.Show(); };
-            loginForm.ShowDialog();
+            Program.myAppCxt.MainForm = loginForm;
+            loginForm.Show();
             this.Close();
         }
 
@@ -85,6 +84,11 @@ namespace quan_ly_resort_v2.forms
         {
             if (e.KeyCode == Keys.Enter)
                 handleSubmit();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

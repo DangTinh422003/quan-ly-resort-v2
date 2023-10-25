@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
@@ -47,6 +48,7 @@
             this.mainTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -310,6 +312,13 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
             this.maskedTextBox1.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,5 +370,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaButton btn_backToLogin;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

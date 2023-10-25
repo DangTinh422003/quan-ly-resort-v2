@@ -125,6 +125,36 @@
     <Compile Include="model\Account.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControl\UserControl_Accountant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControl_Accountant.Designer.cs">
+      <DependentUpon>UserControl_Accountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UserControl_Booking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControl_Booking.Designer.cs">
+      <DependentUpon>UserControl_Booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UserControl_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControl_Customer.Designer.cs">
+      <DependentUpon>UserControl_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UserControl_Manager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControl_Manager.Designer.cs">
+      <DependentUpon>UserControl_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UserControl_Room.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControl_Room.Designer.cs">
+      <DependentUpon>UserControl_Room.cs</DependentUpon>
+    </Compile>
     <Compile Include="utils\ValidateData.cs" />
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -144,6 +174,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="userControl\UserControl_Accountant.resx">
+      <DependentUpon>UserControl_Accountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UserControl_Booking.resx">
+      <DependentUpon>UserControl_Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UserControl_Customer.resx">
+      <DependentUpon>UserControl_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UserControl_Manager.resx">
+      <DependentUpon>UserControl_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UserControl_Room.resx">
+      <DependentUpon>UserControl_Room.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="common\config\" />
+    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\registerImage.jpg" />

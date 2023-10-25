@@ -52,10 +52,8 @@ namespace quan_ly_resort_v2
                     {
                         accountLogined = new Account(currentAccoutn);
                         var mainForm = new MainForm();
-                        mainForm.Location = this.Location;
-                        mainForm.StartPosition = FormStartPosition.Manual;
-                        mainForm.FormClosing += delegate { this.Show(); };
-                        mainForm.ShowDialog();
+                        Program.myAppCxt.MainForm = mainForm;
+                        mainForm.Show();
                         this.Close();
                     }
                 }
@@ -81,11 +79,9 @@ namespace quan_ly_resort_v2
 
         private void labelRegister_Click(object sender, EventArgs e)
         {
-            var registerForm = new RegisterForm();
-            registerForm.Location = this.Location;
-            registerForm.StartPosition = FormStartPosition.Manual;
-            registerForm.FormClosing += delegate { this.Show(); };
-            registerForm.ShowDialog();
+            RegisterForm registerForm = new RegisterForm();
+            Program.myAppCxt.MainForm = registerForm;
+            registerForm.Show();
             this.Close();
         }
     }

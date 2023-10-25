@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.form = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btnRegister = new Guna.UI.WinForms.GunaAdvenceButton();
             this.formGroup_password = new System.Windows.Forms.Panel();
             this.passwordTextBox = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,18 +45,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.subTitle = new System.Windows.Forms.Label();
             this.mainTitle = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.form.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.formGroup_password.SuspendLayout();
             this.formGroup_userName.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,17 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 753);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(821, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 753);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // form
             // 
@@ -91,49 +80,116 @@
             this.form.Size = new System.Drawing.Size(660, 586);
             this.form.TabIndex = 1;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.confirmPasswordTextbox);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(22, 365);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(620, 99);
+            this.panel2.TabIndex = 4;
+            // 
+            // confirmPasswordTextbox
+            // 
+            this.confirmPasswordTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.confirmPasswordTextbox.BaseColor = System.Drawing.Color.White;
+            this.confirmPasswordTextbox.BorderColor = System.Drawing.Color.Silver;
+            this.confirmPasswordTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.confirmPasswordTextbox.FocusedBaseColor = System.Drawing.Color.White;
+            this.confirmPasswordTextbox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.confirmPasswordTextbox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.confirmPasswordTextbox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordTextbox.Location = new System.Drawing.Point(0, 32);
+            this.confirmPasswordTextbox.Name = "confirmPasswordTextbox";
+            this.confirmPasswordTextbox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.confirmPasswordTextbox.PasswordChar = '*';
+            this.confirmPasswordTextbox.Radius = 12;
+            this.confirmPasswordTextbox.SelectedText = "";
+            this.confirmPasswordTextbox.Size = new System.Drawing.Size(606, 58);
+            this.confirmPasswordTextbox.TabIndex = 1;
+            this.confirmPasswordTextbox.TextOffsetX = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(219, 29);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "confirm password";
+            // 
             // gunaPanel1
             // 
             this.gunaPanel1.Controls.Add(this.gunaButton1);
-            this.gunaPanel1.Controls.Add(this.gunaAdvenceButton1);
+            this.gunaPanel1.Controls.Add(this.btnRegister);
             this.gunaPanel1.Location = new System.Drawing.Point(27, 470);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
             // 
-            // gunaAdvenceButton1
+            // gunaButton1
             // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = null;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(437, 0);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 15;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(168, 58);
-            this.gunaAdvenceButton1.TabIndex = 0;
-            this.gunaAdvenceButton1.Text = "Register";
-            this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(3, 3);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 20;
+            this.gunaButton1.Size = new System.Drawing.Size(195, 52);
+            this.gunaButton1.TabIndex = 1;
+            this.gunaButton1.Text = "Đăng nhập";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.AnimationHoverSpeed = 0.07F;
+            this.btnRegister.AnimationSpeed = 0.03F;
+            this.btnRegister.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegister.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnRegister.BorderColor = System.Drawing.Color.Black;
+            this.btnRegister.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnRegister.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnRegister.CheckedForeColor = System.Drawing.Color.White;
+            this.btnRegister.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnRegister.CheckedImage")));
+            this.btnRegister.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegister.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRegister.FocusedColor = System.Drawing.Color.Empty;
+            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Image = null;
+            this.btnRegister.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnRegister.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnRegister.Location = new System.Drawing.Point(437, 0);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnRegister.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnRegister.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnRegister.OnHoverImage = null;
+            this.btnRegister.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnRegister.OnPressedColor = System.Drawing.Color.Black;
+            this.btnRegister.Radius = 15;
+            this.btnRegister.Size = new System.Drawing.Size(168, 58);
+            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // formGroup_password
             // 
@@ -233,72 +289,16 @@
             this.mainTitle.TabIndex = 0;
             this.mainTitle.Text = "Register";
             // 
-            // panel2
+            // pictureBox1
             // 
-            this.panel2.Controls.Add(this.confirmPasswordTextbox);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(22, 365);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(620, 99);
-            this.panel2.TabIndex = 4;
-            // 
-            // confirmPasswordTextbox
-            // 
-            this.confirmPasswordTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.confirmPasswordTextbox.BaseColor = System.Drawing.Color.White;
-            this.confirmPasswordTextbox.BorderColor = System.Drawing.Color.Silver;
-            this.confirmPasswordTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.confirmPasswordTextbox.FocusedBaseColor = System.Drawing.Color.White;
-            this.confirmPasswordTextbox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.confirmPasswordTextbox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.confirmPasswordTextbox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordTextbox.Location = new System.Drawing.Point(0, 32);
-            this.confirmPasswordTextbox.Name = "confirmPasswordTextbox";
-            this.confirmPasswordTextbox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.confirmPasswordTextbox.PasswordChar = '*';
-            this.confirmPasswordTextbox.Radius = 12;
-            this.confirmPasswordTextbox.SelectedText = "";
-            this.confirmPasswordTextbox.Size = new System.Drawing.Size(606, 58);
-            this.confirmPasswordTextbox.TabIndex = 1;
-            this.confirmPasswordTextbox.TextOffsetX = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 29);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "confirm password";
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(3, 3);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 20;
-            this.gunaButton1.Size = new System.Drawing.Size(195, 52);
-            this.gunaButton1.TabIndex = 1;
-            this.gunaButton1.Text = "Đăng nhập";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(821, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(561, 753);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // maskedTextBox1
             // 
@@ -322,18 +322,17 @@
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.form.ResumeLayout(false);
             this.form.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.gunaPanel1.ResumeLayout(false);
             this.formGroup_password.ResumeLayout(false);
             this.formGroup_password.PerformLayout();
             this.formGroup_userName.ResumeLayout(false);
             this.formGroup_userName.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,7 +344,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel form;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private Guna.UI.WinForms.GunaAdvenceButton btnRegister;
         private System.Windows.Forms.Panel formGroup_password;
         private Guna.UI.WinForms.GunaTextBox passwordTextBox;
         private System.Windows.Forms.Label label2;

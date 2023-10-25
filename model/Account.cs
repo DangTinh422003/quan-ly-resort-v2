@@ -15,29 +15,24 @@ namespace quan_ly_resort_v2.model
 
         public Account(string username, string password)
         {
-            this.username = username;
-            this.password = password;
+            this.Username = username;
+            this.Password = password;
         }
 
         public Account(Account account)
         {
-            this.username = account.username;
-            this.password = account.password;
+            this.Username = account.Username;
+            this.Password = account.Password;
         }
 
-        public string Username
-        {
-            get { return username; }
-        }
-        public string Password
-        {
-            get { return password; }
-        }
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+        public DateTime Create_at { get => create_at; set => create_at = value; }
 
         public override string ToString()
         {
-            return "username : " + username + "\n" +
-                "password : " + password;
+            return "username : " + Username + "\n" +
+                "password : " + Password;
         }
     }
 }

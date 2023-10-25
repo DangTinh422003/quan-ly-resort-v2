@@ -45,10 +45,10 @@ namespace quan_ly_resort_v2.forms
                         {
                             AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, passwordTextBox.Text));
                             MessageBox.Show("Đăng kí thành công!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            userNameTextBox.Focus();
-                            userNameTextBox.Text = "";
-                            passwordTextBox.Text = "";
-                            confirmPasswordTextbox.Text = "";
+                            var loginForm = new LoginForm();
+                            Program.myAppCxt.MainForm = loginForm;
+                            loginForm.Show();
+                            this.Close();
                         }
                     }
                 }

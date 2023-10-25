@@ -60,9 +60,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.form);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(821, 753);
@@ -70,7 +71,7 @@
             // 
             // form
             // 
-            this.form.BackColor = System.Drawing.Color.White;
+            this.form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.form.Controls.Add(this.panel2);
             this.form.Controls.Add(this.gunaPanel1);
             this.form.Controls.Add(this.formGroup_password);
@@ -86,7 +87,7 @@
             // 
             this.panel2.Controls.Add(this.confirmPasswordTextbox);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(22, 365);
+            this.panel2.Location = new System.Drawing.Point(22, 368);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 99);
             this.panel2.TabIndex = 4;
@@ -101,7 +102,8 @@
             this.confirmPasswordTextbox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.confirmPasswordTextbox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.confirmPasswordTextbox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordTextbox.Location = new System.Drawing.Point(0, 32);
+            this.confirmPasswordTextbox.ForeColor = System.Drawing.Color.Black;
+            this.confirmPasswordTextbox.Location = new System.Drawing.Point(14, 32);
             this.confirmPasswordTextbox.Name = "confirmPasswordTextbox";
             this.confirmPasswordTextbox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
             this.confirmPasswordTextbox.PasswordChar = '*';
@@ -118,15 +120,15 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 29);
+            this.label3.Size = new System.Drawing.Size(232, 29);
             this.label3.TabIndex = 0;
-            this.label3.Text = "confirm password";
+            this.label3.Text = "Xác nhận mật khẩu";
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.Controls.Add(this.btn_backToLogin);
             this.gunaPanel1.Controls.Add(this.btnRegister);
-            this.gunaPanel1.Location = new System.Drawing.Point(27, 470);
+            this.gunaPanel1.Location = new System.Drawing.Point(27, 482);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
@@ -136,23 +138,23 @@
             this.btn_backToLogin.AnimationHoverSpeed = 0.07F;
             this.btn_backToLogin.AnimationSpeed = 0.03F;
             this.btn_backToLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btn_backToLogin.BaseColor = System.Drawing.Color.White;
-            this.btn_backToLogin.BorderColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_backToLogin.BorderColor = System.Drawing.Color.Transparent;
             this.btn_backToLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_backToLogin.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_backToLogin.FocusedColor = System.Drawing.Color.Empty;
             this.btn_backToLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_backToLogin.ForeColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.ForeColor = System.Drawing.Color.White;
             this.btn_backToLogin.Image = ((System.Drawing.Image)(resources.GetObject("btn_backToLogin.Image")));
             this.btn_backToLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_backToLogin.Location = new System.Drawing.Point(3, 3);
+            this.btn_backToLogin.Location = new System.Drawing.Point(1, 3);
             this.btn_backToLogin.Name = "btn_backToLogin";
             this.btn_backToLogin.OnHoverBaseColor = System.Drawing.Color.White;
             this.btn_backToLogin.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btn_backToLogin.OnHoverForeColor = System.Drawing.Color.Black;
             this.btn_backToLogin.OnHoverImage = null;
             this.btn_backToLogin.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_backToLogin.Radius = 20;
+            this.btn_backToLogin.Radius = 8;
             this.btn_backToLogin.Size = new System.Drawing.Size(195, 52);
             this.btn_backToLogin.TabIndex = 1;
             this.btn_backToLogin.Text = "Đăng nhập";
@@ -179,7 +181,7 @@
             this.btnRegister.Image = null;
             this.btnRegister.ImageSize = new System.Drawing.Size(20, 20);
             this.btnRegister.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnRegister.Location = new System.Drawing.Point(437, 0);
+            this.btnRegister.Location = new System.Drawing.Point(417, 0);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnRegister.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -188,9 +190,9 @@
             this.btnRegister.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnRegister.OnPressedColor = System.Drawing.Color.Black;
             this.btnRegister.Radius = 15;
-            this.btnRegister.Size = new System.Drawing.Size(168, 58);
+            this.btnRegister.Size = new System.Drawing.Size(195, 52);
             this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "Đăng ký";
             this.btnRegister.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -213,7 +215,8 @@
             this.passwordTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.passwordTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(0, 32);
+            this.passwordTextBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordTextBox.Location = new System.Drawing.Point(14, 32);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
             this.passwordTextBox.PasswordChar = '*';
@@ -228,19 +231,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 0);
+            this.label2.Location = new System.Drawing.Point(14, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 29);
+            this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "password";
+            this.label2.Text = "Mật khẩu";
             // 
             // formGroup_userName
             // 
             this.formGroup_userName.Controls.Add(this.userNameTextBox);
             this.formGroup_userName.Controls.Add(this.label1);
-            this.formGroup_userName.Location = new System.Drawing.Point(19, 156);
+            this.formGroup_userName.Location = new System.Drawing.Point(19, 154);
             this.formGroup_userName.Name = "formGroup_userName";
-            this.formGroup_userName.Size = new System.Drawing.Size(620, 109);
+            this.formGroup_userName.Size = new System.Drawing.Size(620, 111);
             this.formGroup_userName.TabIndex = 2;
             // 
             // userNameTextBox
@@ -253,7 +256,8 @@
             this.userNameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.userNameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(0, 49);
+            this.userNameTextBox.ForeColor = System.Drawing.Color.Black;
+            this.userNameTextBox.Location = new System.Drawing.Point(14, 48);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
             this.userNameTextBox.PasswordChar = '\0';
@@ -268,17 +272,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Location = new System.Drawing.Point(14, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 29);
+            this.label1.Size = new System.Drawing.Size(188, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "username";
+            this.label1.Text = "Tên đăng nhập";
             // 
             // subTitle
             // 
             this.subTitle.AutoSize = true;
             this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitle.Location = new System.Drawing.Point(59, 91);
+            this.subTitle.Location = new System.Drawing.Point(81, 102);
             this.subTitle.Name = "subTitle";
             this.subTitle.Size = new System.Drawing.Size(306, 25);
             this.subTitle.TabIndex = 1;
@@ -288,11 +292,11 @@
             // 
             this.mainTitle.AutoSize = true;
             this.mainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainTitle.Location = new System.Drawing.Point(11, 0);
+            this.mainTitle.Location = new System.Drawing.Point(17, 0);
             this.mainTitle.Name = "mainTitle";
-            this.mainTitle.Size = new System.Drawing.Size(343, 91);
+            this.mainTitle.Size = new System.Drawing.Size(337, 91);
             this.mainTitle.TabIndex = 0;
-            this.mainTitle.Text = "Register";
+            this.mainTitle.Text = "Đăng ký";
             // 
             // pictureBox1
             // 

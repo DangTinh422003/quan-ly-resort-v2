@@ -28,295 +28,313 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new Guna.UI.WinForms.GunaElipsePanel();
-            this.btn_Accountant = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_Manager = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_Room = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_Customer = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_Booking = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaTransfarantPictureBox1 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.username_label = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.currentUser = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageBill = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageStatistic = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageService = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageAccountant = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_manageRoom = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.Transparent;
-            this.sidebar.BaseColor = System.Drawing.Color.WhiteSmoke;
-            this.sidebar.Controls.Add(this.btn_Accountant);
-            this.sidebar.Controls.Add(this.btn_Manager);
-            this.sidebar.Controls.Add(this.btn_Room);
-            this.sidebar.Controls.Add(this.btn_Customer);
-            this.sidebar.Controls.Add(this.btn_Booking);
-            this.sidebar.Controls.Add(this.gunaTransfarantPictureBox1);
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(0)))), ((int)(((byte)(47)))));
+            this.sidebar.BaseColor = System.Drawing.Color.Transparent;
+            this.sidebar.Controls.Add(this.currentUser);
+            this.sidebar.Controls.Add(this.btn_manageBill);
+            this.sidebar.Controls.Add(this.btn_manageStatistic);
+            this.sidebar.Controls.Add(this.btn_manageService);
+            this.sidebar.Controls.Add(this.btn_manageAccountant);
+            this.sidebar.Controls.Add(this.btn_manageCustomer);
+            this.sidebar.Controls.Add(this.btn_manageRoom);
+            this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.ForeColor = System.Drawing.Color.White;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(251, 803);
+            this.sidebar.Size = new System.Drawing.Size(308, 803);
             this.sidebar.TabIndex = 0;
             // 
-            // btn_Accountant
+            // currentUser
             // 
-            this.btn_Accountant.AnimationHoverSpeed = 0.07F;
-            this.btn_Accountant.AnimationSpeed = 0.03F;
-            this.btn_Accountant.BaseColor = System.Drawing.Color.White;
-            this.btn_Accountant.BorderColor = System.Drawing.Color.Black;
-            this.btn_Accountant.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Accountant.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Accountant.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Accountant.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Accountant.CheckedImage")));
-            this.btn_Accountant.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Accountant.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Accountant.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Accountant.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Accountant.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Accountant.ForeColor = System.Drawing.Color.Black;
-            this.btn_Accountant.Image = ((System.Drawing.Image)(resources.GetObject("btn_Accountant.Image")));
-            this.btn_Accountant.ImageOffsetX = 10;
-            this.btn_Accountant.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Accountant.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Accountant.Location = new System.Drawing.Point(0, 402);
-            this.btn_Accountant.Name = "btn_Accountant";
-            this.btn_Accountant.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Accountant.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Accountant.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btn_Accountant.OnHoverImage = null;
-            this.btn_Accountant.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_Accountant.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Accountant.Size = new System.Drawing.Size(251, 92);
-            this.btn_Accountant.TabIndex = 6;
-            this.btn_Accountant.Text = "Accountant";
-            this.btn_Accountant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Accountant.Click += new System.EventHandler(this.btn_Accountant_Click);
+            this.currentUser.AnimationHoverSpeed = 0.07F;
+            this.currentUser.AnimationSpeed = 0.03F;
+            this.currentUser.BaseColor = System.Drawing.Color.Transparent;
+            this.currentUser.BorderColor = System.Drawing.Color.Black;
+            this.currentUser.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.currentUser.CheckedBorderColor = System.Drawing.Color.Black;
+            this.currentUser.CheckedForeColor = System.Drawing.Color.White;
+            this.currentUser.CheckedImage = ((System.Drawing.Image)(resources.GetObject("currentUser.CheckedImage")));
+            this.currentUser.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.currentUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.currentUser.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.currentUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.currentUser.FocusedColor = System.Drawing.Color.Empty;
+            this.currentUser.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUser.ForeColor = System.Drawing.Color.White;
+            this.currentUser.Image = ((System.Drawing.Image)(resources.GetObject("currentUser.Image")));
+            this.currentUser.ImageOffsetX = 5;
+            this.currentUser.ImageSize = new System.Drawing.Size(70, 70);
+            this.currentUser.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.currentUser.Location = new System.Drawing.Point(0, 720);
+            this.currentUser.Name = "currentUser";
+            this.currentUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.currentUser.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.currentUser.OnHoverForeColor = System.Drawing.Color.White;
+            this.currentUser.OnHoverImage = null;
+            this.currentUser.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.currentUser.OnPressedColor = System.Drawing.Color.Black;
+            this.currentUser.Size = new System.Drawing.Size(308, 83);
+            this.currentUser.TabIndex = 14;
+            this.currentUser.Text = "Tên người dùng";
+            this.toolTip1.SetToolTip(this.currentUser, "Bấm vào để đăng xuất");
+            this.currentUser.Click += new System.EventHandler(this.currentUser_Click);
             // 
-            // btn_Manager
+            // btn_manageBill
             // 
-            this.btn_Manager.AnimationHoverSpeed = 0.07F;
-            this.btn_Manager.AnimationSpeed = 0.03F;
-            this.btn_Manager.BaseColor = System.Drawing.Color.White;
-            this.btn_Manager.BorderColor = System.Drawing.Color.Black;
-            this.btn_Manager.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Manager.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Manager.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Manager.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Manager.CheckedImage")));
-            this.btn_Manager.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Manager.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Manager.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Manager.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Manager.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Manager.ForeColor = System.Drawing.Color.Black;
-            this.btn_Manager.Image = ((System.Drawing.Image)(resources.GetObject("btn_Manager.Image")));
-            this.btn_Manager.ImageOffsetX = 10;
-            this.btn_Manager.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Manager.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Manager.Location = new System.Drawing.Point(0, 304);
-            this.btn_Manager.Name = "btn_Manager";
-            this.btn_Manager.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Manager.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Manager.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btn_Manager.OnHoverImage = null;
-            this.btn_Manager.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_Manager.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Manager.Size = new System.Drawing.Size(251, 92);
-            this.btn_Manager.TabIndex = 5;
-            this.btn_Manager.Text = "Manager";
-            this.btn_Manager.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Manager.Click += new System.EventHandler(this.btn_Manager_Click);
+            this.btn_manageBill.AnimationHoverSpeed = 0.07F;
+            this.btn_manageBill.AnimationSpeed = 0.03F;
+            this.btn_manageBill.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageBill.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageBill.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageBill.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageBill.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageBill.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageBill.CheckedImage")));
+            this.btn_manageBill.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageBill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageBill.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageBill.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageBill.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageBill.ForeColor = System.Drawing.Color.White;
+            this.btn_manageBill.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageBill.Image")));
+            this.btn_manageBill.ImageOffsetX = 10;
+            this.btn_manageBill.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageBill.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageBill.Location = new System.Drawing.Point(0, 391);
+            this.btn_manageBill.Name = "btn_manageBill";
+            this.btn_manageBill.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageBill.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageBill.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageBill.OnHoverImage = null;
+            this.btn_manageBill.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageBill.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageBill.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageBill.TabIndex = 13;
+            this.btn_manageBill.Text = "Quản lý hóa đơn";
+            this.btn_manageBill.TextOffsetX = 10;
+            this.btn_manageBill.Click += new System.EventHandler(this.btn_manageBill_Click);
             // 
-            // btn_Room
+            // btn_manageStatistic
             // 
-            this.btn_Room.AnimationHoverSpeed = 0.07F;
-            this.btn_Room.AnimationSpeed = 0.03F;
-            this.btn_Room.BaseColor = System.Drawing.Color.White;
-            this.btn_Room.BorderColor = System.Drawing.Color.Black;
-            this.btn_Room.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Room.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Room.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Room.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Room.CheckedImage")));
-            this.btn_Room.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Room.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Room.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Room.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Room.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Room.ForeColor = System.Drawing.Color.Black;
-            this.btn_Room.Image = ((System.Drawing.Image)(resources.GetObject("btn_Room.Image")));
-            this.btn_Room.ImageOffsetX = 10;
-            this.btn_Room.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Room.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Room.Location = new System.Drawing.Point(0, 500);
-            this.btn_Room.Name = "btn_Room";
-            this.btn_Room.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Room.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Room.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btn_Room.OnHoverImage = null;
-            this.btn_Room.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_Room.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Room.Size = new System.Drawing.Size(251, 92);
-            this.btn_Room.TabIndex = 4;
-            this.btn_Room.Text = "Room";
-            this.btn_Room.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Room.Click += new System.EventHandler(this.btn_Room_Click);
+            this.btn_manageStatistic.AnimationHoverSpeed = 0.07F;
+            this.btn_manageStatistic.AnimationSpeed = 0.03F;
+            this.btn_manageStatistic.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageStatistic.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageStatistic.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageStatistic.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageStatistic.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageStatistic.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageStatistic.CheckedImage")));
+            this.btn_manageStatistic.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageStatistic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageStatistic.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageStatistic.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageStatistic.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageStatistic.ForeColor = System.Drawing.Color.White;
+            this.btn_manageStatistic.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageStatistic.Image")));
+            this.btn_manageStatistic.ImageOffsetX = 10;
+            this.btn_manageStatistic.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageStatistic.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageStatistic.Location = new System.Drawing.Point(0, 335);
+            this.btn_manageStatistic.Name = "btn_manageStatistic";
+            this.btn_manageStatistic.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageStatistic.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageStatistic.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageStatistic.OnHoverImage = null;
+            this.btn_manageStatistic.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageStatistic.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageStatistic.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageStatistic.TabIndex = 12;
+            this.btn_manageStatistic.Text = "Thống kê";
+            this.btn_manageStatistic.TextOffsetX = 10;
+            this.btn_manageStatistic.Click += new System.EventHandler(this.btn_manageStatistic_Click);
             // 
-            // btn_Customer
+            // btn_manageService
             // 
-            this.btn_Customer.AnimationHoverSpeed = 0.07F;
-            this.btn_Customer.AnimationSpeed = 0.03F;
-            this.btn_Customer.BaseColor = System.Drawing.Color.White;
-            this.btn_Customer.BorderColor = System.Drawing.Color.Black;
-            this.btn_Customer.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Customer.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Customer.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Customer.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Customer.CheckedImage")));
-            this.btn_Customer.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Customer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Customer.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Customer.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Customer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Customer.ForeColor = System.Drawing.Color.Black;
-            this.btn_Customer.Image = ((System.Drawing.Image)(resources.GetObject("btn_Customer.Image")));
-            this.btn_Customer.ImageOffsetX = 10;
-            this.btn_Customer.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Customer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Customer.Location = new System.Drawing.Point(0, 206);
-            this.btn_Customer.Name = "btn_Customer";
-            this.btn_Customer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Customer.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Customer.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btn_Customer.OnHoverImage = null;
-            this.btn_Customer.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_Customer.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Customer.Size = new System.Drawing.Size(251, 92);
-            this.btn_Customer.TabIndex = 2;
-            this.btn_Customer.Text = "Customer";
-            this.btn_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
+            this.btn_manageService.AnimationHoverSpeed = 0.07F;
+            this.btn_manageService.AnimationSpeed = 0.03F;
+            this.btn_manageService.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageService.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageService.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageService.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageService.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageService.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageService.CheckedImage")));
+            this.btn_manageService.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageService.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageService.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageService.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageService.ForeColor = System.Drawing.Color.White;
+            this.btn_manageService.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageService.Image")));
+            this.btn_manageService.ImageOffsetX = 10;
+            this.btn_manageService.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageService.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageService.Location = new System.Drawing.Point(0, 278);
+            this.btn_manageService.Name = "btn_manageService";
+            this.btn_manageService.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageService.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageService.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageService.OnHoverImage = null;
+            this.btn_manageService.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageService.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageService.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageService.TabIndex = 11;
+            this.btn_manageService.Text = "Quản lý dịch vụ";
+            this.btn_manageService.TextOffsetX = 10;
+            this.btn_manageService.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SingleBitPerPixel;
+            this.btn_manageService.Click += new System.EventHandler(this.btn_manageService_Click);
             // 
-            // btn_Booking
+            // btn_manageAccountant
             // 
-            this.btn_Booking.AnimationHoverSpeed = 0.07F;
-            this.btn_Booking.AnimationSpeed = 0.03F;
-            this.btn_Booking.BaseColor = System.Drawing.Color.White;
-            this.btn_Booking.BorderColor = System.Drawing.Color.Black;
-            this.btn_Booking.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_Booking.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_Booking.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_Booking.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_Booking.CheckedImage")));
-            this.btn_Booking.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_Booking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Booking.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_Booking.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_Booking.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Booking.ForeColor = System.Drawing.Color.Black;
-            this.btn_Booking.Image = ((System.Drawing.Image)(resources.GetObject("btn_Booking.Image")));
-            this.btn_Booking.ImageOffsetX = 10;
-            this.btn_Booking.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Booking.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Booking.Location = new System.Drawing.Point(0, 108);
-            this.btn_Booking.Name = "btn_Booking";
-            this.btn_Booking.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(224)))), ((int)(((byte)(11)))));
-            this.btn_Booking.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_Booking.OnHoverForeColor = System.Drawing.Color.Black;
-            this.btn_Booking.OnHoverImage = null;
-            this.btn_Booking.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_Booking.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_Booking.Size = new System.Drawing.Size(251, 92);
-            this.btn_Booking.TabIndex = 1;
-            this.btn_Booking.Text = "Booking";
-            this.btn_Booking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_Booking.Click += new System.EventHandler(this.btn_Booking_Click);
+            this.btn_manageAccountant.AnimationHoverSpeed = 0.07F;
+            this.btn_manageAccountant.AnimationSpeed = 0.03F;
+            this.btn_manageAccountant.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccountant.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageAccountant.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageAccountant.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageAccountant.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageAccountant.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageAccountant.CheckedImage")));
+            this.btn_manageAccountant.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageAccountant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageAccountant.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageAccountant.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageAccountant.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageAccountant.ForeColor = System.Drawing.Color.White;
+            this.btn_manageAccountant.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageAccountant.Image")));
+            this.btn_manageAccountant.ImageOffsetX = 10;
+            this.btn_manageAccountant.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageAccountant.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageAccountant.Location = new System.Drawing.Point(0, 221);
+            this.btn_manageAccountant.Name = "btn_manageAccountant";
+            this.btn_manageAccountant.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageAccountant.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageAccountant.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageAccountant.OnHoverImage = null;
+            this.btn_manageAccountant.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageAccountant.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageAccountant.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageAccountant.TabIndex = 10;
+            this.btn_manageAccountant.Text = "Quản lý nhân viên";
+            this.btn_manageAccountant.TextOffsetX = 10;
+            this.btn_manageAccountant.Click += new System.EventHandler(this.btn_manageAccountant_Click);
             // 
-            // gunaTransfarantPictureBox1
+            // btn_manageCustomer
             // 
-            this.gunaTransfarantPictureBox1.BaseColor = System.Drawing.Color.Black;
-            this.gunaTransfarantPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaTransfarantPictureBox1.Image")));
-            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(44, 12);
-            this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
-            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(158, 90);
-            this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaTransfarantPictureBox1.TabIndex = 0;
-            this.gunaTransfarantPictureBox1.TabStop = false;
+            this.btn_manageCustomer.AnimationHoverSpeed = 0.07F;
+            this.btn_manageCustomer.AnimationSpeed = 0.03F;
+            this.btn_manageCustomer.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageCustomer.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageCustomer.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageCustomer.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageCustomer.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageCustomer.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageCustomer.CheckedImage")));
+            this.btn_manageCustomer.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageCustomer.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageCustomer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageCustomer.ForeColor = System.Drawing.Color.White;
+            this.btn_manageCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageCustomer.Image")));
+            this.btn_manageCustomer.ImageOffsetX = 10;
+            this.btn_manageCustomer.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageCustomer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageCustomer.Location = new System.Drawing.Point(0, 165);
+            this.btn_manageCustomer.Name = "btn_manageCustomer";
+            this.btn_manageCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageCustomer.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageCustomer.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageCustomer.OnHoverImage = null;
+            this.btn_manageCustomer.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageCustomer.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageCustomer.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageCustomer.TabIndex = 9;
+            this.btn_manageCustomer.Text = "Quản lý khách hàng";
+            this.btn_manageCustomer.TextOffsetX = 10;
+            this.btn_manageCustomer.Click += new System.EventHandler(this.btn_manageCustomer_Click);
             // 
-            // panel1
+            // btn_manageRoom
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.username_label);
-            this.panel1.Controls.Add(this.gunaButton1);
-            this.panel1.Controls.Add(this.gunaTextBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(251, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1131, 108);
-            this.panel1.TabIndex = 1;
+            this.btn_manageRoom.AnimationHoverSpeed = 0.07F;
+            this.btn_manageRoom.AnimationSpeed = 0.03F;
+            this.btn_manageRoom.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageRoom.BorderColor = System.Drawing.Color.Black;
+            this.btn_manageRoom.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_manageRoom.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_manageRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageRoom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageRoom.CheckedImage")));
+            this.btn_manageRoom.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_manageRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageRoom.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageRoom.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_manageRoom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageRoom.ForeColor = System.Drawing.Color.White;
+            this.btn_manageRoom.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageRoom.Image")));
+            this.btn_manageRoom.ImageOffsetX = 10;
+            this.btn_manageRoom.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageRoom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageRoom.Location = new System.Drawing.Point(0, 108);
+            this.btn_manageRoom.Name = "btn_manageRoom";
+            this.btn_manageRoom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageRoom.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_manageRoom.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageRoom.OnHoverImage = null;
+            this.btn_manageRoom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_manageRoom.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_manageRoom.Size = new System.Drawing.Size(308, 60);
+            this.btn_manageRoom.TabIndex = 8;
+            this.btn_manageRoom.Text = "Quản lý phòng";
+            this.btn_manageRoom.TextOffsetX = 10;
+            this.btn_manageRoom.Click += new System.EventHandler(this.btn_manageRoom_Click);
             // 
-            // username_label
+            // panel2
             // 
-            this.username_label.AutoSize = true;
-            this.username_label.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username_label.Location = new System.Drawing.Point(894, 40);
-            this.username_label.Name = "username_label";
-            this.username_label.Size = new System.Drawing.Size(185, 31);
-            this.username_label.TabIndex = 2;
-            this.username_label.Text = "Tên Đăng Nhập";
+            this.panel2.Controls.Add(this.gunaPictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(308, 108);
+            this.panel2.TabIndex = 7;
             // 
-            // gunaButton1
+            // gunaPictureBox1
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(572, 29);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 10;
-            this.gunaButton1.Size = new System.Drawing.Size(53, 53);
-            this.gunaButton1.TabIndex = 1;
-            // 
-            // gunaTextBox1
-            // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(30, 29);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 10;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(524, 53);
-            this.gunaTextBox1.TabIndex = 0;
-            this.gunaTextBox1.Text = "gunaTextBox1";
-            this.gunaTextBox1.TextOffsetX = 20;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(308, 108);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 0;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // mainPanel
             // 
-            this.mainPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(10)))), ((int)(((byte)(56)))));
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(251, 108);
+            this.mainPanel.Location = new System.Drawing.Point(308, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1131, 695);
+            this.mainPanel.Size = new System.Drawing.Size(1074, 803);
             this.mainPanel.TabIndex = 2;
             // 
             // MainForm
@@ -325,7 +343,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 803);
             this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidebar);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1400, 850);
@@ -335,9 +352,8 @@
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,17 +361,17 @@
         #endregion
 
         private Guna.UI.WinForms.GunaElipsePanel sidebar;
-        private Guna.UI.WinForms.GunaTransfarantPictureBox gunaTransfarantPictureBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Booking;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Customer;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Room;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaLabel username_label;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Accountant;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_Manager;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageRoom;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageBill;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageStatistic;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageService;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageAccountant;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageCustomer;
+        private Guna.UI.WinForms.GunaAdvenceButton currentUser;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

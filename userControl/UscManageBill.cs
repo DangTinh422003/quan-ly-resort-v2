@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace quan_ly_resort_v2.userControl
 {
-    public partial class UserControl_Customer : UserControl
+    public partial class UscManageBill : UserControl
     {
-        public UserControl_Customer()
+        public UscManageBill()
         {
             InitializeComponent();
         }

@@ -123,37 +123,45 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Account.cs" />
+    <Compile Include="model\Room.cs" />
+    <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="userControl\UserControl_Accountant.cs">
+    <Compile Include="userControl\UscManageAccountant.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControl\UserControl_Accountant.Designer.cs">
-      <DependentUpon>UserControl_Accountant.cs</DependentUpon>
+    <Compile Include="userControl\UscManageAccountant.Designer.cs">
+      <DependentUpon>UscManageAccountant.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControl\UserControl_Booking.cs">
+    <Compile Include="userControl\UscManageBill.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControl\UserControl_Booking.Designer.cs">
-      <DependentUpon>UserControl_Booking.cs</DependentUpon>
+    <Compile Include="userControl\UscManageBill.Designer.cs">
+      <DependentUpon>UscManageBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControl\UserControl_Customer.cs">
+    <Compile Include="userControl\UscManageCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControl\UserControl_Customer.Designer.cs">
-      <DependentUpon>UserControl_Customer.cs</DependentUpon>
+    <Compile Include="userControl\UscManageCustomer.Designer.cs">
+      <DependentUpon>UscManageCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControl\UserControl_Manager.cs">
+    <Compile Include="userControl\UscManageRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControl\UserControl_Manager.Designer.cs">
-      <DependentUpon>UserControl_Manager.cs</DependentUpon>
+    <Compile Include="userControl\UscManageRoom.Designer.cs">
+      <DependentUpon>UscManageRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControl\UserControl_Room.cs">
+    <Compile Include="userControl\UscManageServices.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="userControl\UserControl_Room.Designer.cs">
-      <DependentUpon>UserControl_Room.cs</DependentUpon>
+    <Compile Include="userControl\UscManageServices.Designer.cs">
+      <DependentUpon>UscManageServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UscManageStatistic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscManageStatistic.Designer.cs">
+      <DependentUpon>UscManageStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="utils\ValidateData.cs" />
     <EmbeddedResource Include="forms\LoginForm.resx">
@@ -174,20 +182,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="userControl\UserControl_Accountant.resx">
-      <DependentUpon>UserControl_Accountant.cs</DependentUpon>
+    <EmbeddedResource Include="userControl\UscManageAccountant.resx">
+      <DependentUpon>UscManageAccountant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControl\UserControl_Booking.resx">
-      <DependentUpon>UserControl_Booking.cs</DependentUpon>
+    <EmbeddedResource Include="userControl\UscManageBill.resx">
+      <DependentUpon>UscManageBill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControl\UserControl_Customer.resx">
-      <DependentUpon>UserControl_Customer.cs</DependentUpon>
+    <EmbeddedResource Include="userControl\UscManageRoom.resx">
+      <DependentUpon>UscManageRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControl\UserControl_Manager.resx">
-      <DependentUpon>UserControl_Manager.cs</DependentUpon>
+    <EmbeddedResource Include="userControl\UscManageServices.resx">
+      <DependentUpon>UscManageServices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControl\UserControl_Room.resx">
-      <DependentUpon>UserControl_Room.cs</DependentUpon>
+    <EmbeddedResource Include="userControl\UscManageStatistic.resx">
+      <DependentUpon>UscManageStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

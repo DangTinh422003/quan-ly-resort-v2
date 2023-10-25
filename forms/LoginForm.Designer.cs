@@ -54,7 +54,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.panel1.Controls.Add(this.form);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -64,12 +64,13 @@
             // 
             // form
             // 
-            this.form.BackColor = System.Drawing.Color.White;
+            this.form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.form.Controls.Add(this.gunaPanel1);
             this.form.Controls.Add(this.formGroup_password);
             this.form.Controls.Add(this.formGroup_userName);
             this.form.Controls.Add(this.subTitle);
             this.form.Controls.Add(this.mainTitle);
+            this.form.ForeColor = System.Drawing.Color.White;
             this.form.Location = new System.Drawing.Point(95, 122);
             this.form.Name = "form";
             this.form.Size = new System.Drawing.Size(660, 485);
@@ -89,13 +90,14 @@
             // 
             this.labelRegister.AutoSize = true;
             this.labelRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegister.Location = new System.Drawing.Point(225, 17);
+            this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.labelRegister.Location = new System.Drawing.Point(156, 14);
             this.labelRegister.Margin = new System.Windows.Forms.Padding(0);
             this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(91, 25);
+            this.labelRegister.Size = new System.Drawing.Size(106, 29);
             this.labelRegister.TabIndex = 2;
-            this.labelRegister.Text = "Register";
+            this.labelRegister.Text = "Đăng ký";
             this.labelRegister.Click += new System.EventHandler(this.labelRegister_Click);
             // 
             // label3
@@ -105,9 +107,9 @@
             this.label3.Location = new System.Drawing.Point(3, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 25);
+            this.label3.Size = new System.Drawing.Size(153, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Don’t have an account ?";
+            this.label3.Text = "Bấm vào đây để";
             // 
             // gunaAdvenceButton1
             // 
@@ -140,7 +142,7 @@
             this.gunaAdvenceButton1.Radius = 15;
             this.gunaAdvenceButton1.Size = new System.Drawing.Size(168, 58);
             this.gunaAdvenceButton1.TabIndex = 0;
-            this.gunaAdvenceButton1.Text = "Login";
+            this.gunaAdvenceButton1.Text = "Đăng Nhập";
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
@@ -163,7 +165,8 @@
             this.passwordTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.passwordTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(0, 32);
+            this.passwordTextBox.ForeColor = System.Drawing.Color.Black;
+            this.passwordTextBox.Location = new System.Drawing.Point(8, 32);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
             this.passwordTextBox.PasswordChar = '*';
@@ -180,9 +183,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 29);
+            this.label2.Size = new System.Drawing.Size(117, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "password";
+            this.label2.Text = "Mật khẩu";
             // 
             // formGroup_userName
             // 
@@ -203,7 +206,8 @@
             this.userNameTextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.userNameTextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.Location = new System.Drawing.Point(0, 49);
+            this.userNameTextBox.ForeColor = System.Drawing.Color.Black;
+            this.userNameTextBox.Location = new System.Drawing.Point(8, 49);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
             this.userNameTextBox.PasswordChar = '\0';
@@ -220,15 +224,15 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 29);
+            this.label1.Size = new System.Drawing.Size(196, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "username";
+            this.label1.Text = "Tên người dùng";
             // 
             // subTitle
             // 
             this.subTitle.AutoSize = true;
             this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitle.Location = new System.Drawing.Point(59, 91);
+            this.subTitle.Location = new System.Drawing.Point(81, 91);
             this.subTitle.Name = "subTitle";
             this.subTitle.Size = new System.Drawing.Size(306, 25);
             this.subTitle.TabIndex = 1;
@@ -240,9 +244,9 @@
             this.mainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTitle.Location = new System.Drawing.Point(11, 0);
             this.mainTitle.Name = "mainTitle";
-            this.mainTitle.Size = new System.Drawing.Size(237, 91);
+            this.mainTitle.Size = new System.Drawing.Size(435, 91);
             this.mainTitle.TabIndex = 0;
-            this.mainTitle.Text = "Login";
+            this.mainTitle.Text = "Đăng nhập";
             // 
             // pictureBox1
             // 

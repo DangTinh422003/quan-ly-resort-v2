@@ -108,6 +108,7 @@
             this.confirmPasswordTextbox.Size = new System.Drawing.Size(606, 58);
             this.confirmPasswordTextbox.TabIndex = 1;
             this.confirmPasswordTextbox.TextOffsetX = 15;
+            this.confirmPasswordTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmPasswordTextbox_KeyDown);
             // 
             // label3
             // 
@@ -154,6 +155,7 @@
             this.btn_backToLogin.TabIndex = 1;
             this.btn_backToLogin.Text = "Đăng nhập";
             this.btn_backToLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_backToLogin.Click += new System.EventHandler(this.btn_backToLogin_Click);
             // 
             // btnRegister
             // 
@@ -218,6 +220,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(606, 58);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.TextOffsetX = 15;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // label2
             // 
@@ -257,6 +260,7 @@
             this.userNameTextBox.Size = new System.Drawing.Size(606, 58);
             this.userNameTextBox.TabIndex = 1;
             this.userNameTextBox.TextOffsetX = 15;
+            this.userNameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userNameTextBox_KeyDown);
             // 
             // label1
             // 

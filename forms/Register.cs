@@ -1,4 +1,6 @@
-﻿using quan_ly_resort_v2.utils;
+﻿using quan_ly_resort_v2.DAO;
+using quan_ly_resort_v2.model;
+using quan_ly_resort_v2.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,18 +20,7 @@ namespace quan_ly_resort_v2.forms
             InitializeComponent();
         }
 
-
-        private void btn_backToLogin_Click(object sender, EventArgs e)
-        {
-            var loginForm = new LoginForm();
-            loginForm.Location = this.Location;
-            loginForm.StartPosition = FormStartPosition.Manual;
-            loginForm.FormClosing += delegate { this.Show(); };
-            loginForm.ShowDialog();
-            this.Close();
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void handleSubmit()
         {
             string username = userNameTextBox.Text;
             string password = passwordTextBox.Text;
@@ -45,13 +36,55 @@ namespace quan_ly_resort_v2.forms
                     }
                     else
                     {
-                        MessageBox.Show("Đăng kí thành công!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        userNameTextBox.Text = "";
-                        passwordTextBox.Text = "";
-                        confirmPasswordTextbox.Text = "";
+                        Account currentAccount = AccountDAO.GetAccount(username);
+                        if (currentAccount != null) // Đã tồn tại user này -> không cho đăng kí
+                        {
+                            MessageBox.Show("Tên đăng nhập đã tồn tại!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            Account registerAccount = AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, passwordTextBox.Text));
+                            MessageBox.Show("Đăng kí thành công!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            userNameTextBox.Text = "";
+                            passwordTextBox.Text = "";
+                            confirmPasswordTextbox.Text = "";
+                        }
                     }
                 }
             }
+        }
+
+        private void btn_backToLogin_Click(object sender, EventArgs e)
+        {
+            var loginForm = new LoginForm();
+            loginForm.Location = this.Location;
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.FormClosing += delegate { this.Show(); };
+            loginForm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            handleSubmit();
+        }
+
+        private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                handleSubmit();
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                handleSubmit();
+        }
+
+        private void confirmPasswordTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                handleSubmit();
         }
     }
 }

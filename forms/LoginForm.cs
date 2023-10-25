@@ -16,10 +16,13 @@ namespace quan_ly_resort_v2
 {
     public partial class LoginForm : Form
     {
+        public static Account accountLogined = null;
+
         public LoginForm()
         {
             InitializeComponent();
         }
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
@@ -40,12 +43,21 @@ namespace quan_ly_resort_v2
                 }
                 else
                 {
-                    var mainForm = new MainForm();
-                    mainForm.Location = this.Location;
-                    mainForm.StartPosition = FormStartPosition.Manual;
-                    mainForm.FormClosing += delegate { this.Show(); };
-                    mainForm.ShowDialog();
-                    this.Close();
+                    if (currentAccoutn.Password != password)
+                    {
+                        MessageBox.Show("Mật khẩu không chính xác!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        accountLogined = new Account(currentAccoutn);
+                        var mainForm = new MainForm();
+                        mainForm.Location = this.Location;
+                        mainForm.StartPosition = FormStartPosition.Manual;
+                        mainForm.FormClosing += delegate { this.Show(); };
+                        mainForm.ShowDialog();
+                        this.Close();
+                    }
                 }
             }
         }

@@ -120,8 +120,8 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_backToLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAADh
-        AQAA4QEBNdXjdAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABPNSURBVHhe7d1Z
+        iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAADg
+        /gAA4P4B5YDUSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABPNSURBVHhe7d1Z
         yK57XcZxhzDTIqQJjUqiQWggIsTqxKiDKGjAMrWyLLNs0LRJy7LBrGw4qDPrRCoLhcAiCbEww3QH0SR0
         UmRa2zLypHLAYXc9upa++93XWusdnuG+f/fn4APua73rXc//6PvDvdda97vnnnsAgI2pIwAwWx0BgNnq
         CADMVkcAYLY6AgCz1REAmK2OAMBsdQQAZqsjADBbHQGA2eoIAMxWRwBgtjoCALPVEQCYrY4AwGx1BABm

@@ -19,6 +19,7 @@ namespace quan_ly_resort_v2
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

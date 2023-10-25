@@ -19,6 +19,12 @@ namespace quan_ly_resort_v2.model
             this.password = password;
         }
 
+        public Account(Account account)
+        {
+            this.username = account.username;
+            this.password = account.password;
+        }
+
         public string Username
         {
             get { return username; }

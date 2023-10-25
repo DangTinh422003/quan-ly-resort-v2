@@ -1,4 +1,7 @@
-﻿using quan_ly_resort_v2.forms;
+﻿using quan_ly_resort_v2.DAO;
+using quan_ly_resort_v2.forms;
+using quan_ly_resort_v2.model;
+using quan_ly_resort_v2.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,23 +27,26 @@ namespace quan_ly_resort_v2
 
         private void handleSubmit()
         {
-            if (userNameTextBox.Text == "admin" && passwordTextBox.Text == "admin")
-            {
-                // clear form
-                userNameTextBox.Focus();
-                userNameTextBox.Text = "";
-                passwordTextBox.Text = "";
+            string username = userNameTextBox.Text;
+            string password = passwordTextBox.Text;
 
-                var mainForm = new MainForm();
-                mainForm.Location = this.Location;
-                mainForm.StartPosition = FormStartPosition.Manual;
-                mainForm.FormClosing += delegate { this.Show(); };
-                mainForm.ShowDialog();
-                this.Close();
-            }
-            else
+            if (ValidateData.validate(username, password))
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác, vui lòng kiểm tra lại!", "Có lỗi xãy ra!", MessageBoxButtons.OK);
+                Account currentAccoutn = AccountDAO.GetAccount(username);
+                if (currentAccoutn == null)
+                {
+                    MessageBox.Show("Tài khoản không tồn tại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    var mainForm = new MainForm();
+                    mainForm.Location = this.Location;
+                    mainForm.StartPosition = FormStartPosition.Manual;
+                    mainForm.FormClosing += delegate { this.Show(); };
+                    mainForm.ShowDialog();
+                    this.Close();
+                }
             }
         }
 

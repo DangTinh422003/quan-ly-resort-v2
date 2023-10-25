@@ -35,7 +35,7 @@
             this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_backToLogin = new Guna.UI.WinForms.GunaButton();
             this.btnRegister = new Guna.UI.WinForms.GunaAdvenceButton();
             this.formGroup_password = new System.Windows.Forms.Panel();
             this.passwordTextBox = new Guna.UI.WinForms.GunaTextBox();
@@ -121,40 +121,39 @@
             // 
             // gunaPanel1
             // 
-            this.gunaPanel1.Controls.Add(this.gunaButton1);
+            this.gunaPanel1.Controls.Add(this.btn_backToLogin);
             this.gunaPanel1.Controls.Add(this.btnRegister);
             this.gunaPanel1.Location = new System.Drawing.Point(27, 470);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
             // 
-            // gunaButton1
+            // btn_backToLogin
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(3, 3);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 20;
-            this.gunaButton1.Size = new System.Drawing.Size(195, 52);
-            this.gunaButton1.TabIndex = 1;
-            this.gunaButton1.Text = "Đăng nhập";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.btn_backToLogin.AnimationHoverSpeed = 0.07F;
+            this.btn_backToLogin.AnimationSpeed = 0.03F;
+            this.btn_backToLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btn_backToLogin.BaseColor = System.Drawing.Color.White;
+            this.btn_backToLogin.BorderColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_backToLogin.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_backToLogin.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_backToLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_backToLogin.ForeColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.Image = ((System.Drawing.Image)(resources.GetObject("btn_backToLogin.Image")));
+            this.btn_backToLogin.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_backToLogin.Location = new System.Drawing.Point(3, 3);
+            this.btn_backToLogin.Name = "btn_backToLogin";
+            this.btn_backToLogin.OnHoverBaseColor = System.Drawing.Color.White;
+            this.btn_backToLogin.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.OnHoverForeColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.OnHoverImage = null;
+            this.btn_backToLogin.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_backToLogin.Radius = 20;
+            this.btn_backToLogin.Size = new System.Drawing.Size(195, 52);
+            this.btn_backToLogin.TabIndex = 1;
+            this.btn_backToLogin.Text = "Đăng nhập";
+            this.btn_backToLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnRegister
             // 
@@ -356,7 +355,7 @@
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaTextBox confirmPasswordTextbox;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btn_backToLogin;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

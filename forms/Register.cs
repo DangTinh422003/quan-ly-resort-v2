@@ -19,7 +19,7 @@ namespace quan_ly_resort_v2.forms
         }
 
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void btn_backToLogin_Click(object sender, EventArgs e)
         {
             var loginForm = new LoginForm();
             loginForm.Location = this.Location;

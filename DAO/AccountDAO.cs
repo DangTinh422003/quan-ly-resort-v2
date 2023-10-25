@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
+// DATA ACCESS OBJECT 
 namespace quan_ly_resort_v2.DAO
 {
     internal class AccountDAO

@@ -16,7 +16,7 @@ namespace quan_ly_resort_v2
 {
     public partial class LoginForm : Form
     {
-        public static Account accountLogined = null;
+        public static Account accountLogined = new Account("", "");
 
         public LoginForm()
         {

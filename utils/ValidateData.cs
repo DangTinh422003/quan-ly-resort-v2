@@ -15,7 +15,7 @@ namespace quan_ly_resort_v2.utils
         {
             if (username.Equals(""))
             {
-                MessageBox.Show("Tên đăng nhập không bao gồm khoảng trắng!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập Tên Đăng Nhập!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (username.Length < 5 || username.Length >= 20)
@@ -34,7 +34,7 @@ namespace quan_ly_resort_v2.utils
         {
             if (password.Equals(""))
             {
-                MessageBox.Show("Mật khẩu không bao gồm khoảng trắng!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập Mật Khẩu!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (password.Length < 5 || password.Length >= 20)

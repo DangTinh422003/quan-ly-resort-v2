@@ -1,6 +1,5 @@
 ﻿using System;
 using quan_ly_resort_v2.DAO;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,6 +42,8 @@ namespace quan_ly_resort_v2.userControl
             {
                 MessageBox.Show("Không có dữ liệu nhân viên để hiển thị.");
             }
+
+            txtMaNV.ReadOnly = false;
             txtAddress.Text = "";
             txtCccd.Text = "";
             txtEmail.Text = "";
@@ -175,6 +176,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void txtRestart_Click(object sender, EventArgs e)
         {
+            txtMaNV.ReadOnly = false;
             txtAddress.Text = "";
             txtCccd.Text = "";
             txtEmail.Text = "";

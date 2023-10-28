@@ -106,6 +106,7 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\EmloyeeDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\ServiceDAO.cs" />
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +129,7 @@
     <Compile Include="model\Employee.cs" />
     <Compile Include="model\Customer.cs" />
     <Compile Include="model\Room.cs" />
+    <Compile Include="model\Service.cs" />
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,6 +175,7 @@
     <Compile Include="userControl\UscTest.Designer.cs">
       <DependentUpon>UscTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="utils\ImageHelper.cs" />
     <Compile Include="utils\ValidateData.cs" />
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

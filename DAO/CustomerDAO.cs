@@ -57,7 +57,7 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "delete from khachhang where MaKH = @id";
+                string sql = "delete from khachhang where Cccd = @id";
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@id", id);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -78,7 +78,7 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "select * from khachhang where MaKH = @id";
+                string sql = "select * from khachhang where Cccd = @id";
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@id", id);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -87,13 +87,12 @@ namespace quan_ly_resort_v2.DAO
                 if (reader.Read())
                 {
                     customer = new Customer(
-                        reader["MaKH"].ToString(),
+                        reader["Cccd"].ToString(),
                         reader["HoTen"].ToString(),
                         DateTime.Parse(reader["NgaySinh"].ToString()),
                         reader["Sdt"].ToString(),
                         reader["Email"].ToString(),
-                        reader["DiaChi"].ToString(),
-                        reader["username"].ToString()
+                        reader["DiaChi"].ToString()
                         );
                 }
                 else
@@ -118,15 +117,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "insert into khachhang values(@id,@name,@dateOfBirth,@phoneNumber,@email,@address,@username)";
-                //string sql = "insert into khachhang values('admin','admin','2004-04-02','0898978987','admin@gmail.com','hcm','admin')";
+                string sql = "insert into khachhang values(@id,@name,@dateOfBirth,@phoneNumber,@email,@address)";
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@id", ctm.Id);
                 command.Parameters.AddWithValue("@name", ctm.Fullname);
                 command.Parameters.AddWithValue("@dateOfBirth", ctm.DateOfBirth.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@phoneNumber", ctm.PhoneNumber);
                 command.Parameters.AddWithValue("@address", ctm.Address);
-                command.Parameters.AddWithValue("@username", ctm.Username);
                 command.Parameters.AddWithValue("@email", ctm.Email);
                 command.ExecuteNonQuery();
                 return true;
@@ -153,8 +150,8 @@ namespace quan_ly_resort_v2.DAO
                 string sql = "select * from khachhang";
                 switch (typeValue)
                 {
-                    case "Mã khách hàng":
-                        sql += " where MaKH like @filterValue";
+                    case "Căn cước công dân":
+                        sql += " where Cccd like @filterValue";
                         break;
                     case "Họ và tên":
                         sql += " where HoTen like @filterValue";
@@ -200,15 +197,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "update khachhang set HoTen = @name, NgaySinh = @dateOfBirth, Sdt = @phoneNumber, Email = @email,"
-                    + " DiaChi = @address, username = @username where MaKH = @id";
+                string sql = "update khachhang set HoTen = @name, NgaySinh = @dateOfBirth, Sdt = @phoneNumber, Email = @email, DiaChi = @address where Cccd = @id";
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@id", ctm.Id);
                 command.Parameters.AddWithValue("@name", ctm.Fullname);
                 command.Parameters.AddWithValue("@dateOfBirth", ctm.DateOfBirth);
                 command.Parameters.AddWithValue("@phoneNumber", ctm.PhoneNumber);
                 command.Parameters.AddWithValue("@address", ctm.Address);
-                command.Parameters.AddWithValue("@username", ctm.Username);
                 command.Parameters.AddWithValue("@email", ctm.Email);
                 MySqlDataReader reader = command.ExecuteReader();
                 return true;

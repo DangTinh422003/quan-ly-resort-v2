@@ -23,12 +23,11 @@ namespace quan_ly_resort_v2.resources
 
         private void changeHeaderTableName()
         {
-            customerTable.Columns["MaKH"].HeaderText = "Mã khách hàng";
+            customerTable.Columns["Cccd"].HeaderText = "Căn cước công dân";
             customerTable.Columns["HoTen"].HeaderText = "Họ và tên";
             customerTable.Columns["NgaySinh"].HeaderText = "Ngày sinh";
             customerTable.Columns["Sdt"].HeaderText = "Số điện thoại";
             customerTable.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            customerTable.Columns["username"].HeaderText = "Tên người dùng";
         }
 
         private void UscManageCustomer_Load(object sender, EventArgs e)
@@ -49,7 +48,6 @@ namespace quan_ly_resort_v2.resources
             textbox_email.Text = "";
             textbox_name.Text = "";
             textbox_phonenumber.Text = "";
-            textbox_username.Text = "";
             dateOfBirthPicker.Value = DateTime.Now;
         }
 
@@ -74,7 +72,6 @@ namespace quan_ly_resort_v2.resources
             textbox_email.Enabled = true;
             textbox_name.Enabled = true;
             textbox_phonenumber.Enabled = true;
-            textbox_username.Enabled = true;
             dateOfBirthPicker.Enabled = true;
         }
 
@@ -93,7 +90,6 @@ namespace quan_ly_resort_v2.resources
                 string phone = customerTable.Rows[selectedrowindex].Cells[3].Value.ToString();
                 string email = customerTable.Rows[selectedrowindex].Cells[4].Value.ToString();
                 string address = customerTable.Rows[selectedrowindex].Cells[5].Value.ToString();
-                string username = customerTable.Rows[selectedrowindex].Cells[6].Value.ToString();
 
                 textbox_id.Text = id;
                 textbox_name.Text = name;
@@ -101,7 +97,6 @@ namespace quan_ly_resort_v2.resources
                 textbox_phonenumber.Text = phone;
                 textbox_email.Text = email;
                 textbox_address.Text = address;
-                textbox_username.Text = username;
             }
         }
 
@@ -140,7 +135,7 @@ namespace quan_ly_resort_v2.resources
 
         private void textbox_id_TextChanged(object sender, EventArgs e)
         {
-            customerTable.DataSource = CustomerDAO.filterByField("MaKH", textbox_id.Text);
+            customerTable.DataSource = CustomerDAO.filterByField("Cccd", textbox_id.Text);
             Customer customerDetal = CustomerDAO.getCustomerById(textbox_id.Text);
             if (customerDetal == null)
             {
@@ -148,7 +143,6 @@ namespace quan_ly_resort_v2.resources
                 textbox_phonenumber.Text = "";
                 textbox_email.Text = "";
                 textbox_address.Text = "";
-                textbox_username.Text = "";
                 dateOfBirthPicker.Value = DateTime.Now;
             }
             else
@@ -157,7 +151,6 @@ namespace quan_ly_resort_v2.resources
                 textbox_phonenumber.Text = customerDetal.PhoneNumber;
                 textbox_email.Text = customerDetal.Email;
                 textbox_address.Text = customerDetal.Address;
-                textbox_username.Text = customerDetal.Username;
                 dateOfBirthPicker.Value = customerDetal.DateOfBirth;
             }
         }
@@ -211,7 +204,6 @@ namespace quan_ly_resort_v2.resources
             string phoneNumber = textbox_phonenumber.Text;
             string email = textbox_email.Text;
             string address = textbox_address.Text;
-            string username = textbox_username.Text;
 
             // validate email
             if (!ValidateData.IsValidEmail(email))
@@ -228,7 +220,7 @@ namespace quan_ly_resort_v2.resources
             // check type function
             if (btn_ModifyCustomer.Enabled)
             {
-                bool isUpdated = CustomerDAO.updateCustomer(new Customer(id, name, birthday, phoneNumber, email, address, username));
+                bool isUpdated = CustomerDAO.updateCustomer(new Customer(id, name, birthday, phoneNumber, email, address));
                 if (isUpdated)
                     MessageBox.Show("Cập nhật thông tin khách hàng thành công!", "Cập nhật thông tin khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
@@ -238,7 +230,7 @@ namespace quan_ly_resort_v2.resources
             }
             else if (btn_AddCustomer.Enabled)
             {
-                Customer newCustomer = new Customer(id, name, birthday, phoneNumber, email, address, username);
+                Customer newCustomer = new Customer(id, name, birthday, phoneNumber, email, address);
                 bool isAdded = CustomerDAO.addNewCustomer(newCustomer);
                 if (isAdded)
                     MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -246,6 +238,116 @@ namespace quan_ly_resort_v2.resources
                     MessageBox.Show("Có lỗi xãy ra!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UscManageCustomer_Load(sender, e);
             }
+        }
+
+        private void btn_PrintCustomer_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
+        }
+
+        private void ExportExcelFile(DataTable dataGridTable, string sheetname, string title)
+        {
+            // Tạo các đối tượng Excel
+            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbooks oBooks;
+            Microsoft.Office.Interop.Excel.Worksheets oSheets;
+
+            Microsoft.Office.Interop.Excel.Workbook oBook;
+            Microsoft.Office.Interop.Excel.Worksheet oSheet;
+
+            // Tạo mới một Excel WorkBook
+            oExcel.Visible = true;
+            oExcel.DisplayAlerts = false;
+            oExcel.Application.SheetsInNewWorkbook = 1;
+            oBooks = oExcel.Workbooks;
+            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
+            oSheets = (Microsoft.Office.Interop.Excel.Worksheets)oBook.Worksheets;
+            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
+            oSheet.Name = sheetname;
+
+            // Tạo phần tiêu đề
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "G1");
+            head.MergeCells = true;
+            head.Value2 = title;
+            head.Font.Bold = true;
+            head.Font.Name = "Times New Roman";
+            head.Font.Size = "20";
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Tạo tiêu đề cột
+            Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
+            cl1.Value2 = "Mã khách hàng";
+            cl1.ColumnWidth = 15.0;
+
+            Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
+            cl2.Value2 = "Họ và tên";
+            cl2.ColumnWidth = 25.0;
+
+            Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
+            cl3.Value2 = "Ngày sinh";
+            cl3.ColumnWidth = 15.0;
+
+            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
+            cl4.Value2 = "Số điện thoại";
+            cl4.ColumnWidth = 15.0;
+
+            Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
+            cl5.Value2 = "Email";
+            cl5.ColumnWidth = 25.0;
+
+            Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
+            cl6.Value2 = "Địa chỉ";
+            cl5.ColumnWidth = 40.0;
+
+            Microsoft.Office.Interop.Excel.Range cl7 = oSheet.get_Range("G3", "G3");
+            cl7.Value2 = "Tên người dùng";
+            cl7.ColumnWidth = 15.0;
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "G3");
+            rowHead.Font.Bold = true;
+            rowHead.Font.Name = "Times New Roman";
+            rowHead.Font.Size = "13";
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+
+            // Tạo mẳng đối tượng để lưu dữ toàn bồ dữ liệu trong DataTable,
+            object[,] arr = new object[dataGridTable.Rows.Count, dataGridTable.Columns.Count];
+
+            //Chuyển dữ liệu từ DataTable vào mảng đối tượng
+            for (int r = 0; r < dataGridTable.Rows.Count; r++)
+            {
+                DataRow dr = dataGridTable.Rows[r];
+                for (int c = 0; c < dataGridTable.Columns.Count; c++)
+                {
+                    arr[r, c] = dr[c];
+                }
+            }
+
+            //Thiết lập vùng điền dữ liệu
+            int rowStart = 4;
+            int columnStart = 1;
+            int rowEnd = rowStart + dataGridTable.Rows.Count - 2;
+            int columnEnd = dataGridTable.Columns.Count;
+
+            // Ô bắt đầu điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
+            // Ô kết thúc điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
+            // Lấy về vùng điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
+
+            //Điền dữ liệu vào vùng đã thiết lập
+            range.Value2 = arr;
+
+            // Kẻ viền
+            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+        }
+
+        private void gunaGroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

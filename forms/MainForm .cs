@@ -26,7 +26,6 @@ namespace quan_ly_resort_v2
             activeBtn(btn_manageRoom);
             addUserControll(new UscManageRoom());
             currentUser.Text = LoginForm.accountLogined.Username;
-
         }
 
         private void activeBtn(GunaAdvenceButton btn)
@@ -38,10 +37,12 @@ namespace quan_ly_resort_v2
                     if (item.Name == btn.Name)
                     {
                         btn.BackColor = Color.FromArgb(100, 88, 255);
+                        btn.ForeColor = Color.White;
                     }
                     else
                     {
-                        item.BackColor = Color.FromArgb(2, 0, 47);
+                        item.BackColor = Color.White;
+                        item.ForeColor = Color.FromArgb(12, 140, 233);
                     }
                 }
             }

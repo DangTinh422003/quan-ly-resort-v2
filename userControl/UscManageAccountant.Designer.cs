@@ -644,6 +644,8 @@
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            this.Size = new System.Drawing.Size(1317, 703);
+            this.Load += new System.EventHandler(this.UscManageAccountant_Load);
             this.ResumeLayout(false);
 
         }

@@ -63,8 +63,9 @@
             this.sidebar.ForeColor = System.Drawing.Color.White;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(308, 803);
+            this.sidebar.Size = new System.Drawing.Size(308, 903);
             this.sidebar.TabIndex = 0;
+            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
             // 
             // currentUser
             // 
@@ -87,7 +88,7 @@
             this.currentUser.ImageOffsetX = 5;
             this.currentUser.ImageSize = new System.Drawing.Size(70, 70);
             this.currentUser.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.currentUser.Location = new System.Drawing.Point(0, 720);
+            this.currentUser.Location = new System.Drawing.Point(0, 820);
             this.currentUser.Name = "currentUser";
             this.currentUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.currentUser.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -334,19 +335,17 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(308, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1074, 803);
+            this.mainPanel.Size = new System.Drawing.Size(1279, 903);
             this.mainPanel.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 803);
+            this.ClientSize = new System.Drawing.Size(1587, 903);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.sidebar);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1400, 850);
-            this.MinimumSize = new System.Drawing.Size(1400, 850);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";

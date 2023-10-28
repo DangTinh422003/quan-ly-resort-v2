@@ -90,5 +90,10 @@ namespace quan_ly_resort_v2.forms
         {
 
         }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

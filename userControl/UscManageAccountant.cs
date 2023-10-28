@@ -16,5 +16,10 @@ namespace quan_ly_resort_v2.userControl
         {
             InitializeComponent();
         }
+
+        private void UscManageAccountant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

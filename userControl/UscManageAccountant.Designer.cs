@@ -38,6 +38,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Name = "UscManageAccountant";
             this.Size = new System.Drawing.Size(1317, 703);
+            this.Load += new System.EventHandler(this.UscManageAccountant_Load);
             this.ResumeLayout(false);
 
         }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace quan_ly_resort_v2.userControl
 {
-    public partial class UscManageBill : UserControl
+    public partial class UscTest : UserControl
     {
-        public UscManageBill()
+        public UscTest()
         {
             InitializeComponent();
-        }
-
-        private void UscManageBill_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

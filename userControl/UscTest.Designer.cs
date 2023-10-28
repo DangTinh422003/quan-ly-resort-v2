@@ -1,6 +1,6 @@
 ﻿namespace quan_ly_resort_v2.userControl
 {
-    partial class UscManageBill
+    partial class UscTest
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // UscManageBill
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(323, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "test";
+            // 
+            // UscTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GrayText;
-            this.Name = "UscManageBill";
-            this.Load += new System.EventHandler(this.UscManageBill_Load);
+            this.Controls.Add(this.label1);
+            this.Name = "UscTest";
+            this.Size = new System.Drawing.Size(784, 558);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

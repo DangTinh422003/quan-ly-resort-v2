@@ -18,6 +18,7 @@ namespace quan_ly_resort_v2
         public MainForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -100,6 +101,11 @@ namespace quan_ly_resort_v2
                 loginForm.Show();
                 this.Close();
             }
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

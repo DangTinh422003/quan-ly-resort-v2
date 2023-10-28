@@ -31,8 +31,6 @@ namespace quan_ly_resort_v2.DAO
                 Account account = null;
                 if (reader.Read())
                 {
-                    // Lấy dữ liệu từ cột trong database và gán cho account
-                    // account = new Account(...);
                     string accountUsername = reader["username"].ToString();
                     string accountPassword = reader["password"].ToString();
                     account = new Account(accountUsername, accountPassword);

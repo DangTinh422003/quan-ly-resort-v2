@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="common\constants\MyConstants.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +124,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Account.cs" />
+    <Compile Include="model\Customer.cs" />
     <Compile Include="model\Room.cs" />
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
@@ -163,6 +165,12 @@
     <Compile Include="userControl\UscManageStatistic.Designer.cs">
       <DependentUpon>UscManageStatistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\UscTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscTest.Designer.cs">
+      <DependentUpon>UscTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="utils\ValidateData.cs" />
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -188,6 +196,9 @@
     <EmbeddedResource Include="userControl\UscManageBill.resx">
       <DependentUpon>UscManageBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscManageCustomer.resx">
+      <DependentUpon>UscManageCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageRoom.resx">
       <DependentUpon>UscManageRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageStatistic.resx">
       <DependentUpon>UscManageStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscTest.resx">
+      <DependentUpon>UscTest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

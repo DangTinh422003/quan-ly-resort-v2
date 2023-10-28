@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Schema;
@@ -10,6 +11,30 @@ namespace quan_ly_resort_v2.utils
 {
     internal class ValidateData
     {
+
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(84|0[3|5|7|8|9])+([0-9]{8})$").Success;
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
+
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public static bool validateUsername(string username)
         {

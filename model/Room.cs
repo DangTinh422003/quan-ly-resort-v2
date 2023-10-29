@@ -9,38 +9,35 @@ namespace quan_ly_resort_v2.model
     public class Room
     {
         private string id;
-        private string name;
         private string type;
+        private string bedStyle;
+        private string state;
         private double price;
-        private string desc;
-        private string stateBooking;
-        private int rating;
-        private int personInRoom;
-        private bool accessChildren;
+        private bool isClean;
+        private bool isFixed;
 
-        public Room() { }
-
-        public Room(string id, string name, string type, double price, string desc, string stateBooking, int rating, int personInRoom, bool accessChildren)
+        public Room(string id, string type, string bedStyle, string state, double price, bool isClean, bool isFixed)
         {
             this.Id = id;
-            this.Name = name;
             this.Type = type;
+            this.BedStyle = bedStyle;
+            this.State = state;
             this.Price = price;
-            this.Desc = desc;
-            this.StateBooking = stateBooking;
-            this.Rating = rating;
-            this.PersonInRoom = personInRoom;
-            this.AccessChildren = accessChildren;
+            this.IsClean = isClean;
+            this.IsFixed = isFixed;
         }
 
         public string Id { get => id; set => id = value; }
-        public string Name { get => name; set => name = value; }
         public string Type { get => type; set => type = value; }
+        public string BedStyle { get => bedStyle; set => bedStyle = value; }
+        public string State { get => state; set => state = value; }
         public double Price { get => price; set => price = value; }
-        public string Desc { get => desc; set => desc = value; }
-        public string StateBooking { get => stateBooking; set => stateBooking = value; }
-        public int Rating { get => rating; set => rating = value; }
-        public int PersonInRoom { get => personInRoom; set => personInRoom = value; }
-        public bool AccessChildren { get => accessChildren; set => accessChildren = value; }
+        public bool IsClean { get => isClean; set => isClean = value; }
+        public bool IsFixed { get => isFixed; set => isFixed = value; }
+
+        public override string ToString()
+        {
+            return "Room: " + this.Id + " - " + this.Type + " - " + this.BedStyle + " - " + this.State + " - " + this.Price + " - " + this.IsClean + " - " + this.IsFixed;
+        }
     }
 }

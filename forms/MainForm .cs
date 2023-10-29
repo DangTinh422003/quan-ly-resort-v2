@@ -23,8 +23,8 @@ namespace quan_ly_resort_v2
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            activeBtn(btn_manageRoom);
-            addUserControll(new UscManageRoom());
+            activeBtn(btn_manageCustomer);
+            addUserControll(new UscManageCustomer());
             currentUser.Text = LoginForm.accountLogined.Username;
         }
 

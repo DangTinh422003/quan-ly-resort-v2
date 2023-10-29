@@ -1,4 +1,5 @@
-﻿using quan_ly_resort_v2.DAO;
+﻿using Guna.UI2.WinForms;
+using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.utils;
 using System;
@@ -43,8 +44,9 @@ namespace quan_ly_resort_v2.forms
                         }
                         else
                         {
-                            AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, passwordTextBox.Text));
-                            MessageBox.Show("Đăng kí thành công!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string hassPassword = PasswordUils.HashingPassword(passwordTextBox.Text);
+                            AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, hassPassword));
+                            MessageBox.Show("Đăng kí thành công!", "Trạng thái đăng ký!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             var loginForm = new LoginForm();
                             Program.myAppCxt.MainForm = loginForm;
                             loginForm.Show();
@@ -86,14 +88,10 @@ namespace quan_ly_resort_v2.forms
                 handleSubmit();
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        private void checkBoxShowPassword_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-
+            passwordTextBox.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '*';
+            confirmPasswordTextbox.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '*';
         }
     }
 }

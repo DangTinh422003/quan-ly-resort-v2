@@ -16,7 +16,7 @@ namespace quan_ly_resort_v2
 {
     public partial class LoginForm : Form
     {
-        public static Account accountLogined = new Account("","");
+        public static Account accountLogined = new Account("", "");
 
         public LoginForm()
         {
@@ -30,8 +30,8 @@ namespace quan_ly_resort_v2
 
         private void handleSubmit()
         {
-            string username = userNameTextBox.Text;
-            string password = passwordTextBox.Text;
+            string username = userNameTextBox.Text.Trim();
+            string password = passwordTextBox.Text.Trim();
 
             if (ValidateData.validate(username, password))
             {
@@ -43,7 +43,7 @@ namespace quan_ly_resort_v2
                 }
                 else
                 {
-                    if (currentAccoutn.Password != password)
+                    if (!PasswordUils.ComparePassword(password, currentAccoutn.Password))
                     {
                         MessageBox.Show("Mật khẩu không chính xác!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -83,6 +83,11 @@ namespace quan_ly_resort_v2
             Program.myAppCxt.MainForm = registerForm;
             registerForm.Show();
             this.Close();
+        }
+
+        private void checkBoxShowPassword_Click(object sender, EventArgs e)
+        {
+            passwordTextBox.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '*';
         }
     }
 }

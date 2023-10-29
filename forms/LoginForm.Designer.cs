@@ -44,12 +44,16 @@
             this.subTitle = new System.Windows.Forms.Label();
             this.mainTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.checkBoxShowPassword = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.formGroup_password.SuspendLayout();
             this.formGroup_userName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gunaPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,15 +69,16 @@
             // form
             // 
             this.form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.form.Controls.Add(this.gunaPanel2);
             this.form.Controls.Add(this.gunaPanel1);
             this.form.Controls.Add(this.formGroup_password);
             this.form.Controls.Add(this.formGroup_userName);
             this.form.Controls.Add(this.subTitle);
             this.form.Controls.Add(this.mainTitle);
             this.form.ForeColor = System.Drawing.Color.White;
-            this.form.Location = new System.Drawing.Point(95, 122);
+            this.form.Location = new System.Drawing.Point(92, 96);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(660, 485);
+            this.form.Size = new System.Drawing.Size(660, 489);
             this.form.TabIndex = 0;
             // 
             // gunaPanel1
@@ -81,7 +86,7 @@
             this.gunaPanel1.Controls.Add(this.labelRegister);
             this.gunaPanel1.Controls.Add(this.label3);
             this.gunaPanel1.Controls.Add(this.gunaAdvenceButton1);
-            this.gunaPanel1.Location = new System.Drawing.Point(19, 384);
+            this.gunaPanel1.Location = new System.Drawing.Point(19, 416);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
@@ -232,7 +237,7 @@
             // 
             this.subTitle.AutoSize = true;
             this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitle.Location = new System.Drawing.Point(81, 91);
+            this.subTitle.Location = new System.Drawing.Point(183, 91);
             this.subTitle.Name = "subTitle";
             this.subTitle.Size = new System.Drawing.Size(306, 25);
             this.subTitle.TabIndex = 1;
@@ -242,7 +247,7 @@
             // 
             this.mainTitle.AutoSize = true;
             this.mainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainTitle.Location = new System.Drawing.Point(11, 0);
+            this.mainTitle.Location = new System.Drawing.Point(113, 0);
             this.mainTitle.Name = "mainTitle";
             this.mainTitle.Size = new System.Drawing.Size(435, 91);
             this.mainTitle.TabIndex = 0;
@@ -258,6 +263,43 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.Controls.Add(this.guna2HtmlLabel1);
+            this.gunaPanel2.Controls.Add(this.checkBoxShowPassword);
+            this.gunaPanel2.Location = new System.Drawing.Point(19, 374);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(620, 36);
+            this.gunaPanel2.TabIndex = 6;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(49, 6);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(153, 27);
+            this.guna2HtmlLabel1.TabIndex = 1;
+            this.guna2HtmlLabel1.Text = "Hiển thị mật khẩu";
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxShowPassword.CheckedState.BorderRadius = 2;
+            this.checkBoxShowPassword.CheckedState.BorderThickness = 0;
+            this.checkBoxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(16, 8);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(25, 25);
+            this.checkBoxShowPassword.TabIndex = 0;
+            this.checkBoxShowPassword.Text = "guna2CustomCheckBox1";
+            this.checkBoxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkBoxShowPassword.UncheckedState.BorderRadius = 2;
+            this.checkBoxShowPassword.UncheckedState.BorderThickness = 0;
+            this.checkBoxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkBoxShowPassword.Click += new System.EventHandler(this.checkBoxShowPassword_Click);
             // 
             // LoginForm
             // 
@@ -283,6 +325,8 @@
             this.formGroup_userName.ResumeLayout(false);
             this.formGroup_userName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gunaPanel2.ResumeLayout(false);
+            this.gunaPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -304,6 +348,9 @@
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelRegister;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox checkBoxShowPassword;
     }
 }
 

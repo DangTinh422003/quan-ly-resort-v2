@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.checkBoxShowPassword = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +51,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
+            this.gunaPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.formGroup_password.SuspendLayout();
@@ -72,16 +76,43 @@
             // form
             // 
             this.form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.form.Controls.Add(this.gunaPanel2);
             this.form.Controls.Add(this.panel2);
             this.form.Controls.Add(this.gunaPanel1);
             this.form.Controls.Add(this.formGroup_password);
             this.form.Controls.Add(this.formGroup_userName);
             this.form.Controls.Add(this.subTitle);
             this.form.Controls.Add(this.mainTitle);
-            this.form.Location = new System.Drawing.Point(96, 121);
+            this.form.Location = new System.Drawing.Point(89, 62);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(660, 586);
+            this.form.Size = new System.Drawing.Size(660, 609);
             this.form.TabIndex = 1;
+            // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.Controls.Add(this.label4);
+            this.gunaPanel2.Controls.Add(this.checkBoxShowPassword);
+            this.gunaPanel2.Location = new System.Drawing.Point(22, 480);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(620, 36);
+            this.gunaPanel2.TabIndex = 5;
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxShowPassword.CheckedState.BorderRadius = 2;
+            this.checkBoxShowPassword.CheckedState.BorderThickness = 0;
+            this.checkBoxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(20, 6);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(25, 25);
+            this.checkBoxShowPassword.TabIndex = 0;
+            this.checkBoxShowPassword.Text = "guna2CustomCheckBox1";
+            this.checkBoxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkBoxShowPassword.UncheckedState.BorderRadius = 2;
+            this.checkBoxShowPassword.UncheckedState.BorderThickness = 0;
+            this.checkBoxShowPassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkBoxShowPassword.Click += new System.EventHandler(this.checkBoxShowPassword_Click);
             // 
             // panel2
             // 
@@ -128,7 +159,7 @@
             // 
             this.gunaPanel1.Controls.Add(this.btn_backToLogin);
             this.gunaPanel1.Controls.Add(this.btnRegister);
-            this.gunaPanel1.Location = new System.Drawing.Point(27, 482);
+            this.gunaPanel1.Location = new System.Drawing.Point(22, 529);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
@@ -145,9 +176,9 @@
             this.btn_backToLogin.FocusedColor = System.Drawing.Color.Empty;
             this.btn_backToLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_backToLogin.ForeColor = System.Drawing.Color.White;
-            this.btn_backToLogin.Image = ((System.Drawing.Image)(resources.GetObject("btn_backToLogin.Image")));
+            this.btn_backToLogin.Image = null;
             this.btn_backToLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_backToLogin.Location = new System.Drawing.Point(1, 3);
+            this.btn_backToLogin.Location = new System.Drawing.Point(11, 3);
             this.btn_backToLogin.Name = "btn_backToLogin";
             this.btn_backToLogin.OnHoverBaseColor = System.Drawing.Color.White;
             this.btn_backToLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -155,9 +186,9 @@
             this.btn_backToLogin.OnHoverImage = null;
             this.btn_backToLogin.OnPressedColor = System.Drawing.Color.Black;
             this.btn_backToLogin.Radius = 8;
-            this.btn_backToLogin.Size = new System.Drawing.Size(195, 52);
+            this.btn_backToLogin.Size = new System.Drawing.Size(201, 52);
             this.btn_backToLogin.TabIndex = 1;
-            this.btn_backToLogin.Text = "Đăng nhập";
+            this.btn_backToLogin.Text = "Quay lại đăng nhập";
             this.btn_backToLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_backToLogin.Click += new System.EventHandler(this.btn_backToLogin_Click);
             // 
@@ -282,7 +313,7 @@
             // 
             this.subTitle.AutoSize = true;
             this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTitle.Location = new System.Drawing.Point(81, 102);
+            this.subTitle.Location = new System.Drawing.Point(156, 91);
             this.subTitle.Name = "subTitle";
             this.subTitle.Size = new System.Drawing.Size(306, 25);
             this.subTitle.TabIndex = 1;
@@ -292,7 +323,7 @@
             // 
             this.mainTitle.AutoSize = true;
             this.mainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainTitle.Location = new System.Drawing.Point(17, 0);
+            this.mainTitle.Location = new System.Drawing.Point(145, 0);
             this.mainTitle.Name = "mainTitle";
             this.mainTitle.Size = new System.Drawing.Size(337, 91);
             this.mainTitle.TabIndex = 0;
@@ -321,7 +352,16 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(162, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hiển thị mật khẩu";
             // 
             // RegisterForm
             // 
@@ -338,10 +378,11 @@
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();
+            this.gunaPanel2.ResumeLayout(false);
+            this.gunaPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gunaPanel1.ResumeLayout(false);
@@ -376,5 +417,8 @@
         private Guna.UI.WinForms.GunaButton btn_backToLogin;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox checkBoxShowPassword;
+        private System.Windows.Forms.Label label4;
     }
 }

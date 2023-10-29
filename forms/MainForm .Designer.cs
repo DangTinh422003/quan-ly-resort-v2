@@ -42,6 +42,7 @@
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.sidebar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             this.sidebar.BackColor = System.Drawing.Color.White;
             this.sidebar.BaseColor = System.Drawing.Color.Transparent;
+            this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sidebar.Controls.Add(this.currentUser);
             this.sidebar.Controls.Add(this.btn_manageBill);
             this.sidebar.Controls.Add(this.btn_manageStatistic);
@@ -88,7 +90,7 @@
             this.currentUser.ImageOffsetX = 5;
             this.currentUser.ImageSize = new System.Drawing.Size(70, 70);
             this.currentUser.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.currentUser.Location = new System.Drawing.Point(0, 820);
+            this.currentUser.Location = new System.Drawing.Point(0, 816);
             this.currentUser.Name = "currentUser";
             this.currentUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.currentUser.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -96,7 +98,7 @@
             this.currentUser.OnHoverImage = null;
             this.currentUser.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.currentUser.OnPressedColor = System.Drawing.Color.Black;
-            this.currentUser.Size = new System.Drawing.Size(308, 83);
+            this.currentUser.Size = new System.Drawing.Size(304, 83);
             this.currentUser.TabIndex = 14;
             this.currentUser.Text = "Tên người dùng";
             this.toolTip1.SetToolTip(this.currentUser, "Bấm vào để đăng xuất");
@@ -123,7 +125,7 @@
             this.btn_manageBill.ImageOffsetX = 10;
             this.btn_manageBill.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageBill.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageBill.Location = new System.Drawing.Point(0, 421);
+            this.btn_manageBill.Location = new System.Drawing.Point(-2, 421);
             this.btn_manageBill.Name = "btn_manageBill";
             this.btn_manageBill.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageBill.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -193,7 +195,7 @@
             this.btn_manageService.ImageOffsetX = 10;
             this.btn_manageService.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageService.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageService.Location = new System.Drawing.Point(0, 297);
+            this.btn_manageService.Location = new System.Drawing.Point(-2, 300);
             this.btn_manageService.Name = "btn_manageService";
             this.btn_manageService.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageService.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -229,7 +231,7 @@
             this.btn_manageAccountant.ImageOffsetX = 10;
             this.btn_manageAccountant.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageAccountant.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageAccountant.Location = new System.Drawing.Point(0, 235);
+            this.btn_manageAccountant.Location = new System.Drawing.Point(-2, 238);
             this.btn_manageAccountant.Name = "btn_manageAccountant";
             this.btn_manageAccountant.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageAccountant.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -264,7 +266,7 @@
             this.btn_manageCustomer.ImageOffsetX = 10;
             this.btn_manageCustomer.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageCustomer.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageCustomer.Location = new System.Drawing.Point(0, 173);
+            this.btn_manageCustomer.Location = new System.Drawing.Point(-2, 114);
             this.btn_manageCustomer.Name = "btn_manageCustomer";
             this.btn_manageCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageCustomer.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -299,7 +301,7 @@
             this.btn_manageRoom.ImageOffsetX = 10;
             this.btn_manageRoom.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageRoom.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageRoom.Location = new System.Drawing.Point(0, 111);
+            this.btn_manageRoom.Location = new System.Drawing.Point(-2, 176);
             this.btn_manageRoom.Name = "btn_manageRoom";
             this.btn_manageRoom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageRoom.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -319,7 +321,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 108);
+            this.panel2.Size = new System.Drawing.Size(304, 108);
             this.panel2.TabIndex = 7;
             // 
             // gunaPictureBox1
@@ -329,7 +331,7 @@
             this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
             this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(308, 108);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(304, 108);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
@@ -342,6 +344,15 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1279, 903);
             this.mainPanel.TabIndex = 2;
+            // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = null;
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.guna2MessageDialog1.Text = null;
             // 
             // MainForm
             // 
@@ -376,6 +387,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton btn_manageCustomer;
         private Guna.UI.WinForms.GunaAdvenceButton currentUser;
         private System.Windows.Forms.ToolTip toolTip1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
     }
 }
 

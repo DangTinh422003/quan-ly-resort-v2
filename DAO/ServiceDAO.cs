@@ -36,9 +36,9 @@ namespace quan_ly_resort_v2.DAO
                     {
                         MaDV = reader["MaDV"].ToString(),
                         TenDV = reader["TenDV"].ToString(),
+                        LoaiDV = reader["LoaiDV"].ToString(),
                         ChiTietDichVu = reader["ChiTietDichVu"].ToString(),
-                        Gia = Convert.ToDouble(reader["Gia"]),
-                        Picture = (byte[])reader["Image"] // Trích xuất dữ liệu hình ảnh
+                        Gia = Convert.ToDouble(reader["Gia"])
                     };
 
                     services.Add(service);
@@ -52,9 +52,7 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
-
-        public static bool AddService(Service service)
+        public static string GetNextMaDV()
         {
             try
             {
@@ -62,28 +60,56 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                // Trước tiên, kiểm tra xem MaDV đã tồn tại chưa
-                string checkMaDVQuery = "SELECT COUNT(*) FROM dichvu WHERE MaDV = @MaDV";
-                MySqlCommand checkMaDVCmd = new MySqlCommand(checkMaDVQuery, conn);
-                checkMaDVCmd.Parameters.AddWithValue("@MaDV", service.MaDV);
+                // Truy vấn MaDV cuối cùng
+                string query = "SELECT MaDV FROM dichvu ORDER BY MaDV DESC LIMIT 1";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                string lastMaDV = cmd.ExecuteScalar() as string;
 
-                int count = Convert.ToInt32(checkMaDVCmd.ExecuteScalar());
-
-                if (count > 0)
+                // Kiểm tra nếu không có bất kỳ MaDV nào trong cơ sở dữ liệu
+                if (string.IsNullOrEmpty(lastMaDV))
                 {
-                    // MaDV đã tồn tại, bạn có thể xử lý logic ở đây nếu cần thiết
-                    conn.Close();
+                    return "DV1";
+                }
+
+                // Rút trích số id từ MaDV cuối cùng
+                string[] parts = lastMaDV.Split(new string[] { "DV" }, StringSplitOptions.None);
+                if (parts.Length == 2 && int.TryParse(parts[1], out int lastId))
+                {
+                    // Tạo MaDV mới bằng cách tăng id lên 1 và kết hợp với "DV"
+                    string newMaDV = "DV" + (lastId + 1);
+                    return newMaDV;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+        public static bool AddService(Service service)
+        {
+            try
+            {
+                string newMaDV = GetNextMaDV();
+                if (string.IsNullOrEmpty(newMaDV))
+                {
                     return false;
                 }
 
-                // Nếu MaDV chưa tồn tại, thêm dịch vụ mới
-                string insertQuery = "INSERT INTO dichvu (MaDV, TenDV, ChiTietDichVu, Gia, Image) VALUES (@MaDV, @TenDV, @ChiTietDichVu, @Gia, @Image)";
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                // Thêm dịch vụ mới với MaDV mới
+                string insertQuery = "INSERT INTO dichvu (MaDV, TenDV, LoaiDV, ChiTietDichVu, Gia) " +
+                    "VALUES (@MaDV, @TenDV, @LoaiDV, @ChiTietDichVu, @Gia)";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
-                cmd.Parameters.AddWithValue("@MaDV", service.MaDV);
+                cmd.Parameters.AddWithValue("@MaDV", newMaDV);
                 cmd.Parameters.AddWithValue("@TenDV", service.TenDV);
+                cmd.Parameters.AddWithValue("@LoaiDV", service.LoaiDV);
                 cmd.Parameters.AddWithValue("@ChiTietDichVu", service.ChiTietDichVu);
                 cmd.Parameters.AddWithValue("@Gia", service.Gia);
-                cmd.Parameters.AddWithValue("@Image", service.Picture); // Gán dữ liệu hình ảnh cho tham số @Image
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 conn.Close();
@@ -105,14 +131,16 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string updateQuery = "UPDATE dichvu SET TenDV = @TenDV, ChiTietDichVu = @ChiTietDichVu, Gia = @Gia, Image = @Image WHERE MaDV = @MaDV";
+                string updateQuery = "UPDATE dichvu " +
+                    "SET TenDV = @TenDV, LoaiDV = @LoaiDV, ChiTietDichVu = @ChiTietDichVu, Gia = @Gia " +
+                    "WHERE MaDV = @MaDV";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@MaDV", service.MaDV);
                 cmd.Parameters.AddWithValue("@TenDV", service.TenDV);
+                cmd.Parameters.AddWithValue("@LoaiDV", service.LoaiDV);
                 cmd.Parameters.AddWithValue("@ChiTietDichVu", service.ChiTietDichVu);
                 cmd.Parameters.AddWithValue("@Gia", service.Gia);
-                cmd.Parameters.AddWithValue("@Image", service.Picture); // Gán dữ liệu hình ảnh cho tham số @Image
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 conn.Close();
@@ -125,7 +153,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
 
         public static bool DeleteService(string maDV)
         {
@@ -173,9 +200,9 @@ namespace quan_ly_resort_v2.DAO
                     {
                         MaDV = reader["MaDV"].ToString(),
                         TenDV = reader["TenDV"].ToString(),
+                        LoaiDV = reader["LoaiDV"].ToString(),
                         ChiTietDichVu = reader["ChiTietDichVu"].ToString(),
-                        Gia = Convert.ToDouble(reader["Gia"]),
-                        Picture = (byte[])reader["Image"] // Lấy dữ liệu hình ảnh từ trường "Image" trong cơ sở dữ liệu
+                        Gia = Convert.ToDouble(reader["Gia"])
                     };
 
                     conn.Close();
@@ -184,7 +211,7 @@ namespace quan_ly_resort_v2.DAO
                 else
                 {
                     conn.Close();
-                    return null; // Trả về null nếu không tìm thấy dịch vụ với MaDV tương ứng
+                    return null;
                 }
             }
             catch (Exception ex)
@@ -214,8 +241,8 @@ namespace quan_ly_resort_v2.DAO
                     case "Tên dịch vụ":
                         sql += " WHERE TenDV LIKE @filterValue";
                         break;
-                    case "Thông tin dịch vụ":
-                        sql += " WHERE ChiTietDichVu LIKE @filterValue";
+                    case "Loại dịch vụ":
+                        sql += " WHERE LoaiDV LIKE @filterValue";
                         break;
                     case "Giá dịch vụ":
                         sql += " WHERE Gia LIKE @filterValue";
@@ -239,7 +266,5 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
-
     }
 }

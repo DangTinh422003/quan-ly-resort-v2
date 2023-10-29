@@ -3,6 +3,7 @@ using quan_ly_resort_v2.common.constants;
 using quan_ly_resort_v2.model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,7 @@ namespace quan_ly_resort_v2.DAO
                         Cccd = Convert.ToInt32(reader["Cccd"]),
                         Luong = Convert.ToDouble(reader["Luong"]),
                         NgayVaoLam = (DateTime)reader["NgayVaoLam"],    
+                        Username = reader["username"].ToString(),
                     };
 
                     employees.Add(employee);
@@ -61,6 +63,43 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
+        public static string GetNextMaNV()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                // Thực hiện truy vấn để lấy mã nhân viên cuối cùng
+                string getLastMaNVQuery = "SELECT MaNV FROM nhanvien ORDER BY MaNV DESC LIMIT 1";
+
+                MySqlCommand getLastMaNVCmd = new MySqlCommand(getLastMaNVQuery, conn);
+                string lastMaNV = getLastMaNVCmd.ExecuteScalar() as string;
+
+                // Kiểm tra nếu không có bất kỳ MaNV nào trong cơ sở dữ liệu
+                if (string.IsNullOrEmpty(lastMaNV))
+                {
+                    return "NV1";
+                }
+
+                // Rút trích số id từ MaNV cuối cùng
+                string[] parts = lastMaNV.Split(new string[] { "NV" }, StringSplitOptions.None);
+                if (parts.Length == 2 && int.TryParse(parts[1], out int lastId))
+                {
+                    // Tạo MaNV mới bằng cách tăng id lên 1 và kết hợp với "NV"
+                    string newMaNV = "NV" + (lastId + 1);
+                    return newMaNV;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
+
         public static bool AddEmployee(Employee newEmployee)
         {
             try
@@ -69,12 +108,34 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                // Xây dựng truy vấn INSERT
-                string insertQuery = "INSERT INTO nhanvien (MaNV, TenNV, Sdt, Email, NgaySinh, DiaChi, Cccd, Luong, NgayVaoLam) " +
-                                    "VALUES (@MaNV, @TenNV, @Sdt, @Email, @NgaySinh, @DiaChi, @Cccd, @Luong, @NgayVaoLam)";
+                // Lấy mã nhân viên tiếp theo
+                string nextMaNV = GetNextMaNV();
+
+                if (nextMaNV == null)
+                {
+                    conn.Close();
+                    return false;
+                }
+
+                // Kiểm tra xem username đã tồn tại hay chưa
+                string checkUsernameQuery = "SELECT username FROM nhanvien WHERE username = @Username";
+                MySqlCommand checkUsernameCmd = new MySqlCommand(checkUsernameQuery, conn);
+                checkUsernameCmd.Parameters.AddWithValue("@Username", newEmployee.Username);
+                object usernameResult = checkUsernameCmd.ExecuteScalar();
+
+                // Nếu username đã tồn tại, không thêm mới
+                if (usernameResult != null)
+                {
+                    conn.Close();
+                    return false;
+                }
+
+                // Xây dựng truy vấn INSERT nếu cả MaNV và username chưa tồn tại
+                string insertQuery = "INSERT INTO nhanvien (MaNV, TenNV, Sdt, Email, NgaySinh, DiaChi, Cccd, Luong, NgayVaoLam, username) " +
+                                    "VALUES (@MaNV, @TenNV, @Sdt, @Email, @NgaySinh, @DiaChi, @Cccd, @Luong, @NgayVaoLam, @Username)";
 
                 MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
-                cmd.Parameters.AddWithValue("@MaNV", newEmployee.MaNV);
+                cmd.Parameters.AddWithValue("@MaNV", nextMaNV);
                 cmd.Parameters.AddWithValue("@TenNV", newEmployee.TenNV);
                 cmd.Parameters.AddWithValue("@Sdt", newEmployee.Sdt);
                 cmd.Parameters.AddWithValue("@Email", newEmployee.Email);
@@ -83,6 +144,7 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Parameters.AddWithValue("@Cccd", newEmployee.Cccd);
                 cmd.Parameters.AddWithValue("@Luong", newEmployee.Luong);
                 cmd.Parameters.AddWithValue("@NgayVaoLam", newEmployee.NgayVaoLam);
+                cmd.Parameters.AddWithValue("@Username", newEmployee.Username);
 
                 // Thực hiện truy vấn INSERT
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -99,6 +161,9 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
+
+
+
         public static bool UpdateEmployee(Employee employee)
         {
             try
@@ -108,7 +173,7 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Xây dựng truy vấn UPDATE
-                string updateQuery = "UPDATE nhanvien SET TenNV = @TenNV, Sdt = @Sdt, Email = @Email, NgaySinh = @NgaySinh, DiaChi = @DiaChi, Cccd = @Cccd, Luong = @Luong, NgayVaoLam = @NgayVaoLam WHERE MaNV = @MaNV";
+                string updateQuery = "UPDATE nhanvien SET TenNV = @TenNV, Sdt = @Sdt, Email = @Email, NgaySinh = @NgaySinh, DiaChi = @DiaChi, Cccd = @Cccd, Luong = @Luong, NgayVaoLam = @NgayVaoLam, username = @Username WHERE MaNV = @MaNV";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@MaNV", employee.MaNV);
@@ -120,6 +185,7 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Parameters.AddWithValue("@Cccd", employee.Cccd);
                 cmd.Parameters.AddWithValue("@Luong", employee.Luong);
                 cmd.Parameters.AddWithValue("@NgayVaoLam", employee.NgayVaoLam);
+                cmd.Parameters.AddWithValue("@Username", employee.Username); // Bổ sung trường username
 
                 // Thực hiện truy vấn UPDATE
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -135,6 +201,7 @@ namespace quan_ly_resort_v2.DAO
                 return false; // Xử lý lỗi và trả về false nếu có lỗi
             }
         }
+
 
         public static bool DeleteEmployee(string maNV)
         {
@@ -164,6 +231,104 @@ namespace quan_ly_resort_v2.DAO
                 return false; // Xử lý lỗi và trả về false nếu có lỗi
             }
         }
+
+        public static DataTable FilterByField(string typeValue, string filterValue)
+        {
+            try
+            {
+                typeValue = typeValue.Trim();
+                filterValue = filterValue.Trim();
+
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "SELECT * FROM nhanvien";
+                switch (typeValue)
+                {
+                    case "Mã nhân viên":
+                        sql += " WHERE MaNV LIKE @filterValue";
+                        break;
+                    case "Họ và tên":
+                        sql += " WHERE TenNV LIKE @filterValue";
+                        break;
+                    case "Số điện thoại":
+                        sql += " WHERE Sdt LIKE @filterValue";
+                        break;
+                    case "Tên người dùng":
+                        sql += " WHERE Username LIKE @filterValue";
+                        break;
+                    case "Email":
+                        sql += " WHERE Email LIKE @filterValue";
+                        break;
+                    case "CCCD":
+                        sql += " WHERE Cccd LIKE @filterValue";
+                        break;
+                    default:
+                        sql += " WHERE " + typeValue + " like @filterValue";
+                        break;
+                }
+
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@filterValue", "%" + filterValue + "%");
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                conn.Close();
+
+                return table;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+        public static Employee GetEmployeeById(string id)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select * from nhanvien where MaNV = @id";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                Employee employee = null;
+                if (reader.Read())
+                {
+                    employee = new Employee(
+                        reader["MaNV"].ToString(),
+                        reader["TenNV"].ToString(),
+                        reader["Sdt"].ToString(),
+                        reader["Email"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        reader["DiaChi"].ToString(),
+                        Convert.ToInt32(reader["Cccd"]), // Thêm Cccd ở đây
+                        double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
+                        DateTime.Parse(reader["NgayVaoLam"].ToString()),
+                        reader["username"].ToString()
+                    );
+                }
+                else
+                {
+                    return null;
+                }
+                conn.Close();
+                return employee;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GetEmployeeById: " + e.Message);
+                return null;
+            }
+        }
+
+
 
     }
 }

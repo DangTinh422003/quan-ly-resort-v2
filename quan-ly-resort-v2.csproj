@@ -169,6 +169,12 @@
     <Compile Include="userControl\UscManageStatistic.Designer.cs">
       <DependentUpon>UscManageStatistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\UscServiceDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscServiceDetail.Designer.cs">
+      <DependentUpon>UscServiceDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\UscTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageStatistic.resx">
       <DependentUpon>UscManageStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscServiceDetail.resx">
+      <DependentUpon>UscServiceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscTest.resx">
       <DependentUpon>UscTest.cs</DependentUpon>

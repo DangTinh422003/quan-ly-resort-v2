@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Guna.UI.WinForms;
 using quan_ly_resort_v2.resources;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Guna.UI2.WinForms;
 
 namespace quan_ly_resort_v2.userControl
 {
@@ -26,8 +27,8 @@ namespace quan_ly_resort_v2.userControl
         }
         private void UscManageServices_Load(object sender, EventArgs e)
         {
+            gunaTextBox1.Enabled = false;
             txtMaDV.Visible = false;
-            GroupBox3.Visible = false;
             LoadServiceData();
             cleanForm();
             disableControl();
@@ -201,11 +202,24 @@ namespace quan_ly_resort_v2.userControl
             string chiTietDichVu = txtDetail.Text;
             double gia;
 
-            if (string.IsNullOrEmpty(tenDV) || !double.TryParse(txtPrice.Text, out gia))
+            if (string.IsNullOrEmpty(tenDV) || string.IsNullOrEmpty(chiTietDichVu) || !double.TryParse(txtPrice.Text, out gia))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin và kiểm tra giá dịch vụ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (tenDV != tenDV.Trim() || chiTietDichVu != chiTietDichVu.Trim())
+            {
+                MessageBox.Show("Tên dịch vụ hoặc Chi tiết dịch vụ không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (gia < 1000 || gia > 1000000)
+            {
+                MessageBox.Show("Giá dịch vụ phải nằm trong khoảng từ 1,000 đến 1,000,000.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             string loaiDV = ccbSelectService.Text; // Lấy giá trị từ ComboBox
 
@@ -250,14 +264,13 @@ namespace quan_ly_resort_v2.userControl
         private void addUserControll(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            GroupBox3.Controls.Clear();
-            GroupBox3.Controls.Add(userControl);
+            panelService.Controls.Clear();
+            panelService.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            GroupBox3.Visible = true;
             UscServiceDetail detailControl = new UscServiceDetail();
             detailControl.MaDVValue = txtMaDV.Text;
             detailControl.BackButtonClicked += (s, args) => {
@@ -270,12 +283,12 @@ namespace quan_ly_resort_v2.userControl
         private void ShowUscManageServices()
         {
             // Xóa bất kỳ điều khiển nào đang hiển thị trong gunaGroupBox2
-            GroupBox3.Controls.Clear();
+            panelService.Controls.Clear();
 
             // Hiển thị lại trang UscManageServices
             UscManageServices manageServicesControl = new UscManageServices();
             manageServicesControl.Dock = DockStyle.Fill;
-            GroupBox3.Controls.Add(manageServicesControl);
+            panelService.Controls.Add(manageServicesControl);
             manageServicesControl.BringToFront();
         }
     }

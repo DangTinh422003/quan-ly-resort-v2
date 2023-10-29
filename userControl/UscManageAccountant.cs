@@ -45,6 +45,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void UscManageAccountant_Load(object sender, EventArgs e)
         {
+            txtId.Visible = false;
             btnAdd.Enabled = true;
             LoadEmployeeData();
             cleanForm();
@@ -226,6 +227,7 @@ namespace quan_ly_resort_v2.userControl
             int cccd;
             DateTime ngayVaoLam = txtWorkDay.Value;
             string username = txtUsername.Text;
+            string luongStr = txtSalary.Text;
 
             string[] requiredFields = { tenNV, sdt, email, diaChi, username };
             if (requiredFields.Any(string.IsNullOrEmpty) || ngaySinh == null || ngayVaoLam == null)
@@ -235,6 +237,12 @@ namespace quan_ly_resort_v2.userControl
             }
 
             // Validate email
+            if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim())
+            {
+                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!ValidateData.IsValidEmail(email))
             {
                 MessageBox.Show("Email không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -256,11 +264,31 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            double luong;
+            int currentYear = DateTime.Now.Year;
+            int requiredBirthYear = currentYear - 18;
 
-            if (!double.TryParse(txtSalary.Text, out luong))
+            if (ngaySinh.Year > requiredBirthYear)
             {
-                MessageBox.Show("Lương không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // Kiểm tra thời gian làm việc ít nhất là 1 tháng
+            TimeSpan workDuration = ngayVaoLam - DateTime.Now;
+           
+            if (workDuration.TotalDays < 0 || workDuration.TotalDays > 10)
+            {
+                MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 10 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+            double luong;
+            if (!double.TryParse(luongStr, out luong) || luong < 1000000 || luong >= 1000000000)
+            {
+                MessageBox.Show("Lương không hợp lệ! Lương phải nằm trong khoảng từ 1,000,000 đến 999,999,999.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -299,8 +327,6 @@ namespace quan_ly_resort_v2.userControl
                 UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi cập nhật
             }
         }
-
-
 
     }
 }

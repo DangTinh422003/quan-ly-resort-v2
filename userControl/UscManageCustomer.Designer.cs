@@ -597,11 +597,8 @@
             // 
             this.customerTable.AllowUserToOrderColumns = true;
             this.customerTable.AllowUserToResizeRows = false;
-<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-=======
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
->>>>>>> c2f51412b12b22938c758a729eb660e23dd4e1c1
             this.customerTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.customerTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -610,18 +607,14 @@
             this.customerTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.customerTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-<<<<<<< HEAD
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-=======
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
->>>>>>> c2f51412b12b22938c758a729eb660e23dd4e1c1
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.customerTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-<<<<<<< HEAD
             this.customerTable.ColumnHeadersHeight = 30;
             this.customerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -631,7 +624,6 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-=======
             this.customerTable.ColumnHeadersHeight = 40;
             this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -640,7 +632,6 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
->>>>>>> c2f51412b12b22938c758a729eb660e23dd4e1c1
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.customerTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.customerTable.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -666,17 +657,14 @@
             this.customerTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.customerTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
             this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.customerTable.ThemeStyle.HeaderStyle.Height = 30;
             this.customerTable.ThemeStyle.ReadOnly = false;
             this.customerTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-=======
             this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.customerTable.ThemeStyle.HeaderStyle.Height = 40;
             this.customerTable.ThemeStyle.ReadOnly = true;
             this.customerTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
->>>>>>> c2f51412b12b22938c758a729eb660e23dd4e1c1
             this.customerTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.customerTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.customerTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));

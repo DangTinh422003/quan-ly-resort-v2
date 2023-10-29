@@ -397,7 +397,7 @@
             this.btn_PrintCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btn_PrintCustomer.Image")));
             this.btn_PrintCustomer.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_PrintCustomer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_PrintCustomer.Location = new System.Drawing.Point(765, 5);
+            this.btn_PrintCustomer.Location = new System.Drawing.Point(612, 6);
             this.btn_PrintCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_PrintCustomer.Name = "btn_PrintCustomer";
             this.btn_PrintCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -490,7 +490,7 @@
             this.btn_CancelCustomer.AnimationHoverSpeed = 0.07F;
             this.btn_CancelCustomer.AnimationSpeed = 0.03F;
             this.btn_CancelCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CancelCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_CancelCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
             this.btn_CancelCustomer.BorderColor = System.Drawing.Color.Black;
             this.btn_CancelCustomer.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btn_CancelCustomer.CheckedBorderColor = System.Drawing.Color.Black;
@@ -504,7 +504,7 @@
             this.btn_CancelCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btn_CancelCustomer.Image")));
             this.btn_CancelCustomer.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_CancelCustomer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_CancelCustomer.Location = new System.Drawing.Point(613, 5);
+            this.btn_CancelCustomer.Location = new System.Drawing.Point(780, 6);
             this.btn_CancelCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_CancelCustomer.Name = "btn_CancelCustomer";
             this.btn_CancelCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));

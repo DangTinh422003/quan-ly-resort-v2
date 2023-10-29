@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_backToLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAU9JREFUaEPt2T9KA2EQhvEtrf1zAztbLbyFheKN9EyCV9BLeAGxEEV087w4H8Rg
-        dr9txJm8P5giySzsQ0LYZAczMzMzM7M/N47jHnMQD2sj9JJ5Zr6Y23i6JgKvmQ+mUfRhvFwLYVfMemxz
-        HCt1ELUtVmoFEzQVK3WCiZmLlRrBhPTESv5gInpjJXcwAUtiJW8wJ780VnIGc+KbFxX/3Stzz5xHQj8O
-        yha77p05i5R5LGeObR4jZxqLFWKbo8j6HQsXTJVYmf7yZOHpe68MB//Awm59pIWl3fnSalisEP0QOX04
-        IHP0G3MaKf04KFu0Li3vmJNIWI6D9Y/k0uicPx4aApZG5w4WIpZE5w8WQnqjawQLMT3RdYKFoLnoWsFC
-        1FR0vWAhbFt0zWAhbvPi5JOpeTOtIVDv9AujO4c38XRthOqG+H48NDMzMzMzy2oYViPOQcgyuvKVAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
   <data name="btnRegister.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAcJJREFUOE+V

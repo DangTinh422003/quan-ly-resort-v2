@@ -430,7 +430,7 @@
   <data name="btn_manageRoom.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAACzhJREFUeF7tXXtQVNcZN313pu10pn90+kinnUmrEfAFKL5QMSKKKKKoER/R+oxo
+        DQAACw0B7QfALAAACzhJREFUeF7tXXtQVNcZN313pu10pn90+kinnUmrEfAFKL5QMSKKKKKoER/R+oxo
         o1bbio+o0SQ+ghodNY1RY41GK1qfMTVSFXYhaqqU6PgKinvvKnt3QXyhgF+/73LWWe4e2Af3Lgt7fjO/
         2d27e+853+93v/O491xoISAgICAgICAgICAgICAgICAgICAgIBBc2APw7XybHGWyS3PNinQIXy+ZFdmB
         76tMivyE3uO2r812eb/ZLi0226w9j8LV77PdBfSCueT2702KtEEV3y6DT1TkUjRrs6lE6sAOJ+AvzI7b
@@ -484,7 +484,7 @@
   <data name="gunaPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARkAAABhCAYAAADiFtUPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAB+pJREFUeF7tnYuN7EQQRV8CBAAJEAAEAAFAABAABAABQAAkQAIkQAIkQEr4CJV0
+        DQAACw0B7QfALAAAB+pJREFUeF7tnYuN7EQQRV8CBAAJEAAEAAFAABAABAABQAAkQAIkQAIkQEr4CJV0
         Kcq/Wc+b2dE50tXzttvtbj/Xneq2Z/eDiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI
         iIiIiIiIiIiIiIiIiIiIiMhBvlv056K/Fv0douz3RSIib+K3RWkuXZ8sEhG5GbKVyVxKny4SEbmZPk3q
         +mqRiMhNfLZoMpbUD4tERG7i60WTsaRc/BWRm/ll0WQsKaZTLv6KyE3srceUeMwtInKKbxdNhjLJKZOI
@@ -521,6 +521,9 @@
         n9KZbKGcGfsAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="guna2MessageDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>133, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>81</value>
   </metadata>

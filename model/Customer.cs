@@ -14,10 +14,9 @@ namespace quan_ly_resort_v2.model
         private string phoneNumber;
         private string email;
         private string address;
-        private string username;
 
         public Customer() { }
-        public Customer(string id, string fullname, DateTime dateOfBirth, string phoneNumber, string email, string address, string username)
+        public Customer(string id, string fullname, DateTime dateOfBirth, string phoneNumber, string email, string address)
         {
             this.Id = id;
             this.DateOfBirth = dateOfBirth;
@@ -25,7 +24,6 @@ namespace quan_ly_resort_v2.model
             this.PhoneNumber = phoneNumber;
             this.Email = email;
             this.Address = address;
-            this.Username = username;
         }
 
         public string Id { get => id; set => id = value; }
@@ -34,11 +32,10 @@ namespace quan_ly_resort_v2.model
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Email { get => email; set => email = value; }
         public string Address { get => address; set => address = value; }
-        public string Username { get => username; set => username = value; }
 
         public override string ToString()
         {
-            return "Customer: " + this.Id + " " + this.Fullname + " " + this.DateOfBirth.ToString("yyyy-MM-dd") + " " + this.PhoneNumber + " " + this.Email + " " + this.Address + " " + this.Username;
+            return "Customer: " + this.Id + " " + this.Fullname + " " + this.DateOfBirth.ToString("yyyy-MM-dd") + " " + this.PhoneNumber + " " + this.Email + " " + this.Address;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace quan_ly_resort_v2.model
     {
 
         public Employee() { }
-        public Employee(string maNV, string tenNV, string sdt, string email, DateTime ngaySinh, string diaChi, int cccd, double luong, DateTime ngayVaoLam, Account username)
+        public Employee(string maNV, string tenNV, string sdt, string email, DateTime ngaySinh, string diaChi, int cccd, double luong, DateTime ngayVaoLam, string username)
         {
             MaNV = maNV;
             TenNV = tenNV;
@@ -34,7 +34,7 @@ namespace quan_ly_resort_v2.model
         public int Cccd { get; set; }
         public double Luong { get; set; }
         public DateTime NgayVaoLam { get; set; }
-        public Account Username { get; set; }
+        public string Username { get; set; }
 
     }
 }

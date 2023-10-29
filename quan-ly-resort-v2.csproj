@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -201,12 +201,6 @@
     <Compile Include="userControl\UscServiceDetail.Designer.cs">
       <DependentUpon>UscServiceDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="userControl\UscTest.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="userControl\UscTest.Designer.cs">
-      <DependentUpon>UscTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="utils\ImageHelper.cs" />
     <Compile Include="utils\PasswordUils.cs" />
     <Compile Include="utils\ValidateData.cs" />
@@ -253,10 +247,6 @@
     <EmbeddedResource Include="userControl\UscServiceDetail.resx">
       <DependentUpon>UscServiceDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userControl\UscTest.resx">
-      <DependentUpon>UscTest.cs</DependentUpon>
-    </EmbeddedResource>
-
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

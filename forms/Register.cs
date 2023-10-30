@@ -27,6 +27,12 @@ namespace quan_ly_resort_v2.forms
             string password = passwordTextBox.Text;
             string confirmPassword = confirmPasswordTextbox.Text;
 
+            if (username != username.Trim() || password != password.Trim() || confirmPassword != confirmPassword.Trim())
+            {
+                MessageBox.Show("Username hoặc Password hoặc ConfirmPassword chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (ValidateData.validate(username, password))
             {
                 if (ValidateData.validatePassword(confirmPassword))

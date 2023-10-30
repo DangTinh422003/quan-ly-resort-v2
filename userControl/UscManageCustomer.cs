@@ -9,8 +9,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace quan_ly_resort_v2.resources
 {
@@ -205,6 +207,19 @@ namespace quan_ly_resort_v2.resources
             string email = textbox_email.Text;
             string address = textbox_address.Text;
 
+            string[] requiredFields = { id, name, email, phoneNumber , address };
+            if (requiredFields.Any(string.IsNullOrEmpty) || birthday == null)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (id != id.Trim() || name != name.Trim() || email != email.Trim() || address != address.Trim())
+            {
+                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // validate email
             if (!ValidateData.IsValidEmail(email))
             {
@@ -216,6 +231,13 @@ namespace quan_ly_resort_v2.resources
                 MessageBox.Show("Số điện thoại không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!Regex.IsMatch(id, @"^\d{12}$"))
+            {
+                MessageBox.Show("CCCD không hợp lệ!, Vui lòng nhập đủ 12 số", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
 
             // check type function
             if (btn_ModifyCustomer.Enabled)

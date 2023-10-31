@@ -281,8 +281,8 @@ namespace quan_ly_resort_v2.resources
 
         private void btn_PrintCustomer_Click(object sender, EventArgs e)
         {
-            // MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
+            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
         }
 
         private void ExportExcelFile(DataTable dataGridTable, string sheetname, string title)

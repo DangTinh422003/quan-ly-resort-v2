@@ -69,7 +69,6 @@
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btn_Nextpage = new Guna.UI.WinForms.GunaCircleButton();
             this.btn_Prevpage = new Guna.UI.WinForms.GunaCircleButton();
-            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.guna2Panel1.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -548,7 +547,6 @@
             this.gunaTextBox1.SelectedText = "";
             this.gunaTextBox1.Size = new System.Drawing.Size(366, 45);
             this.gunaTextBox1.TabIndex = 0;
-            this.gunaTextBox1.Text = "gunaTextBox1";
             this.gunaTextBox1.TextOffsetX = 50;
             // 
             // gunaShadowPanel1
@@ -646,7 +644,6 @@
             // 
             this.guna2Panel2.Controls.Add(this.lb_currentPage);
             this.guna2Panel2.Controls.Add(this.gunaPanel5);
-            this.guna2Panel2.Controls.Add(this.gunaAdvenceButton2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(224, 78);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -721,39 +718,6 @@
             this.btn_Prevpage.TabIndex = 0;
             this.btn_Prevpage.Click += new System.EventHandler(this.btn_Prevpage_Click);
             // 
-            // gunaAdvenceButton2
-            // 
-            this.gunaAdvenceButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton2.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.CheckedImage = null;
-            this.gunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.Image")));
-            this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.gunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton2.Location = new System.Drawing.Point(568, 9);
-            this.gunaAdvenceButton2.Name = "gunaAdvenceButton2";
-            this.gunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.OnHoverImage = null;
-            this.gunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.Radius = 12;
-            this.gunaAdvenceButton2.Size = new System.Drawing.Size(366, 51);
-            this.gunaAdvenceButton2.TabIndex = 0;
-            this.gunaAdvenceButton2.Text = "Quản lý danh sách phòng";
-            this.gunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // UscManageRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -819,7 +783,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
         private RoomItem roomItem1;
         private RoomItem roomItem2;
         private RoomItem roomItem3;

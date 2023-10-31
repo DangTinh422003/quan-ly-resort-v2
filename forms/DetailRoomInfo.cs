@@ -46,11 +46,11 @@ namespace quan_ly_resort_v2.forms
             string roomId = currentRoomId;
             Room room = RoomDAO.getRoomByID(roomId);
 
-            if (room.State == "available")
+            if (room.State.ToLower() == "avaiable")
             {
                 MessageBox.Show("Thêm khách hàng mới, rồi lưu phòng");
             }
-            else if (room.State == "reserved")
+            else if (room.State.ToLower() == "reserved")
             {
                 MessageBox.Show("Nhận phòng,Tạo hóa đơn, query bảng đặt phòng + bảng khách hàng để thêm thong tin vào hóa đơn");
             }

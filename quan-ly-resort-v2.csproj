@@ -127,6 +127,18 @@
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\ServiceDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />
+    <Compile Include="forms\BookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\BookingForm.Designer.cs">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\DetailRoomInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DetailRoomInfo.Designer.cs">
+      <DependentUpon>DetailRoomInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,9 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Account.cs" />
+    <Compile Include="model\Bill.cs" />
+    <Compile Include="model\BookingRoom.cs" />
+    <Compile Include="model\BookingRoomDAO.cs" />
     <Compile Include="model\Employee.cs" />
     <Compile Include="model\Customer.cs" />
     <Compile Include="model\Room.cs" />
@@ -170,6 +185,12 @@
     </Compile>
     <Compile Include="userControl\UscManageBill.Designer.cs">
       <DependentUpon>UscManageBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UscManageBookingRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscManageBookingRoom.Designer.cs">
+      <DependentUpon>UscManageBookingRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="userControl\UscManageCustomer.cs">
       <SubType>UserControl</SubType>
@@ -204,6 +225,12 @@
     <Compile Include="utils\ImageHelper.cs" />
     <Compile Include="utils\PasswordUils.cs" />
     <Compile Include="utils\ValidateData.cs" />
+    <EmbeddedResource Include="forms\BookingForm.resx">
+      <DependentUpon>BookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DetailRoomInfo.resx">
+      <DependentUpon>DetailRoomInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageBill.resx">
       <DependentUpon>UscManageBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscManageBookingRoom.resx">
+      <DependentUpon>UscManageBookingRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageCustomer.resx">
       <DependentUpon>UscManageCustomer.cs</DependentUpon>
@@ -288,6 +318,12 @@
     <None Include="Resources\icons8-arrow-48.png" />
     <None Include="Resources\icons8-prev-button-40.png" />
     <None Include="Resources\icons8-next-button-40.png" />
+    <None Include="Resources\icons8-calendar-50.png" />
+    <None Include="Resources\icons8-group-100.png" />
+    <None Include="Resources\icons8-hotel-64.png" />
+    <None Include="Resources\icons8-phone-48.png" />
+    <None Include="Resources\icons8-gmail-100.png" />
+    <None Include="Resources\icons8-address-100.png" />
     <Content Include="Resources\registerImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

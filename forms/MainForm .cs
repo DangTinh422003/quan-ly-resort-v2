@@ -104,9 +104,10 @@ namespace quan_ly_resort_v2
             }
         }
 
-        private void sidebar_Paint(object sender, PaintEventArgs e)
+        private void btn_bookingRoom_Click(object sender, EventArgs e)
         {
-
+            activeBtn(btn_bookingRoom);
+            addUserControll(new UscManageBookingRoom());
         }
     }
 }

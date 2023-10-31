@@ -22,10 +22,12 @@ namespace quan_ly_resort_v2.userControl
         public UscManageRoom()
         {
             InitializeComponent();
+            renderListRoom();
         }
 
-        private void UscManageRoom_Load(object sender, EventArgs e)
+        private void renderListRoom()
         {
+            lb_currentPage.Text = "Trang 1/" + totalPage;
             flowLayoutPanel_ListRoom.Controls.Clear();
             List<Room> rooms = RoomDAO.GetRooms(1, PAGE_LIMIT);
             foreach (Room room in rooms)
@@ -34,11 +36,6 @@ namespace quan_ly_resort_v2.userControl
                 roomItem.SetRoomInfo(room);
                 flowLayoutPanel_ListRoom.Controls.Add(roomItem);
             }
-        }
-
-        private void flowLayoutPanel_ListRoom_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btn_Prevpage_Click(object sender, EventArgs e)
@@ -60,7 +57,19 @@ namespace quan_ly_resort_v2.userControl
 
         private void btn_Nextpage_Click(object sender, EventArgs e)
         {
-
+            if (currentPageIndex + 1 > totalPage)
+                currentPageIndex = 1;
+            else
+                currentPageIndex++;
+            flowLayoutPanel_ListRoom.Controls.Clear();
+            List<Room> rooms = RoomDAO.GetRooms(currentPageIndex, PAGE_LIMIT);
+            foreach (Room room in rooms)
+            {
+                RoomItem roomItem = new RoomItem();
+                roomItem.SetRoomInfo(room);
+                flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+            }
+            lb_currentPage.Text = "Trang " + currentPageIndex.ToString() + "/" + totalPage;
         }
     }
 }

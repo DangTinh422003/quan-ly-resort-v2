@@ -33,8 +33,8 @@ namespace quan_ly_resort_v2.DAO
                                 reader["KieuGiuong"].ToString(),
                                 reader["TinhTrang"].ToString(),
                                 Convert.ToDouble(reader["Gia"]),
-                                reader["DonDep"].ToString() == "1",
-                                reader["SuaChua"].ToString() == "1"
+                                Convert.ToBoolean(reader["DonDep"]),
+                                Convert.ToBoolean(reader["SuaChua"])
                             );
                             rooms.Add(room);
                         }
@@ -62,7 +62,6 @@ namespace quan_ly_resort_v2.DAO
                     string sql = "SELECT * FROM phong ORDER BY Id LIMIT @PageSize OFFSET @Offset";
                     MySqlCommand command = new MySqlCommand(sql, conn);
                     command.Parameters.AddWithValue("@PageSize", pageSize);
-                    Console.WriteLine((currentPageIndex - 1) * pageSize);
                     command.Parameters.AddWithValue("@Offset", (currentPageIndex - 1) * pageSize);
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
@@ -74,8 +73,8 @@ namespace quan_ly_resort_v2.DAO
                                 reader["KieuGiuong"].ToString(),
                                 reader["TinhTrang"].ToString(),
                                 Convert.ToDouble(reader["Gia"]),
-                                reader["DonDep"].ToString() == "1",
-                                reader["SuaChua"].ToString() == "1"
+                                (bool)reader["DonDep"],
+                                (bool)reader["SuaChua"]
                             );
                             rooms.Add(room);
                         }
@@ -86,10 +85,41 @@ namespace quan_ly_resort_v2.DAO
             {
                 Console.WriteLine("Error in GetRooms: " + err.Message);
                 return null;
-                // Consider logging the error here for monitoring purposes.
-                // You might also throw a custom exception or handle it according to your application's needs.
             }
             return rooms;
+        }
+
+        public static Room getRoomByID(string id)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM phong WHERE Id = @Id";
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+                    command.Parameters.AddWithValue("@Id", id);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    Room room = null;
+                    if (reader.Read())
+                    {
+                        room = new Room(
+                                reader["id"].ToString(),
+                                reader["LoaiPhong"].ToString(),
+                                reader["KieuGiuong"].ToString(),
+                                reader["TinhTrang"].ToString(),
+                                Convert.ToDouble(reader["Gia"]),
+                                (bool)reader["DonDep"],
+                                (bool)reader["SuaChua"]);
+                    }
+                    return room;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error in getRoomByID: " + e.Message);
+                return null;
+            }
         }
     }
 }

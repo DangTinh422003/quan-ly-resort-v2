@@ -21,6 +21,18 @@ namespace quan_ly_resort_v2.resources
         public UscManageCustomer()
         {
             InitializeComponent();
+            renderFomr();
+        }
+
+        private void renderFomr()
+        {
+            btn_AddCustomer.Enabled = true;
+            customerTable.DataSource = CustomerDAO.getCustomers();
+            cleanForm();
+            changeHeaderTableName();
+            disableControl();
+
+            label_functionName.Text = "Chức năng hiện tại : Chưa chọn!";
         }
 
         private void changeHeaderTableName()
@@ -31,6 +43,7 @@ namespace quan_ly_resort_v2.resources
             customerTable.Columns["Sdt"].HeaderText = "Số điện thoại";
             customerTable.Columns["DiaChi"].HeaderText = "Địa chỉ";
         }
+
 
         private void UscManageCustomer_Load(object sender, EventArgs e)
         {
@@ -131,7 +144,8 @@ namespace quan_ly_resort_v2.resources
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            UscManageCustomer_Load(sender, e);
+            //UscManageCustomer_Load(sender, e);
+            renderFomr();
         }
 
 
@@ -170,7 +184,8 @@ namespace quan_ly_resort_v2.resources
 
         private void btn_CancelCustomer_Click(object sender, EventArgs e)
         {
-            UscManageCustomer_Load(sender, e);
+            //UscManageCustomer_Load(sender, e);
+            renderFomr();
         }
 
         private void btn_DeleteCustomer_Click(object sender, EventArgs e)
@@ -182,7 +197,8 @@ namespace quan_ly_resort_v2.resources
                 if (isDeleted)
                 {
                     MessageBox.Show("Xóa khách hàng thành công!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    UscManageCustomer_Load(sender, e);
+                    //UscManageCustomer_Load(sender, e);
+                    renderFomr();
                 }
                 else
                     MessageBox.Show("Có lỗi xãy ra!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -258,7 +274,8 @@ namespace quan_ly_resort_v2.resources
                     MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Có lỗi xãy ra!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UscManageCustomer_Load(sender, e);
+                //UscManageCustomer_Load(sender, e);
+                renderFomr();
             }
         }
 

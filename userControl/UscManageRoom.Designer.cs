@@ -60,16 +60,16 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel_ListRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.roomItem1 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem2 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem3 = new quan_ly_resort_v2.userControl.RoomItem();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_currentPage = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btn_Nextpage = new Guna.UI.WinForms.GunaCircleButton();
             this.btn_Prevpage = new Guna.UI.WinForms.GunaCircleButton();
             this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.roomItem1 = new quan_ly_resort_v2.userControl.RoomItem();
-            this.roomItem2 = new quan_ly_resort_v2.userControl.RoomItem();
-            this.roomItem3 = new quan_ly_resort_v2.userControl.RoomItem();
-            this.lb_currentPage = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel1.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -600,7 +600,36 @@
             this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(20, 8, 0, 0);
             this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 759);
             this.flowLayoutPanel_ListRoom.TabIndex = 3;
-            this.flowLayoutPanel_ListRoom.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_ListRoom_Paint);
+            // 
+            // roomItem1
+            // 
+            this.roomItem1.BackColor = System.Drawing.Color.White;
+            this.roomItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem1.Location = new System.Drawing.Point(20, 8);
+            this.roomItem1.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem1.Name = "roomItem1";
+            this.roomItem1.Size = new System.Drawing.Size(321, 184);
+            this.roomItem1.TabIndex = 0;
+            // 
+            // roomItem2
+            // 
+            this.roomItem2.BackColor = System.Drawing.Color.White;
+            this.roomItem2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem2.Location = new System.Drawing.Point(341, 8);
+            this.roomItem2.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem2.Name = "roomItem2";
+            this.roomItem2.Size = new System.Drawing.Size(321, 184);
+            this.roomItem2.TabIndex = 1;
+            // 
+            // roomItem3
+            // 
+            this.roomItem3.BackColor = System.Drawing.Color.White;
+            this.roomItem3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem3.Location = new System.Drawing.Point(662, 8);
+            this.roomItem3.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem3.Name = "roomItem3";
+            this.roomItem3.Size = new System.Drawing.Size(321, 184);
+            this.roomItem3.TabIndex = 2;
             // 
             // guna2HtmlLabel3
             // 
@@ -623,6 +652,16 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1055, 69);
             this.guna2Panel2.TabIndex = 4;
+            // 
+            // lb_currentPage
+            // 
+            this.lb_currentPage.AutoSize = true;
+            this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_currentPage.Location = new System.Drawing.Point(199, 20);
+            this.lb_currentPage.Name = "lb_currentPage";
+            this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
+            this.lb_currentPage.TabIndex = 2;
+            this.lb_currentPage.Text = "Trang 1";
             // 
             // gunaPanel5
             // 
@@ -715,46 +754,6 @@
             this.gunaAdvenceButton2.Text = "Quản lý danh sách phòng";
             this.gunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // roomItem1
-            // 
-            this.roomItem1.BackColor = System.Drawing.Color.White;
-            this.roomItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem1.Location = new System.Drawing.Point(20, 8);
-            this.roomItem1.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem1.Name = "roomItem1";
-            this.roomItem1.Size = new System.Drawing.Size(321, 184);
-            this.roomItem1.TabIndex = 0;
-            // 
-            // roomItem2
-            // 
-            this.roomItem2.BackColor = System.Drawing.Color.White;
-            this.roomItem2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem2.Location = new System.Drawing.Point(341, 8);
-            this.roomItem2.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem2.Name = "roomItem2";
-            this.roomItem2.Size = new System.Drawing.Size(321, 184);
-            this.roomItem2.TabIndex = 1;
-            // 
-            // roomItem3
-            // 
-            this.roomItem3.BackColor = System.Drawing.Color.White;
-            this.roomItem3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem3.Location = new System.Drawing.Point(662, 8);
-            this.roomItem3.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem3.Name = "roomItem3";
-            this.roomItem3.Size = new System.Drawing.Size(321, 184);
-            this.roomItem3.TabIndex = 2;
-            // 
-            // lb_currentPage
-            // 
-            this.lb_currentPage.AutoSize = true;
-            this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(199, 20);
-            this.lb_currentPage.Name = "lb_currentPage";
-            this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
-            this.lb_currentPage.TabIndex = 2;
-            this.lb_currentPage.Text = "Trang 1";
-            // 
             // UscManageRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -766,7 +765,6 @@
             this.Controls.Add(this.gunaShadowPanel1);
             this.Name = "UscManageRoom";
             this.Size = new System.Drawing.Size(1279, 903);
-            this.Load += new System.EventHandler(this.UscManageRoom_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel3.PerformLayout();

@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
@@ -51,7 +52,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -96,6 +96,16 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(620, 36);
             this.gunaPanel2.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(162, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hiển thị mật khẩu";
             // 
             // checkBoxShowPassword
             // 
@@ -352,16 +362,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Hiển thị mật khẩu";
             // 
             // RegisterForm
             // 

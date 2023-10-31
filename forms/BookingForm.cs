@@ -1,6 +1,7 @@
 ﻿using Org.BouncyCastle.Asn1.X509;
 using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
+using quan_ly_resort_v2.userControl;
 using quan_ly_resort_v2.utils;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,8 @@ namespace quan_ly_resort_v2.forms
 
         private void renderSelectRoomTable()
         {
-            List<Room> rooms = RoomDAO.getRoomsByRoomState("available");
+            this.tableRoomAvaiable.Rows.Clear();
+            List<Room> rooms = RoomDAO.getRoomsByRoomState("avaiable");
             lb_roomAvaialbeCounter.Text = rooms.Count.ToString();
             foreach (Room room in rooms)
             {
@@ -39,9 +41,9 @@ namespace quan_ly_resort_v2.forms
             this.Close();
         }
 
-        private bool checkContainsRoomInTable(string roomId)
+        private bool checkContainsRoomInTable(string roomId, DataGridView table)
         {
-            foreach (DataGridViewRow row in tableRoomTarget.Rows)
+            foreach (DataGridViewRow row in table.Rows)
             {
                 if (row.Cells[0].Value.ToString() == roomId)
                     return true;
@@ -54,20 +56,27 @@ namespace quan_ly_resort_v2.forms
             if (tableRoomAvaiable.SelectedCells.Count > 0)
             {
                 int selectedrowindex = tableRoomAvaiable.SelectedCells[0].RowIndex;
-                if (!checkContainsRoomInTable(tableRoomAvaiable.Rows[selectedrowindex].Cells[0].Value.ToString()))
+                if (!checkContainsRoomInTable(tableRoomAvaiable.Rows[selectedrowindex].Cells[0].Value.ToString(), tableRoomTarget))
+                {
                     this.tableRoomTarget.Rows.Add(
                         tableRoomAvaiable.Rows[selectedrowindex].Cells[0].Value.ToString(),
                         tableRoomAvaiable.Rows[selectedrowindex].Cells[1].Value.ToString(),
                         tableRoomAvaiable.Rows[selectedrowindex].Cells[2].Value.ToString(),
                         tableRoomAvaiable.Rows[selectedrowindex].Cells[3].Value.ToString()
                     );
-                else MessageBox.Show("Phòng đã được chọn", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.tableRoomAvaiable.Rows.RemoveAt(selectedrowindex);
+                }
             }
         }
 
         private void tableRoomTarget_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (tableRoomTarget.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = tableRoomTarget.SelectedCells[0].RowIndex;
+                this.tableRoomTarget.Rows.RemoveAt(selectedrowindex);
+                renderSelectRoomTable();
+            }
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -79,6 +88,10 @@ namespace quan_ly_resort_v2.forms
             string customerAddress = textbox_address.Text.Trim();
             string customerEmail = textbox_email.Text.Trim();
             DateTime customerDateOfBirth = datePicker_dateOfBirth.Value;
+            string peopleCounter = textbox_peopleCounter.Text;
+
+            DateTime dateCheckin = datetimePicker_Checkint.Value;
+            DateTime dateCheckout = datetimePicker_checkout.Value;
 
             // validate
             if (customerId == "" | customerName == "" |
@@ -132,14 +145,61 @@ namespace quan_ly_resort_v2.forms
                 return;
             }
 
-            //
+            // check email
             if (!ValidateData.IsValidEmail(customerEmail))
             {
                 MessageBox.Show("Email không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            MessageBox.Show("Thông tin khách hàng hợp lệ");
+            // check people counter
+            if (!Regex.IsMatch(peopleCounter, @"^\d+$"))
+            {
+                MessageBox.Show("Số người không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // check time checkint
+            if (dateCheckin <= DateTime.Now)
+            {
+                MessageBox.Show("Ngày nhận phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // check time checkout
+            if (dateCheckout <= dateCheckin)
+            {
+                MessageBox.Show("Ngày trả phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // check room target
+            if (tableRoomTarget.Rows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            // check customer id in database
+            CustomerDAO.deleteCustomerById(customerId);
+            CustomerDAO.addNewCustomer(new Customer(customerId, customerName, customerDateOfBirth, customerPhone, customerEmail, customerAddress));
+            string listRoomId = "";
+            foreach (DataGridViewRow row in tableRoomTarget.Rows)
+            {
+                listRoomId += row.Cells[0].Value.ToString() + ",";
+            }
+            listRoomId = listRoomId.Substring(0, listRoomId.Length - 1);
+            BookingRoomDAO.addNew(new BookingRoom("", DateTime.Now, listRoomId, customerId, dateCheckin, dateCheckout.Subtract(dateCheckin).Days, int.Parse(peopleCounter)));
+
+            // update room state
+            foreach (DataGridViewRow row in tableRoomTarget.Rows)
+            {
+                RoomDAO.updateRoomStateById(row.Cells[0].Value.ToString(), "reserved");
+            }
+            MessageBox.Show("Đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

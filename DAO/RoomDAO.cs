@@ -160,5 +160,28 @@ namespace quan_ly_resort_v2.DAO
             return rooms;
         }
 
+        public static bool updateRoomStateById(string roomId, string state)
+        {
+            try
+            {
+                // Tạo connection
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                // Query data
+                string sql = "update phong set TinhTrang = @state where Id = @roomId";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@state", state);
+                cmd.Parameters.AddWithValue("@roomId", roomId);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Error in updateRoomStateById: " + err.Message);
+                return false;
+            }
+        }
     }
 }

@@ -223,7 +223,7 @@ namespace quan_ly_resort_v2.resources
             string email = textbox_email.Text;
             string address = textbox_address.Text;
 
-            string[] requiredFields = { id, name, email, phoneNumber , address };
+            string[] requiredFields = { id, name, email, phoneNumber, address };
             if (requiredFields.Any(string.IsNullOrEmpty) || birthday == null)
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -387,6 +387,12 @@ namespace quan_ly_resort_v2.resources
         private void gunaGroupBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbb_search_SelectedValueChanged(object sender, EventArgs e)
+        {
+            textbox_search.Text = "";
+            textbox_search.Focus();
         }
     }
 }

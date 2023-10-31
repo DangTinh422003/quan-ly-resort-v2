@@ -22,7 +22,7 @@ namespace quan_ly_resort_v2
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            myAppCxt = new ApplicationContext(new MainForm());
+            myAppCxt = new ApplicationContext(new LoginForm());
             Application.Run(myAppCxt);
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]

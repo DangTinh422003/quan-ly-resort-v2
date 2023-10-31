@@ -46,12 +46,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void UscManageAccountant_Load(object sender, EventArgs e)
         {
-            txtId.Visible = false;
-            btnAdd.Enabled = true;
-            LoadEmployeeData();
-            cleanForm();
-            disableControl();
-            disableFormInput();
+
         }
         private void cleanForm()
         {
@@ -73,7 +68,8 @@ namespace quan_ly_resort_v2.userControl
             btnUpdate.Enabled = false;
         }
         private void enableControl()
-        {   btnAdd.Enabled = false;
+        {
+            btnAdd.Enabled = false;
             btnSave.Enabled = false;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
@@ -107,7 +103,7 @@ namespace quan_ly_resort_v2.userControl
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Enabled = false;
-            txtWorkDay.Enabled=false;
+            txtWorkDay.Enabled = false;
 
             if (e.RowIndex >= 0)
             {
@@ -330,5 +326,9 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
+        private void gunaGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

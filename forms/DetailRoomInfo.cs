@@ -53,13 +53,19 @@ namespace quan_ly_resort_v2.forms
             else if (room.State == "reserved")
             {
                 MessageBox.Show("Nhận phòng,Tạo hóa đơn, query bảng đặt phòng + bảng khách hàng để thêm thong tin vào hóa đơn");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Hiện nút thanh toán, tính tiền");
             }
         }
 
         private void gunaContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btn_saveInomation_Click(object sender, EventArgs e)
         {
 
         }

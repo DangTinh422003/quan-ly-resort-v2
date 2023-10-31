@@ -310,7 +310,7 @@
             this.dateOfBirthPicker.Radius = 8;
             this.dateOfBirthPicker.Size = new System.Drawing.Size(352, 49);
             this.dateOfBirthPicker.TabIndex = 1;
-            this.dateOfBirthPicker.Text = "Friday, October 27, 2023";
+            this.dateOfBirthPicker.Text = "27 Tháng Mười 2023";
             this.dateOfBirthPicker.Value = new System.DateTime(2023, 10, 27, 16, 58, 39, 378);
             // 
             // lb_dateOfBirth
@@ -596,6 +596,8 @@
             // 
             // customerTable
             // 
+            this.customerTable.AllowUserToAddRows = false;
+            this.customerTable.AllowUserToDeleteRows = false;
             this.customerTable.AllowUserToOrderColumns = true;
             this.customerTable.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -698,10 +700,8 @@
             this.cbb_search.ForeColor = System.Drawing.Color.Black;
             this.cbb_search.FormattingEnabled = true;
             this.cbb_search.Items.AddRange(new object[] {
-            "Mã khách hàng",
-            "Ngày sinh",
+            "Căn cước công dân",
             "Email",
-            "Tên người dùng",
             "Họ và tên",
             "Số điện thoại",
             "Địa chỉ"});
@@ -712,6 +712,7 @@
             this.cbb_search.Radius = 8;
             this.cbb_search.Size = new System.Drawing.Size(241, 35);
             this.cbb_search.TabIndex = 1;
+            this.cbb_search.SelectedValueChanged += new System.EventHandler(this.cbb_search_SelectedValueChanged);
             // 
             // gunaAdvenceButton1
             // 

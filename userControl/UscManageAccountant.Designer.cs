@@ -127,6 +127,7 @@
             this.gunaGroupBox1.TabIndex = 0;
             this.gunaGroupBox1.Text = "Thông tin nhân viên";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            this.gunaGroupBox1.Click += new System.EventHandler(this.gunaGroupBox1_Click);
             // 
             // Label_Title
             // 
@@ -363,7 +364,7 @@
             this.txtWorkDay.Radius = 8;
             this.txtWorkDay.Size = new System.Drawing.Size(422, 49);
             this.txtWorkDay.TabIndex = 20;
-            this.txtWorkDay.Text = "10/28/2023";
+            this.txtWorkDay.Text = "28/10/2023";
             this.txtWorkDay.Value = new System.DateTime(2023, 10, 28, 21, 17, 10, 418);
             // 
             // gunaLabel9
@@ -538,7 +539,7 @@
             this.txtDate.Radius = 8;
             this.txtDate.Size = new System.Drawing.Size(422, 49);
             this.txtDate.TabIndex = 8;
-            this.txtDate.Text = "10/28/2023";
+            this.txtDate.Text = "28/10/2023";
             this.txtDate.Value = new System.DateTime(2023, 10, 28, 21, 17, 10, 418);
             // 
             // gunaLabel4

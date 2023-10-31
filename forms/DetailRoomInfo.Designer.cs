@@ -476,6 +476,7 @@
             this.btn_saveInomation.TabIndex = 4;
             this.btn_saveInomation.Text = "Lưu";
             this.btn_saveInomation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_saveInomation.Click += new System.EventHandler(this.btn_saveInomation_Click);
             // 
             // btn_CloseForm
             // 

@@ -60,9 +60,6 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel_ListRoom = new System.Windows.Forms.FlowLayoutPanel();
-            this.roomItem1 = new quan_ly_resort_v2.userControl.RoomItem();
-            this.roomItem2 = new quan_ly_resort_v2.userControl.RoomItem();
-            this.roomItem3 = new quan_ly_resort_v2.userControl.RoomItem();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lb_currentPage = new Guna.UI.WinForms.GunaLabel();
@@ -77,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.flowLayoutPanel_ListRoom.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
             this.SuspendLayout();
@@ -590,44 +586,12 @@
             this.flowLayoutPanel_ListRoom.AutoScroll = true;
             this.flowLayoutPanel_ListRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel_ListRoom.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem1);
-            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem2);
-            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem3);
-            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 144);
+            this.flowLayoutPanel_ListRoom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 125);
             this.flowLayoutPanel_ListRoom.Name = "flowLayoutPanel_ListRoom";
-            this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(20, 8, 0, 0);
-            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 759);
+            this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 778);
             this.flowLayoutPanel_ListRoom.TabIndex = 3;
-            // 
-            // roomItem1
-            // 
-            this.roomItem1.BackColor = System.Drawing.Color.White;
-            this.roomItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem1.Location = new System.Drawing.Point(20, 8);
-            this.roomItem1.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem1.Name = "roomItem1";
-            this.roomItem1.Size = new System.Drawing.Size(321, 184);
-            this.roomItem1.TabIndex = 0;
-            // 
-            // roomItem2
-            // 
-            this.roomItem2.BackColor = System.Drawing.Color.White;
-            this.roomItem2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem2.Location = new System.Drawing.Point(341, 8);
-            this.roomItem2.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem2.Name = "roomItem2";
-            this.roomItem2.Size = new System.Drawing.Size(321, 184);
-            this.roomItem2.TabIndex = 1;
-            // 
-            // roomItem3
-            // 
-            this.roomItem3.BackColor = System.Drawing.Color.White;
-            this.roomItem3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.roomItem3.Location = new System.Drawing.Point(662, 8);
-            this.roomItem3.Margin = new System.Windows.Forms.Padding(0);
-            this.roomItem3.Name = "roomItem3";
-            this.roomItem3.Size = new System.Drawing.Size(321, 184);
-            this.roomItem3.TabIndex = 2;
             // 
             // guna2HtmlLabel3
             // 
@@ -647,14 +611,14 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(224, 78);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1055, 69);
+            this.guna2Panel2.Size = new System.Drawing.Size(1055, 48);
             this.guna2Panel2.TabIndex = 4;
             // 
             // lb_currentPage
             // 
             this.lb_currentPage.AutoSize = true;
             this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(199, 20);
+            this.lb_currentPage.Location = new System.Drawing.Point(150, 10);
             this.lb_currentPage.Name = "lb_currentPage";
             this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
             this.lb_currentPage.TabIndex = 2;
@@ -665,9 +629,9 @@
             this.gunaPanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaPanel5.Controls.Add(this.btn_Nextpage);
             this.gunaPanel5.Controls.Add(this.btn_Prevpage);
-            this.gunaPanel5.Location = new System.Drawing.Point(35, 9);
+            this.gunaPanel5.Location = new System.Drawing.Point(26, 2);
             this.gunaPanel5.Name = "gunaPanel5";
-            this.gunaPanel5.Size = new System.Drawing.Size(146, 51);
+            this.gunaPanel5.Size = new System.Drawing.Size(102, 44);
             this.gunaPanel5.TabIndex = 1;
             // 
             // btn_Nextpage
@@ -683,14 +647,14 @@
             this.btn_Nextpage.ForeColor = System.Drawing.Color.White;
             this.btn_Nextpage.Image = ((System.Drawing.Image)(resources.GetObject("btn_Nextpage.Image")));
             this.btn_Nextpage.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Nextpage.Location = new System.Drawing.Point(68, 1);
+            this.btn_Nextpage.Location = new System.Drawing.Point(58, 0);
             this.btn_Nextpage.Name = "btn_Nextpage";
             this.btn_Nextpage.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Nextpage.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btn_Nextpage.OnHoverForeColor = System.Drawing.Color.White;
             this.btn_Nextpage.OnHoverImage = null;
             this.btn_Nextpage.OnPressedColor = System.Drawing.Color.Aquamarine;
-            this.btn_Nextpage.Size = new System.Drawing.Size(50, 50);
+            this.btn_Nextpage.Size = new System.Drawing.Size(40, 40);
             this.btn_Nextpage.TabIndex = 1;
             this.btn_Nextpage.Click += new System.EventHandler(this.btn_Nextpage_Click);
             // 
@@ -714,7 +678,7 @@
             this.btn_Prevpage.OnHoverForeColor = System.Drawing.Color.White;
             this.btn_Prevpage.OnHoverImage = null;
             this.btn_Prevpage.OnPressedColor = System.Drawing.Color.Aquamarine;
-            this.btn_Prevpage.Size = new System.Drawing.Size(50, 50);
+            this.btn_Prevpage.Size = new System.Drawing.Size(40, 40);
             this.btn_Prevpage.TabIndex = 0;
             this.btn_Prevpage.Click += new System.EventHandler(this.btn_Prevpage_Click);
             // 
@@ -741,7 +705,6 @@
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.flowLayoutPanel_ListRoom.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
@@ -783,9 +746,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private RoomItem roomItem1;
-        private RoomItem roomItem2;
-        private RoomItem roomItem3;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private Guna.UI.WinForms.GunaCircleButton btn_Nextpage;
         private Guna.UI.WinForms.GunaCircleButton btn_Prevpage;

@@ -326,6 +326,8 @@
     <None Include="Resources\icons8-phone-48.png" />
     <None Include="Resources\icons8-gmail-100.png" />
     <None Include="Resources\icons8-address-100.png" />
+    <None Include="Resources\icons8-pencil-48.png" />
+    <None Include="Resources\icons8-modify-24.png" />
     <Content Include="Resources\registerImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

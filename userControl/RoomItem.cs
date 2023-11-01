@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using quan_ly_resort_v2.common.constants;
+using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.forms;
 using quan_ly_resort_v2.model;
 using System;
@@ -17,9 +18,6 @@ namespace quan_ly_resort_v2.userControl
 {
     public partial class RoomItem : UserControl
     {
-
-        private string currentRoomId;
-
         public RoomItem()
         {
             InitializeComponent();
@@ -28,9 +26,7 @@ namespace quan_ly_resort_v2.userControl
         public void SetRoomInfo(Room roomInfo)
         {
             // set room id
-            currentRoomId = roomInfo.Id;
-            string roomId = roomInfo.Id;
-            lb_RoomId.Text = roomId;
+            lb_RoomId.Text = roomInfo.Id;
 
             // room state
             if (roomInfo.IsFixed)
@@ -48,34 +44,24 @@ namespace quan_ly_resort_v2.userControl
                 case "avaiable":
                     lb_CustomerName.Text = "Phòng Trống";
                     lb_roomState.Text = "Phòng Trống";
-                    panel_RoomWrap.BackColor = Color.FromArgb(30, 225, 114);
                     lb_timeToStart.Text = "";
                     lb_TimeToEnd.Text = "";
                     lb_CountTimeStay.Text = "";
                     break;
                 case "reserved":
                     lb_roomState.Text = "Phòng đã đặt";
-                    lb_CustomerName.Text = "Nguyen Van A";
-                    panel_RoomWrap.BackColor = Color.FromArgb(53, 193, 241);
                     break;
                 case "occupied":
                     lb_roomState.Text = "Đã cho thuê";
-                    panel_RoomWrap.BackColor = Color.FromArgb(110, 110, 110);
                     break;
-
             }
         }
 
         private void panel_RoomWrap_Click(object sender, EventArgs e)
         {
             DetailRoomInfo detailRoomInfo = new DetailRoomInfo();
-            detailRoomInfo.setRoomID(currentRoomId);
+            detailRoomInfo.setRoomID(lb_RoomId.Text);
             detailRoomInfo.ShowDialog();
-        }
-
-        private void panel_RoomWrap_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

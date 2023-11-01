@@ -35,5 +35,18 @@ namespace quan_ly_resort_v2.model
         public DateTime NgayCheckInDuKien { get => ngayCheckInDuKien; set => ngayCheckInDuKien = value; }
         public int SoNgayThue { get => soNgayThue; set => soNgayThue = value; }
         public int SoNguoiThue { get => soNguoiThue; set => soNguoiThue = value; }
+
+        public override string ToString()
+        {
+            return "BookingRoom{" +
+                    "id='" + id + '\'' +
+                    ", ngayDat=" + ngayDat +
+                    ", danhSachMaPhong='" + danhSachMaPhong + '\'' +
+                    ", maKhachHang='" + maKhachHang + '\'' +
+                    ", ngayCheckInDuKien=" + ngayCheckInDuKien +
+                    ", soNgayThue=" + soNgayThue +
+                    ", soNguoiThue=" + soNguoiThue +
+                    '}';
+        }
     }
 }

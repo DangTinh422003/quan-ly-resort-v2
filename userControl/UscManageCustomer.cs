@@ -9,8 +9,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace quan_ly_resort_v2.resources
 {
@@ -19,6 +21,18 @@ namespace quan_ly_resort_v2.resources
         public UscManageCustomer()
         {
             InitializeComponent();
+            renderFomr();
+        }
+
+        private void renderFomr()
+        {
+            btn_AddCustomer.Enabled = true;
+            customerTable.DataSource = CustomerDAO.getCustomers();
+            cleanForm();
+            changeHeaderTableName();
+            disableControl();
+
+            label_functionName.Text = "Chức năng hiện tại : Chưa chọn!";
         }
 
         private void changeHeaderTableName()
@@ -29,6 +43,7 @@ namespace quan_ly_resort_v2.resources
             customerTable.Columns["Sdt"].HeaderText = "Số điện thoại";
             customerTable.Columns["DiaChi"].HeaderText = "Địa chỉ";
         }
+
 
         private void UscManageCustomer_Load(object sender, EventArgs e)
         {
@@ -129,7 +144,8 @@ namespace quan_ly_resort_v2.resources
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            UscManageCustomer_Load(sender, e);
+            //UscManageCustomer_Load(sender, e);
+            renderFomr();
         }
 
 
@@ -168,7 +184,8 @@ namespace quan_ly_resort_v2.resources
 
         private void btn_CancelCustomer_Click(object sender, EventArgs e)
         {
-            UscManageCustomer_Load(sender, e);
+            //UscManageCustomer_Load(sender, e);
+            renderFomr();
         }
 
         private void btn_DeleteCustomer_Click(object sender, EventArgs e)
@@ -180,7 +197,8 @@ namespace quan_ly_resort_v2.resources
                 if (isDeleted)
                 {
                     MessageBox.Show("Xóa khách hàng thành công!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    UscManageCustomer_Load(sender, e);
+                    //UscManageCustomer_Load(sender, e);
+                    renderFomr();
                 }
                 else
                     MessageBox.Show("Có lỗi xãy ra!", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -205,6 +223,19 @@ namespace quan_ly_resort_v2.resources
             string email = textbox_email.Text;
             string address = textbox_address.Text;
 
+            string[] requiredFields = { id, name, email, phoneNumber, address };
+            if (requiredFields.Any(string.IsNullOrEmpty) || birthday == null)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (id != id.Trim() || name != name.Trim() || email != email.Trim() || address != address.Trim())
+            {
+                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // validate email
             if (!ValidateData.IsValidEmail(email))
             {
@@ -216,6 +247,13 @@ namespace quan_ly_resort_v2.resources
                 MessageBox.Show("Số điện thoại không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!Regex.IsMatch(id, @"^\d{12}$"))
+            {
+                MessageBox.Show("CCCD không hợp lệ!, Vui lòng nhập đủ 12 số", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
 
             // check type function
             if (btn_ModifyCustomer.Enabled)
@@ -236,14 +274,15 @@ namespace quan_ly_resort_v2.resources
                     MessageBox.Show("Thêm khách hàng thành công!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Có lỗi xãy ra!", "Thêm khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                UscManageCustomer_Load(sender, e);
+                //UscManageCustomer_Load(sender, e);
+                renderFomr();
             }
         }
 
         private void btn_PrintCustomer_Click(object sender, EventArgs e)
         {
-            // MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
+            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
         }
 
         private void ExportExcelFile(DataTable dataGridTable, string sheetname, string title)
@@ -348,6 +387,12 @@ namespace quan_ly_resort_v2.resources
         private void gunaGroupBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbb_search_SelectedValueChanged(object sender, EventArgs e)
+        {
+            textbox_search.Text = "";
+            textbox_search.Focus();
         }
     }
 }

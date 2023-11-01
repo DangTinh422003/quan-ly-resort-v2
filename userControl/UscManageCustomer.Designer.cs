@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageCustomer));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -67,6 +68,8 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btn_search = new Guna.UI.WinForms.GunaAdvenceButton();
             this.textbox_search = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gunaGroupBox1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -309,7 +312,7 @@
             this.dateOfBirthPicker.Radius = 8;
             this.dateOfBirthPicker.Size = new System.Drawing.Size(352, 49);
             this.dateOfBirthPicker.TabIndex = 1;
-            this.dateOfBirthPicker.Text = "Friday, October 27, 2023";
+            this.dateOfBirthPicker.Text = "27 Tháng Mười 2023";
             this.dateOfBirthPicker.Value = new System.DateTime(2023, 10, 27, 16, 58, 39, 378);
             // 
             // lb_dateOfBirth
@@ -595,9 +598,10 @@
             // 
             // customerTable
             // 
+            this.customerTable.AllowUserToAddRows = false;
+            this.customerTable.AllowUserToDeleteRows = false;
             this.customerTable.AllowUserToOrderColumns = true;
             this.customerTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.customerTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.customerTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -607,7 +611,6 @@
             this.customerTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.customerTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -615,15 +618,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.customerTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.customerTable.ColumnHeadersHeight = 30;
-            this.customerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.customerTable.ColumnHeadersHeight = 40;
             this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -639,6 +633,7 @@
             this.customerTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.customerTable.Location = new System.Drawing.Point(0, 412);
             this.customerTable.Name = "customerTable";
+            this.customerTable.ReadOnly = true;
             this.customerTable.RowHeadersVisible = false;
             this.customerTable.RowHeadersWidth = 51;
             this.customerTable.RowTemplate.Height = 24;
@@ -657,10 +652,6 @@
             this.customerTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.customerTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.customerTable.ThemeStyle.HeaderStyle.Height = 30;
-            this.customerTable.ThemeStyle.ReadOnly = false;
-            this.customerTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.customerTable.ThemeStyle.HeaderStyle.Height = 40;
             this.customerTable.ThemeStyle.ReadOnly = true;
@@ -711,10 +702,8 @@
             this.cbb_search.ForeColor = System.Drawing.Color.Black;
             this.cbb_search.FormattingEnabled = true;
             this.cbb_search.Items.AddRange(new object[] {
-            "Mã khách hàng",
-            "Ngày sinh",
+            "Căn cước công dân",
             "Email",
-            "Tên người dùng",
             "Họ và tên",
             "Số điện thoại",
             "Địa chỉ"});
@@ -725,6 +714,7 @@
             this.cbb_search.Radius = 8;
             this.cbb_search.Size = new System.Drawing.Size(241, 35);
             this.cbb_search.TabIndex = 1;
+            this.cbb_search.SelectedValueChanged += new System.EventHandler(this.cbb_search_SelectedValueChanged);
             // 
             // gunaAdvenceButton1
             // 
@@ -828,6 +818,21 @@
             this.textbox_search.TextChanged += new System.EventHandler(this.textbox_search_TextChanged);
             this.textbox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_search_KeyDown);
             // 
+            // gunaContextMenuStrip1
+            // 
+            this.gunaContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
+            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // UscManageCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -900,5 +905,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaLabel label_functionName;
+        private Guna.UI.WinForms.GunaContextMenuStrip gunaContextMenuStrip1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

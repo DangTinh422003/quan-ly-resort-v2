@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new Guna.UI.WinForms.GunaElipsePanel();
+            this.btn_bookingRoom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.currentUser = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_manageBill = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_manageStatistic = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -53,6 +54,7 @@
             this.sidebar.BackColor = System.Drawing.Color.White;
             this.sidebar.BaseColor = System.Drawing.Color.Transparent;
             this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sidebar.Controls.Add(this.btn_bookingRoom);
             this.sidebar.Controls.Add(this.currentUser);
             this.sidebar.Controls.Add(this.btn_manageBill);
             this.sidebar.Controls.Add(this.btn_manageStatistic);
@@ -67,7 +69,41 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(308, 903);
             this.sidebar.TabIndex = 0;
-            this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.sidebar_Paint);
+            // 
+            // btn_bookingRoom
+            // 
+            this.btn_bookingRoom.AnimationHoverSpeed = 0.07F;
+            this.btn_bookingRoom.AnimationSpeed = 0.03F;
+            this.btn_bookingRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.CheckedBaseColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_bookingRoom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_bookingRoom.CheckedImage")));
+            this.btn_bookingRoom.CheckedLineColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_bookingRoom.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_bookingRoom.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bookingRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(107)))), ((int)(((byte)(159)))));
+            this.btn_bookingRoom.Image = ((System.Drawing.Image)(resources.GetObject("btn_bookingRoom.Image")));
+            this.btn_bookingRoom.ImageOffsetX = 10;
+            this.btn_bookingRoom.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_bookingRoom.LineColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.Location = new System.Drawing.Point(-2, 238);
+            this.btn_bookingRoom.Name = "btn_bookingRoom";
+            this.btn_bookingRoom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_bookingRoom.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_bookingRoom.OnHoverImage = null;
+            this.btn_bookingRoom.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.OnPressedColor = System.Drawing.Color.Transparent;
+            this.btn_bookingRoom.Size = new System.Drawing.Size(308, 56);
+            this.btn_bookingRoom.TabIndex = 15;
+            this.btn_bookingRoom.Text = "Đặt phòng";
+            this.btn_bookingRoom.TextOffsetX = 10;
+            this.btn_bookingRoom.Click += new System.EventHandler(this.btn_bookingRoom_Click);
             // 
             // currentUser
             // 
@@ -125,7 +161,7 @@
             this.btn_manageBill.ImageOffsetX = 10;
             this.btn_manageBill.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageBill.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageBill.Location = new System.Drawing.Point(-2, 421);
+            this.btn_manageBill.Location = new System.Drawing.Point(0, 483);
             this.btn_manageBill.Name = "btn_manageBill";
             this.btn_manageBill.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageBill.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -160,7 +196,7 @@
             this.btn_manageStatistic.ImageOffsetX = 10;
             this.btn_manageStatistic.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageStatistic.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageStatistic.Location = new System.Drawing.Point(0, 359);
+            this.btn_manageStatistic.Location = new System.Drawing.Point(2, 421);
             this.btn_manageStatistic.Name = "btn_manageStatistic";
             this.btn_manageStatistic.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageStatistic.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -195,7 +231,7 @@
             this.btn_manageService.ImageOffsetX = 10;
             this.btn_manageService.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageService.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageService.Location = new System.Drawing.Point(-2, 300);
+            this.btn_manageService.Location = new System.Drawing.Point(0, 362);
             this.btn_manageService.Name = "btn_manageService";
             this.btn_manageService.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageService.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -231,7 +267,7 @@
             this.btn_manageAccountant.ImageOffsetX = 10;
             this.btn_manageAccountant.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_manageAccountant.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageAccountant.Location = new System.Drawing.Point(-2, 238);
+            this.btn_manageAccountant.Location = new System.Drawing.Point(0, 300);
             this.btn_manageAccountant.Name = "btn_manageAccountant";
             this.btn_manageAccountant.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btn_manageAccountant.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -388,6 +424,7 @@
         private Guna.UI.WinForms.GunaAdvenceButton currentUser;
         private System.Windows.Forms.ToolTip toolTip1;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_bookingRoom;
     }
 }
 

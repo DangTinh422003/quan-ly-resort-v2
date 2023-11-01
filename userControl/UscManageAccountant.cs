@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.forms;
 using quan_ly_resort_v2.model;
@@ -45,11 +46,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void UscManageAccountant_Load(object sender, EventArgs e)
         {
-            btnAdd.Enabled = true;
-            LoadEmployeeData();
-            cleanForm();
-            disableControl();
-            disableFormInput();
+
         }
         private void cleanForm()
         {
@@ -71,7 +68,8 @@ namespace quan_ly_resort_v2.userControl
             btnUpdate.Enabled = false;
         }
         private void enableControl()
-        {   btnAdd.Enabled = false;
+        {
+            btnAdd.Enabled = false;
             btnSave.Enabled = false;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
@@ -86,7 +84,6 @@ namespace quan_ly_resort_v2.userControl
             txtAddress.Enabled = true;
             txtEmail.Enabled = true;
             txtSalary.Enabled = true;
-            txtWorkDay.Enabled = true;
             txtUsername.Enabled = true;
         }
         private void disableFormInput()
@@ -106,6 +103,7 @@ namespace quan_ly_resort_v2.userControl
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Enabled = false;
+            txtWorkDay.Enabled = false;
 
             if (e.RowIndex >= 0)
             {
@@ -167,6 +165,7 @@ namespace quan_ly_resort_v2.userControl
             txtName.Focus();
             btnSave.Enabled = true;
             txtId.Enabled = false;
+            txtWorkDay.Enabled = true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -223,9 +222,10 @@ namespace quan_ly_resort_v2.userControl
             string email = txtEmail.Text;
             DateTime ngaySinh = txtDate.Value;
             string diaChi = txtAddress.Text;
-            int cccd;
+            string cccd = txtCCCD.Text;
             DateTime ngayVaoLam = txtWorkDay.Value;
             string username = txtUsername.Text;
+            string luongStr = txtSalary.Text;
 
             string[] requiredFields = { tenNV, sdt, email, diaChi, username };
             if (requiredFields.Any(string.IsNullOrEmpty) || ngaySinh == null || ngayVaoLam == null)
@@ -235,6 +235,12 @@ namespace quan_ly_resort_v2.userControl
             }
 
             // Validate email
+            if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim() || email != email.Trim() || cccd != cccd.Trim())
+            {
+                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (!ValidateData.IsValidEmail(email))
             {
                 MessageBox.Show("Email không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -250,23 +256,43 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            if (!int.TryParse(txtCCCD.Text, out cccd))
-            {
-                MessageBox.Show("CCCD không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             double luong;
-
-            if (!double.TryParse(txtSalary.Text, out luong))
+            if (!double.TryParse(luongStr, out luong) || luong < 1000000 || luong >= 1000000000)
             {
-                MessageBox.Show("Lương không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lương không hợp lệ! Lương phải nằm trong khoảng từ 1,000,000 đến 999,999,999.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check type function
             if (btnAdd.Enabled)
             {
+                // Kiểm tra thời gian làm việc ít nhất là 1 tháng
+                TimeSpan workDuration = ngayVaoLam - DateTime.Now;
+
+                if (workDuration.TotalDays < 0 || workDuration.TotalDays > 10)
+                {
+                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 10 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!Regex.IsMatch(cccd, @"^\d{12}$"))
+                {
+                    MessageBox.Show("CCCD không hợp lệ!, Vui lòng nhập đủ 12 số", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int currentYear = DateTime.Now.Year;
+                int requiredMinBirthYear = currentYear - 60;
+                int requiredMaxBirthYear = currentYear - 18;
+
+                if (ngaySinh.Year > requiredMaxBirthYear || ngaySinh.Year < requiredMinBirthYear)
+                {
+                    MessageBox.Show("Nhân viên phải từ 18 tuổi đến 70 tuổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
                 string maNV = EmployeeDAO.GetNextMaNV(); // Lấy mã nhân viên tự động
                 if (maNV == null)
                 {
@@ -288,7 +314,7 @@ namespace quan_ly_resort_v2.userControl
             {
                 // Đoạn này giữ nguyên, vì bạn đang cập nhật nhân viên đã tồn tại
                 string maNV = txtId.Text;
-                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username);
+                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, username);
                 bool isUpdated = EmployeeDAO.UpdateEmployee(employee);
 
                 if (isUpdated)
@@ -300,7 +326,9 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
+        private void gunaGroupBox1_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

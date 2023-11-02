@@ -47,6 +47,7 @@ namespace quan_ly_resort_v2.DAO
                         Luong = Convert.ToDouble(reader["Luong"]),
                         NgayVaoLam = (DateTime)reader["NgayVaoLam"],    
                         Username = reader["username"].ToString(),
+                        Role = Convert.ToInt32(reader["Role"].ToString())
                     };
 
                     employees.Add(employee);
@@ -307,7 +308,8 @@ namespace quan_ly_resort_v2.DAO
                         reader["Cccd"].ToString(), // Thêm Cccd ở đây
                         double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
                         DateTime.Parse(reader["NgayVaoLam"].ToString()),
-                        reader["username"].ToString()
+                        reader["username"].ToString(),
+                        Convert.ToInt32(reader["Role"])
                     );
                 }
                 else

@@ -312,7 +312,7 @@
             this.dateOfBirthPicker.Radius = 8;
             this.dateOfBirthPicker.Size = new System.Drawing.Size(352, 49);
             this.dateOfBirthPicker.TabIndex = 1;
-            this.dateOfBirthPicker.Text = "27 Tháng Mười 2023";
+            this.dateOfBirthPicker.Text = "Friday, October 27, 2023";
             this.dateOfBirthPicker.Value = new System.DateTime(2023, 10, 27, 16, 58, 39, 378);
             // 
             // lb_dateOfBirth

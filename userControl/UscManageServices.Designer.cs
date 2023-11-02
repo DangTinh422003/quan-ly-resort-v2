@@ -60,7 +60,6 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.btnRestart = new Guna.UI.WinForms.GunaButton();
-            this.btnDetail = new Guna.UI.WinForms.GunaButton();
             this.btnDelete = new Guna.UI.WinForms.GunaButton();
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
@@ -105,12 +104,13 @@
             this.DataGridView.AllowUserToAddRows = false;
             this.DataGridView.AllowUserToDeleteRows = false;
             this.DataGridView.AllowUserToOrderColumns = true;
+            this.DataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.DataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -121,7 +121,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridView.ColumnHeadersHeight = 30;
+            this.DataGridView.ColumnHeadersHeight = 40;
             this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column5,
@@ -137,9 +137,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 104);
+            this.DataGridView.Location = new System.Drawing.Point(0, 110);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -147,7 +148,7 @@
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView.Size = new System.Drawing.Size(1303, 494);
+            this.DataGridView.Size = new System.Drawing.Size(1303, 491);
             this.DataGridView.TabIndex = 0;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -162,7 +163,7 @@
             this.DataGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DataGridView.ThemeStyle.HeaderStyle.Height = 30;
+            this.DataGridView.ThemeStyle.HeaderStyle.Height = 40;
             this.DataGridView.ThemeStyle.ReadOnly = true;
             this.DataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -276,14 +277,16 @@
             this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtSearch.Location = new System.Drawing.Point(458, 37);
             this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Radius = 8;
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(575, 49);
             this.txtSearch.TabIndex = 3;
+            this.txtSearch.TextOffsetX = 20;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
@@ -349,7 +352,6 @@
             this.gunaGroupBox1.Controls.Add(this.gunaLabel1);
             this.gunaGroupBox1.Controls.Add(this.btnSave);
             this.gunaGroupBox1.Controls.Add(this.btnRestart);
-            this.gunaGroupBox1.Controls.Add(this.btnDetail);
             this.gunaGroupBox1.Controls.Add(this.btnDelete);
             this.gunaGroupBox1.Controls.Add(this.btnUpdate);
             this.gunaGroupBox1.Controls.Add(this.btnAdd);
@@ -357,7 +359,7 @@
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.Location = new System.Drawing.Point(0, 3);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
-            this.gunaGroupBox1.Radius = 8;
+            this.gunaGroupBox1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.gunaGroupBox1.Size = new System.Drawing.Size(1303, 316);
             this.gunaGroupBox1.TabIndex = 0;
             this.gunaGroupBox1.Text = "Thông tin dịch vụ";
@@ -385,7 +387,7 @@
             // 
             this.LabelTitle.AutoSize = true;
             this.LabelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.LabelTitle.Location = new System.Drawing.Point(33, 53);
+            this.LabelTitle.Location = new System.Drawing.Point(43, 53);
             this.LabelTitle.Name = "LabelTitle";
             this.LabelTitle.Size = new System.Drawing.Size(0, 28);
             this.LabelTitle.TabIndex = 25;
@@ -412,11 +414,13 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrice.Location = new System.Drawing.Point(790, 158);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.Radius = 8;
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(474, 49);
             this.txtPrice.TabIndex = 23;
+            this.txtPrice.TextOffsetX = 20;
             // 
             // txtDetail
             // 
@@ -430,17 +434,19 @@
             this.txtDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDetail.Location = new System.Drawing.Point(195, 158);
             this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtDetail.PasswordChar = '\0';
             this.txtDetail.Radius = 8;
             this.txtDetail.SelectedText = "";
             this.txtDetail.Size = new System.Drawing.Size(461, 49);
             this.txtDetail.TabIndex = 22;
+            this.txtDetail.TextOffsetX = 20;
             // 
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel3.Location = new System.Drawing.Point(30, 167);
+            this.gunaLabel3.Location = new System.Drawing.Point(40, 167);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(165, 28);
             this.gunaLabel3.TabIndex = 21;
@@ -458,17 +464,19 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.Location = new System.Drawing.Point(790, 101);
             this.txtName.Name = "txtName";
+            this.txtName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtName.PasswordChar = '\0';
             this.txtName.Radius = 8;
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(474, 49);
             this.txtName.TabIndex = 20;
+            this.txtName.TextOffsetX = 20;
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel2.Location = new System.Drawing.Point(675, 110);
+            this.gunaLabel2.Location = new System.Drawing.Point(685, 110);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(109, 28);
             this.gunaLabel2.TabIndex = 19;
@@ -524,7 +532,7 @@
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel1.Location = new System.Drawing.Point(30, 110);
+            this.gunaLabel1.Location = new System.Drawing.Point(40, 110);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(116, 28);
             this.gunaLabel1.TabIndex = 16;
@@ -543,7 +551,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(847, 247);
+            this.btnSave.Location = new System.Drawing.Point(461, 247);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -570,7 +578,7 @@
             this.btnRestart.ForeColor = System.Drawing.Color.White;
             this.btnRestart.Image = ((System.Drawing.Image)(resources.GetObject("btnRestart.Image")));
             this.btnRestart.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRestart.Location = new System.Drawing.Point(988, 247);
+            this.btnRestart.Location = new System.Drawing.Point(602, 247);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnRestart.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -583,33 +591,6 @@
             this.btnRestart.Text = "Hủy";
             this.btnRestart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.AnimationHoverSpeed = 0.07F;
-            this.btnDetail.AnimationSpeed = 0.03F;
-            this.btnDetail.BackColor = System.Drawing.Color.Transparent;
-            this.btnDetail.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnDetail.BorderColor = System.Drawing.Color.Black;
-            this.btnDetail.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDetail.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDetail.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Image = null;
-            this.btnDetail.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDetail.Location = new System.Drawing.Point(1129, 247);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDetail.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDetail.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDetail.OnHoverImage = null;
-            this.btnDetail.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDetail.Radius = 8;
-            this.btnDetail.Size = new System.Drawing.Size(135, 45);
-            this.btnDetail.TabIndex = 13;
-            this.btnDetail.Text = "Xem chi tiết";
-            this.btnDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnDelete
             // 
@@ -624,7 +605,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(706, 247);
+            this.btnDelete.Location = new System.Drawing.Point(320, 247);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -651,7 +632,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdate.Location = new System.Drawing.Point(565, 247);
+            this.btnUpdate.Location = new System.Drawing.Point(179, 247);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -678,7 +659,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(424, 247);
+            this.btnAdd.Location = new System.Drawing.Point(38, 247);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -743,7 +724,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton btnSave;
         private Guna.UI.WinForms.GunaButton btnRestart;
-        private Guna.UI.WinForms.GunaButton btnDetail;
         private Guna.UI.WinForms.GunaButton btnDelete;
         private Guna.UI.WinForms.GunaButton btnUpdate;
         private Guna.UI.WinForms.GunaButton btnAdd;

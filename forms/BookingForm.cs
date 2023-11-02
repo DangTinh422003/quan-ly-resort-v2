@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Asn1.X509;
+﻿using MySqlX.XDevAPI.Relational;
+using Org.BouncyCastle.Asn1.X509;
 using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.userControl;
@@ -219,17 +220,25 @@ namespace quan_ly_resort_v2.forms
             CustomerDAO.addNewCustomer(new Customer(customerId, customerName, customerDateOfBirth, customerPhone, customerEmail, customerAddress));
             string listRoomId = "";
             foreach (DataGridViewRow row in tableRoomTarget.Rows)
-            {
                 listRoomId += row.Cells[0].Value.ToString() + ",";
-            }
             listRoomId = listRoomId.Substring(0, listRoomId.Length - 1);
+
             BookingRoomDAO.addNew(new BookingRoom("", DateTime.Now, listRoomId, customerId, dateCheckin, dateCheckout.Subtract(dateCheckin).Days, int.Parse(peopleCounter)));
 
             // update room state
-            foreach (DataGridViewRow row in tableRoomTarget.Rows)
+            foreach (Room room in RoomDAO.GetRooms())
             {
-                RoomDAO.updateRoomStateById(row.Cells[0].Value.ToString(), "reserved");
+                if (listRoomId.Contains(room.Id))
+                {
+                    RoomDAO.updateRoomStateById(room.Id, "reserved");
+                    continue;
+                }
+                else
+                {
+                    RoomDAO.updateRoomStateById(room.Id, "avaiable");
+                }
             }
+
             MessageBox.Show("Đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

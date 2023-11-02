@@ -24,6 +24,7 @@ namespace quan_ly_resort_v2.userControl
         {
             var bookingForm = new BookingForm();
             bookingForm.ShowDialog();
+            UscManageBookingRoom_Load(sender, e);
         }
 
         private void UscManageBookingRoom_Load(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace quan_ly_resort_v2.userControl
                     string bookingRoomId = table_BookingRoomList.Rows[e.RowIndex].Cells[0].Value.ToString();
                     bookingForm.setData(BookingRoomDAO.GetBookingRoomByID(bookingRoomId));
                     bookingForm.ShowDialog();
+                    UscManageBookingRoom_Load(sender, e);
                 }
             }
         }

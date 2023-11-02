@@ -55,7 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.textbox_searchRoom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -80,7 +80,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(240)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.Controls.Add(this.gunaPanel3);
             this.guna2Panel1.Controls.Add(this.gunaPanel2);
             this.guna2Panel1.Controls.Add(this.gunaPanel1);
@@ -476,9 +476,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.gunaAdvenceButton1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.gunaTextBox1);
+            this.panel1.Controls.Add(this.textbox_searchRoom);
             this.panel1.Location = new System.Drawing.Point(792, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(464, 45);
@@ -503,7 +502,7 @@
             this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(40, 40);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(378, 0);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(6, 0);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -526,24 +525,25 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // gunaTextBox1
+            // textbox_searchRoom
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 8;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(366, 45);
-            this.gunaTextBox1.TabIndex = 0;
-            this.gunaTextBox1.TextOffsetX = 50;
+            this.textbox_searchRoom.BackColor = System.Drawing.Color.Transparent;
+            this.textbox_searchRoom.BaseColor = System.Drawing.Color.White;
+            this.textbox_searchRoom.BorderColor = System.Drawing.Color.Silver;
+            this.textbox_searchRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textbox_searchRoom.FocusedBaseColor = System.Drawing.Color.White;
+            this.textbox_searchRoom.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textbox_searchRoom.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textbox_searchRoom.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_searchRoom.Location = new System.Drawing.Point(0, 0);
+            this.textbox_searchRoom.Name = "textbox_searchRoom";
+            this.textbox_searchRoom.PasswordChar = '\0';
+            this.textbox_searchRoom.Radius = 8;
+            this.textbox_searchRoom.SelectedText = "";
+            this.textbox_searchRoom.Size = new System.Drawing.Size(366, 45);
+            this.textbox_searchRoom.TabIndex = 0;
+            this.textbox_searchRoom.TextOffsetX = 50;
+            this.textbox_searchRoom.TextChanged += new System.EventHandler(this.textbox_searchRoom_TextChanged);
             // 
             // gunaShadowPanel1
             // 
@@ -562,6 +562,7 @@
             this.gunaShadowPanel1.ShadowShift = 0;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1279, 78);
             this.gunaShadowPanel1.TabIndex = 0;
+            this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
             // 
             // gunaPanel4
             // 
@@ -586,6 +587,7 @@
             this.flowLayoutPanel_ListRoom.AutoScroll = true;
             this.flowLayoutPanel_ListRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel_ListRoom.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel_ListRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel_ListRoom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 125);
             this.flowLayoutPanel_ListRoom.Name = "flowLayoutPanel_ListRoom";
@@ -606,6 +608,8 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.gunaAdvenceButton1);
             this.guna2Panel2.Controls.Add(this.lb_currentPage);
             this.guna2Panel2.Controls.Add(this.gunaPanel5);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -618,7 +622,7 @@
             // 
             this.lb_currentPage.AutoSize = true;
             this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(150, 10);
+            this.lb_currentPage.Location = new System.Drawing.Point(206, 10);
             this.lb_currentPage.Name = "lb_currentPage";
             this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
             this.lb_currentPage.TabIndex = 2;
@@ -629,7 +633,7 @@
             this.gunaPanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaPanel5.Controls.Add(this.btn_Nextpage);
             this.gunaPanel5.Controls.Add(this.btn_Prevpage);
-            this.gunaPanel5.Location = new System.Drawing.Point(26, 2);
+            this.gunaPanel5.Location = new System.Drawing.Point(80, 1);
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Size = new System.Drawing.Size(102, 44);
             this.gunaPanel5.TabIndex = 1;
@@ -647,7 +651,7 @@
             this.btn_Nextpage.ForeColor = System.Drawing.Color.White;
             this.btn_Nextpage.Image = ((System.Drawing.Image)(resources.GetObject("btn_Nextpage.Image")));
             this.btn_Nextpage.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Nextpage.Location = new System.Drawing.Point(58, 0);
+            this.btn_Nextpage.Location = new System.Drawing.Point(59, 0);
             this.btn_Nextpage.Name = "btn_Nextpage";
             this.btn_Nextpage.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Nextpage.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -671,7 +675,7 @@
             this.btn_Prevpage.ForeColor = System.Drawing.Color.White;
             this.btn_Prevpage.Image = ((System.Drawing.Image)(resources.GetObject("btn_Prevpage.Image")));
             this.btn_Prevpage.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Prevpage.Location = new System.Drawing.Point(0, 1);
+            this.btn_Prevpage.Location = new System.Drawing.Point(3, 0);
             this.btn_Prevpage.Name = "btn_Prevpage";
             this.btn_Prevpage.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_Prevpage.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -718,7 +722,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox textbox_searchRoom;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ListRoom;

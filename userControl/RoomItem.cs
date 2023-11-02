@@ -25,10 +25,7 @@ namespace quan_ly_resort_v2.userControl
 
         public void SetRoomInfo(Room roomInfo)
         {
-            // set room id
             lb_RoomId.Text = roomInfo.Id;
-
-            // room state
             if (roomInfo.IsFixed)
                 lb_isCleanup.Text = "Đang sửa chữa";
             else

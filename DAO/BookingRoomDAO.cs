@@ -145,18 +145,18 @@ namespace quan_ly_resort_v2.model
                     MySqlCommand command = new MySqlCommand(sql, conn);
                     command.Parameters.AddWithValue("@Id", "%" + roomId + "%");
                     MySqlDataReader reader = command.ExecuteReader();
-                    BookingRoom bookingRoom = null;
                     if (reader.Read())
                     {
-                        bookingRoom = new BookingRoom(reader["Id"].ToString(),
-                            DateTime.Parse(reader["NgayDat"].ToString()),
-                            reader["DSMaPhong"].ToString(),
-                            reader["MaKH"].ToString(),
-                            DateTime.Parse(reader["NgayCheckInDuKien"].ToString()),
-                            int.Parse(reader["SoNgayThue"].ToString()),
-                            int.Parse(reader["SoNguoiThue"].ToString()));
+                        BookingRoom bookingRoom = new BookingRoom(reader["Id"].ToString(),
+                                DateTime.Parse(reader["NgayDat"].ToString()),
+                                reader["DSMaPhong"].ToString(),
+                                reader["MaKH"].ToString(),
+                                DateTime.Parse(reader["NgayCheckInDuKien"].ToString()),
+                                int.Parse(reader["SoNgayThue"].ToString()),
+                                int.Parse(reader["SoNguoiThue"].ToString()));
+                        return bookingRoom;
                     }
-                    return bookingRoom;
+                    return null;
                 }
             }
             catch (Exception e)
@@ -168,7 +168,7 @@ namespace quan_ly_resort_v2.model
 
         public static BookingRoom GetBookingRoomByID(string bookingRoomID)
         {
-              try
+            try
             {
                 using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
                 {
@@ -183,7 +183,7 @@ namespace quan_ly_resort_v2.model
                         bookingRoom = new BookingRoom(
                             reader["Id"].ToString(),
                             DateTime.Parse(reader["NgayDat"].ToString()),
-                            reader["DSMaPhong"].ToString(),reader["MaKH"].ToString(),
+                            reader["DSMaPhong"].ToString(), reader["MaKH"].ToString(),
                             DateTime.Parse(reader["NgayCheckInDuKien"].ToString()),
                             int.Parse(reader["SoNgayThue"].ToString()),
                             int.Parse(reader["SoNguoiThue"].ToString()));
@@ -195,7 +195,7 @@ namespace quan_ly_resort_v2.model
             {
                 Console.WriteLine("Error in getRoomByID: " + e.Message);
                 return null;
-            }   
+            }
         }
     }
 }

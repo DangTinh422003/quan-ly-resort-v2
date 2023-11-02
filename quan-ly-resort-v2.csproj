@@ -48,7 +48,7 @@
       <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\ADMIN\Desktop\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>lib\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
@@ -224,6 +224,7 @@
     <Compile Include="userControl\UscServiceDetail.Designer.cs">
       <DependentUpon>UscServiceDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="utils\DebounceHandler.cs" />
     <Compile Include="utils\ImageHelper.cs" />
     <Compile Include="utils\PasswordUils.cs" />
     <Compile Include="utils\ValidateData.cs" />

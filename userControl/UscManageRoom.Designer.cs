@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageRoom));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.guna2RadioButton15 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton9 = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -57,6 +56,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textbox_searchRoom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.btn_load = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btn_Nextpage = new Guna.UI.WinForms.GunaCircleButton();
             this.btn_Prevpage = new Guna.UI.WinForms.GunaCircleButton();
@@ -100,37 +101,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(224, 843);
             this.guna2Panel1.TabIndex = 1;
-            // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Bisque;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(587, 12);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 8;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(68, 38);
-            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // gunaPanel3
             // 
@@ -560,6 +530,7 @@
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.btn_load);
             this.gunaShadowPanel1.Controls.Add(this.gunaAdvenceButton1);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel5);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel4);
@@ -576,7 +547,69 @@
             this.gunaShadowPanel1.ShadowShift = 0;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1279, 60);
             this.gunaShadowPanel1.TabIndex = 0;
-            this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
+            // 
+            // btn_load
+            // 
+            this.btn_load.AnimationHoverSpeed = 0.07F;
+            this.btn_load.AnimationSpeed = 0.03F;
+            this.btn_load.BackColor = System.Drawing.Color.Transparent;
+            this.btn_load.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_load.BorderColor = System.Drawing.Color.Black;
+            this.btn_load.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_load.CheckedBorderColor = System.Drawing.Color.Bisque;
+            this.btn_load.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_load.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_load.CheckedImage")));
+            this.btn_load.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_load.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_load.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_load.ForeColor = System.Drawing.Color.White;
+            this.btn_load.Image = ((System.Drawing.Image)(resources.GetObject("btn_load.Image")));
+            this.btn_load.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_load.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_load.Location = new System.Drawing.Point(510, 12);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_load.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_load.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_load.OnHoverImage = null;
+            this.btn_load.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_load.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_load.Radius = 8;
+            this.btn_load.Size = new System.Drawing.Size(63, 38);
+            this.btn_load.TabIndex = 5;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Bisque;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(40, 40);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(583, 12);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 8;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(63, 38);
+            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // gunaPanel5
             // 
@@ -647,7 +680,7 @@
             // 
             this.lb_currentPage.AutoSize = true;
             this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(425, 18);
+            this.lb_currentPage.Location = new System.Drawing.Point(390, 18);
             this.lb_currentPage.Name = "lb_currentPage";
             this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
             this.lb_currentPage.TabIndex = 2;
@@ -897,5 +930,6 @@
         private RoomItem roomItem10;
         private RoomItem roomItem11;
         private RoomItem roomItem12;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_load;
     }
 }

@@ -30,10 +30,10 @@ namespace quan_ly_resort_v2.userControl
         private void UscManageBookingRoom_Load(object sender, EventArgs e)
         {
             table_BookingRoomList.Rows.Clear();
-            List<BookingRoom> rooms = BookingRoomDAO.getBookingRooms();
-            foreach (BookingRoom room in rooms)
+            List<BookingRoom> bookingRooms = BookingRoomDAO.getBookingRooms();
+            foreach (BookingRoom bookingRoom in bookingRooms)
             {
-                table_BookingRoomList.Rows.Add(room.Id, room.NgayDat.ToString("dd-MM-yyyy"), room.DanhSachMaPhong, room.MaKhachHang, room.NgayCheckInDuKien, room.SoNgayThue, room.SoNguoiThue);
+                table_BookingRoomList.Rows.Add(bookingRoom.Id, bookingRoom.NgayDat.ToString("dd-MM-yyyy"), bookingRoom.DanhSachMaPhong, bookingRoom.MaKhachHang, bookingRoom.NgayCheckInDuKien, bookingRoom.SoNgayThue, bookingRoom.SoNguoiThue, bookingRoom.IsConfirm);
             }
         }
 
@@ -45,7 +45,7 @@ namespace quan_ly_resort_v2.userControl
         private void table_BookingRoomList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // click cell and delete
-            if (table_BookingRoomList.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+            if (table_BookingRoomList.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
             {
                 if (table_BookingRoomList.CurrentCell != null && table_BookingRoomList.CurrentCell.Value != null)
                 {
@@ -64,7 +64,7 @@ namespace quan_ly_resort_v2.userControl
                     }
                 }
             }
-            else if (table_BookingRoomList.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
+            else if (table_BookingRoomList.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
             {
                 if (table_BookingRoomList.CurrentCell != null && table_BookingRoomList.CurrentCell.Value != null)
                 {

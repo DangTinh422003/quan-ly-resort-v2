@@ -165,12 +165,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "insert into hoadon(MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
+                string sql = "insert into hoadon(MaHD,MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaHD,@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
                 MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@MaHD", bill.MaHoaDon);
                 command.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
                 command.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
                 command.Parameters.AddWithValue("@DSMaPhong", bill.DanhSachMaPhong);
-                command.Parameters.AddWithValue("@DSMaPhong", bill.NgayTaoHoaDon);
+                command.Parameters.AddWithValue("@NgayTao", bill.NgayTaoHoaDon);
                 command.Parameters.AddWithValue("@TongTien", bill.TongTien);
                 command.Parameters.AddWithValue("@NgayCheckIn", bill.NgayCheckIn);
                 command.Parameters.AddWithValue("@ThoiGianThue", bill.SoNgayThue);
@@ -181,6 +182,67 @@ namespace quan_ly_resort_v2.DAO
             {
                 Console.WriteLine(err.Message);
                 return false;
+            }
+        }
+
+        public static bool upBillState(string billID, string state)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string updateQuery = "UPDATE hoadon set state = @state";
+                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                cmd.Parameters.AddWithValue("@state", state);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+                return rowsAffected > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public static Bill getBillByCustomerId(string customnerId)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select * from hoadon where MaKH = @MaKH";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaKH", customnerId);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+               
+                if (reader.Read())
+                {
+                    Bill bill = new Bill
+                    (
+                        reader["MaHD"].ToString(),
+                        reader["MaKH"].ToString(),
+                        reader["MaNV"].ToString(),
+                        reader["DSMaPhong"].ToString(),
+                        Convert.ToDateTime(reader["NgayTao"]),
+                        Convert.ToDouble(reader["TongTien"]),
+                        Convert.ToDateTime(reader["NgayCheckIn"]),
+                        Convert.ToInt32(reader["ThoiGianThue"]),
+                        reader["state"].ToString()
+                    );
+                    return bill;
+                }
+                conn.Close();
+                return null; ;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("getBillByCustomerId ", e.Message);
+                return null;
             }
         }
     }

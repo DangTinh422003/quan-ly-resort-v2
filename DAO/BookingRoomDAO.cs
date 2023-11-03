@@ -14,6 +14,28 @@ namespace quan_ly_resort_v2.model
 {
     public class BookingRoomDAO
     {
+        public static bool updateBookingRoomConfirm(string id, bool isConfirm)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "update datphong set TinhTrang = @isConfirm where Id = @id";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@isConfirm", isConfirm ? "Đã xử lý" : "Chưa xử lý");
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("updateBookingRoomConfirm : ", err.Message);
+                return false;
+            }
+        }
+
         public static bool deleteByID(string id)
         {
             try
@@ -85,7 +107,9 @@ namespace quan_ly_resort_v2.model
                                                reader["DSMaPhong"].ToString(), reader["MaKH"].ToString(),
                                                DateTime.Parse(reader["NgayCheckInDuKien"].ToString()),
                                                int.Parse(reader["SoNgayThue"].ToString()),
-                                               int.Parse(reader["SoNguoiThue"].ToString()));
+                                               int.Parse(reader["SoNguoiThue"].ToString()),
+                                               reader["TinhTrang"].ToString()
+                                               );
                     bookingRooms.Add(bookingRoom);
                 }
                 return bookingRooms;

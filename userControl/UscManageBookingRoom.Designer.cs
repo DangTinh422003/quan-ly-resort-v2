@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageBookingRoom));
             this.textbox_seatchCustomerId = new Guna.UI2.WinForms.Guna2TextBox();
             this.table_BookingRoomList = new Guna.UI.WinForms.GunaDataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_refresh = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.btn_booking = new Guna.UI.WinForms.GunaAdvenceButton();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaydat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,13 +46,9 @@
             this.checkin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNguoiThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_modify = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_refresh = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.btn_booking = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.table_BookingRoomList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,22 +85,22 @@
             this.table_BookingRoomList.AllowUserToDeleteRows = false;
             this.table_BookingRoomList.AllowUserToOrderColumns = true;
             this.table_BookingRoomList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.table_BookingRoomList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.table_BookingRoomList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.table_BookingRoomList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table_BookingRoomList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.table_BookingRoomList.BackgroundColor = System.Drawing.Color.White;
             this.table_BookingRoomList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.table_BookingRoomList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.table_BookingRoomList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_BookingRoomList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_BookingRoomList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.table_BookingRoomList.ColumnHeadersHeight = 40;
             this.table_BookingRoomList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -109,17 +110,18 @@
             this.checkin,
             this.SoNgayThue,
             this.SoNguoiThue,
-            this.btn_Delete,
+            this.state,
+            this.btn_delete,
             this.btn_modify});
             this.table_BookingRoomList.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.table_BookingRoomList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.table_BookingRoomList.DefaultCellStyle = dataGridViewCellStyle3;
             this.table_BookingRoomList.EnableHeadersVisualStyles = false;
             this.table_BookingRoomList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.table_BookingRoomList.Location = new System.Drawing.Point(42, 133);
@@ -154,79 +156,6 @@
             this.table_BookingRoomList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.table_BookingRoomList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.table_BookingRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_BookingRoomList_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 80;
-            // 
-            // ngaydat
-            // 
-            this.ngaydat.HeaderText = "Ngày Đặt Phòng";
-            this.ngaydat.MinimumWidth = 6;
-            this.ngaydat.Name = "ngaydat";
-            this.ngaydat.ReadOnly = true;
-            // 
-            // DsMaPhong
-            // 
-            this.DsMaPhong.HeaderText = "Danh sách Mã Phòng";
-            this.DsMaPhong.MinimumWidth = 6;
-            this.DsMaPhong.Name = "DsMaPhong";
-            this.DsMaPhong.ReadOnly = true;
-            // 
-            // MaKH
-            // 
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.ReadOnly = true;
-            // 
-            // checkin
-            // 
-            this.checkin.HeaderText = "Ngày checkin";
-            this.checkin.MinimumWidth = 6;
-            this.checkin.Name = "checkin";
-            this.checkin.ReadOnly = true;
-            // 
-            // SoNgayThue
-            // 
-            this.SoNgayThue.HeaderText = "Số ngày thuê";
-            this.SoNgayThue.MinimumWidth = 6;
-            this.SoNgayThue.Name = "SoNgayThue";
-            this.SoNgayThue.ReadOnly = true;
-            // 
-            // SoNguoiThue
-            // 
-            this.SoNguoiThue.HeaderText = "Số người thuê";
-            this.SoNguoiThue.MinimumWidth = 6;
-            this.SoNguoiThue.Name = "SoNguoiThue";
-            this.SoNguoiThue.ReadOnly = true;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btn_Delete.HeaderText = "";
-            this.btn_Delete.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_482;
-            this.btn_Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btn_Delete.MinimumWidth = 6;
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.ReadOnly = true;
-            this.btn_Delete.Width = 50;
-            // 
-            // btn_modify
-            // 
-            this.btn_modify.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btn_modify.HeaderText = "";
-            this.btn_modify.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_modify_24;
-            this.btn_modify.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btn_modify.MinimumWidth = 6;
-            this.btn_modify.Name = "btn_modify";
-            this.btn_modify.ReadOnly = true;
-            this.btn_modify.Width = 50;
             // 
             // dataGridViewImageColumn1
             // 
@@ -329,6 +258,86 @@
             this.btn_booking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_booking.Click += new System.EventHandler(this.gunaAdvenceButton2_Click);
             // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 80;
+            // 
+            // ngaydat
+            // 
+            this.ngaydat.HeaderText = "Ngày Đặt Phòng";
+            this.ngaydat.MinimumWidth = 6;
+            this.ngaydat.Name = "ngaydat";
+            this.ngaydat.ReadOnly = true;
+            // 
+            // DsMaPhong
+            // 
+            this.DsMaPhong.HeaderText = "Danh sách Mã Phòng";
+            this.DsMaPhong.MinimumWidth = 6;
+            this.DsMaPhong.Name = "DsMaPhong";
+            this.DsMaPhong.ReadOnly = true;
+            // 
+            // MaKH
+            // 
+            this.MaKH.HeaderText = "Mã khách hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            // 
+            // checkin
+            // 
+            this.checkin.HeaderText = "Ngày checkin";
+            this.checkin.MinimumWidth = 6;
+            this.checkin.Name = "checkin";
+            this.checkin.ReadOnly = true;
+            // 
+            // SoNgayThue
+            // 
+            this.SoNgayThue.HeaderText = "Số ngày thuê";
+            this.SoNgayThue.MinimumWidth = 6;
+            this.SoNgayThue.Name = "SoNgayThue";
+            this.SoNgayThue.ReadOnly = true;
+            // 
+            // SoNguoiThue
+            // 
+            this.SoNguoiThue.HeaderText = "Số người thuê";
+            this.SoNguoiThue.MinimumWidth = 6;
+            this.SoNguoiThue.Name = "SoNguoiThue";
+            this.SoNguoiThue.ReadOnly = true;
+            // 
+            // state
+            // 
+            this.state.HeaderText = "Trạng thái";
+            this.state.MinimumWidth = 6;
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btn_delete.HeaderText = "";
+            this.btn_delete.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_483;
+            this.btn_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btn_delete.MinimumWidth = 6;
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.ReadOnly = true;
+            this.btn_delete.Width = 50;
+            // 
+            // btn_modify
+            // 
+            this.btn_modify.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btn_modify.HeaderText = "";
+            this.btn_modify.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_pencil_481;
+            this.btn_modify.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btn_modify.MinimumWidth = 6;
+            this.btn_modify.Name = "btn_modify";
+            this.btn_modify.ReadOnly = true;
+            this.btn_modify.Width = 50;
+            // 
             // UscManageBookingRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,7 +372,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn checkin;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayThue;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNguoiThue;
-        private System.Windows.Forms.DataGridViewImageColumn btn_Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private System.Windows.Forms.DataGridViewImageColumn btn_delete;
         private System.Windows.Forms.DataGridViewImageColumn btn_modify;
     }
 }

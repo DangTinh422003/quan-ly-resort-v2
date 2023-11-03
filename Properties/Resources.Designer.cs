@@ -183,6 +183,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_483 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-483", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_clock_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-clock-50", resourceCulture);
@@ -323,6 +333,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_phone_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-phone-48", resourceCulture);
@@ -356,6 +376,66 @@ namespace quan_ly_resort_v2.Properties {
         internal static System.Drawing.Bitmap icons8_print_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-print-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_502 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-502", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_503 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reload_504 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reload-504", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

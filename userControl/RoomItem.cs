@@ -26,15 +26,9 @@ namespace quan_ly_resort_v2.userControl
         public void SetRoomInfo(Room roomInfo)
         {
             lb_RoomId.Text = roomInfo.Id;
+            lb_isCleanup.Text = roomInfo.IsClean ? "Đã dọn dẹp" : "Chưa dọn dẹp";
             if (roomInfo.IsFixed)
                 lb_isCleanup.Text = "Đang sửa chữa";
-            else
-            {
-                if (roomInfo.IsClean)
-                    lb_isCleanup.Text = "Chưa dọn dẹp";
-                else
-                    lb_isCleanup.Text = "Đã dọn dẹp";
-            }
 
             switch (roomInfo.State.ToLower())
             {

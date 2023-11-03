@@ -95,16 +95,16 @@ namespace quan_ly_resort_v2.userControl
                         roomItem.SetRoomInfo(room);
                         flowLayoutPanel_ListRoom.Controls.Add(roomItem);
                     }
-                } else
+                }
+                else
                 {
                     renderListRoom();
                 }
             });
         }
-
-        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        private void btn_load_Click(object sender, EventArgs e)
         {
-
+            renderListRoom();
         }
     }
 }

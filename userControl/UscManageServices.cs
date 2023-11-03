@@ -51,7 +51,7 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu dịch vụ để hiển thị.");
+                DataGridView.DataSource = null;
             }
         }
 

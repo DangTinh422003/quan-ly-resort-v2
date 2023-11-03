@@ -45,7 +45,7 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu nhân viên để hiển thị.");
+                DataGridView.DataSource = null;
             }
 
             Label_Title.Text = "Chức năng hiện tại : Chưa chọn!";

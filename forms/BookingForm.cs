@@ -212,9 +212,7 @@ namespace quan_ly_resort_v2.forms
 
             // check customer id in database
             if (btn_save.Text == "Cập nhật")
-            {
                 BookingRoomDAO.deleteByID(bookingRoomId);
-            }
 
             CustomerDAO.deleteCustomerById(customerId);
             CustomerDAO.addNewCustomer(new Customer(customerId, customerName, customerDateOfBirth, customerPhone, customerEmail, customerAddress));
@@ -233,10 +231,7 @@ namespace quan_ly_resort_v2.forms
                     RoomDAO.updateRoomStateById(room.Id, "reserved");
                     continue;
                 }
-                else
-                {
-                    RoomDAO.updateRoomStateById(room.Id, "avaiable");
-                }
+                else RoomDAO.updateRoomStateById(room.Id, "avaiable");
             }
 
             MessageBox.Show("Đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

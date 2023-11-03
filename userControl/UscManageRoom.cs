@@ -85,13 +85,19 @@ namespace quan_ly_resort_v2.userControl
         {
             debounceHandler.Debounce(() =>
             {
-                List<Room> rooms = RoomDAO.getRoomsByID(textbox_searchRoom.Text.Trim());
-                flowLayoutPanel_ListRoom.Controls.Clear();
-                foreach (Room room in rooms)
+                if (textbox_searchRoom.Text.Trim() != "")
                 {
-                    RoomItem roomItem = new RoomItem();
-                    roomItem.SetRoomInfo(room);
-                    flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+                    List<Room> rooms = RoomDAO.getRoomsByID(textbox_searchRoom.Text.Trim());
+                    flowLayoutPanel_ListRoom.Controls.Clear();
+                    foreach (Room room in rooms)
+                    {
+                        RoomItem roomItem = new RoomItem();
+                        roomItem.SetRoomInfo(room);
+                        flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+                    }
+                } else
+                {
+                    renderListRoom();
                 }
             });
         }

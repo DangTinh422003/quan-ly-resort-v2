@@ -156,5 +156,32 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+
+        public static bool addNewBill(Bill bill)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "insert into hoadon(MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
+                command.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
+                command.Parameters.AddWithValue("@DSMaPhong", bill.DanhSachMaPhong);
+                command.Parameters.AddWithValue("@DSMaPhong", bill.NgayTaoHoaDon);
+                command.Parameters.AddWithValue("@TongTien", bill.TongTien);
+                command.Parameters.AddWithValue("@NgayCheckIn", bill.NgayCheckIn);
+                command.Parameters.AddWithValue("@ThoiGianThue", bill.SoNgayThue);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
     }
 }

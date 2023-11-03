@@ -47,9 +47,17 @@ namespace quan_ly_resort_v2.userControl
                     break;
                 case "reserved":
                     lb_roomState.Text = "Phòng đã đặt";
+                    panel_RoomWrap.BackColor = Color.FromArgb(24, 119, 242);
+                    BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(roomInfo.Id);
+                    Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
+                    lb_CustomerName.Text = customer.Fullname;
+                    lb_timeToStart.Text = bookingRoom.NgayCheckInDuKien.ToString("dd/MM/yyyy");
+                    lb_TimeToEnd.Text = bookingRoom.NgayCheckInDuKien.AddDays(bookingRoom.SoNgayThue).ToString("dd/MM/yyyy");
+                    lb_CountTimeStay.Text = bookingRoom.SoNgayThue.ToString() + " ngày";
                     break;
                 case "occupied":
                     lb_roomState.Text = "Đã cho thuê";
+                    panel_RoomWrap.BackColor = Color.Gray;
                     break;
             }
         }

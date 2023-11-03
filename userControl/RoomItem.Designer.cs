@@ -52,7 +52,7 @@
             this.icon_RoomState.Enabled = false;
             this.icon_RoomState.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_success_48;
             this.icon_RoomState.ImageRotate = 0F;
-            this.icon_RoomState.Location = new System.Drawing.Point(6, 44);
+            this.icon_RoomState.Location = new System.Drawing.Point(9, 38);
             this.icon_RoomState.Name = "icon_RoomState";
             this.icon_RoomState.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.icon_RoomState.Size = new System.Drawing.Size(42, 42);
@@ -68,9 +68,9 @@
             this.gunaPanel1.Controls.Add(this.lb_CountTimeStay);
             this.gunaPanel1.Controls.Add(this.gunaPictureBox1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 140);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 157);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(329, 42);
+            this.gunaPanel1.Size = new System.Drawing.Size(337, 42);
             this.gunaPanel1.TabIndex = 3;
             // 
             // lb_isCleanup
@@ -78,7 +78,7 @@
             this.lb_isCleanup.Enabled = false;
             this.lb_isCleanup.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_isCleanup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_isCleanup.Location = new System.Drawing.Point(206, 6);
+            this.lb_isCleanup.Location = new System.Drawing.Point(210, 6);
             this.lb_isCleanup.Name = "lb_isCleanup";
             this.lb_isCleanup.Size = new System.Drawing.Size(114, 31);
             this.lb_isCleanup.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Enabled = false;
             this.gunaPictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_success_481;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(173, 6);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(176, 6);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
             this.gunaPictureBox2.Size = new System.Drawing.Size(27, 31);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             this.lb_CountTimeStay.Enabled = false;
             this.lb_CountTimeStay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_CountTimeStay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_CountTimeStay.Location = new System.Drawing.Point(50, 11);
+            this.lb_CountTimeStay.Location = new System.Drawing.Point(53, 11);
             this.lb_CountTimeStay.Name = "lb_CountTimeStay";
             this.lb_CountTimeStay.Size = new System.Drawing.Size(59, 20);
             this.lb_CountTimeStay.TabIndex = 1;
@@ -114,7 +114,7 @@
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Enabled = false;
             this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_clock_50;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(6, 0);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(9, 0);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(42, 42);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             this.lb_RoomId.Enabled = false;
             this.lb_RoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RoomId.ForeColor = System.Drawing.Color.White;
-            this.lb_RoomId.Location = new System.Drawing.Point(6, 11);
+            this.lb_RoomId.Location = new System.Drawing.Point(11, 5);
             this.lb_RoomId.Name = "lb_RoomId";
             this.lb_RoomId.Size = new System.Drawing.Size(53, 27);
             this.lb_RoomId.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.lb_roomState.Enabled = false;
             this.lb_roomState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_roomState.ForeColor = System.Drawing.Color.White;
-            this.lb_roomState.Location = new System.Drawing.Point(139, 11);
+            this.lb_roomState.Location = new System.Drawing.Point(145, 11);
             this.lb_roomState.Name = "lb_roomState";
             this.lb_roomState.Size = new System.Drawing.Size(181, 21);
             this.lb_roomState.TabIndex = 1;
@@ -154,7 +154,7 @@
             this.lb_timeToStart.Enabled = false;
             this.lb_timeToStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_timeToStart.ForeColor = System.Drawing.Color.White;
-            this.lb_timeToStart.Location = new System.Drawing.Point(6, 107);
+            this.lb_timeToStart.Location = new System.Drawing.Point(9, 110);
             this.lb_timeToStart.Name = "lb_timeToStart";
             this.lb_timeToStart.Size = new System.Drawing.Size(113, 27);
             this.lb_timeToStart.TabIndex = 5;
@@ -166,7 +166,7 @@
             this.lb_TimeToEnd.Enabled = false;
             this.lb_TimeToEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TimeToEnd.ForeColor = System.Drawing.Color.White;
-            this.lb_TimeToEnd.Location = new System.Drawing.Point(207, 107);
+            this.lb_TimeToEnd.Location = new System.Drawing.Point(211, 110);
             this.lb_TimeToEnd.Name = "lb_TimeToEnd";
             this.lb_TimeToEnd.Size = new System.Drawing.Size(113, 27);
             this.lb_TimeToEnd.TabIndex = 6;
@@ -179,12 +179,12 @@
             this.lb_CustomerName.Enabled = false;
             this.lb_CustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_CustomerName.ForeColor = System.Drawing.Color.White;
-            this.lb_CustomerName.Location = new System.Drawing.Point(66, 38);
+            this.lb_CustomerName.Location = new System.Drawing.Point(73, 38);
             this.lb_CustomerName.Name = "lb_CustomerName";
-            this.lb_CustomerName.Size = new System.Drawing.Size(254, 64);
+            this.lb_CustomerName.Size = new System.Drawing.Size(254, 42);
             this.lb_CustomerName.TabIndex = 7;
             this.lb_CustomerName.Text = "Tên người ";
-            this.lb_CustomerName.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.lb_CustomerName.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel_RoomWrap
             // 
@@ -199,9 +199,10 @@
             this.panel_RoomWrap.Controls.Add(this.lb_RoomId);
             this.panel_RoomWrap.Controls.Add(this.lb_roomState);
             this.panel_RoomWrap.Controls.Add(this.icon_RoomState);
-            this.panel_RoomWrap.Location = new System.Drawing.Point(6, 7);
+            this.panel_RoomWrap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_RoomWrap.Location = new System.Drawing.Point(2, 1);
             this.panel_RoomWrap.Name = "panel_RoomWrap";
-            this.panel_RoomWrap.Size = new System.Drawing.Size(329, 182);
+            this.panel_RoomWrap.Size = new System.Drawing.Size(337, 199);
             this.panel_RoomWrap.TabIndex = 1;
             this.panel_RoomWrap.Click += new System.EventHandler(this.panel_RoomWrap_Click);
             // 
@@ -214,7 +215,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "RoomItem";
-            this.Size = new System.Drawing.Size(338, 192);
+            this.Size = new System.Drawing.Size(343, 204);
             ((System.ComponentModel.ISupportInitialize)(this.icon_RoomState)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();

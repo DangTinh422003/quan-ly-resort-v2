@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageRoom));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.guna2RadioButton15 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2RadioButton9 = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -53,19 +54,29 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textbox_searchRoom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel_ListRoom = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_currentPage = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btn_Nextpage = new Guna.UI.WinForms.GunaCircleButton();
             this.btn_Prevpage = new Guna.UI.WinForms.GunaCircleButton();
+            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
+            this.lb_currentPage = new Guna.UI.WinForms.GunaLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.flowLayoutPanel_ListRoom = new System.Windows.Forms.FlowLayoutPanel();
+            this.roomItem1 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem2 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem3 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem4 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem5 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem6 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem7 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem8 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem9 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem10 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem11 = new quan_ly_resort_v2.userControl.RoomItem();
+            this.roomItem12 = new quan_ly_resort_v2.userControl.RoomItem();
             this.guna2Panel1.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -73,9 +84,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.flowLayoutPanel_ListRoom.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -85,10 +96,41 @@
             this.guna2Panel1.Controls.Add(this.gunaPanel2);
             this.guna2Panel1.Controls.Add(this.gunaPanel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 78);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 60);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(224, 825);
+            this.guna2Panel1.Size = new System.Drawing.Size(224, 843);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Bisque;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(40, 40);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(587, 12);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 8;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(68, 38);
+            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // gunaPanel3
             // 
@@ -467,7 +509,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(144, 22);
+            this.label1.Location = new System.Drawing.Point(68, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 38);
             this.label1.TabIndex = 0;
@@ -478,41 +520,10 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.textbox_searchRoom);
-            this.panel1.Location = new System.Drawing.Point(792, 16);
+            this.panel1.Location = new System.Drawing.Point(799, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(464, 45);
             this.panel1.TabIndex = 3;
-            // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Bisque;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(6, 0);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 8;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(59, 45);
-            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -549,7 +560,10 @@
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.gunaAdvenceButton1);
+            this.gunaShadowPanel1.Controls.Add(this.gunaPanel5);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel4);
+            this.gunaShadowPanel1.Controls.Add(this.lb_currentPage);
             this.gunaShadowPanel1.Controls.Add(this.pictureBox2);
             this.gunaShadowPanel1.Controls.Add(this.panel1);
             this.gunaShadowPanel1.Controls.Add(this.label1);
@@ -560,82 +574,18 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.ShadowDepth = 0;
             this.gunaShadowPanel1.ShadowShift = 0;
-            this.gunaShadowPanel1.Size = new System.Drawing.Size(1279, 78);
+            this.gunaShadowPanel1.Size = new System.Drawing.Size(1279, 60);
             this.gunaShadowPanel1.TabIndex = 0;
             this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
-            // 
-            // gunaPanel4
-            // 
-            this.gunaPanel4.Location = new System.Drawing.Point(858, 84);
-            this.gunaPanel4.Name = "gunaPanel4";
-            this.gunaPanel4.Size = new System.Drawing.Size(246, 63);
-            this.gunaPanel4.TabIndex = 4;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(62, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // flowLayoutPanel_ListRoom
-            // 
-            this.flowLayoutPanel_ListRoom.AutoScroll = true;
-            this.flowLayoutPanel_ListRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel_ListRoom.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel_ListRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel_ListRoom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 125);
-            this.flowLayoutPanel_ListRoom.Name = "flowLayoutPanel_ListRoom";
-            this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 778);
-            this.flowLayoutPanel_ListRoom.TabIndex = 3;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 19);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(166, 38);
-            this.guna2HtmlLabel3.TabIndex = 0;
-            this.guna2HtmlLabel3.Text = "Loại Phòng";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.Controls.Add(this.gunaAdvenceButton1);
-            this.guna2Panel2.Controls.Add(this.lb_currentPage);
-            this.guna2Panel2.Controls.Add(this.gunaPanel5);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(224, 78);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1055, 48);
-            this.guna2Panel2.TabIndex = 4;
-            // 
-            // lb_currentPage
-            // 
-            this.lb_currentPage.AutoSize = true;
-            this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(206, 10);
-            this.lb_currentPage.Name = "lb_currentPage";
-            this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
-            this.lb_currentPage.TabIndex = 2;
-            this.lb_currentPage.Text = "Trang 1";
             // 
             // gunaPanel5
             // 
             this.gunaPanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaPanel5.Controls.Add(this.btn_Nextpage);
             this.gunaPanel5.Controls.Add(this.btn_Prevpage);
-            this.gunaPanel5.Location = new System.Drawing.Point(80, 1);
+            this.gunaPanel5.Location = new System.Drawing.Point(661, 13);
             this.gunaPanel5.Name = "gunaPanel5";
-            this.gunaPanel5.Size = new System.Drawing.Size(102, 44);
+            this.gunaPanel5.Size = new System.Drawing.Size(102, 37);
             this.gunaPanel5.TabIndex = 1;
             // 
             // btn_Nextpage
@@ -658,7 +608,7 @@
             this.btn_Nextpage.OnHoverForeColor = System.Drawing.Color.White;
             this.btn_Nextpage.OnHoverImage = null;
             this.btn_Nextpage.OnPressedColor = System.Drawing.Color.Aquamarine;
-            this.btn_Nextpage.Size = new System.Drawing.Size(40, 40);
+            this.btn_Nextpage.Size = new System.Drawing.Size(40, 37);
             this.btn_Nextpage.TabIndex = 1;
             this.btn_Nextpage.Click += new System.EventHandler(this.btn_Nextpage_Click);
             // 
@@ -682,16 +632,199 @@
             this.btn_Prevpage.OnHoverForeColor = System.Drawing.Color.White;
             this.btn_Prevpage.OnHoverImage = null;
             this.btn_Prevpage.OnPressedColor = System.Drawing.Color.Aquamarine;
-            this.btn_Prevpage.Size = new System.Drawing.Size(40, 40);
+            this.btn_Prevpage.Size = new System.Drawing.Size(40, 37);
             this.btn_Prevpage.TabIndex = 0;
             this.btn_Prevpage.Click += new System.EventHandler(this.btn_Prevpage_Click);
+            // 
+            // gunaPanel4
+            // 
+            this.gunaPanel4.Location = new System.Drawing.Point(858, 84);
+            this.gunaPanel4.Name = "gunaPanel4";
+            this.gunaPanel4.Size = new System.Drawing.Size(246, 63);
+            this.gunaPanel4.TabIndex = 4;
+            // 
+            // lb_currentPage
+            // 
+            this.lb_currentPage.AutoSize = true;
+            this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_currentPage.Location = new System.Drawing.Point(425, 18);
+            this.lb_currentPage.Name = "lb_currentPage";
+            this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
+            this.lb_currentPage.TabIndex = 2;
+            this.lb_currentPage.Text = "Trang 1";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 19);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(166, 38);
+            this.guna2HtmlLabel3.TabIndex = 0;
+            this.guna2HtmlLabel3.Text = "Loại Phòng";
+            // 
+            // flowLayoutPanel_ListRoom
+            // 
+            this.flowLayoutPanel_ListRoom.AutoScroll = true;
+            this.flowLayoutPanel_ListRoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel_ListRoom.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel_ListRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem1);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem2);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem3);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem4);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem5);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem6);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem7);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem8);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem9);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem10);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem11);
+            this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem12);
+            this.flowLayoutPanel_ListRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 60);
+            this.flowLayoutPanel_ListRoom.Name = "flowLayoutPanel_ListRoom";
+            this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
+            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 843);
+            this.flowLayoutPanel_ListRoom.TabIndex = 3;
+            // 
+            // roomItem1
+            // 
+            this.roomItem1.BackColor = System.Drawing.Color.White;
+            this.roomItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem1.Location = new System.Drawing.Point(5, 5);
+            this.roomItem1.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem1.Name = "roomItem1";
+            this.roomItem1.Size = new System.Drawing.Size(343, 204);
+            this.roomItem1.TabIndex = 0;
+            // 
+            // roomItem2
+            // 
+            this.roomItem2.BackColor = System.Drawing.Color.White;
+            this.roomItem2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem2.Location = new System.Drawing.Point(348, 5);
+            this.roomItem2.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem2.Name = "roomItem2";
+            this.roomItem2.Size = new System.Drawing.Size(343, 204);
+            this.roomItem2.TabIndex = 1;
+            // 
+            // roomItem3
+            // 
+            this.roomItem3.BackColor = System.Drawing.Color.White;
+            this.roomItem3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem3.Location = new System.Drawing.Point(691, 5);
+            this.roomItem3.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem3.Name = "roomItem3";
+            this.roomItem3.Size = new System.Drawing.Size(343, 204);
+            this.roomItem3.TabIndex = 2;
+            // 
+            // roomItem4
+            // 
+            this.roomItem4.BackColor = System.Drawing.Color.White;
+            this.roomItem4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem4.Location = new System.Drawing.Point(5, 209);
+            this.roomItem4.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem4.Name = "roomItem4";
+            this.roomItem4.Size = new System.Drawing.Size(343, 204);
+            this.roomItem4.TabIndex = 3;
+            // 
+            // roomItem5
+            // 
+            this.roomItem5.BackColor = System.Drawing.Color.White;
+            this.roomItem5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem5.Location = new System.Drawing.Point(348, 209);
+            this.roomItem5.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem5.Name = "roomItem5";
+            this.roomItem5.Size = new System.Drawing.Size(343, 204);
+            this.roomItem5.TabIndex = 4;
+            // 
+            // roomItem6
+            // 
+            this.roomItem6.BackColor = System.Drawing.Color.White;
+            this.roomItem6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem6.Location = new System.Drawing.Point(691, 209);
+            this.roomItem6.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem6.Name = "roomItem6";
+            this.roomItem6.Size = new System.Drawing.Size(343, 204);
+            this.roomItem6.TabIndex = 5;
+            // 
+            // roomItem7
+            // 
+            this.roomItem7.BackColor = System.Drawing.Color.White;
+            this.roomItem7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem7.Location = new System.Drawing.Point(5, 413);
+            this.roomItem7.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem7.Name = "roomItem7";
+            this.roomItem7.Size = new System.Drawing.Size(343, 204);
+            this.roomItem7.TabIndex = 6;
+            // 
+            // roomItem8
+            // 
+            this.roomItem8.BackColor = System.Drawing.Color.White;
+            this.roomItem8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem8.Location = new System.Drawing.Point(348, 413);
+            this.roomItem8.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem8.Name = "roomItem8";
+            this.roomItem8.Size = new System.Drawing.Size(343, 204);
+            this.roomItem8.TabIndex = 7;
+            // 
+            // roomItem9
+            // 
+            this.roomItem9.BackColor = System.Drawing.Color.White;
+            this.roomItem9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem9.Location = new System.Drawing.Point(691, 413);
+            this.roomItem9.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem9.Name = "roomItem9";
+            this.roomItem9.Size = new System.Drawing.Size(343, 204);
+            this.roomItem9.TabIndex = 8;
+            // 
+            // roomItem10
+            // 
+            this.roomItem10.BackColor = System.Drawing.Color.White;
+            this.roomItem10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem10.Location = new System.Drawing.Point(5, 617);
+            this.roomItem10.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem10.Name = "roomItem10";
+            this.roomItem10.Size = new System.Drawing.Size(343, 204);
+            this.roomItem10.TabIndex = 9;
+            // 
+            // roomItem11
+            // 
+            this.roomItem11.BackColor = System.Drawing.Color.White;
+            this.roomItem11.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem11.Location = new System.Drawing.Point(348, 617);
+            this.roomItem11.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem11.Name = "roomItem11";
+            this.roomItem11.Size = new System.Drawing.Size(343, 204);
+            this.roomItem11.TabIndex = 10;
+            // 
+            // roomItem12
+            // 
+            this.roomItem12.BackColor = System.Drawing.Color.White;
+            this.roomItem12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.roomItem12.Location = new System.Drawing.Point(691, 617);
+            this.roomItem12.Margin = new System.Windows.Forms.Padding(0);
+            this.roomItem12.Name = "roomItem12";
+            this.roomItem12.Size = new System.Drawing.Size(343, 204);
+            this.roomItem12.TabIndex = 11;
             // 
             // UscManageRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.flowLayoutPanel_ListRoom);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.gunaShadowPanel1);
@@ -708,10 +841,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.flowLayoutPanel_ListRoom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -725,7 +857,6 @@
         private Guna.UI.WinForms.GunaTextBox textbox_searchRoom;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ListRoom;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
@@ -749,10 +880,22 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private Guna.UI.WinForms.GunaCircleButton btn_Nextpage;
         private Guna.UI.WinForms.GunaCircleButton btn_Prevpage;
         private Guna.UI.WinForms.GunaLabel lb_currentPage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ListRoom;
+        private RoomItem roomItem1;
+        private RoomItem roomItem2;
+        private RoomItem roomItem3;
+        private RoomItem roomItem4;
+        private RoomItem roomItem5;
+        private RoomItem roomItem6;
+        private RoomItem roomItem7;
+        private RoomItem roomItem8;
+        private RoomItem roomItem9;
+        private RoomItem roomItem10;
+        private RoomItem roomItem11;
+        private RoomItem roomItem12;
     }
 }

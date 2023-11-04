@@ -18,6 +18,8 @@ namespace quan_ly_resort_v2.userControl
 {
     public partial class RoomItem : UserControl
     {
+        private string IdOfBookingRoom;
+
         public RoomItem()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace quan_ly_resort_v2.userControl
                     lb_roomState.Text = "Phòng đã đặt";
                     panel_RoomWrap.BackColor = Color.FromArgb(24, 119, 242);
                     BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(roomInfo.Id);
+                    IdOfBookingRoom = bookingRoom.Id;
                     Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
                     lb_CustomerName.Text = customer.Fullname;
                     lb_timeToStart.Text = bookingRoom.NgayCheckInDuKien.ToString("dd/MM/yyyy");
@@ -52,6 +55,13 @@ namespace quan_ly_resort_v2.userControl
                 case "occupied":
                     lb_roomState.Text = "Đã cho thuê";
                     panel_RoomWrap.BackColor = Color.Gray;
+                    BookingRoom bookingRoom2 = BookingRoomDAO.GetBookingRoomByRoomID(roomInfo.Id);
+                    IdOfBookingRoom = bookingRoom2.Id;
+                    Customer customer2 = CustomerDAO.getCustomerById(bookingRoom2.MaKhachHang);
+                    lb_CustomerName.Text = customer2.Fullname;
+                    lb_timeToStart.Text = bookingRoom2.NgayCheckInDuKien.ToString("dd/MM/yyyy");
+                    lb_TimeToEnd.Text = bookingRoom2.NgayCheckInDuKien.AddDays(bookingRoom2.SoNgayThue).ToString("dd/MM/yyyy");
+                    lb_CountTimeStay.Text = bookingRoom2.SoNgayThue.ToString() + " ngày";
                     break;
             }
         }
@@ -60,6 +70,7 @@ namespace quan_ly_resort_v2.userControl
         {
             DetailRoomInfo detailRoomInfo = new DetailRoomInfo();
             detailRoomInfo.setRoomID(lb_RoomId.Text);
+            detailRoomInfo.setBookingRoomID(IdOfBookingRoom);
             detailRoomInfo.ShowDialog();
         }
     }

@@ -165,7 +165,7 @@ namespace quan_ly_resort_v2.model
                 using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM datphong WHERE DSMaPhong LIKE @Id";
+                    string sql = "SELECT * FROM datphong WHERE DSMaPhong LIKE @Id ORDER BY Id DESC LIMIT 1";
                     MySqlCommand command = new MySqlCommand(sql, conn);
                     command.Parameters.AddWithValue("@Id", "%" + roomId + "%");
                     MySqlDataReader reader = command.ExecuteReader();

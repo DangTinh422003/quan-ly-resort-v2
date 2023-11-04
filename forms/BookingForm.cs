@@ -60,7 +60,8 @@ namespace quan_ly_resort_v2.forms
             lb_roomAvaialbeCounter.Text = rooms.Count.ToString();
             foreach (Room room in rooms)
             {
-                this.tableRoomAvaiable.Rows.Add(room.Id, room.Type, room.BedStyle, room.Price);
+                if (!checkContainsRoomInTable(room.Id, tableRoomTarget))
+                    this.tableRoomAvaiable.Rows.Add(room.Id, room.Type, room.BedStyle, room.Price);
             }
         }
 
@@ -102,8 +103,16 @@ namespace quan_ly_resort_v2.forms
             if (tableRoomTarget.SelectedCells.Count > 0)
             {
                 int selectedrowindex = tableRoomTarget.SelectedCells[0].RowIndex;
-                this.tableRoomTarget.Rows.RemoveAt(selectedrowindex);
-                renderSelectRoomTable();
+                if (!checkContainsRoomInTable(tableRoomTarget.Rows[selectedrowindex].Cells[0].Value.ToString(), tableRoomAvaiable))
+                {
+                    this.tableRoomAvaiable.Rows.Add(
+                        tableRoomTarget.Rows[selectedrowindex].Cells[0].Value.ToString(),
+                        tableRoomTarget.Rows[selectedrowindex].Cells[1].Value.ToString(),
+                        tableRoomTarget.Rows[selectedrowindex].Cells[2].Value.ToString(),
+                        tableRoomTarget.Rows[selectedrowindex].Cells[3].Value.ToString()
+                    );
+                    this.tableRoomTarget.Rows.RemoveAt(selectedrowindex);
+                }
             }
         }
 

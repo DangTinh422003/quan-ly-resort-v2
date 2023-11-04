@@ -1,4 +1,5 @@
-﻿using quan_ly_resort_v2.DAO;
+﻿using Guna.UI2.WinForms;
+using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.utils;
 using System;
@@ -105,6 +106,42 @@ namespace quan_ly_resort_v2.userControl
         private void btn_load_Click(object sender, EventArgs e)
         {
             renderListRoom();
+        }
+
+        private string getStringValueFilter()
+        {
+            string roomState = "Tất cả";
+            string roomType = "Tất cả";
+            string bedType = "Tất cả";
+
+            foreach (Control item in panel_stateFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        roomState = ((Guna2RadioButton)item).Text;
+            }
+
+            foreach (Control item in panel_typeRoomFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        roomType = ((Guna2RadioButton)item).Text;
+            }
+
+            foreach (Control item in panel_typeBedFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        bedType = ((Guna2RadioButton)item).Text;
+            }
+
+            return roomState + "," + roomType + "," + bedType;
+        }
+
+        private void btn_filter_Click(object sender, EventArgs e)
+        {
+            string valueFilterString = getStringValueFilter();
+            MessageBox.Show(valueFilterString.ToString());
         }
     }
 }

@@ -66,13 +66,20 @@ namespace quan_ly_resort_v2.userControl
             }
             else if (table_BookingRoomList.CurrentCell.ColumnIndex.Equals(9) && e.RowIndex != -1)
             {
-                if (table_BookingRoomList.CurrentCell != null && table_BookingRoomList.CurrentCell.Value != null)
+                if (table_BookingRoomList.Rows[e.RowIndex].Cells[7].Value.ToString() != "Đã xử lý")
                 {
-                    BookingForm bookingForm = new BookingForm();
-                    string bookingRoomId = table_BookingRoomList.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    bookingForm.setData(BookingRoomDAO.GetBookingRoomByID(bookingRoomId));
-                    bookingForm.ShowDialog();
-                    UscManageBookingRoom_Load(sender, e);
+                    if (table_BookingRoomList.CurrentCell != null && table_BookingRoomList.CurrentCell.Value != null)
+                    {
+                        BookingForm bookingForm = new BookingForm();
+                        string bookingRoomId = table_BookingRoomList.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        bookingForm.setData(BookingRoomDAO.GetBookingRoomByID(bookingRoomId));
+                        bookingForm.ShowDialog();
+                        UscManageBookingRoom_Load(sender, e);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể chỉnh sửa lượt đặt phòng đã xử lý", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

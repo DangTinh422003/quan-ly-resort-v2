@@ -18,6 +18,7 @@ namespace quan_ly_resort_v2.forms
     {
 
         private string currentRoomId;
+        private string currentBookingRoomId;
         public DetailRoomInfo()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace quan_ly_resort_v2.forms
         public void setRoomID(string roomId)
         {
             currentRoomId = roomId;
+        }
+        public void setBookingRoomID(string bookingRoomId)
+        {
+            currentBookingRoomId = bookingRoomId;
         }
 
         private void DetailRoomInfo_Load(object sender, EventArgs e)
@@ -46,7 +51,7 @@ namespace quan_ly_resort_v2.forms
             }
             else if (room.State.Trim().ToLower() == "reserved")
             {
-                BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
+                BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
                 Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
                 lb_roomState.Text = customer.Fullname;
                 lb_isConfirmRoom.Text = bookingRoom.NgayCheckInDuKien.ToString("dd/MM/yyyy");
@@ -69,10 +74,11 @@ namespace quan_ly_resort_v2.forms
 
         private void actionWhenReserved()
         {
-            // taọ hóa đơn mới giá tiền bằng 0
+            // taọ hóa đơn
             // => cập nhật lại trạng thái của phòng
             // => cập nhật lại trạng thái của đơn đặt phòng
-            BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
+            //BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
+            BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
             Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
             Employee employee = EmployeeDAO.GetEmployeeByUsername(LoginForm.accountLogined.Username);
             Bill bill = new Bill();
@@ -91,7 +97,7 @@ namespace quan_ly_resort_v2.forms
                 bill.TongTien += room.Price * bookingRoom.SoNgayThue;
             }
             BillDAO.addNewBill(bill);
-            BookingRoomDAO.updateBookingRoomConfirm(bookingRoom.Id, true);
+            BookingRoomDAO.updateBookingRoomConfirm(currentBookingRoomId, true);
             MessageBox.Show("Nhận phòng thành công!");
             this.Close();
         }
@@ -110,7 +116,6 @@ namespace quan_ly_resort_v2.forms
             BillDAO.upBillState(bill.MaHoaDon, "paid");
             foreach (string roomId in bookingRoom.DanhSachMaPhong.Trim().Split(','))
                 RoomDAO.updateRoomStateById(roomId, "avaiable");
-            BookingRoomDAO.updateBookingRoomConfirm(bookingRoom.Id, true);
             MessageBox.Show("Thanh toán thành công!");
             this.Close();
         }

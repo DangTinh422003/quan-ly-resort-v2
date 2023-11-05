@@ -23,54 +23,58 @@ namespace quan_ly_resort_v2.userControl
 
         private void UscManageAccount_Load(object sender, EventArgs e)
         {
+            LoadAccountData();
+            cleanForm();
+            disableControl();
+        }
 
+        private void LoadAccountData()
+        {
+            btnAdd.Enabled = true;
+            var accounts = AccountDAO.GetAccounts();
+            Label_Title.Text = "Chức năng hiện tại : Chưa chọn!";
+
+            if (accounts != null && accounts.Count > 0)
+            {
+                DataGridView.DataSource = accounts;
+            }
+            else
+            {
+                DataGridView.DataSource = null;
+            }
         }
 
         private void cleanForm()
         {
-            txtName.Text = "";
-            txtDate.Value = DateTime.Now;
+            txt_username.Text = string.Empty;
+            txt_role_account.Text = string.Empty;
+            txt_gmail.Text = string.Empty;
+            date_create.Value = DateTime.Now;
         }
         private void disableControl()
         {
-            btnSave.Enabled = false;
             btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
         }
         private void enableControl()
         {
-            btnAdd.Enabled = false;
-            btnSave.Enabled = false;
             btnDelete.Enabled = true;
-            btnUpdate.Enabled = true;
-        }
-        private void enableFormInput()
-        {
-            txtName.Enabled = true;
-            txtDate.Enabled = true;
-        }
-        private void disableFormInput()
-        {
-            txtName.Enabled = false;
-            txtDate.Enabled = false;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtWorkDay.Enabled = false;
+            //txtWorkDay.Enabled = false;
 
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = DataGridView.Rows[e.RowIndex];
 
-                txtName.Text = selectedRow.Cells[1].Value.ToString();
-                string birthday = selectedRow.Cells[4].Value.ToString();
-                string workday = selectedRow.Cells[8].Value.ToString();
+                txt_username.Text = selectedRow.Cells[1].Value.ToString();
+                txt_gmail.Text = selectedRow.Cells[2].Value.ToString();
+                txt_role_account.Text = (string)selectedRow.Cells[3].Value;
 
-                txtDate.Value = DateTime.Parse(birthday);
-                txtWorkDay.Value = DateTime.Parse(workday);
+                string create_date = selectedRow.Cells[4].Value.ToString();
+                date_create.Value = DateTime.Parse(create_date);
 
-                enableControl();
             }
         }
 
@@ -81,11 +85,11 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            enableFormInput();
-            Label_Title.Text = "Chức năng hiện tại : Thêm voucher";
-            txtName.Focus();
-            btnSave.Enabled = true;
-            txtWorkDay.Enabled = true;
+            //enableFormInput();
+            //Label_Title.Text = "Chức năng hiện tại : Thêm voucher";
+            //txt_username.Focus();
+            //btnSave.Enabled = true;
+            //txtWorkDay.Enabled = true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -96,41 +100,41 @@ namespace quan_ly_resort_v2.userControl
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(maNV))
-            {
-                MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(maNV))
+            //{
+            //    MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
+            //    return;
+            //}
 
-            string message = "Bạn có chắc muốn xóa nhân viên có mã: " + maNV + " không?";
-            string caption = "Xác nhận xóa";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            //string message = "Bạn có chắc muốn xóa nhân viên có mã: " + maNV + " không?";
+            //string caption = "Xác nhận xóa";
+            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            DialogResult result = MessageBox.Show(message, caption, buttons);
+            //DialogResult result = MessageBox.Show(message, caption, buttons);
 
-            if (result == DialogResult.Yes)
-            {
-                bool deleted = EmployeeDAO.DeleteEmployee(maNV);
+            //if (result == DialogResult.Yes)
+            //{
+            //    bool deleted = EmployeeDAO.DeleteEmployee(maNV);
 
-                if (deleted)
-                {
-                    MessageBox.Show("Nhân viên đã được xóa thành công.");
-                    //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xóa nhân viên.");
-                }
-            }
+            //    if (deleted)
+            //    {
+            //        MessageBox.Show("Nhân viên đã được xóa thành công.");
+            //        //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Lỗi khi xóa nhân viên.");
+            //    }
+            //}
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Label_Title.Text = "Chức năng hiện tại : Sửa thông tin nhân viên";
-            enableFormInput();
-            btnSave.Enabled = true;
-            btnDelete.Enabled = false;
-            txtName.Focus();
+            //Label_Title.Text = "Chức năng hiện tại : Sửa thông tin nhân viên";
+            //enableFormInput();
+            //btnSave.Enabled = true;
+            //btnDelete.Enabled = false;
+            //txt_username.Focus();
         }
 
         /*private void btnSave_Click(object sender, EventArgs e)

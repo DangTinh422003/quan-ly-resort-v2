@@ -12,8 +12,11 @@ namespace quan_ly_resort_v2.model
     {
         private string username;
         private string password;
+        private string email;
         private DateTime create_at;
-        private int role { get; set; }
+        private int role;
+
+        public Account() { }
 
         public Account(string username, string password)
         {
@@ -31,13 +34,15 @@ namespace quan_ly_resort_v2.model
         {
             this.Username = username;
             this.Password = password;
-            this.role = role;
+            this.Role = role;
             this.create_at = create_at;
         }
 
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public DateTime Create_at { get => create_at; set => create_at = value; }
+        public int Role { get => role; set => role = value; }
+        public string Email { get => email; set => email = value; }
 
         public override string ToString()
         {

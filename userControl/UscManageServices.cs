@@ -24,17 +24,21 @@ namespace quan_ly_resort_v2.userControl
         public UscManageServices()
         {
             InitializeComponent();
-        }
-        private void UscManageServices_Load(object sender, EventArgs e)
-        {
-            gunaTextBox1.Enabled = false;
+            TextBox.Enabled = false;
             txtMaDV.Visible = false;
             LoadServiceData();
             cleanForm();
             disableControl();
             disableFormInput();
-
-
+        }
+        private void UscManageServices_Load(object sender, EventArgs e)
+        {
+            TextBox.Enabled = false;
+            txtMaDV.Visible = false;
+            LoadServiceData();
+            cleanForm();
+            disableControl();
+            disableFormInput();
         }
         private void LoadServiceData()
         {
@@ -48,7 +52,7 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu dịch vụ để hiển thị.");
+                DataGridView.DataSource = null;
             }
         }
 
@@ -59,6 +63,7 @@ namespace quan_ly_resort_v2.userControl
             txtPrice.Text = "";
             txtDetail.Text = "";
             ccbSelectService.SelectedIndex = 0;
+            cbb_search.SelectedIndex = 0;
         }
 
         private void disableControl()
@@ -66,7 +71,7 @@ namespace quan_ly_resort_v2.userControl
             btnSave.Enabled = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
-            btnDetail.Enabled = false;
+
         }
         private void enableControl()
         {
@@ -77,6 +82,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void disableFormInput()
         {
+            TextBox.Enabled = false;
             txtMaDV.Enabled = false;
             txtName.Enabled = false;
             txtPrice.Enabled = false;
@@ -87,14 +93,12 @@ namespace quan_ly_resort_v2.userControl
             txtMaDV.Enabled = true;
             txtName.Enabled = true;
             txtPrice.Enabled = true;
-            txtDetail.Enabled = true;
         }
 
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   
             txtMaDV.ReadOnly = true;
-            btnDetail.Enabled = true;
 
             if (e.RowIndex >= 0)
             {
@@ -113,8 +117,8 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string typeSelectValue = cbb_search.Text;
-            string textSearchValue = txtSearch.Text;
+            string typeSelectValue = cbb_search.Text.Trim();
+            string textSearchValue = txtSearch.Text.Trim();
             if (typeSelectValue == "" || textSearchValue == "")
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -127,7 +131,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string textSearchValue = txtSearch.Text;
+            string textSearchValue = txtSearch.Text.Trim();
             if (textSearchValue != "")
                 btnSearch_Click(sender, e);
         }
@@ -169,7 +173,7 @@ namespace quan_ly_resort_v2.userControl
 
             if (confirmation == DialogResult.Yes)
             {
-                string maDV = txtMaDV.Text;
+                string maDV = txtMaDV.Text.Trim();
                 bool isDeleted = ServiceDAO.DeleteService(maDV);
 
                 if (isDeleted)
@@ -198,19 +202,13 @@ namespace quan_ly_resort_v2.userControl
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Lấy giá trị từ các trường dữ liệu
-            string tenDV = txtName.Text;
-            string chiTietDichVu = txtDetail.Text;
+            string tenDV = txtName.Text.Trim();
+            string chiTietDichVu = txtDetail.Text.Trim();
             double gia;
 
             if (string.IsNullOrEmpty(tenDV) || string.IsNullOrEmpty(chiTietDichVu) || !double.TryParse(txtPrice.Text, out gia))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin và kiểm tra giá dịch vụ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (tenDV != tenDV.Trim() || chiTietDichVu != chiTietDichVu.Trim())
-            {
-                MessageBox.Show("Tên dịch vụ hoặc Chi tiết dịch vụ không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -221,7 +219,7 @@ namespace quan_ly_resort_v2.userControl
             }
 
 
-            string loaiDV = ccbSelectService.Text; // Lấy giá trị từ ComboBox
+            string loaiDV = ccbSelectService.Text.Trim(); // Lấy giá trị từ ComboBox
 
             Service service = new Service
             {
@@ -247,7 +245,7 @@ namespace quan_ly_resort_v2.userControl
             else if (btnUpdate.Enabled)
             {   
 
-                service.MaDV = txtMaDV.Text; // Lấy giá trị MaDV từ trường ẩn
+                service.MaDV = txtMaDV.Text.Trim(); // Lấy giá trị MaDV từ trường ẩn
                 bool isUpdated = ServiceDAO.UpdateService(service);
                 if (isUpdated)
                 {
@@ -261,35 +259,5 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-        private void addUserControll(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            panelService.Controls.Clear();
-            panelService.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
-        private void btnDetail_Click(object sender, EventArgs e)
-        {
-            UscServiceDetail detailControl = new UscServiceDetail();
-            detailControl.MaDVValue = txtMaDV.Text;
-            detailControl.BackButtonClicked += (s, args) => {
-                // Xử lý khi người dùng ấn nút "back" ở UscServiceDetail
-                ShowUscManageServices(); // Đây là phương thức bạn tự định nghĩa để hiển thị lại trang UscManageServices
-            };
-            addUserControll(detailControl);
-        }
-
-        private void ShowUscManageServices()
-        {
-            // Xóa bất kỳ điều khiển nào đang hiển thị trong gunaGroupBox2
-            panelService.Controls.Clear();
-
-            // Hiển thị lại trang UscManageServices
-            UscManageServices manageServicesControl = new UscManageServices();
-            manageServicesControl.Dock = DockStyle.Fill;
-            panelService.Controls.Add(manageServicesControl);
-            manageServicesControl.BringToFront();
-        }
     }
 }

@@ -58,6 +58,7 @@ namespace quan_ly_resort_v2.resources
 
         private void cleanForm()
         {
+            cbb_search.SelectedIndex = 0;
             textbox_id.Text = "";
             textbox_address.Text = "";
             textbox_email.Text = "";
@@ -117,8 +118,8 @@ namespace quan_ly_resort_v2.resources
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string typeSelectValue = cbb_search.Text;
-            string textSearchValue = textbox_search.Text;
+            string typeSelectValue = cbb_search.Text.Trim();
+            string textSearchValue = textbox_search.Text.Trim();
             if (typeSelectValue == "" || textSearchValue == "")
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -131,7 +132,7 @@ namespace quan_ly_resort_v2.resources
 
         private void textbox_search_TextChanged(object sender, EventArgs e)
         {
-            string textSearchValue = textbox_search.Text;
+            string textSearchValue = textbox_search.Text.Trim();
             if (textSearchValue != "")
                 btn_search_Click(sender, e);
         }
@@ -216,12 +217,12 @@ namespace quan_ly_resort_v2.resources
 
         private void btn_SaveCustomer_Click(object sender, EventArgs e)
         {
-            string id = textbox_id.Text;
-            string name = textbox_name.Text;
+            string id = textbox_id.Text.Trim();
+            string name = textbox_name.Text.Trim();
             DateTime birthday = dateOfBirthPicker.Value;
-            string phoneNumber = textbox_phonenumber.Text;
-            string email = textbox_email.Text;
-            string address = textbox_address.Text;
+            string phoneNumber = textbox_phonenumber.Text.Trim();
+            string email = textbox_email.Text.Trim();
+            string address = textbox_address.Text.Trim();
 
             string[] requiredFields = { id, name, email, phoneNumber, address };
             if (requiredFields.Any(string.IsNullOrEmpty) || birthday == null)

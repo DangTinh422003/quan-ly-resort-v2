@@ -35,10 +35,10 @@
             this.lb_roomId = new System.Windows.Forms.Label();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_isClean = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxSelectRoomState = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btn_addServices = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.col_services = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,13 +46,13 @@
             this.col_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_peopleCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_dayCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_isConfirmRoom = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_roomState = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_getRoom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_saveInomation = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_CloseForm = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -99,10 +99,10 @@
             // gunaGradient2Panel2
             // 
             this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel2.Controls.Add(this.guna2ComboBox2);
+            this.gunaGradient2Panel2.Controls.Add(this.comboBox_isClean);
             this.gunaGradient2Panel2.Controls.Add(this.gunaLabel1);
             this.gunaGradient2Panel2.Controls.Add(this.gunaLabel2);
-            this.gunaGradient2Panel2.Controls.Add(this.guna2ComboBox1);
+            this.gunaGradient2Panel2.Controls.Add(this.comboBoxSelectRoomState);
             this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.White;
             this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.White;
             this.gunaGradient2Panel2.Location = new System.Drawing.Point(496, 107);
@@ -111,29 +111,29 @@
             this.gunaGradient2Panel2.Size = new System.Drawing.Size(466, 296);
             this.gunaGradient2Panel2.TabIndex = 8;
             // 
-            // guna2ComboBox2
+            // comboBox_isClean
             // 
-            this.guna2ComboBox2.AllowDrop = true;
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderRadius = 12;
-            this.guna2ComboBox2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2ComboBox2.BorderThickness = 2;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 40;
-            this.guna2ComboBox2.Items.AddRange(new object[] {
+            this.comboBox_isClean.AllowDrop = true;
+            this.comboBox_isClean.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_isClean.BorderRadius = 12;
+            this.comboBox_isClean.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.comboBox_isClean.BorderThickness = 2;
+            this.comboBox_isClean.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_isClean.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_isClean.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_isClean.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_isClean.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox_isClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_isClean.ItemHeight = 40;
+            this.comboBox_isClean.Items.AddRange(new object[] {
             "Chưa dọn dẹp",
-            "Đã dọn dẹp "});
-            this.guna2ComboBox2.Location = new System.Drawing.Point(34, 217);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(310, 46);
-            this.guna2ComboBox2.Sorted = true;
-            this.guna2ComboBox2.TabIndex = 3;
-            this.guna2ComboBox2.TextOffset = new System.Drawing.Point(30, 0);
+            "Đã dọn dẹp"});
+            this.comboBox_isClean.Location = new System.Drawing.Point(34, 217);
+            this.comboBox_isClean.Name = "comboBox_isClean";
+            this.comboBox_isClean.Size = new System.Drawing.Size(310, 46);
+            this.comboBox_isClean.Sorted = true;
+            this.comboBox_isClean.TabIndex = 3;
+            this.comboBox_isClean.TextOffset = new System.Drawing.Point(30, 0);
             // 
             // gunaLabel1
             // 
@@ -157,30 +157,30 @@
             this.gunaLabel2.TabIndex = 2;
             this.gunaLabel2.Text = "Câp nhật tình trạng dọn dẹp";
             // 
-            // guna2ComboBox1
+            // comboBoxSelectRoomState
             // 
-            this.guna2ComboBox1.AllowDrop = true;
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 12;
-            this.guna2ComboBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2ComboBox1.BorderThickness = 2;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 40;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.comboBoxSelectRoomState.AllowDrop = true;
+            this.comboBoxSelectRoomState.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxSelectRoomState.BorderRadius = 12;
+            this.comboBoxSelectRoomState.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.comboBoxSelectRoomState.BorderThickness = 2;
+            this.comboBoxSelectRoomState.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxSelectRoomState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelectRoomState.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxSelectRoomState.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxSelectRoomState.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxSelectRoomState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxSelectRoomState.ItemHeight = 40;
+            this.comboBoxSelectRoomState.Items.AddRange(new object[] {
             "Phòng đã đặt",
             "Phòng đang thuê",
             "Phòng trống"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(34, 84);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(310, 46);
-            this.guna2ComboBox1.Sorted = true;
-            this.guna2ComboBox1.TabIndex = 1;
-            this.guna2ComboBox1.TextOffset = new System.Drawing.Point(30, 0);
+            this.comboBoxSelectRoomState.Location = new System.Drawing.Point(34, 84);
+            this.comboBoxSelectRoomState.Name = "comboBoxSelectRoomState";
+            this.comboBoxSelectRoomState.Size = new System.Drawing.Size(310, 46);
+            this.comboBoxSelectRoomState.Sorted = true;
+            this.comboBoxSelectRoomState.TabIndex = 1;
+            this.comboBoxSelectRoomState.TextOffset = new System.Drawing.Point(30, 0);
             // 
             // btn_addServices
             // 
@@ -310,13 +310,13 @@
             // gunaPanel1
             // 
             this.gunaPanel1.Controls.Add(this.guna2PictureBox4);
-            this.gunaPanel1.Controls.Add(this.guna2HtmlLabel4);
+            this.gunaPanel1.Controls.Add(this.lb_peopleCounter);
             this.gunaPanel1.Controls.Add(this.guna2PictureBox3);
-            this.gunaPanel1.Controls.Add(this.guna2HtmlLabel3);
+            this.gunaPanel1.Controls.Add(this.lb_dayCounter);
             this.gunaPanel1.Controls.Add(this.guna2PictureBox2);
-            this.gunaPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.gunaPanel1.Controls.Add(this.lb_isConfirmRoom);
             this.gunaPanel1.Controls.Add(this.guna2PictureBox1);
-            this.gunaPanel1.Controls.Add(this.guna2HtmlLabel1);
+            this.gunaPanel1.Controls.Add(this.lb_roomState);
             this.gunaPanel1.Location = new System.Drawing.Point(42, 3);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(920, 65);
@@ -334,15 +334,15 @@
             this.guna2PictureBox4.TabIndex = 7;
             this.guna2PictureBox4.TabStop = false;
             // 
-            // guna2HtmlLabel4
+            // lb_peopleCounter
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(813, 19);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(67, 27);
-            this.guna2HtmlLabel4.TabIndex = 6;
-            this.guna2HtmlLabel4.Text = "5 người";
+            this.lb_peopleCounter.BackColor = System.Drawing.Color.Transparent;
+            this.lb_peopleCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_peopleCounter.Location = new System.Drawing.Point(813, 19);
+            this.lb_peopleCounter.Name = "lb_peopleCounter";
+            this.lb_peopleCounter.Size = new System.Drawing.Size(67, 27);
+            this.lb_peopleCounter.TabIndex = 6;
+            this.lb_peopleCounter.Text = "5 người";
             // 
             // guna2PictureBox3
             // 
@@ -356,15 +356,15 @@
             this.guna2PictureBox3.TabIndex = 5;
             this.guna2PictureBox3.TabStop = false;
             // 
-            // guna2HtmlLabel3
+            // lb_dayCounter
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(553, 19);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(62, 27);
-            this.guna2HtmlLabel3.TabIndex = 4;
-            this.guna2HtmlLabel3.Text = "3 ngày";
+            this.lb_dayCounter.BackColor = System.Drawing.Color.Transparent;
+            this.lb_dayCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_dayCounter.Location = new System.Drawing.Point(553, 19);
+            this.lb_dayCounter.Name = "lb_dayCounter";
+            this.lb_dayCounter.Size = new System.Drawing.Size(62, 27);
+            this.lb_dayCounter.TabIndex = 4;
+            this.lb_dayCounter.Text = "3 ngày";
             // 
             // guna2PictureBox2
             // 
@@ -378,15 +378,15 @@
             this.guna2PictureBox2.TabIndex = 3;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // guna2HtmlLabel2
+            // lb_isConfirmRoom
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(251, 19);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(160, 27);
-            this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "Chưa nhận phòng";
+            this.lb_isConfirmRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lb_isConfirmRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_isConfirmRoom.Location = new System.Drawing.Point(251, 19);
+            this.lb_isConfirmRoom.Name = "lb_isConfirmRoom";
+            this.lb_isConfirmRoom.Size = new System.Drawing.Size(160, 27);
+            this.lb_isConfirmRoom.TabIndex = 2;
+            this.lb_isConfirmRoom.Text = "Chưa nhận phòng";
             // 
             // guna2PictureBox1
             // 
@@ -400,15 +400,15 @@
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2HtmlLabel1
+            // lb_roomState
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(49, 19);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(109, 27);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Phòng trống";
+            this.lb_roomState.BackColor = System.Drawing.Color.Transparent;
+            this.lb_roomState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_roomState.Location = new System.Drawing.Point(49, 19);
+            this.lb_roomState.Name = "lb_roomState";
+            this.lb_roomState.Size = new System.Drawing.Size(109, 27);
+            this.lb_roomState.TabIndex = 0;
+            this.lb_roomState.Text = "Phòng trống";
             // 
             // btn_getRoom
             // 
@@ -548,12 +548,10 @@
             // 
             // DetailRoomInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1108, 671);
-            this.ControlBox = false;
             this.Controls.Add(this.uscManageCustomer2);
             this.Controls.Add(this.uscManageCustomer1);
             this.Controls.Add(this.btn_CloseForm);
@@ -562,7 +560,7 @@
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Controls.Add(this.lb_roomId);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DetailRoomInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin chi tiết phòng";
@@ -588,13 +586,13 @@
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_roomState;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_peopleCounter;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_dayCounter;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_isConfirmRoom;
         private Guna.UI.WinForms.GunaAdvenceButton btn_getRoom;
         private Guna.UI.WinForms.GunaAdvenceButton btn_saveInomation;
         private Guna.UI.WinForms.GunaAdvenceButton btn_CloseForm;
@@ -602,10 +600,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_services;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_price;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxSelectRoomState;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaAdvenceButton btn_addServices;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_isClean;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private resources.UscManageCustomer uscManageCustomer1;

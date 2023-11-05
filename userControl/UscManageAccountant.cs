@@ -22,7 +22,13 @@ namespace quan_ly_resort_v2.userControl
         public UscManageAccountant()
         {
             InitializeComponent();
-            //LoadEmployeeData();
+
+            txtId.Visible = false;
+            btnAdd.Enabled = true;
+            LoadEmployeeData();
+            cleanForm();
+            disableControl();
+            disableFormInput();
         }
 
         private void LoadEmployeeData()
@@ -40,17 +46,23 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu nhân viên để hiển thị.");
+                DataGridView.DataSource = null;
             }
 
             Label_Title.Text = "Chức năng hiện tại : Chưa chọn!";
         }
         private void UscManageAccountant_Load(object sender, EventArgs e)
         {
-
+            txtId.Visible = false;
+            btnAdd.Enabled = true;
+            LoadEmployeeData();
+            cleanForm();
+            disableControl();
+            disableFormInput();
         }
         private void cleanForm()
         {
+            ccbSelect.SelectedIndex = 0;
             txtId.Text = "";
             txtName.Text = "";
             txtDate.Value = DateTime.Now;
@@ -61,6 +73,7 @@ namespace quan_ly_resort_v2.userControl
             txtSalary.Text = "";
             txtWorkDay.Value = DateTime.Now;
             txtUsername.Text = "";
+            txtRole.Text = "";
         }
         private void disableControl()
         {
@@ -86,6 +99,7 @@ namespace quan_ly_resort_v2.userControl
             txtEmail.Enabled = true;
             txtSalary.Enabled = true;
             txtUsername.Enabled = true;
+            txtRole.Enabled = true;
         }
         private void disableFormInput()
         {
@@ -99,6 +113,7 @@ namespace quan_ly_resort_v2.userControl
             txtSalary.Enabled = false;
             txtWorkDay.Enabled = false;
             txtUsername.Enabled = false;
+            txtRole.Enabled = false;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -120,6 +135,7 @@ namespace quan_ly_resort_v2.userControl
                 txtSalary.Text = selectedRow.Cells[7].Value.ToString();
                 string workday = selectedRow.Cells[8].Value.ToString();
                 txtUsername.Text = selectedRow.Cells[9].Value.ToString();
+                txtRole.Text = selectedRow.Cells[10].Value.ToString();
 
                 txtDate.Value = DateTime.Parse(birthday);
                 txtWorkDay.Value = DateTime.Parse(workday);
@@ -130,8 +146,8 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string typeSelectValue = ccbSelect.Text;
-            string textSearchValue = txtSearch.Text;
+            string typeSelectValue = ccbSelect.Text.Trim();
+            string textSearchValue = txtSearch.Text.Trim();
             if (typeSelectValue == "" || textSearchValue == "")
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,7 +159,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string textSearchValue = txtSearch.Text;
+            string textSearchValue = txtSearch.Text.Trim();
             if (textSearchValue != "")
                 btnSearch_Click(sender, e);
         }
@@ -176,7 +192,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string maNV = txtId.Text;
+            string maNV = txtId.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(maNV))
             {
@@ -213,20 +229,34 @@ namespace quan_ly_resort_v2.userControl
             txtId.Enabled = false;
             btnSave.Enabled = true;
             btnDelete.Enabled = false;
+            txtUsername.Enabled = false;
             txtName.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string tenNV = txtName.Text;
-            string sdt = txtPhone.Text;
-            string email = txtEmail.Text;
+            string tenNV = txtName.Text.Trim();
+            string sdt = txtPhone.Text.Trim();
+            string email = txtEmail.Text.Trim();
             DateTime ngaySinh = txtDate.Value;
-            string diaChi = txtAddress.Text;
-            string cccd = txtCCCD.Text;
+            string diaChi = txtAddress.Text.Trim();
+            string cccd = txtCCCD.Text.Trim();
             DateTime ngayVaoLam = txtWorkDay.Value;
-            string username = txtUsername.Text;
-            string luongStr = txtSalary.Text;
+            string username = txtUsername.Text.Trim();
+            string luongStr = txtSalary.Text.Trim();
+
+            int role;
+
+            if (!int.TryParse(txtRole.Text, out role))
+            {
+                MessageBox.Show("Vai trò không hợp lệ. Vai trò phải là một số nguyên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (role < 0 || role > 2)
+            {
+                MessageBox.Show("Vai trò phải là 0, 1 hoặc 2.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string[] requiredFields = { tenNV, sdt, email, diaChi, username };
             if (requiredFields.Any(string.IsNullOrEmpty) || ngaySinh == null || ngayVaoLam == null)
@@ -236,11 +266,11 @@ namespace quan_ly_resort_v2.userControl
             }
 
             // Validate email
-            if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim() || email != email.Trim() || cccd != cccd.Trim())
+            /*if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim() || email != email.Trim() || cccd != cccd.Trim())
             {
                 MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }*/
 
             if (!ValidateData.IsValidEmail(email))
             {
@@ -257,23 +287,21 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-
             double luong;
             if (!double.TryParse(luongStr, out luong) || luong < 1000000 || luong >= 1000000000)
             {
-                MessageBox.Show("Lương không hợp lệ! Lương phải nằm trong khoảng từ 1,000,000 đến 999,999,999.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lương không hợp lệ! Lương phải nằm trong khoảng từ 1,000,000đ đến 999,999,999đ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Check type function
             if (btnAdd.Enabled)
             {
                 // Kiểm tra thời gian làm việc ít nhất là 1 tháng
                 TimeSpan workDuration = ngayVaoLam - DateTime.Now;
 
-                if (workDuration.TotalDays < 0 || workDuration.TotalDays > 10)
+                if (ngayVaoLam == DateTime.Now || workDuration.TotalDays >= 7)
                 {
-                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 10 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 7 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -293,15 +321,14 @@ namespace quan_ly_resort_v2.userControl
                     return;
                 }
 
-
-                string maNV = EmployeeDAO.GetNextMaNV(); // Lấy mã nhân viên tự động
+                string maNV = EmployeeDAO.GetNextMaNV();
                 if (maNV == null)
                 {
                     MessageBox.Show("Có lỗi xảy ra khi tạo mã nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                Employee newEmployee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username);
+                Employee newEmployee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username, role);
                 bool isAdded = EmployeeDAO.AddEmployee(newEmployee);
 
                 if (isAdded)
@@ -309,13 +336,12 @@ namespace quan_ly_resort_v2.userControl
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi thêm
+                UscManageAccountant_Load(sender, e);
             }
             else if (btnUpdate.Enabled)
             {
-                // Đoạn này giữ nguyên, vì bạn đang cập nhật nhân viên đã tồn tại
-                string maNV = txtId.Text;
-                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, username);
+                string maNV = txtId.Text.Trim();
+                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username, role);
                 bool isUpdated = EmployeeDAO.UpdateEmployee(employee);
 
                 if (isUpdated)
@@ -323,13 +349,9 @@ namespace quan_ly_resort_v2.userControl
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Cập nhật thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi cập nhật
+                UscManageAccountant_Load(sender, e);
             }
         }
 
-        private void gunaGroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

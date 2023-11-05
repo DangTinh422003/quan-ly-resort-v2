@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new Guna.UI.WinForms.GunaElipsePanel();
+            this.btn_manageVoucher = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_bookingRoom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.currentUser = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_manageBill = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -44,7 +45,6 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.btn_manageVoucher = new Guna.UI.WinForms.GunaAdvenceButton();
             this.sidebar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -71,6 +71,41 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(308, 903);
             this.sidebar.TabIndex = 0;
+            // 
+            // btn_manageVoucher
+            // 
+            this.btn_manageVoucher.AnimationHoverSpeed = 0.07F;
+            this.btn_manageVoucher.AnimationSpeed = 0.03F;
+            this.btn_manageVoucher.BackColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.CheckedBaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageVoucher.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageVoucher.CheckedImage")));
+            this.btn_manageVoucher.CheckedLineColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageVoucher.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageVoucher.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(107)))), ((int)(((byte)(159)))));
+            this.btn_manageVoucher.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageVoucher.Image")));
+            this.btn_manageVoucher.ImageOffsetX = 10;
+            this.btn_manageVoucher.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageVoucher.LineColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.Location = new System.Drawing.Point(3, 545);
+            this.btn_manageVoucher.Name = "btn_manageVoucher";
+            this.btn_manageVoucher.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageVoucher.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageVoucher.OnHoverImage = null;
+            this.btn_manageVoucher.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.OnPressedColor = System.Drawing.Color.Transparent;
+            this.btn_manageVoucher.Size = new System.Drawing.Size(308, 56);
+            this.btn_manageVoucher.TabIndex = 16;
+            this.btn_manageVoucher.Text = "Quản lý tài khoản";
+            this.btn_manageVoucher.TextOffsetX = 10;
+            this.btn_manageVoucher.Click += new System.EventHandler(this.btn_manageVoucher_Click);
             // 
             // btn_bookingRoom
             // 
@@ -391,41 +426,6 @@
             this.guna2MessageDialog1.Parent = null;
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
-            // 
-            // btn_manageVoucher
-            // 
-            this.btn_manageVoucher.AnimationHoverSpeed = 0.07F;
-            this.btn_manageVoucher.AnimationSpeed = 0.03F;
-            this.btn_manageVoucher.BackColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.BaseColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.CheckedBaseColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_manageVoucher.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageVoucher.CheckedImage")));
-            this.btn_manageVoucher.CheckedLineColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_manageVoucher.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_manageVoucher.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_manageVoucher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(107)))), ((int)(((byte)(159)))));
-            this.btn_manageVoucher.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageVoucher.Image")));
-            this.btn_manageVoucher.ImageOffsetX = 10;
-            this.btn_manageVoucher.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_manageVoucher.LineColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.Location = new System.Drawing.Point(3, 545);
-            this.btn_manageVoucher.Name = "btn_manageVoucher";
-            this.btn_manageVoucher.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_manageVoucher.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_manageVoucher.OnHoverImage = null;
-            this.btn_manageVoucher.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.OnPressedColor = System.Drawing.Color.Transparent;
-            this.btn_manageVoucher.Size = new System.Drawing.Size(308, 56);
-            this.btn_manageVoucher.TabIndex = 16;
-            this.btn_manageVoucher.Text = "Quản lý voucher";
-            this.btn_manageVoucher.TextOffsetX = 10;
-            this.btn_manageVoucher.Click += new System.EventHandler(this.btn_manageVoucher_Click);
             // 
             // MainForm
             // 

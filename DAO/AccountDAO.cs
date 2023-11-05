@@ -2,6 +2,7 @@
 using quan_ly_resort_v2.common.constants;
 using quan_ly_resort_v2.model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,45 @@ namespace quan_ly_resort_v2.DAO
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+
+        public static List<Account> GetAccounts()
+        {
+            List<Account> accounts = new List<Account>();
+
+            try
+            {
+                // Tạo connection
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select * from account";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Account account = new Account
+                    {
+                        Username = reader["username"].ToString(),
+                        Password = reader["password"].ToString(),
+                        Create_at = Convert.ToDateTime(reader["create_at"]),
+                        Role = Convert.ToInt32(reader["Role"]),
+                        Email = reader["Email"].ToString(),
+                    };
+
+                    accounts.Add(account);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            
+
+            return accounts;
         }
 
         public static Account AddNewAccount(Account acc)

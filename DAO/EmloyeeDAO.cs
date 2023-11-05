@@ -45,8 +45,9 @@ namespace quan_ly_resort_v2.DAO
                         DiaChi = reader["DiaChi"].ToString(),
                         Cccd = reader["Cccd"].ToString(),
                         Luong = Convert.ToDouble(reader["Luong"]),
-                        NgayVaoLam = (DateTime)reader["NgayVaoLam"],    
+                        NgayVaoLam = (DateTime)reader["NgayVaoLam"],
                         Username = reader["username"].ToString(),
+                        Role = Convert.ToInt32(reader["Role"].ToString())
                     };
 
                     employees.Add(employee);
@@ -307,7 +308,8 @@ namespace quan_ly_resort_v2.DAO
                         reader["Cccd"].ToString(), // Thêm Cccd ở đây
                         double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
                         DateTime.Parse(reader["NgayVaoLam"].ToString()),
-                        reader["username"].ToString()
+                        reader["username"].ToString(),
+                        Convert.ToInt32(reader["Role"])
                     );
                 }
                 else
@@ -325,6 +327,45 @@ namespace quan_ly_resort_v2.DAO
         }
 
 
+        public static Employee GetEmployeeByUsername(string username)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
 
+                string sql = "select * from nhanvien where username = @username";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@username", username);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                Employee employee = null;
+                if (reader.Read())
+                {
+                    employee = new Employee(
+                        reader["MaNV"].ToString(),
+                        reader["TenNV"].ToString(),
+                        reader["Sdt"].ToString(),
+                        reader["Email"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        reader["DiaChi"].ToString(),
+                        reader["Cccd"].ToString(), // Thêm Cccd ở đây
+                        double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
+                        DateTime.Parse(reader["NgayVaoLam"].ToString()),
+                        reader["username"].ToString(),
+                        Convert.ToInt32(reader["Role"])
+                    );
+                    return employee;
+                }
+                conn.Close();
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GetEmployeeById: " + e.Message);
+                return null;
+            }
+        }
     }
 }

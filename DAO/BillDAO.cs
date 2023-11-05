@@ -38,7 +38,8 @@ namespace quan_ly_resort_v2.DAO
                         NgayTaoHoaDon = Convert.ToDateTime(reader["NgayTao"]),
                         TongTien = Convert.ToDouble(reader["TongTien"]),
                         NgayCheckIn = Convert.ToDateTime(reader["NgayCheckIn"]),
-                        SoNgayThue = Convert.ToInt32(reader["ThoiGianThue"])
+                        SoNgayThue = Convert.ToInt32(reader["ThoiGianThue"]),
+                        State = reader["state"].ToString(),
                     };
 
                     bills.Add(bill);
@@ -153,6 +154,149 @@ namespace quan_ly_resort_v2.DAO
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public static DataTable FilterByFieldStatistic(string typeValue, string selectedYear)
+        {
+            try
+            {
+                typeValue = typeValue.Trim();
+
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string sql = "SELECT * FROM hoadon WHERE ";
+
+                // Dictionary ánh xạ giá trị ComboBox
+                Dictionary<string, string> comboBoxMapping = new Dictionary<string, string>
+        {
+            {"Tháng 1", $"MONTH(NgayTao) = 1 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 2", $"MONTH(NgayTao) = 2 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 3", $"MONTH(NgayTao) = 3 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 4", $"MONTH(NgayTao) = 4 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 5", $"MONTH(NgayTao) = 5 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 6", $"MONTH(NgayTao) = 6 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 7", $"MONTH(NgayTao) = 7 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 8", $"MONTH(NgayTao) = 8 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 9", $"MONTH(NgayTao) = 9 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 10", $"MONTH(NgayTao) = 10 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 11", $"MONTH(NgayTao) = 11 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 12", $"MONTH(NgayTao) = 12 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 1", $"MONTH(NgayTao) IN (1, 2, 3) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 2", $"MONTH(NgayTao) IN (4, 5, 6) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 3", $"MONTH(NgayTao) IN (7, 8, 9) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 4", $"MONTH(NgayTao) IN (10, 11, 12) AND YEAR(NgayTao) = {selectedYear}"}
+        };
+
+                if (comboBoxMapping.ContainsKey(typeValue))
+                {
+                    sql += comboBoxMapping[typeValue];
+                }
+
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                conn.Close();
+
+                return table;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+
+        public static bool addNewBill(Bill bill)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "insert into hoadon(MaHD,MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaHD,@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@MaHD", bill.MaHoaDon);
+                command.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
+                command.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
+                command.Parameters.AddWithValue("@DSMaPhong", bill.DanhSachMaPhong);
+                command.Parameters.AddWithValue("@NgayTao", bill.NgayTaoHoaDon);
+                command.Parameters.AddWithValue("@TongTien", bill.TongTien);
+                command.Parameters.AddWithValue("@NgayCheckIn", bill.NgayCheckIn);
+                command.Parameters.AddWithValue("@ThoiGianThue", bill.SoNgayThue);
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        public static bool upBillState(string billID, string state)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string updateQuery = "UPDATE hoadon set state = @state";
+                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                cmd.Parameters.AddWithValue("@state", state);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+                return rowsAffected > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public static Bill getBillByCustomerId(string customnerId)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select * from hoadon where MaKH = @MaKH";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaKH", customnerId);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                if (reader.Read())
+                {
+                    Bill bill = new Bill
+                    (
+                        reader["MaHD"].ToString(),
+                        reader["MaKH"].ToString(),
+                        reader["MaNV"].ToString(),
+                        reader["DSMaPhong"].ToString(),
+                        Convert.ToDateTime(reader["NgayTao"]),
+                        Convert.ToDouble(reader["TongTien"]),
+                        Convert.ToDateTime(reader["NgayCheckIn"]),
+                        Convert.ToInt32(reader["ThoiGianThue"]),
+                        reader["state"].ToString()
+                    );
+                    return bill;
+                }
+                conn.Close();
+                return null; ;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("getBillByCustomerId ", e.Message);
                 return null;
             }
         }

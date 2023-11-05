@@ -35,6 +35,11 @@
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.DataGridView = new Guna.UI.WinForms.GunaDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAll = new Guna.UI.WinForms.GunaButton();
             this.btnSearch = new Guna.UI.WinForms.GunaButton();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
@@ -51,7 +56,7 @@
             this.txtName = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.ccbSelectService = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.TextBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.btnRestart = new Guna.UI.WinForms.GunaButton();
@@ -59,11 +64,6 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnAdd = new Guna.UI.WinForms.GunaButton();
             this.panelService = new System.Windows.Forms.Panel();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -140,7 +140,7 @@
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 110);
+            this.DataGridView.Location = new System.Drawing.Point(0, 79);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -148,7 +148,7 @@
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView.Size = new System.Drawing.Size(1303, 491);
+            this.DataGridView.Size = new System.Drawing.Size(1303, 522);
             this.DataGridView.TabIndex = 0;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -174,6 +174,46 @@
             this.DataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaDV";
+            this.Column1.HeaderText = "Mã DV";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "LoaiDV";
+            this.Column5.HeaderText = "Loại dịch vụ";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenDV";
+            this.Column2.HeaderText = "Tên dịch vụ";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ChiTietDichVu";
+            this.Column3.HeaderText = "Thông tin";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Gia";
+            this.Column4.HeaderText = "Giá dịch vụ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // btnAll
             // 
             this.btnAll.AnimationHoverSpeed = 0.07F;
@@ -187,7 +227,7 @@
             this.btnAll.ForeColor = System.Drawing.Color.White;
             this.btnAll.Image = null;
             this.btnAll.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAll.Location = new System.Drawing.Point(1156, 37);
+            this.btnAll.Location = new System.Drawing.Point(1159, 24);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAll.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -214,7 +254,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = null;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.Location = new System.Drawing.Point(1039, 37);
+            this.btnSearch.Location = new System.Drawing.Point(1042, 24);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -238,7 +278,7 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(458, 37);
+            this.txtSearch.Location = new System.Drawing.Point(461, 24);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtSearch.PasswordChar = '\0';
@@ -254,7 +294,7 @@
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
             this.gunaPanel2.Controls.Add(this.cbb_search);
-            this.gunaPanel2.Location = new System.Drawing.Point(198, 37);
+            this.gunaPanel2.Location = new System.Drawing.Point(201, 24);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(241, 49);
             this.gunaPanel2.TabIndex = 2;
@@ -288,7 +328,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel4.Location = new System.Drawing.Point(33, 46);
+            this.gunaLabel4.Location = new System.Drawing.Point(36, 33);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(136, 28);
             this.gunaLabel4.TabIndex = 0;
@@ -308,7 +348,7 @@
             this.gunaGroupBox1.Controls.Add(this.txtName);
             this.gunaGroupBox1.Controls.Add(this.gunaLabel2);
             this.gunaGroupBox1.Controls.Add(this.ccbSelectService);
-            this.gunaGroupBox1.Controls.Add(this.gunaTextBox1);
+            this.gunaGroupBox1.Controls.Add(this.TextBox);
             this.gunaGroupBox1.Controls.Add(this.gunaLabel1);
             this.gunaGroupBox1.Controls.Add(this.btnSave);
             this.gunaGroupBox1.Controls.Add(this.btnRestart);
@@ -469,24 +509,24 @@
             this.ccbSelectService.Size = new System.Drawing.Size(435, 31);
             this.ccbSelectService.TabIndex = 18;
             // 
-            // gunaTextBox1
+            // TextBox
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(195, 101);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 8;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(461, 49);
-            this.gunaTextBox1.TabIndex = 17;
+            this.TextBox.BackColor = System.Drawing.Color.Transparent;
+            this.TextBox.BaseColor = System.Drawing.Color.White;
+            this.TextBox.BorderColor = System.Drawing.Color.Silver;
+            this.TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.TextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox.Location = new System.Drawing.Point(195, 101);
+            this.TextBox.Name = "TextBox";
+            this.TextBox.PasswordChar = '\0';
+            this.TextBox.Radius = 8;
+            this.TextBox.SelectedText = "";
+            this.TextBox.Size = new System.Drawing.Size(461, 49);
+            this.TextBox.TabIndex = 17;
             // 
             // gunaLabel1
             // 
@@ -640,46 +680,6 @@
             this.panelService.Size = new System.Drawing.Size(1300, 896);
             this.panelService.TabIndex = 3;
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Gia";
-            this.Column4.HeaderText = "Giá dịch vụ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "ChiTietDichVu";
-            this.Column3.HeaderText = "Thông tin";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenDV";
-            this.Column2.HeaderText = "Tên dịch vụ";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "LoaiDV";
-            this.Column5.HeaderText = "Loại dịch vụ";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaDV";
-            this.Column1.HeaderText = "Mã DV";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // UscManageServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -720,7 +720,7 @@
         private Guna.UI.WinForms.GunaTextBox txtName;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaComboBox ccbSelectService;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox TextBox;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton btnSave;
         private Guna.UI.WinForms.GunaButton btnRestart;

@@ -1,6 +1,7 @@
 ﻿using Guna.UI.WinForms;
 using quan_ly_resort_v2.resources;
 using quan_ly_resort_v2.userControl;
+using quan_ly_resort_v2.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +16,22 @@ namespace quan_ly_resort_v2
 {
     public partial class MainForm : Form
     {
+        private DebounceHandler debounceHandler = new DebounceHandler(100);
+
         public MainForm()
         {
             InitializeComponent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            activeBtn(btn_manageCustomer);
+            addUserControll(new UscManageCustomer());
+            currentUser.Text = LoginForm.accountLogined.Username;
         }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            activeBtn(btn_manageCustomer);
-            addUserControll(new UscManageCustomer());
-            currentUser.Text = LoginForm.accountLogined.Username;
+            //activeBtn(btn_manageCustomer);
+            //addUserControll(new UscManageCustomer());
+            //currentUser.Text = LoginForm.accountLogined.Username;
         }
 
         private void activeBtn(GunaAdvenceButton btn)
@@ -58,38 +64,56 @@ namespace quan_ly_resort_v2
 
         private void btn_manageCustomer_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageCustomer);
-            addUserControll(new UscManageCustomer());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageCustomer);
+                addUserControll(new UscManageCustomer());
+            });
         }
 
         private void btn_manageAccountant_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageAccountant);
-            addUserControll(new UscManageAccountant());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageAccountant);
+                addUserControll(new UscManageAccountant());
+            });
         }
 
         private void btn_manageStatistic_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageStatistic);
-            addUserControll(new UscManageStatistic());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageStatistic);
+                addUserControll(new UscManageStatistic());
+            });
         }
 
         private void btn_manageService_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageService);
-            addUserControll(new UscManageServices());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageService);
+                addUserControll(new UscManageServices());
+            });
         }
 
         private void btn_manageBill_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageBill);
-            addUserControll(new UscManageBill());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageBill);
+                addUserControll(new UscManageBill());
+            });
         }
 
         private void btn_manageRoom_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_manageRoom);
-            addUserControll(new UscManageRoom());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageRoom);
+                addUserControll(new UscManageRoom());
+            });
         }
 
         private void currentUser_Click(object sender, EventArgs e)
@@ -106,8 +130,11 @@ namespace quan_ly_resort_v2
 
         private void btn_bookingRoom_Click(object sender, EventArgs e)
         {
-            activeBtn(btn_bookingRoom);
-            addUserControll(new UscManageBookingRoom());
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_bookingRoom);
+                addUserControll(new UscManageBookingRoom());
+            });
         }
     }
 }

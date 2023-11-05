@@ -38,5 +38,9 @@ namespace quan_ly_resort_v2.model
         public string Username { get; set; }
         public int Role { get; set; }
 
+        public override string ToString()
+        {
+            return MaNV + " " + TenNV + " " + Sdt + " " + Email + " " + NgaySinh + " " + DiaChi + " " + Cccd + " " + Luong + " " + NgayVaoLam + " " + Username + " " + Role;
+        }
     }
 }

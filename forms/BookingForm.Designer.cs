@@ -51,34 +51,34 @@
             this.roomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datetimePicker_checkout = new Guna.UI.WinForms.GunaDateTimePicker();
             this.datetimePicker_Checkint = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaPictureBox8 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPictureBox7 = new Guna.UI.WinForms.GunaPictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textbox_peopleCounter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox9 = new Guna.UI.WinForms.GunaPictureBox();
             this.datePicker_dateOfBirth = new Guna.UI.WinForms.GunaDateTimePicker();
             this.textbox_address = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox6 = new Guna.UI.WinForms.GunaPictureBox();
             this.textbox_email = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox5 = new Guna.UI.WinForms.GunaPictureBox();
             this.textbox_phoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox4 = new Guna.UI.WinForms.GunaPictureBox();
             this.textbox_customerName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.textbox_customerId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.btn_Close = new Guna.UI2.WinForms.Guna2Button();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
-            this.textbox_peopleCounter = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaPictureBox8 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox7 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox9 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox6 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox5 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox4 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableRoomTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableRoomAvaiable)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox7)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).BeginInit();
@@ -365,7 +365,7 @@
             this.datetimePicker_checkout.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_checkout.OnPressedColor = System.Drawing.Color.Black;
             this.datetimePicker_checkout.Size = new System.Drawing.Size(285, 46);
-            this.datetimePicker_checkout.TabIndex = 17;
+            this.datetimePicker_checkout.TabIndex = 9;
             this.datetimePicker_checkout.Text = "31 Tháng Mười 2023";
             this.datetimePicker_checkout.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
             // 
@@ -387,9 +387,20 @@
             this.datetimePicker_Checkint.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_Checkint.OnPressedColor = System.Drawing.Color.Black;
             this.datetimePicker_Checkint.Size = new System.Drawing.Size(286, 46);
-            this.datetimePicker_Checkint.TabIndex = 15;
+            this.datetimePicker_Checkint.TabIndex = 8;
             this.datetimePicker_Checkint.Text = "31 Tháng Mười 2023";
             this.datetimePicker_Checkint.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
+            // 
+            // gunaPictureBox8
+            // 
+            this.gunaPictureBox8.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox8.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
+            this.gunaPictureBox8.Location = new System.Drawing.Point(390, 91);
+            this.gunaPictureBox8.Name = "gunaPictureBox8";
+            this.gunaPictureBox8.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox8.TabIndex = 16;
+            this.gunaPictureBox8.TabStop = false;
             // 
             // gunaLabel2
             // 
@@ -401,6 +412,17 @@
             this.gunaLabel2.Size = new System.Drawing.Size(304, 41);
             this.gunaLabel2.TabIndex = 1;
             this.gunaLabel2.Text = "THÔNG TIN PHÒNG";
+            // 
+            // gunaPictureBox7
+            // 
+            this.gunaPictureBox7.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox7.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
+            this.gunaPictureBox7.Location = new System.Drawing.Point(14, 91);
+            this.gunaPictureBox7.Name = "gunaPictureBox7";
+            this.gunaPictureBox7.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox7.TabIndex = 14;
+            this.gunaPictureBox7.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -424,6 +446,39 @@
             this.guna2Panel1.Size = new System.Drawing.Size(426, 534);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // textbox_peopleCounter
+            // 
+            this.textbox_peopleCounter.BorderRadius = 12;
+            this.textbox_peopleCounter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textbox_peopleCounter.DefaultText = "";
+            this.textbox_peopleCounter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textbox_peopleCounter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textbox_peopleCounter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textbox_peopleCounter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textbox_peopleCounter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textbox_peopleCounter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textbox_peopleCounter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textbox_peopleCounter.Location = new System.Drawing.Point(81, 478);
+            this.textbox_peopleCounter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_peopleCounter.Name = "textbox_peopleCounter";
+            this.textbox_peopleCounter.PasswordChar = '\0';
+            this.textbox_peopleCounter.PlaceholderText = "Số người thuê";
+            this.textbox_peopleCounter.SelectedText = "";
+            this.textbox_peopleCounter.Size = new System.Drawing.Size(326, 46);
+            this.textbox_peopleCounter.TabIndex = 7;
+            this.textbox_peopleCounter.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox9
+            // 
+            this.gunaPictureBox9.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox9.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_group_1001;
+            this.gunaPictureBox9.Location = new System.Drawing.Point(23, 478);
+            this.gunaPictureBox9.Name = "gunaPictureBox9";
+            this.gunaPictureBox9.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox9.TabIndex = 15;
+            this.gunaPictureBox9.TabStop = false;
+            // 
             // datePicker_dateOfBirth
             // 
             this.datePicker_dateOfBirth.BaseColor = System.Drawing.Color.White;
@@ -442,7 +497,7 @@
             this.datePicker_dateOfBirth.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datePicker_dateOfBirth.OnPressedColor = System.Drawing.Color.Black;
             this.datePicker_dateOfBirth.Size = new System.Drawing.Size(326, 46);
-            this.datePicker_dateOfBirth.TabIndex = 14;
+            this.datePicker_dateOfBirth.TabIndex = 3;
             this.datePicker_dateOfBirth.Text = "31 Tháng Mười 2023";
             this.datePicker_dateOfBirth.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
             // 
@@ -465,8 +520,19 @@
             this.textbox_address.PlaceholderText = "Địa chỉ ";
             this.textbox_address.SelectedText = "";
             this.textbox_address.Size = new System.Drawing.Size(326, 46);
-            this.textbox_address.TabIndex = 13;
+            this.textbox_address.TabIndex = 6;
             this.textbox_address.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox6
+            // 
+            this.gunaPictureBox6.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox6.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_address_100;
+            this.gunaPictureBox6.Location = new System.Drawing.Point(23, 415);
+            this.gunaPictureBox6.Name = "gunaPictureBox6";
+            this.gunaPictureBox6.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox6.TabIndex = 12;
+            this.gunaPictureBox6.TabStop = false;
             // 
             // textbox_email
             // 
@@ -487,8 +553,19 @@
             this.textbox_email.PlaceholderText = "Địa chỉ email";
             this.textbox_email.SelectedText = "";
             this.textbox_email.Size = new System.Drawing.Size(326, 46);
-            this.textbox_email.TabIndex = 11;
+            this.textbox_email.TabIndex = 5;
             this.textbox_email.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox5
+            // 
+            this.gunaPictureBox5.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox5.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_gmail_100;
+            this.gunaPictureBox5.Location = new System.Drawing.Point(23, 351);
+            this.gunaPictureBox5.Name = "gunaPictureBox5";
+            this.gunaPictureBox5.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox5.TabIndex = 10;
+            this.gunaPictureBox5.TabStop = false;
             // 
             // textbox_phoneNumber
             // 
@@ -509,8 +586,30 @@
             this.textbox_phoneNumber.PlaceholderText = "Số điện thoại";
             this.textbox_phoneNumber.SelectedText = "";
             this.textbox_phoneNumber.Size = new System.Drawing.Size(326, 46);
-            this.textbox_phoneNumber.TabIndex = 8;
+            this.textbox_phoneNumber.TabIndex = 4;
             this.textbox_phoneNumber.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox3
+            // 
+            this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_phone_48;
+            this.gunaPictureBox3.Location = new System.Drawing.Point(23, 286);
+            this.gunaPictureBox3.Name = "gunaPictureBox3";
+            this.gunaPictureBox3.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox3.TabIndex = 7;
+            this.gunaPictureBox3.TabStop = false;
+            // 
+            // gunaPictureBox4
+            // 
+            this.gunaPictureBox4.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
+            this.gunaPictureBox4.Location = new System.Drawing.Point(23, 221);
+            this.gunaPictureBox4.Name = "gunaPictureBox4";
+            this.gunaPictureBox4.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox4.TabIndex = 5;
+            this.gunaPictureBox4.TabStop = false;
             // 
             // textbox_customerName
             // 
@@ -531,8 +630,19 @@
             this.textbox_customerName.PlaceholderText = "Họ và tên";
             this.textbox_customerName.SelectedText = "";
             this.textbox_customerName.Size = new System.Drawing.Size(326, 46);
-            this.textbox_customerName.TabIndex = 4;
+            this.textbox_customerName.TabIndex = 2;
             this.textbox_customerName.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_user_502;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(23, 156);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 3;
+            this.gunaPictureBox2.TabStop = false;
             // 
             // textbox_customerId
             // 
@@ -553,8 +663,19 @@
             this.textbox_customerId.PlaceholderText = "Số căn cước công dân";
             this.textbox_customerId.SelectedText = "";
             this.textbox_customerId.Size = new System.Drawing.Size(326, 46);
-            this.textbox_customerId.TabIndex = 2;
+            this.textbox_customerId.TabIndex = 1;
             this.textbox_customerId.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_hotel_64;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(23, 91);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 1;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // gunaLabel1
             // 
@@ -600,132 +721,11 @@
             this.btn_save.Text = "Lưu";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // textbox_peopleCounter
-            // 
-            this.textbox_peopleCounter.BorderRadius = 12;
-            this.textbox_peopleCounter.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textbox_peopleCounter.DefaultText = "";
-            this.textbox_peopleCounter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textbox_peopleCounter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textbox_peopleCounter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textbox_peopleCounter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textbox_peopleCounter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_peopleCounter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textbox_peopleCounter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_peopleCounter.Location = new System.Drawing.Point(81, 478);
-            this.textbox_peopleCounter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textbox_peopleCounter.Name = "textbox_peopleCounter";
-            this.textbox_peopleCounter.PasswordChar = '\0';
-            this.textbox_peopleCounter.PlaceholderText = "Số người thuê";
-            this.textbox_peopleCounter.SelectedText = "";
-            this.textbox_peopleCounter.Size = new System.Drawing.Size(326, 46);
-            this.textbox_peopleCounter.TabIndex = 16;
-            this.textbox_peopleCounter.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // gunaPictureBox8
-            // 
-            this.gunaPictureBox8.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox8.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox8.Location = new System.Drawing.Point(390, 91);
-            this.gunaPictureBox8.Name = "gunaPictureBox8";
-            this.gunaPictureBox8.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox8.TabIndex = 16;
-            this.gunaPictureBox8.TabStop = false;
-            // 
-            // gunaPictureBox7
-            // 
-            this.gunaPictureBox7.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox7.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox7.Location = new System.Drawing.Point(14, 91);
-            this.gunaPictureBox7.Name = "gunaPictureBox7";
-            this.gunaPictureBox7.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox7.TabIndex = 14;
-            this.gunaPictureBox7.TabStop = false;
-            // 
-            // gunaPictureBox9
-            // 
-            this.gunaPictureBox9.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox9.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_group_1001;
-            this.gunaPictureBox9.Location = new System.Drawing.Point(23, 478);
-            this.gunaPictureBox9.Name = "gunaPictureBox9";
-            this.gunaPictureBox9.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox9.TabIndex = 15;
-            this.gunaPictureBox9.TabStop = false;
-            // 
-            // gunaPictureBox6
-            // 
-            this.gunaPictureBox6.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox6.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_address_100;
-            this.gunaPictureBox6.Location = new System.Drawing.Point(23, 415);
-            this.gunaPictureBox6.Name = "gunaPictureBox6";
-            this.gunaPictureBox6.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox6.TabIndex = 12;
-            this.gunaPictureBox6.TabStop = false;
-            // 
-            // gunaPictureBox5
-            // 
-            this.gunaPictureBox5.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox5.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_gmail_100;
-            this.gunaPictureBox5.Location = new System.Drawing.Point(23, 351);
-            this.gunaPictureBox5.Name = "gunaPictureBox5";
-            this.gunaPictureBox5.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox5.TabIndex = 10;
-            this.gunaPictureBox5.TabStop = false;
-            // 
-            // gunaPictureBox3
-            // 
-            this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_phone_48;
-            this.gunaPictureBox3.Location = new System.Drawing.Point(23, 286);
-            this.gunaPictureBox3.Name = "gunaPictureBox3";
-            this.gunaPictureBox3.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox3.TabIndex = 7;
-            this.gunaPictureBox3.TabStop = false;
-            // 
-            // gunaPictureBox4
-            // 
-            this.gunaPictureBox4.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox4.Location = new System.Drawing.Point(23, 221);
-            this.gunaPictureBox4.Name = "gunaPictureBox4";
-            this.gunaPictureBox4.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox4.TabIndex = 5;
-            this.gunaPictureBox4.TabStop = false;
-            // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_user_502;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(23, 156);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox2.TabIndex = 3;
-            this.gunaPictureBox2.TabStop = false;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_hotel_64;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(23, 91);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(52, 46);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 1;
-            this.gunaPictureBox1.TabStop = false;
-            // 
             // BookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1319, 678);
+            this.ClientSize = new System.Drawing.Size(1315, 674);
             this.ControlBox = false;
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btn_save);
@@ -742,10 +742,10 @@
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableRoomTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableRoomAvaiable)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox7)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox5)).EndInit();

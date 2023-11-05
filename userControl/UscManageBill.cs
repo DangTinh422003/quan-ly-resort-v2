@@ -74,7 +74,6 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableControl()
         {
-/*            btnSave.Enabled = false;*/
             btnDelete.Enabled = false;
             /*btnUpdate.Enabled = false;*/
         }
@@ -208,6 +207,7 @@ namespace quan_ly_resort_v2.userControl
             btnDelete.Enabled = false;
             txtListRoom.Focus();
         }*/
+
 
         /*private void btnSave_Click(object sender, EventArgs e)
         {

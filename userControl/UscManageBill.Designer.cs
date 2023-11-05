@@ -73,6 +73,15 @@
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
             this.txtState = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -88,9 +97,9 @@
             this.gunaPanel2.Controls.Add(this.btnSearch);
             this.gunaPanel2.Controls.Add(this.txtSearch);
             this.gunaPanel2.Controls.Add(this.gunaPanel1);
-            this.gunaPanel2.Location = new System.Drawing.Point(0, 454);
+            this.gunaPanel2.Location = new System.Drawing.Point(0, 471);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(1285, 604);
+            this.gunaPanel2.Size = new System.Drawing.Size(1285, 513);
             this.gunaPanel2.TabIndex = 1;
             // 
             // DataGridView
@@ -138,7 +147,7 @@
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 67);
+            this.DataGridView.Location = new System.Drawing.Point(0, 104);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersVisible = false;
@@ -816,6 +825,79 @@
             this.gunaLabel10.TabIndex = 52;
             this.gunaLabel10.Text = "Tình trạng";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaHoaDon";
+            this.Column1.HeaderText = "Mã hóa đơn";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaKhachHang";
+            this.Column2.HeaderText = "Mã khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MaNhanVien";
+            this.Column3.HeaderText = "Mã nhân viên";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "DanhSachMaPhong";
+            this.Column4.HeaderText = "Danh sách phòng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NgayTaoHoaDon";
+            this.Column5.HeaderText = "Ngày tạo";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TongTien";
+            this.Column6.HeaderText = "Tổng tiền";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "NgayCheckIn";
+            this.Column7.HeaderText = "Ngày nhận phòng";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "SoNgayThue";
+            this.Column8.HeaderText = "Thời gian thuê";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "State";
+            this.Column9.HeaderText = "Tình trạng";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
             // UscManageBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -867,6 +949,8 @@
         private Guna.UI.WinForms.GunaComboBox cbb_search;
         private Guna.UI.WinForms.GunaDataGridView DataGridView;
         private Guna.UI.WinForms.GunaAdvenceButton btnDetailBill;
+        private Guna.UI.WinForms.GunaTextBox txtState;
+        private Guna.UI.WinForms.GunaLabel gunaLabel10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

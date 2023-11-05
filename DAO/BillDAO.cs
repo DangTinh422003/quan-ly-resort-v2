@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace quan_ly_resort_v2.DAO
 {
@@ -17,7 +18,6 @@ namespace quan_ly_resort_v2.DAO
         public static List<Bill> GetBills()
         {
             List<Bill> bills = new List<Bill>();
-
             try
             {
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
@@ -163,7 +163,6 @@ namespace quan_ly_resort_v2.DAO
             try
             {
                 typeValue = typeValue.Trim();
-
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 

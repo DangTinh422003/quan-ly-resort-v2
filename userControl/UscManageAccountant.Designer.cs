@@ -638,7 +638,7 @@
             // 
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(46, 493);
+            this.gunaLabel11.Location = new System.Drawing.Point(45, 480);
             this.gunaLabel11.Name = "gunaLabel11";
             this.gunaLabel11.Size = new System.Drawing.Size(136, 28);
             this.gunaLabel11.TabIndex = 9;
@@ -648,7 +648,7 @@
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
             this.gunaPanel2.Controls.Add(this.ccbSelect);
-            this.gunaPanel2.Location = new System.Drawing.Point(188, 481);
+            this.gunaPanel2.Location = new System.Drawing.Point(187, 468);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(241, 49);
             this.gunaPanel2.TabIndex = 10;
@@ -689,7 +689,7 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(435, 481);
+            this.txtSearch.Location = new System.Drawing.Point(434, 468);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtSearch.PasswordChar = '\0';
@@ -714,7 +714,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = null;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.Location = new System.Drawing.Point(1016, 481);
+            this.btnSearch.Location = new System.Drawing.Point(1015, 468);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -741,7 +741,7 @@
             this.btnAll.ForeColor = System.Drawing.Color.White;
             this.btnAll.Image = null;
             this.btnAll.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAll.Location = new System.Drawing.Point(1133, 481);
+            this.btnAll.Location = new System.Drawing.Point(1132, 468);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAll.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -802,14 +802,14 @@
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 626);
+            this.DataGridView.Location = new System.Drawing.Point(0, 605);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersVisible = false;
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView.Size = new System.Drawing.Size(1285, 358);
+            this.DataGridView.Size = new System.Drawing.Size(1285, 379);
             this.DataGridView.TabIndex = 14;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

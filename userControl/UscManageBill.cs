@@ -74,7 +74,6 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableControl()
         {
-            /*            btnSave.Enabled = false;*/
             btnDelete.Enabled = false;
             /*btnUpdate.Enabled = false;*/
         }
@@ -99,7 +98,7 @@ namespace quan_ly_resort_v2.userControl
         }
 
         private void disableFormInput()
-        {
+        {   
             txtState.Enabled = false;
             txtIdBill.Enabled = false;
             txtIdKH.Enabled = false;
@@ -197,17 +196,18 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-        /*        private void btnUpdate_Click(object sender, EventArgs e)
-                {
-                    Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
-                    disableFormInput();
-                    txtNgayThue.Enabled = true;
-                    txtTong.Enabled = true;
-                    btnSave.Enabled = true;
-                    txtListRoom.Enabled = true;
-                    btnDelete.Enabled = false;
-                    txtListRoom.Focus();
-                }*/
+/*        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
+            disableFormInput();
+            txtNgayThue.Enabled = true;
+            txtTong.Enabled = true;
+            btnSave.Enabled = true;
+            txtListRoom.Enabled = true;
+            btnDelete.Enabled = false;
+            txtListRoom.Focus();
+        }*/
+
 
         /*private void btnSave_Click(object sender, EventArgs e)
         {

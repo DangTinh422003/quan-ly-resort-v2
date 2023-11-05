@@ -159,6 +159,7 @@
     <Compile Include="forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Voucher.cs" />
     <Compile Include="model\Account.cs" />
     <Compile Include="model\Bill.cs" />
     <Compile Include="model\BookingRoom.cs" />
@@ -181,6 +182,12 @@
     </Compile>
     <Compile Include="userControl\UscManageAccountant.Designer.cs">
       <DependentUpon>UscManageAccountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UscManageVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscManageVoucher.Designer.cs">
+      <DependentUpon>UscManageVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="userControl\UscManageBill.cs">
       <SubType>UserControl</SubType>
@@ -257,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageAccountant.resx">
       <DependentUpon>UscManageAccountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscManageVoucher.resx">
+      <DependentUpon>UscManageVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageBill.resx">
       <DependentUpon>UscManageBill.cs</DependentUpon>

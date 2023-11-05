@@ -1,66 +1,35 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using quan_ly_resort_v2.DAO;
-using quan_ly_resort_v2.forms;
+﻿using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Guna.UI.WinForms;
-
 
 namespace quan_ly_resort_v2.userControl
 {
-    public partial class UscManageAccountant : UserControl
+    public partial class UscManageAccount : UserControl
     {
-        public UscManageAccountant()
+        public UscManageAccount()
         {
             InitializeComponent();
-            //LoadEmployeeData();
         }
 
-        private void LoadEmployeeData()
-        {
-            // Gọi EmployeeDAO để lấy danh sách nhân viên
-            var employees = EmployeeDAO.GetEmployees();
-
-            // Kiểm tra xem danh sách có dữ liệu hay không
-            if (employees != null && employees.Count > 0)
-            {
-
-                // Gán danh sách nhân viên cho DataGridView
-                DataGridView.DataSource = employees;
-
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu nhân viên để hiển thị.");
-            }
-
-            Label_Title.Text = "Chức năng hiện tại : Chưa chọn!";
-        }
-        private void UscManageAccountant_Load(object sender, EventArgs e)
+        private void UscManageAccount_Load(object sender, EventArgs e)
         {
 
         }
+
         private void cleanForm()
         {
-            txtId.Text = "";
             txtName.Text = "";
             txtDate.Value = DateTime.Now;
-            txtCCCD.Text = "";
-            txtPhone.Text = "";
-            txtAddress.Text = "";
-            txtEmail.Text = "";
-            txtSalary.Text = "";
-            txtWorkDay.Value = DateTime.Now;
-            txtUsername.Text = "";
         }
         private void disableControl()
         {
@@ -77,49 +46,26 @@ namespace quan_ly_resort_v2.userControl
         }
         private void enableFormInput()
         {
-            txtId.Enabled = true;
             txtName.Enabled = true;
             txtDate.Enabled = true;
-            txtCCCD.Enabled = true;
-            txtPhone.Enabled = true;
-            txtAddress.Enabled = true;
-            txtEmail.Enabled = true;
-            txtSalary.Enabled = true;
-            txtUsername.Enabled = true;
         }
         private void disableFormInput()
         {
-            txtId.Enabled = false;
             txtName.Enabled = false;
             txtDate.Enabled = false;
-            txtCCCD.Enabled = false;
-            txtPhone.Enabled = false;
-            txtAddress.Enabled = false;
-            txtEmail.Enabled = false;
-            txtSalary.Enabled = false;
-            txtWorkDay.Enabled = false;
-            txtUsername.Enabled = false;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtId.Enabled = false;
             txtWorkDay.Enabled = false;
 
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = DataGridView.Rows[e.RowIndex];
 
-                txtId.Text = selectedRow.Cells[0].Value.ToString();
                 txtName.Text = selectedRow.Cells[1].Value.ToString();
                 string birthday = selectedRow.Cells[4].Value.ToString();
-                txtCCCD.Text = selectedRow.Cells[6].Value.ToString();
-                txtPhone.Text = selectedRow.Cells[2].Value.ToString();
-                txtAddress.Text = selectedRow.Cells[5].Value.ToString();
-                txtEmail.Text = selectedRow.Cells[3].Value.ToString();
-                txtSalary.Text = selectedRow.Cells[7].Value.ToString();
                 string workday = selectedRow.Cells[8].Value.ToString();
-                txtUsername.Text = selectedRow.Cells[9].Value.ToString();
 
                 txtDate.Value = DateTime.Parse(birthday);
                 txtWorkDay.Value = DateTime.Parse(workday);
@@ -128,55 +74,27 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            string typeSelectValue = ccbSelect.Text;
-            string textSearchValue = txtSearch.Text;
-            if (typeSelectValue == "" || textSearchValue == "")
-            {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-                DataGridView.DataSource = EmployeeDAO.FilterByField(typeSelectValue, textSearchValue);
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string textSearchValue = txtSearch.Text;
-            if (textSearchValue != "")
-                btnSearch_Click(sender, e);
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                btnSearch_Click(sender, e);
-        }
-
         private void btnAll_Click(object sender, EventArgs e)
         {
-            UscManageAccountant_Load(sender, e);
+            //UscManageAccountant_Load(sender, e);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             enableFormInput();
-            Label_Title.Text = "Chức năng hiện tại : Thêm nhân viên!";
+            Label_Title.Text = "Chức năng hiện tại : Thêm voucher";
             txtName.Focus();
             btnSave.Enabled = true;
-            txtId.Enabled = false;
             txtWorkDay.Enabled = true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            UscManageAccountant_Load(sender, e);
+            //UscManageAccountant_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string maNV = txtId.Text;
 
             if (string.IsNullOrWhiteSpace(maNV))
             {
@@ -197,7 +115,7 @@ namespace quan_ly_resort_v2.userControl
                 if (deleted)
                 {
                     MessageBox.Show("Nhân viên đã được xóa thành công.");
-                    UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
+                    //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
                 }
                 else
                 {
@@ -210,13 +128,12 @@ namespace quan_ly_resort_v2.userControl
         {
             Label_Title.Text = "Chức năng hiện tại : Sửa thông tin nhân viên";
             enableFormInput();
-            txtId.Enabled = false;
             btnSave.Enabled = true;
             btnDelete.Enabled = false;
             txtName.Focus();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        /*private void btnSave_Click(object sender, EventArgs e)
         {
             string tenNV = txtName.Text;
             string sdt = txtPhone.Text;
@@ -309,7 +226,7 @@ namespace quan_ly_resort_v2.userControl
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi thêm
+                //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi thêm
             }
             else if (btnUpdate.Enabled)
             {
@@ -323,13 +240,8 @@ namespace quan_ly_resort_v2.userControl
                 else
                     MessageBox.Show("Có lỗi xảy ra!", "Cập nhật thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi cập nhật
+                //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi cập nhật
             }
-        }
-
-        private void gunaGroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }*/
     }
 }

@@ -118,6 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_manageVoucher.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAcJJREFUOE+V
+        lEsrRGEYx0e5ZNyGlAYbC3wM5TIWWE5kYSRN+QBqyn2nLLG3YCO2iGJSWJDLVj4BJZcopPH7n3nOMOOM
+        Gb/6Nc/zvM975rznvO/x5SKRSFRhk1lp5f/BxGqcwzM8wBUzjqc4iwFr/xsa+/ECh9Bv5RSqYcR6wlb2
+        hoYYrmO5lbJCTwVu4LiV0mFgEHWxAgxhpw39grEujVvvJvbbUBIKevBaQhkG8RlfsQc7MGy2Yy9q7Anr
+        UHequd8vjGQCIxZHMV9Gbc4IxhQ7kJxgqcVjmC9Rm6MXdaRYiW457iRAPID5knp2xIfoV9CCq1ZXvofi
+        HbU9hvHDIxe7Nk3z1rBZQSs6F+S3Fj9RXDudQHzjkQv11lhNF2xRkFoyv934k0VcSoYOmbkI2VwtuUyx
+        kmOsRC3Ji3nTC50oHdXkSxEk2jbaLgHU2c3k3sxkH7WHtTPSto2Kl6iNXYQ6/I+YjQecwULUI7vC9C8R
+        BffoleAC6nn24RQum4p1UjSmnmL8ffRcGNDH4RxdbnEb9UdyB+/QRUfO++PgQsM0vqk7B+qZtGl/Q2MD
+        6s5eMBPVtjBo7f+DiY3YZtZbOQs+3xcwqLQ+pE6R4AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_manageVoucher.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAABEZJREFUWEftV1tvGlcQdm9qVVWqWlWq8pKoD7089/JT+hf61kqtlBgW8CpqIseC
+        hcWhdrgtLDbOhUCNweCq7osBA26s4ri224fEUps0ddoqqbQIcAOb+TaHqrU2VmDX8NB+0qdd7c458zFz
+        ZnYY+U/i5ETobU6QrGPemW8dYuy2VQi3QNw76BnewYaZDw4Wp/8Du1deG5ucUYILxcbSxs9q4eY9dX3v
+        L424z9MzvCOhdRJcJaHvs+VHh4/8/uccXlkiYfXk6k6n9ntH3fhDPZS139pqsrTTcXhjdVobwh5sO3Px
+        qRB81e6R18R4vn7t131dMYcRa7DWLspVy/jUK2xbc4BfDXHhbLH1JFF7HLGW0t6CSFMj6fDIkhjPKUbE
+        dYk9xDmKpEcOse2NAQWBM9dPWh/HddoLZ9LiCr7H3PQPVGtq9YeOniMjvFra7ox55Qpz0x+sLv87aCVm
+        pPYgUd2Pohh4i7nrHVZXiAtmig09B2YwkC40qJmPMne9A18INFy9zc1gvvaTSj6qzF3vcIjyneLun7qb
+        m8HCzfuUZvkX5q53WF1Sc33PvOo9SOwNH8xd7+BosZnt5SDRbmi4aDB3vQPhL+7e193cDK7cuKfaafJh
+        7noHPxlbO+oi4Sdn+u+FFprngukjbDPzKw2bK3yKuesdGDYxz6Gp6jkwwm6jPjkhvcnc9QcMm6nSTlvP
+        iRFeLW63qY2VmZv+gUkYv9TMar52p6VFj5uQ3mVujMHuiRY9szltVNJz2Au1cSueo78BcpBtbwwWIfyJ
+        XYzWx4MJNZwtGRKJtaGFYpMG1oopA6tNkOzUBpQvV2rqQum6CpHu2VwHDVZPwGFEWikLGPkrpoz8nFMa
+        58+TuEJNzVW31Xm6UlpoEo6WcH4wzz1JdcNGKwhaQ5kI8Dz/LHPRJ1T1Kc4tTZ32xZV0cUMTly5soKEq
+        NpfEwQSTMCIBpxiZ0HDxVcC3FcQ9nuEdbFCtphTEh1euPGPzROJnpi8qmdVNTVymtKme/iKu2NzSGWb2
+        N9DDqJmPYmTCJwsffnDMG7tFg24F7wz3uS4QepsQSZy9cFnJlJk4Evn51FwdEWVmw8HHXu/zNndk6Vwo
+        Uc+Wv9fE4Xr2wiWF80izSDszHTx43v+i3R0puSKperaypYlbLG+hYhVElCL7NDMdPEbP+V+ms/WdEJ1v
+        LHbFVbdUp5REWvPGK84A0ItI3KY4s9DIMXG4CtEUxBWQdmY6eFjF4OvUhG/4Li42NWFa5LZVTyzdoLNY
+        4fnIC8x08KC0Hidxt6cuL+13xYHn57JNEned9/leYqaDh80ZeINzh/eCqeV/ifNdyu9TWn/EmWSmwwHS
+        F0gtt/8pbjrx1T5FdPczl/81ZjY8WJ1SM7P6qM+BgeQ3D6hQbnFu/zFmMlxQBKvTia8fQGQgudzmBOku
+        ziR7PXzYnKETSLPFFWrZ3dEyziR79T8Ox8jIQ7mi6KkLFal3AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btn_bookingRoom.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAcJJREFUOE+V

@@ -109,5 +109,11 @@ namespace quan_ly_resort_v2
             activeBtn(btn_bookingRoom);
             addUserControll(new UscManageBookingRoom());
         }
+
+        private void btn_manageVoucher_Click(object sender, EventArgs e)
+        {
+            activeBtn(btn_manageVoucher);
+            addUserControll(new UscManageAccount());
+        }
     }
 }

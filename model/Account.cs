@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Xml.Linq;
 
 namespace quan_ly_resort_v2.model
@@ -12,6 +13,7 @@ namespace quan_ly_resort_v2.model
         private string username;
         private string password;
         private DateTime create_at;
+        private int role { get; set; }
 
         public Account(string username, string password)
         {
@@ -23,6 +25,14 @@ namespace quan_ly_resort_v2.model
         {
             this.Username = account.Username;
             this.Password = account.Password;
+        }
+
+        public Account(string username, string password, int role, DateTime create_at)
+        {
+            this.Username = username;
+            this.Password = password;
+            this.role = role;
+            this.create_at = create_at;
         }
 
         public string Username { get => username; set => username = value; }

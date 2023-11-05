@@ -46,7 +46,6 @@ namespace quan_ly_resort_v2.model
             this.state = state;
         }
 
-
         public string MaHoaDon { get => maHoaDon; set => maHoaDon = value; }
         public string MaKhachHang { get => maKhachHang; set => maKhachHang = value; }
         public string MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
@@ -55,11 +54,6 @@ namespace quan_ly_resort_v2.model
         public double TongTien { get => tongTien; set => tongTien = value; }
         public DateTime NgayCheckIn { get => ngayCheckIn; set => ngayCheckIn = value; }
         public int SoNgayThue { get => soNgayThue; set => soNgayThue = value; }
-        public int State { get => State; set => State = value; }
-
-        public override string ToString()
-        {
-            return "MaHoaDon: " + MaHoaDon + " MaKhachHang: " + MaKhachHang + " MaNhanVien: " + MaNhanVien + " DanhSachMaPhong: " + DanhSachMaPhong + " NgayTaoHoaDon: " + NgayTaoHoaDon + " TongTien: " + TongTien + " NgayCheckIn: " + NgayCheckIn + " SoNgayThue: " + SoNgayThue;
-        }
+        public string State { get => state; set => state = value; }
     }
 }

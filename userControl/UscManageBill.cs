@@ -74,16 +74,16 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableControl()
         {
-            btnSave.Enabled = false;
+            /*            btnSave.Enabled = false;*/
             btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
+            /*btnUpdate.Enabled = false;*/
         }
 
         private void enableControl()
         {
-            btnSave.Enabled = false;
+            /*btnSave.Enabled = false;*/
             btnDelete.Enabled = true;
-            btnUpdate.Enabled = true;
+            /*btnUpdate.Enabled = true;*/
         }
 
         private void enableFormInput()
@@ -100,6 +100,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableFormInput()
         {
+            txtState.Enabled = false;
             txtIdBill.Enabled = false;
             txtIdKH.Enabled = false;
             txtIdNV.Enabled = false;
@@ -123,6 +124,7 @@ namespace quan_ly_resort_v2.userControl
                 txtListRoom.Text = selectedRow.Cells[3].Value.ToString();
                 txtNgayThue.Text = selectedRow.Cells[7].Value.ToString();
                 txtTong.Text = selectedRow.Cells[5].Value.ToString();
+                txtState.Text = selectedRow.Cells[8].Value.ToString();
 
                 string NgayTao = selectedRow.Cells[4].Value.ToString();
                 txtDateCrea.Value = DateTime.Parse(NgayTao);
@@ -195,19 +197,19 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
-            disableFormInput();
-            txtNgayThue.Enabled = true;
-            txtTong.Enabled = true;
-            btnSave.Enabled = true;
-            txtListRoom.Enabled = true;
-            btnDelete.Enabled = false;
-            txtListRoom.Focus();
-        }
+        /*        private void btnUpdate_Click(object sender, EventArgs e)
+                {
+                    Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
+                    disableFormInput();
+                    txtNgayThue.Enabled = true;
+                    txtTong.Enabled = true;
+                    btnSave.Enabled = true;
+                    txtListRoom.Enabled = true;
+                    btnDelete.Enabled = false;
+                    txtListRoom.Focus();
+                }*/
 
-        private void btnSave_Click(object sender, EventArgs e)
+        /*private void btnSave_Click(object sender, EventArgs e)
         {
             string idBill = txtIdBill.Text;
             string idKH = txtIdKH.Text;
@@ -246,7 +248,7 @@ namespace quan_ly_resort_v2.userControl
 
                 UscManageBill_Load(sender, e);
             }
-        }
+        }*/
 
         private void btn_ExportExcel_Click(object sender, EventArgs e)
         {
@@ -322,6 +324,9 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            UscManageBill_Load(sender, e);
+        }
     }
 }

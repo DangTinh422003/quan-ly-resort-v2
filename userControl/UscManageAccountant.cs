@@ -299,9 +299,9 @@ namespace quan_ly_resort_v2.userControl
                 // Kiểm tra thời gian làm việc ít nhất là 1 tháng
                 TimeSpan workDuration = ngayVaoLam - DateTime.Now;
 
-                if (workDuration.TotalDays < 0 || workDuration.TotalDays > 10)
+                if (ngayVaoLam == DateTime.Now || workDuration.TotalDays >= 7)
                 {
-                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 10 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 7 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

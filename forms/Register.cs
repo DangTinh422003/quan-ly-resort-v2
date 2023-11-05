@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,32 +27,34 @@ namespace quan_ly_resort_v2.forms
             string username = userNameTextBox.Text.Trim();
             string password = passwordTextBox.Text.Trim();
             string confirmPassword = confirmPasswordTextbox.Text.Trim();
+            string email = textboxEmail.Text.Trim();
 
             if (ValidateData.validate(username, password))
             {
                 if (ValidateData.validatePassword(confirmPassword))
                 {
                     if (password != confirmPassword)
-                    {
                         MessageBox.Show("Mật khẩu không trùng khớp!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     else
                     {
-                        Account currentAccount = AccountDAO.GetAccount(username);
-                        if (currentAccount != null) // Đã tồn tại user này -> không cho đăng kí
+                        if (!ValidateData.IsValidEmail(email))
                         {
-                            MessageBox.Show("Tên đăng nhập đã tồn tại!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Account currentAccount = AccountDAO.GetAccount(username);
+                            if (currentAccount != null) // Đã tồn tại user này -> không cho đăng kí
+                                MessageBox.Show("Tên đăng nhập đã tồn tại!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                            {
+                                string hassPassword = PasswordUils.HashingPassword(passwordTextBox.Text);
+                                AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, hassPassword, email, "employee"));
+                                MessageBox.Show("Đăng kí thành công!", "Trạng thái đăng ký!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                var loginForm = new LoginForm();
+                                Program.myAppCxt.MainForm = loginForm;
+                                loginForm.Show();
+                                this.Close();
+                            }
                         }
                         else
-                        {
-                            string hassPassword = PasswordUils.HashingPassword(passwordTextBox.Text);
-                            AccountDAO.AddNewAccount(new Account(userNameTextBox.Text, hassPassword));
-                            MessageBox.Show("Đăng kí thành công!", "Trạng thái đăng ký!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            var loginForm = new LoginForm();
-                            Program.myAppCxt.MainForm = loginForm;
-                            loginForm.Show();
-                            this.Close();
-                        }
+                            MessageBox.Show("Email không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

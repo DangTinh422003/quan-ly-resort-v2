@@ -44,6 +44,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btn_manageAccount = new Guna.UI.WinForms.GunaAdvenceButton();
             this.sidebar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -54,6 +55,7 @@
             this.sidebar.BackColor = System.Drawing.Color.White;
             this.sidebar.BaseColor = System.Drawing.Color.Transparent;
             this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sidebar.Controls.Add(this.btn_manageAccount);
             this.sidebar.Controls.Add(this.btn_bookingRoom);
             this.sidebar.Controls.Add(this.currentUser);
             this.sidebar.Controls.Add(this.btn_manageBill);
@@ -390,6 +392,41 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
+            // btn_manageAccount
+            // 
+            this.btn_manageAccount.AnimationHoverSpeed = 0.07F;
+            this.btn_manageAccount.AnimationSpeed = 0.03F;
+            this.btn_manageAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.BaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.CheckedBaseColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_manageAccount.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_manageAccount.CheckedImage")));
+            this.btn_manageAccount.CheckedLineColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_manageAccount.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_manageAccount.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_manageAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(107)))), ((int)(((byte)(159)))));
+            this.btn_manageAccount.Image = ((System.Drawing.Image)(resources.GetObject("btn_manageAccount.Image")));
+            this.btn_manageAccount.ImageOffsetX = 10;
+            this.btn_manageAccount.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_manageAccount.LineColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.Location = new System.Drawing.Point(-2, 545);
+            this.btn_manageAccount.Name = "btn_manageAccount";
+            this.btn_manageAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_manageAccount.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_manageAccount.OnHoverImage = null;
+            this.btn_manageAccount.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.OnPressedColor = System.Drawing.Color.Transparent;
+            this.btn_manageAccount.Size = new System.Drawing.Size(308, 56);
+            this.btn_manageAccount.TabIndex = 16;
+            this.btn_manageAccount.Text = "Quản lý tài khoản";
+            this.btn_manageAccount.TextOffsetX = 10;
+            this.btn_manageAccount.Click += new System.EventHandler(this.btn_manageAccount_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,6 +462,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Guna.UI.WinForms.GunaAdvenceButton btn_bookingRoom;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_manageAccount;
     }
 }
 

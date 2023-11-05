@@ -193,6 +193,12 @@
     <Compile Include="userControl\RoomItem.Designer.cs">
       <DependentUpon>RoomItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControl\UscManageAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UscManageAccount.Designer.cs">
+      <DependentUpon>UscManageAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\UscManageAccountant.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </Compile>
     <EmbeddedResource Include="userControl\RoomItem.resx">
       <DependentUpon>RoomItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UscManageAccount.resx">
+      <DependentUpon>UscManageAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UscManageAccountant.resx">
       <DependentUpon>UscManageAccountant.cs</DependentUpon>

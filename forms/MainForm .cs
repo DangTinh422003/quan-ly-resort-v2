@@ -25,14 +25,13 @@ namespace quan_ly_resort_v2
             activeBtn(btn_manageCustomer);
             addUserControll(new UscManageCustomer());
             currentUser.Text = LoginForm.accountLogined.Username;
+            if (LoginForm.accountLogined.Role == "admin")
+                btn_manageAccount.Enabled = true;
+            else
+                btn_manageAccount.Enabled = false;
         }
 
-        private void mainForm_Load(object sender, EventArgs e)
-        {
-            //activeBtn(btn_manageCustomer);
-            //addUserControll(new UscManageCustomer());
-            //currentUser.Text = LoginForm.accountLogined.Username;
-        }
+        private void mainForm_Load(object sender, EventArgs e) { }
 
         private void activeBtn(GunaAdvenceButton btn)
         {
@@ -134,6 +133,15 @@ namespace quan_ly_resort_v2
             {
                 activeBtn(btn_bookingRoom);
                 addUserControll(new UscManageBookingRoom());
+            });
+        }
+
+        private void btn_manageAccount_Click(object sender, EventArgs e)
+        {
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btn_manageAccount);
+                addUserControll(new UscManageAccount());
             });
         }
     }

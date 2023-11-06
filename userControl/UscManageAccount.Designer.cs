@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
+            this.combo_role = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txt_role = new Guna.UI.WinForms.GunaLabel();
+            this.txt_gmail = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -48,14 +52,6 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.DataGridView = new Guna.UI.WinForms.GunaDataGridView();
-            this.columm1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_gmail = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.txt_role_account = new Guna.UI.WinForms.GunaTextBox();
-            this.txt_role = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +61,7 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.txt_role_account);
+            this.gunaGroupBox1.Controls.Add(this.combo_role);
             this.gunaGroupBox1.Controls.Add(this.txt_role);
             this.gunaGroupBox1.Controls.Add(this.txt_gmail);
             this.gunaGroupBox1.Controls.Add(this.gunaLabel1);
@@ -89,6 +85,69 @@
             this.gunaGroupBox1.TabIndex = 0;
             this.gunaGroupBox1.Text = "Thông tin tài khoản";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            this.gunaGroupBox1.Click += new System.EventHandler(this.gunaGroupBox1_Click);
+            // 
+            // combo_role
+            // 
+            this.combo_role.BackColor = System.Drawing.Color.Transparent;
+            this.combo_role.BorderColor = System.Drawing.Color.Silver;
+            this.combo_role.BorderRadius = 8;
+            this.combo_role.BorderThickness = 2;
+            this.combo_role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combo_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combo_role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combo_role.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.combo_role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.combo_role.ItemHeight = 30;
+            this.combo_role.Items.AddRange(new object[] {
+            "admin",
+            "accountant",
+            "employee"});
+            this.combo_role.Location = new System.Drawing.Point(171, 204);
+            this.combo_role.Name = "combo_role";
+            this.combo_role.Size = new System.Drawing.Size(422, 36);
+            this.combo_role.StartIndex = 2;
+            this.combo_role.TabIndex = 34;
+            this.combo_role.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
+            // txt_role
+            // 
+            this.txt_role.AutoSize = true;
+            this.txt_role.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txt_role.Location = new System.Drawing.Point(46, 214);
+            this.txt_role.Name = "txt_role";
+            this.txt_role.Size = new System.Drawing.Size(50, 28);
+            this.txt_role.TabIndex = 32;
+            this.txt_role.Text = "Role";
+            // 
+            // txt_gmail
+            // 
+            this.txt_gmail.BackColor = System.Drawing.Color.Transparent;
+            this.txt_gmail.BaseColor = System.Drawing.Color.White;
+            this.txt_gmail.BorderColor = System.Drawing.Color.Silver;
+            this.txt_gmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_gmail.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_gmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_gmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_gmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_gmail.Location = new System.Drawing.Point(171, 149);
+            this.txt_gmail.Name = "txt_gmail";
+            this.txt_gmail.PasswordChar = '\0';
+            this.txt_gmail.Radius = 8;
+            this.txt_gmail.SelectedText = "";
+            this.txt_gmail.Size = new System.Drawing.Size(422, 49);
+            this.txt_gmail.TabIndex = 31;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel1.Location = new System.Drawing.Point(46, 159);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(63, 28);
+            this.gunaLabel1.TabIndex = 30;
+            this.gunaLabel1.Text = "Gmail";
             // 
             // Label_Title
             // 
@@ -230,6 +289,7 @@
             this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnSave.BorderColor = System.Drawing.Color.Black;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.Enabled = false;
             this.btnSave.FocusedColor = System.Drawing.Color.Empty;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -247,6 +307,7 @@
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // date_create
             // 
@@ -255,11 +316,12 @@
             this.date_create.BorderColor = System.Drawing.Color.Silver;
             this.date_create.CustomFormat = null;
             this.date_create.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.date_create.Enabled = false;
             this.date_create.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.date_create.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_create.ForeColor = System.Drawing.Color.Black;
             this.date_create.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_create.Location = new System.Drawing.Point(171, 259);
+            this.date_create.Location = new System.Drawing.Point(171, 246);
             this.date_create.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_create.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date_create.Name = "date_create";
@@ -277,7 +339,7 @@
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel4.Location = new System.Drawing.Point(46, 271);
+            this.gunaLabel4.Location = new System.Drawing.Point(46, 267);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(93, 28);
             this.gunaLabel4.TabIndex = 4;
@@ -297,7 +359,6 @@
             this.txt_username.Name = "txt_username";
             this.txt_username.PasswordChar = '\0';
             this.txt_username.Radius = 8;
-            this.txt_username.ReadOnly = true;
             this.txt_username.SelectedText = "";
             this.txt_username.Size = new System.Drawing.Size(422, 49);
             this.txt_username.TabIndex = 3;
@@ -334,42 +395,37 @@
             this.DataGridView.AllowUserToOrderColumns = true;
             this.DataGridView.AllowUserToResizeColumns = false;
             this.DataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridView.ColumnHeadersHeight = 30;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columm1,
-            this.Column8,
-            this.Role,
-            this.state});
             this.DataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 461);
+            this.DataGridView.Location = new System.Drawing.Point(0, 380);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersVisible = false;
@@ -402,97 +458,6 @@
             this.DataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
-            // columm1
-            // 
-            this.columm1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.columm1.DataPropertyName = "username";
-            this.columm1.HeaderText = "Username";
-            this.columm1.MinimumWidth = 6;
-            this.columm1.Name = "columm1";
-            this.columm1.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.DataPropertyName = "Gmail";
-            this.Column8.HeaderText = "Gmail";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Role.HeaderText = "Role";
-            this.Role.MinimumWidth = 6;
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            // 
-            // state
-            // 
-            this.state.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.state.HeaderText = "Ngày tạo";
-            this.state.MinimumWidth = 6;
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            // 
-            // txt_gmail
-            // 
-            this.txt_gmail.BackColor = System.Drawing.Color.Transparent;
-            this.txt_gmail.BaseColor = System.Drawing.Color.White;
-            this.txt_gmail.BorderColor = System.Drawing.Color.Silver;
-            this.txt_gmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_gmail.FocusedBaseColor = System.Drawing.Color.White;
-            this.txt_gmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txt_gmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_gmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_gmail.Location = new System.Drawing.Point(171, 149);
-            this.txt_gmail.Name = "txt_gmail";
-            this.txt_gmail.PasswordChar = '\0';
-            this.txt_gmail.Radius = 8;
-            this.txt_gmail.SelectedText = "";
-            this.txt_gmail.Size = new System.Drawing.Size(422, 49);
-            this.txt_gmail.TabIndex = 31;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel1.Location = new System.Drawing.Point(46, 159);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(63, 28);
-            this.gunaLabel1.TabIndex = 30;
-            this.gunaLabel1.Text = "Gmail";
-            // 
-            // txt_role_account
-            // 
-            this.txt_role_account.BackColor = System.Drawing.Color.Transparent;
-            this.txt_role_account.BaseColor = System.Drawing.Color.White;
-            this.txt_role_account.BorderColor = System.Drawing.Color.Silver;
-            this.txt_role_account.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_role_account.FocusedBaseColor = System.Drawing.Color.White;
-            this.txt_role_account.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txt_role_account.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_role_account.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_role_account.Location = new System.Drawing.Point(171, 204);
-            this.txt_role_account.Name = "txt_role_account";
-            this.txt_role_account.PasswordChar = '\0';
-            this.txt_role_account.Radius = 8;
-            this.txt_role_account.ReadOnly = true;
-            this.txt_role_account.SelectedText = "";
-            this.txt_role_account.Size = new System.Drawing.Size(422, 49);
-            this.txt_role_account.TabIndex = 33;
-            // 
-            // txt_role
-            // 
-            this.txt_role.AutoSize = true;
-            this.txt_role.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txt_role.Location = new System.Drawing.Point(46, 214);
-            this.txt_role.Name = "txt_role";
-            this.txt_role.Size = new System.Drawing.Size(50, 28);
-            this.txt_role.TabIndex = 32;
-            this.txt_role.Text = "Role";
-            // 
             // UscManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,7 +467,7 @@
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.gunaGroupBox1);
             this.Name = "UscManageAccount";
-            this.Size = new System.Drawing.Size(1285, 984);
+            this.Size = new System.Drawing.Size(1285, 903);
             this.Load += new System.EventHandler(this.UscManageAccount_Load);
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
@@ -529,13 +494,9 @@
         private Guna.UI.WinForms.GunaDataGridView DataGridView;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaLabel Label_Title;
-        private Guna.UI.WinForms.GunaTextBox txt_role_account;
         private Guna.UI.WinForms.GunaLabel txt_role;
         private Guna.UI.WinForms.GunaTextBox txt_gmail;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columm1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn state;
+        private Guna.UI2.WinForms.Guna2ComboBox combo_role;
     }
 }

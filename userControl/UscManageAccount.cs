@@ -1,4 +1,5 @@
 ﻿using quan_ly_resort_v2.DAO;
+using quan_ly_resort_v2.forms;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.utils;
 using System;
@@ -7,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace quan_ly_resort_v2.userControl
 {
     public partial class UscManageAccount : UserControl
     {
+        private Boolean isAddMode = false;
         public UscManageAccount()
         {
             InitializeComponent();
@@ -47,7 +50,6 @@ namespace quan_ly_resort_v2.userControl
         private void cleanForm()
         {
             txt_username.Text = string.Empty;
-            txt_role_account.Text = string.Empty;
             txt_gmail.Text = string.Empty;
             date_create.Value = DateTime.Now;
         }
@@ -58,25 +60,40 @@ namespace quan_ly_resort_v2.userControl
         private void enableControl()
         {
             btnDelete.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
+        public void enableSaveButton()
+        {
+            btnSave.Enabled = true;
+            btnDelete.Enabled = false;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //txtWorkDay.Enabled = false;
-
+            isAddMode = false;
+            txt_username.Enabled = false;
+            Label_Title.Text = "Chức năng hiện tại : Sửa thông tin";
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = DataGridView.Rows[e.RowIndex];
 
-                txt_username.Text = selectedRow.Cells[1].Value.ToString();
-                txt_gmail.Text = selectedRow.Cells[2].Value.ToString();
-                txt_role_account.Text = (string)selectedRow.Cells[3].Value;
-
-                string create_date = selectedRow.Cells[4].Value.ToString();
-                date_create.Value = DateTime.Parse(create_date);
+                txt_username.Text = selectedRow.Cells[0].Value.ToString();
+                txt_gmail.Text = selectedRow.Cells[3].Value.ToString();
+                combo_role.SelectedIndex = AccountDAO.getRoleIndex(selectedRow.Cells[4].Value.ToString());
+                string create_date = selectedRow.Cells[2].Value.ToString();
+                try
+                {
+                    date_create.Value = DateTime.Parse(create_date);
+                }catch(Exception ex)
+                {
+                    date_create.Value = DateTime.Now;
+                }
 
             }
+            enableControl();
         }
+        
 
         private void btnAll_Click(object sender, EventArgs e)
         {
@@ -85,81 +102,91 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //enableFormInput();
-            //Label_Title.Text = "Chức năng hiện tại : Thêm voucher";
-            //txt_username.Focus();
-            //btnSave.Enabled = true;
-            //txtWorkDay.Enabled = true;
+            cleanForm();
+            Label_Title.Text = "Chức năng hiện tại : Thêm tài khoản";
+            txt_username.Focus();
+            txt_username.Enabled = true;
+            isAddMode = true;
+            enableSaveButton();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            //UscManageAccountant_Load(sender, e);
+            isAddMode = false;
+            UscManageAccount_Load(sender, e);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string username = txt_username.Text;
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
+                return;
+            }
 
-            //if (string.IsNullOrWhiteSpace(maNV))
-            //{
-            //    MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
-            //    return;
-            //}
+            string message = "Bạn có chắc muốn xóa tài khoản: " + username + " không?";
+            string caption = "Xác nhận xóa";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
-            //string message = "Bạn có chắc muốn xóa nhân viên có mã: " + maNV + " không?";
-            //string caption = "Xác nhận xóa";
-            //MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
 
-            //DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.Yes)
+            {
+                bool deleted = AccountDAO.DeleteAccount(username);
 
-            //if (result == DialogResult.Yes)
-            //{
-            //    bool deleted = EmployeeDAO.DeleteEmployee(maNV);
+                if (deleted)
+                {
+                    MessageBox.Show("Tài khoản đã được xóa thành công.");
+                    //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa tài khoản.");
+                }
+            }
 
-            //    if (deleted)
-            //    {
-            //        MessageBox.Show("Nhân viên đã được xóa thành công.");
-            //        //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Lỗi khi xóa nhân viên.");
-            //    }
-            //}
+            LoadAccountData();
+            cleanForm();
+            disableControl();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //Label_Title.Text = "Chức năng hiện tại : Sửa thông tin nhân viên";
-            //enableFormInput();
-            //btnSave.Enabled = true;
-            //btnDelete.Enabled = false;
-            //txt_username.Focus();
+           String username = txt_username.Text;
+            if (!username.Equals(String.Empty))
+            {
+               ChangePasswordForm changePasswordForm = new ChangePasswordForm(username);
+               changePasswordForm.ShowDialog();
+                LoadAccountData();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn tài khoản!");
+            }
         }
 
-        /*private void btnSave_Click(object sender, EventArgs e)
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string tenNV = txtName.Text;
-            string sdt = txtPhone.Text;
-            string email = txtEmail.Text;
-            DateTime ngaySinh = txtDate.Value;
-            string diaChi = txtAddress.Text;
-            string cccd = txtCCCD.Text;
-            DateTime ngayVaoLam = txtWorkDay.Value;
-            string username = txtUsername.Text;
-            string luongStr = txtSalary.Text;
 
-            string[] requiredFields = { tenNV, sdt, email, diaChi, username };
-            if (requiredFields.Any(string.IsNullOrEmpty) || ngaySinh == null || ngayVaoLam == null)
+        }
+
+        private void gunaGroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            String username = txt_username.Text.Trim();
+            String email = txt_gmail.Text.Trim();
+            int role = combo_role.SelectedIndex;
+            string[] requiredFields = { username, email };
+
+            if (requiredFields.Any(string.IsNullOrEmpty))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Validate email
-            if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim() || email != email.Trim() || cccd != cccd.Trim())
-            {
-                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -168,84 +195,31 @@ namespace quan_ly_resort_v2.userControl
                 MessageBox.Show("Email không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (!ValidateData.IsPhoneNumber(sdt)) // Validate phone number
+
+            Account account = new Account
             {
-                MessageBox.Show("Số điện thoại không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Username = username,
+                Email = email,
+                Role = AccountDAO.getRoleName(role)
+            };
+
+            if (isAddMode) {
+                account.Password = username;
+
+                Account result = AccountDAO.AddNewAccount(account);
+                if(result != null) MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định sẽ là tên tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Có lỗi xảy ra khi thêm tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            else if (!ValidateData.validateUsername(username))
+            else
             {
-                return;
+
+                Boolean result = AccountDAO.UpdateAccount(account);
+                if (result) MessageBox.Show("Chỉnh sửa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Có lỗi xảy ra khi sửa thông tin tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-            double luong;
-            if (!double.TryParse(luongStr, out luong) || luong < 1000000 || luong >= 1000000000)
-            {
-                MessageBox.Show("Lương không hợp lệ! Lương phải nằm trong khoảng từ 1,000,000 đến 999,999,999.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Check type function
-            if (btnAdd.Enabled)
-            {
-                // Kiểm tra thời gian làm việc ít nhất là 1 tháng
-                TimeSpan workDuration = ngayVaoLam - DateTime.Now;
-
-                if (workDuration.TotalDays < 0 || workDuration.TotalDays > 10)
-                {
-                    MessageBox.Show("Ngày vào làm phải trong khoảng từ hôm nay đến 10 ngày sau!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                if (!Regex.IsMatch(cccd, @"^\d{12}$"))
-                {
-                    MessageBox.Show("CCCD không hợp lệ!, Vui lòng nhập đủ 12 số", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                int currentYear = DateTime.Now.Year;
-                int requiredMinBirthYear = currentYear - 60;
-                int requiredMaxBirthYear = currentYear - 18;
-
-                if (ngaySinh.Year > requiredMaxBirthYear || ngaySinh.Year < requiredMinBirthYear)
-                {
-                    MessageBox.Show("Nhân viên phải từ 18 tuổi đến 70 tuổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-
-                string maNV = EmployeeDAO.GetNextMaNV(); // Lấy mã nhân viên tự động
-                if (maNV == null)
-                {
-                    MessageBox.Show("Có lỗi xảy ra khi tạo mã nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                Employee newEmployee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username);
-                bool isAdded = EmployeeDAO.AddEmployee(newEmployee);
-
-                if (isAdded)
-                    MessageBox.Show("Thêm nhân viên thành công!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Có lỗi xảy ra!", "Thêm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi thêm
-            }
-            else if (btnUpdate.Enabled)
-            {
-                // Đoạn này giữ nguyên, vì bạn đang cập nhật nhân viên đã tồn tại
-                string maNV = txtId.Text;
-                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, username);
-                bool isUpdated = EmployeeDAO.UpdateEmployee(employee);
-
-                if (isUpdated)
-                    MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Cập nhật thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else
-                    MessageBox.Show("Có lỗi xảy ra!", "Cập nhật thông tin nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //UscManageAccountant_Load(sender, e); // Tải lại danh sách nhân viên sau khi cập nhật
-            }
-        }*/
+            LoadAccountData();
+        }
     }
 }

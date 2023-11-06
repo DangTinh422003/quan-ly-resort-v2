@@ -1,5 +1,4 @@
 ﻿using quan_ly_resort_v2.DAO;
-using System.Windows.Forms.DataVisualization.Charting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace quan_ly_resort_v2.userControl
 {
@@ -44,7 +43,7 @@ namespace quan_ly_resort_v2.userControl
             // Đặt tên trục Y cho biểu đồ
             chartStatistic.ChartAreas[0].AxisY.Title = "Tổng thu";
             chartStatistic.ChartAreas[0].AxisY.TitleFont = new Font("Arial", 12, FontStyle.Bold);
-            chartStatistic.ChartAreas[0].AxisY.LabelStyle.Format = "N0";// "C0" định dạng giá trị tiền tệ với 0 chữ số sau dấu thập phân
+            chartStatistic.ChartAreas[0].AxisY.LabelStyle.Format = "N0";
 
 
             // Đặt tên trục X cho biểu đồ

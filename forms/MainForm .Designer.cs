@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new Guna.UI.WinForms.GunaElipsePanel();
+            //this.btn_manageVoucher = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_bookingRoom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.currentUser = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_manageBill = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -71,6 +72,41 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(308, 903);
             this.sidebar.TabIndex = 0;
+            // 
+            // btn_manageVoucher
+            // 
+            //this.btn_managevoucher.animationhoverspeed = 0.07f;
+            //this.btn_managevoucher.animationspeed = 0.03f;
+            //this.btn_managevoucher.backcolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.basecolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.bordercolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.checkedbasecolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.checkedbordercolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.checkedforecolor = system.drawing.color.white;
+            //this.btn_managevoucher.checkedimage = ((system.drawing.image)(resources.getobject("btn_managevoucher.checkedimage")));
+            //this.btn_managevoucher.checkedlinecolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.cursor = system.windows.forms.cursors.hand;
+            //this.btn_managevoucher.dialogresult = system.windows.forms.dialogresult.none;
+            //this.btn_managevoucher.focusedcolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.font = new system.drawing.font("segoe ui", 12f, system.drawing.fontstyle.bold, system.drawing.graphicsunit.point, ((byte)(0)));
+            //this.btn_managevoucher.forecolor = system.drawing.color.fromargb(((int)(((byte)(82)))), ((int)(((byte)(107)))), ((int)(((byte)(159)))));
+            //this.btn_managevoucher.image = ((system.drawing.image)(resources.getobject("btn_managevoucher.image")));
+            //this.btn_managevoucher.imageoffsetx = 10;
+            //this.btn_managevoucher.imagesize = new system.drawing.size(30, 30);
+            //this.btn_managevoucher.linecolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.location = new system.drawing.point(3, 545);
+            //this.btn_managevoucher.name = "btn_managevoucher";
+            //this.btn_managevoucher.onhoverbasecolor = system.drawing.color.fromargb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            //this.btn_managevoucher.onhoverbordercolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.onhoverforecolor = system.drawing.color.white;
+            //this.btn_managevoucher.onhoverimage = null;
+            //this.btn_managevoucher.onhoverlinecolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.onpressedcolor = system.drawing.color.transparent;
+            //this.btn_managevoucher.size = new system.drawing.size(308, 56);
+            //this.btn_managevoucher.tabindex = 16;
+            //this.btn_managevoucher.text = "quản lý tài khoản";
+            //this.btn_managevoucher.textoffsetx = 10;
+            //this.btn_managevoucher.click += new system.eventhandler(this.btn_managevoucher_click);
             // 
             // btn_bookingRoom
             // 

@@ -24,7 +24,7 @@ namespace quan_ly_resort_v2.userControl
         public UscManageServices()
         {
             InitializeComponent();
-            gunaTextBox1.Enabled = false;
+            TextBox.Enabled = false;
             txtMaDV.Visible = false;
             LoadServiceData();
             cleanForm();
@@ -33,7 +33,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void UscManageServices_Load(object sender, EventArgs e)
         {
-            gunaTextBox1.Enabled = false;
+            TextBox.Enabled = false;
             txtMaDV.Visible = false;
             LoadServiceData();
             cleanForm();
@@ -82,6 +82,7 @@ namespace quan_ly_resort_v2.userControl
         }
         private void disableFormInput()
         {
+            TextBox.Enabled = false;
             txtMaDV.Enabled = false;
             txtName.Enabled = false;
             txtPrice.Enabled = false;
@@ -257,7 +258,6 @@ namespace quan_ly_resort_v2.userControl
                 }
             }
         }
-
 
     }
 }

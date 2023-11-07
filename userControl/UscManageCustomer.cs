@@ -231,12 +231,6 @@ namespace quan_ly_resort_v2.resources
                 return;
             }
 
-            if (id != id.Trim() || name != name.Trim() || email != email.Trim() || address != address.Trim())
-            {
-                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             // validate email
             if (!ValidateData.IsValidEmail(email))
             {

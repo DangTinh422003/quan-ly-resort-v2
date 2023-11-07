@@ -14,6 +14,7 @@ namespace quan_ly_resort_v2.userControl
 {
     public partial class UscManageStatistic : UserControl
     {
+       
         public UscManageStatistic()
         {
             InitializeComponent();
@@ -167,6 +168,8 @@ namespace quan_ly_resort_v2.userControl
                 labelTotalRevenue.Text = string.Empty;
             }
         }
+
+  
 
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LabelTitle = new Guna.UI.WinForms.GunaLabel();
             this.cbbYears = new Guna.UI.WinForms.GunaComboBox();
             this.TextBox1 = new Guna.UI.WinForms.GunaTextBox();
@@ -202,7 +202,7 @@
             // 
             this.labelTotalRevenue.AutoSize = true;
             this.labelTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelTotalRevenue.Location = new System.Drawing.Point(490, 201);
+            this.labelTotalRevenue.Location = new System.Drawing.Point(508, 196);
             this.labelTotalRevenue.Name = "labelTotalRevenue";
             this.labelTotalRevenue.Size = new System.Drawing.Size(48, 28);
             this.labelTotalRevenue.TabIndex = 37;
@@ -210,18 +210,18 @@
             // 
             // chartStatistic
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend1);
-            this.chartStatistic.Location = new System.Drawing.Point(0, 292);
+            chartArea2.Name = "ChartArea1";
+            this.chartStatistic.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartStatistic.Legends.Add(legend2);
+            this.chartStatistic.Location = new System.Drawing.Point(12, 246);
             this.chartStatistic.Name = "chartStatistic";
             this.chartStatistic.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Doanh thu";
-            this.chartStatistic.Series.Add(series1);
-            this.chartStatistic.Size = new System.Drawing.Size(1285, 607);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh thu";
+            this.chartStatistic.Series.Add(series2);
+            this.chartStatistic.Size = new System.Drawing.Size(1259, 656);
             this.chartStatistic.TabIndex = 38;
             this.chartStatistic.Text = "chart";
             this.chartStatistic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartStatistic_MouseMove);

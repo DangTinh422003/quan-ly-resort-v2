@@ -44,6 +44,7 @@ namespace quan_ly_resort_v2.forms
             Room room = RoomDAO.getRoomByID(currentRoomId);
             if (room.State.Trim().ToLower() == "avaiable")
             {
+                btn_addServices.Enabled = false;
                 lb_roomState.Text = "Phòng trống";
                 lb_isConfirmRoom.Text = "Chưa nhận phòng";
                 lb_dayCounter.Text = "";
@@ -51,6 +52,8 @@ namespace quan_ly_resort_v2.forms
             }
             else if (room.State.Trim().ToLower() == "reserved")
             {
+                btn_addServices.Enabled = true;
+
                 BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
                 Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
                 lb_roomState.Text = customer.Fullname;
@@ -62,6 +65,7 @@ namespace quan_ly_resort_v2.forms
             }
             else
             {
+                btn_addServices.Enabled = false;
                 btn_getRoom.Text = "Thanh toán";
             }
         }
@@ -78,6 +82,7 @@ namespace quan_ly_resort_v2.forms
             // => cập nhật lại trạng thái của phòng
             // => cập nhật lại trạng thái của đơn đặt phòng
             //BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
+            comboBoxSelectRoomState.SelectedIndex = comboBoxSelectRoomState.Items.IndexOf("Phòng đang thuê");
             BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
             Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
             Employee employee = EmployeeDAO.GetEmployeeByUsername(LoginForm.accountLogined.Username);
@@ -131,16 +136,105 @@ namespace quan_ly_resort_v2.forms
                 actionWhenOccupied();
         }
 
-
-
-        private void gunaContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        private void btn_addServices_Click(object sender, EventArgs e)
         {
+            comboBoxServiceType.SelectedIndex = 0;
+            List<Service> services = ServiceDAO.GetServiceList();
+            foreach (Service service in services)
+            {
+                tableServiceSelect.Rows.Add(service.MaDV, service.TenDV, service.Gia);
+            }
+        }
+
+        private void comboBoxServiceType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxServiceType.Text == "Tất cả")
+            {
+                tableServiceSelect.Rows.Clear();
+                List<Service> servicesAll = ServiceDAO.GetServiceList();
+                foreach (Service service in servicesAll)
+                {
+                    if (!checkContainsRoomInTable(service.MaDV, tableServiceTarget))
+                        tableServiceSelect.Rows.Add(service.MaDV, service.TenDV, service.Gia);
+                }
+            }
+            else
+            {
+                tableServiceSelect.Rows.Clear();
+                List<Service> servicesFood = ServiceDAO.GetServicesByType(comboBoxServiceType.Text);
+                foreach (Service service in servicesFood)
+                {
+                    if (!checkContainsRoomInTable(service.MaDV, tableServiceTarget))
+                        tableServiceSelect.Rows.Add(service.MaDV, service.TenDV, service.Gia);
+                }
+            }
 
         }
 
-        private void btn_saveInomation_Click(object sender, EventArgs e)
+        private bool checkContainsRoomInTable(string roomId, DataGridView table)
         {
+            foreach (DataGridViewRow row in table.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == roomId)
+                    return true;
+            }
+            return false;
+        }
 
+        private void tableServiceSelect_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tableServiceSelect.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = tableServiceSelect.SelectedCells[0].RowIndex;
+                if (!checkContainsRoomInTable(tableServiceSelect.Rows[selectedrowindex].Cells[0].Value.ToString(), tableServiceTarget))
+                {
+                    this.tableServiceTarget.Rows.Add(
+                        tableServiceSelect.Rows[selectedrowindex].Cells[0].Value.ToString(),
+                        1, //so luong = 1
+                        tableServiceSelect.Rows[selectedrowindex].Cells[1].Value.ToString(),
+                        tableServiceSelect.Rows[selectedrowindex].Cells[2].Value.ToString()
+                    );
+                    this.tableServiceSelect.Rows.RemoveAt(selectedrowindex);
+                }
+            }
+        }
+
+        private void tableServiceTarget_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tableServiceTarget.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                int selectedrowindex = tableServiceTarget.SelectedCells[0].RowIndex;
+                this.tableServiceSelect.Rows.Add(
+                    tableServiceTarget.Rows[selectedrowindex].Cells[0].Value.ToString(),
+                    tableServiceTarget.Rows[selectedrowindex].Cells[2].Value.ToString(),
+                    tableServiceTarget.Rows[selectedrowindex].Cells[3].Value.ToString()
+                );
+                this.tableServiceTarget.Rows.RemoveAt(selectedrowindex);
+                comboBoxServiceType_SelectedIndexChanged(sender, e);
+            }
+            else if (tableServiceTarget.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1)
+            {
+                // tang so luong len 1
+                tableServiceTarget.Rows[e.RowIndex].Cells[1].Value =
+                    int.Parse(tableServiceTarget.Rows[e.RowIndex].Cells[1].Value.ToString()) + 1;
+            }
+            else if (tableServiceTarget.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
+            {
+                // tang so luong len 1
+                if (int.Parse(tableServiceTarget.Rows[e.RowIndex].Cells[1].Value.ToString()) - 1 <= 0)
+                {
+                    int selectedrowindex = tableServiceTarget.SelectedCells[0].RowIndex;
+                    this.tableServiceSelect.Rows.Add(
+                        tableServiceTarget.Rows[selectedrowindex].Cells[0].Value.ToString(),
+                        tableServiceTarget.Rows[selectedrowindex].Cells[2].Value.ToString(),
+                        tableServiceTarget.Rows[selectedrowindex].Cells[3].Value.ToString()
+                    );
+                    this.tableServiceTarget.Rows.RemoveAt(selectedrowindex);
+                    comboBoxServiceType_SelectedIndexChanged(sender, e);
+                }
+                else
+                    tableServiceTarget.Rows[e.RowIndex].Cells[1].Value = int.Parse(tableServiceTarget.Rows[e.RowIndex].Cells[1].Value.ToString()) - 1;
+            }
         }
     }
 }

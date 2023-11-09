@@ -193,6 +193,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_484 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-484", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_clock_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-clock-50", resourceCulture);
@@ -303,6 +313,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_minus_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-minus-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_modify_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-modify-24", resourceCulture);
@@ -356,6 +376,16 @@ namespace quan_ly_resort_v2.Properties {
         internal static System.Drawing.Bitmap icons8_plus_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-481", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

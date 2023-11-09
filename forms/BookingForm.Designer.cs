@@ -725,7 +725,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1315, 674);
+            this.ClientSize = new System.Drawing.Size(1311, 670);
             this.ControlBox = false;
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btn_save);
@@ -737,6 +737,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vui lòng điền đầy đủ thông tin";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.BookingForm_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();

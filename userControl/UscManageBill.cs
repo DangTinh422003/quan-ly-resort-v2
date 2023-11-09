@@ -16,11 +16,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Web.Security;
 using System.IO;
+using quan_ly_resort_v2.forms;
 
 namespace quan_ly_resort_v2.userControl
 {
     public partial class UscManageBill : UserControl
     {
+        private string selectedBillId;
+
         public UscManageBill()
         {
             InitializeComponent();
@@ -75,6 +78,7 @@ namespace quan_ly_resort_v2.userControl
         private void disableControl()
         {
             btnDelete.Enabled = false;
+            btnDetailBill.Enabled = false;
             /*btnUpdate.Enabled = false;*/
         }
 
@@ -129,6 +133,10 @@ namespace quan_ly_resort_v2.userControl
                 txtDateCrea.Value = DateTime.Parse(NgayTao);
                 string CheckIn = selectedRow.Cells[6].Value.ToString();
                 txtDateCheckIn.Value = DateTime.Parse(CheckIn);
+
+                selectedBillId = txtIdBill.Text;
+
+                btnDetailBill.Enabled = true;
 
                 enableControl();
             }
@@ -186,12 +194,12 @@ namespace quan_ly_resort_v2.userControl
 
                 if (deleted)
                 {
-                    MessageBox.Show("Nhân viên đã được xóa thành công.");
+                    MessageBox.Show("Hóa đơn đã được xóa thành công.");
                     UscManageBill_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xóa nhân viên.");
+                    MessageBox.Show("Lỗi khi xóa hóa đơn.");
                 }
             }
         }
@@ -269,13 +277,21 @@ namespace quan_ly_resort_v2.userControl
                     excelApp.Workbooks.Add();
                     Excel.Worksheet worksheet = (Excel.Worksheet)excelApp.ActiveSheet;
 
+                    // Đặt header in đậm và in hoa
+                    Excel.Range headerRange = worksheet.get_Range("A1", "I1");
+                    headerRange.Merge(); // Gộp ô từ A1 đến F1
+                    headerRange.Font.Bold = true;
+                    headerRange.Font.Size = 16;
+                    headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter; // Căn giữa
+                    headerRange.Value = "DANH SÁCH HÓA ĐƠN"; // Nội dung header
+
                     // Đặt header cho các cột và in đậm
                     for (int i = 1; i <= DataGridView.Columns.Count; i++)
                     {
-                        worksheet.Cells[1, i] = DataGridView.Columns[i - 1].HeaderText;
+                        worksheet.Cells[2, i] = DataGridView.Columns[i - 1].HeaderText;
 
                         // Đặt định dạng font in đậm cho header
-                        Excel.Range headerCell = (Excel.Range)worksheet.Cells[1, i];
+                        Excel.Range headerCell = (Excel.Range)worksheet.Cells[2, i];
                         headerCell.Font.Bold = true;
                     }
 
@@ -289,16 +305,16 @@ namespace quan_ly_resort_v2.userControl
                             {
                                 // Ép kiểu dữ liệu thành chuỗi và gán cho ô Excel
                                 string maKH = DataGridView.Rows[i].Cells[j].Value.ToString();
-                                worksheet.Cells[i + 2, j + 1] = maKH;
+                                worksheet.Cells[i + 3, j + 1] = maKH;
 
                                 // Đặt định dạng kiểu văn bản (text) cho cột Mã khách hàng
-                                Excel.Range cell = (Excel.Range)worksheet.Cells[i + 2, j + 1];
+                                Excel.Range cell = (Excel.Range)worksheet.Cells[i + 3, j + 1];
                                 cell.NumberFormat = "@";
                             }
                             else
                             {
                                 // Xử lý các cột khác
-                                worksheet.Cells[i + 2, j + 1] = DataGridView.Rows[i].Cells[j].Value;
+                                worksheet.Cells[i + 3, j + 1] = DataGridView.Rows[i].Cells[j].Value;
                             }
                         }
                     }
@@ -306,7 +322,7 @@ namespace quan_ly_resort_v2.userControl
                     // Tự động đặt chiều rộng cột bằng với dữ liệu
                     for (int i = 0; i < DataGridView.Columns.Count; i++)
                     {
-                        Excel.Range columnRange = (Excel.Range)worksheet.Cells[1, i + 1];
+                        Excel.Range columnRange = (Excel.Range)worksheet.Cells[2, i + 1];
                         columnRange = columnRange.EntireColumn;
                         columnRange.AutoFit();
                     }
@@ -324,9 +340,20 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
+
         private void btnAll_Click(object sender, EventArgs e)
         {
             UscManageBill_Load(sender, e);
+        }
+
+        private void btnDetailBill_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedBillId))
+            {
+                var BillDetailForm = new BillDetailForm(selectedBillId);
+                BillDetailForm.ShowDialog();
+                UscManageBill_Load(sender, e);
+            }
         }
     }
 }

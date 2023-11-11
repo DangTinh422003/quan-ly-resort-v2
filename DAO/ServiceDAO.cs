@@ -52,6 +52,44 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+        public static List<Service> GetServicesByType(string type)
+        {
+            List<Service> services = new List<Service>();
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "SELECT * FROM dichvu where LoaiDV LIKE @LoaiDV";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@LoaiDV", "%" + type + "%");
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Service service = new Service
+                    {
+                        MaDV = reader["MaDV"].ToString(),
+                        TenDV = reader["TenDV"].ToString(),
+                        LoaiDV = reader["LoaiDV"].ToString(),
+                        ChiTietDichVu = reader["ChiTietDichVu"].ToString(),
+                        Gia = Convert.ToDouble(reader["Gia"])
+                    };
+
+                    services.Add(service);
+                }
+                conn.Close();
+                return services;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         public static string GetNextMaDV()
         {
             try

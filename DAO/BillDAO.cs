@@ -158,59 +158,6 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
-        public static DataTable FilterByFieldStatistic(string typeValue, string selectedYear)
-        {
-            try
-            {
-                typeValue = typeValue.Trim();
-                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
-                conn.Open();
-
-                string sql = "SELECT * FROM hoadon WHERE ";
-
-                // Dictionary ánh xạ giá trị ComboBox
-                Dictionary<string, string> comboBoxMapping = new Dictionary<string, string>
-        {
-            {"Tháng 1", $"MONTH(NgayTao) = 1 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 2", $"MONTH(NgayTao) = 2 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 3", $"MONTH(NgayTao) = 3 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 4", $"MONTH(NgayTao) = 4 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 5", $"MONTH(NgayTao) = 5 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 6", $"MONTH(NgayTao) = 6 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 7", $"MONTH(NgayTao) = 7 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 8", $"MONTH(NgayTao) = 8 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 9", $"MONTH(NgayTao) = 9 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 10", $"MONTH(NgayTao) = 10 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 11", $"MONTH(NgayTao) = 11 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Tháng 12", $"MONTH(NgayTao) = 12 AND YEAR(NgayTao) = {selectedYear}"},
-            {"Quý 1", $"MONTH(NgayTao) IN (1, 2, 3) AND YEAR(NgayTao) = {selectedYear}"},
-            {"Quý 2", $"MONTH(NgayTao) IN (4, 5, 6) AND YEAR(NgayTao) = {selectedYear}"},
-            {"Quý 3", $"MONTH(NgayTao) IN (7, 8, 9) AND YEAR(NgayTao) = {selectedYear}"},
-            {"Quý 4", $"MONTH(NgayTao) IN (10, 11, 12) AND YEAR(NgayTao) = {selectedYear}"}
-        };
-
-                if (comboBoxMapping.ContainsKey(typeValue))
-                {
-                    sql += comboBoxMapping[typeValue];
-                }
-
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                conn.Close();
-
-                return table;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
-
-
         public static bool addNewBill(Bill bill)
         {
             try
@@ -299,5 +246,57 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+        public static DataTable FilterByFieldStatistic(string typeValue, string selectedYear)
+        {
+            try
+            {
+                typeValue = typeValue.Trim();
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string sql = "SELECT * FROM hoadon WHERE ";
+
+                // Dictionary ánh xạ giá trị ComboBox
+                Dictionary<string, string> comboBoxMapping = new Dictionary<string, string>
+        {
+            {"Tháng 1", $"MONTH(NgayTao) = 1 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 2", $"MONTH(NgayTao) = 2 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 3", $"MONTH(NgayTao) = 3 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 4", $"MONTH(NgayTao) = 4 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 5", $"MONTH(NgayTao) = 5 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 6", $"MONTH(NgayTao) = 6 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 7", $"MONTH(NgayTao) = 7 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 8", $"MONTH(NgayTao) = 8 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 9", $"MONTH(NgayTao) = 9 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 10", $"MONTH(NgayTao) = 10 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 11", $"MONTH(NgayTao) = 11 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Tháng 12", $"MONTH(NgayTao) = 12 AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 1", $"MONTH(NgayTao) IN (1, 2, 3) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 2", $"MONTH(NgayTao) IN (4, 5, 6) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 3", $"MONTH(NgayTao) IN (7, 8, 9) AND YEAR(NgayTao) = {selectedYear}"},
+            {"Quý 4", $"MONTH(NgayTao) IN (10, 11, 12) AND YEAR(NgayTao) = {selectedYear}"}
+        };
+
+                if (comboBoxMapping.ContainsKey(typeValue))
+                {
+                    sql += comboBoxMapping[typeValue];
+                }
+
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                conn.Close();
+
+                return table;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
     }
 }

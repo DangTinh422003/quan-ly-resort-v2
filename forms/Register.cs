@@ -37,7 +37,7 @@ namespace quan_ly_resort_v2.forms
                         MessageBox.Show("Mật khẩu không trùng khớp!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        if (!ValidateData.IsValidEmail(email))
+                        if (ValidateData.IsValidEmail(email))
                         {
                             Account currentAccount = AccountDAO.GetAccount(username);
                             if (currentAccount != null) // Đã tồn tại user này -> không cho đăng kí

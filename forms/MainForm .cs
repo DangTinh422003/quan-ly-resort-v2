@@ -144,5 +144,14 @@ namespace quan_ly_resort_v2
                 addUserControll(new UscManageAccount());
             });
         }
+
+        private void btnVoucher_Click(object sender, EventArgs e)
+        {
+            debounceHandler.Debounce(() =>
+            {
+                activeBtn(btnVoucher);
+                addUserControll(new UscManageVoucher());
+            });
+        }
     }
 }

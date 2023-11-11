@@ -179,9 +179,9 @@
             this.lb_CustomerName.Enabled = false;
             this.lb_CustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_CustomerName.ForeColor = System.Drawing.Color.White;
-            this.lb_CustomerName.Location = new System.Drawing.Point(73, 38);
+            this.lb_CustomerName.Location = new System.Drawing.Point(57, 38);
             this.lb_CustomerName.Name = "lb_CustomerName";
-            this.lb_CustomerName.Size = new System.Drawing.Size(254, 42);
+            this.lb_CustomerName.Size = new System.Drawing.Size(270, 66);
             this.lb_CustomerName.TabIndex = 7;
             this.lb_CustomerName.Text = "Tên người ";
             this.lb_CustomerName.TextAlignment = System.Drawing.ContentAlignment.TopRight;

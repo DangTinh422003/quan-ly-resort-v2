@@ -190,6 +190,38 @@ namespace quan_ly_resort_v2.model
             }
         }
 
+        public static BookingRoom GetBookingRoomNotHandleByRoomID(string roomId)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM datphong WHERE TinhTrang <> 'Đã xử lý' AND DSMaPhong LIKE @Id ";
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+                    command.Parameters.AddWithValue("@Id", "%" + roomId + "%");
+                    MySqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        BookingRoom bookingRoom = new BookingRoom(reader["Id"].ToString(),
+                                DateTime.Parse(reader["NgayDat"].ToString()),
+                                reader["DSMaPhong"].ToString(),
+                                reader["MaKH"].ToString(),
+                                DateTime.Parse(reader["NgayCheckInDuKien"].ToString()),
+                                int.Parse(reader["SoNgayThue"].ToString()),
+                                int.Parse(reader["SoNguoiThue"].ToString()));
+                        return bookingRoom;
+                    }
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error in getRoomByID: " + e.Message);
+                return null;
+            }
+        }
+
         public static BookingRoom GetBookingRoomByID(string bookingRoomID)
         {
             try

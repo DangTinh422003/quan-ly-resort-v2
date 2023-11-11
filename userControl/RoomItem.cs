@@ -44,7 +44,8 @@ namespace quan_ly_resort_v2.userControl
                 case "reserved":
                     lb_roomState.Text = "Phòng đã đặt";
                     panel_RoomWrap.BackColor = Color.FromArgb(24, 119, 242);
-                    BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(roomInfo.Id);
+                    //BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(roomInfo.Id);
+                    BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomNotHandleByRoomID(roomInfo.Id);
                     IdOfBookingRoom = bookingRoom.Id;
                     Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
                     lb_CustomerName.Text = customer.Fullname;

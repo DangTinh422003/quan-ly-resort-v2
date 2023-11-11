@@ -551,7 +551,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(461, 247);
+            this.btnSave.Location = new System.Drawing.Point(497, 247);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -578,7 +578,7 @@
             this.btnRestart.ForeColor = System.Drawing.Color.White;
             this.btnRestart.Image = ((System.Drawing.Image)(resources.GetObject("btnRestart.Image")));
             this.btnRestart.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnRestart.Location = new System.Drawing.Point(602, 247);
+            this.btnRestart.Location = new System.Drawing.Point(648, 247);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnRestart.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -605,7 +605,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(320, 247);
+            this.btnDelete.Location = new System.Drawing.Point(346, 247);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -632,7 +632,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdate.Location = new System.Drawing.Point(179, 247);
+            this.btnUpdate.Location = new System.Drawing.Point(195, 247);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -659,7 +659,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(38, 247);
+            this.btnAdd.Location = new System.Drawing.Point(44, 247);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;

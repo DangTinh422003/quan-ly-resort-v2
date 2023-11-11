@@ -197,14 +197,15 @@ namespace quan_ly_resort_v2.forms
             }
 
             // check time checkint
-            if (dateCheckin <= DateTime.Now)
+            if (DateTime.Compare(dateCheckin, DateTime.Now) <= 0 )
             {
                 MessageBox.Show("Ngày nhận phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+
             // check time checkout
-            if (dateCheckout <= dateCheckin)
+            if (DateTime.Compare(dateCheckin,dateCheckout) > 0)
             {
                 MessageBox.Show("Ngày trả phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -235,16 +236,23 @@ namespace quan_ly_resort_v2.forms
             // update room state
             foreach (Room room in RoomDAO.GetRooms())
             {
+                if (room.State.ToLower() == "reserved" || room.State.ToLower() == "occupied")
+                    continue;
                 if (listRoomId.Contains(room.Id))
                 {
                     RoomDAO.updateRoomStateById(room.Id, "reserved");
                     continue;
                 }
-                else RoomDAO.updateRoomStateById(room.Id, "avaiable");
             }
 
             MessageBox.Show("Đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void BookingForm_Load(object sender, EventArgs e)
+        {
+            datetimePicker_Checkint.Value = DateTime.Now;
+            datetimePicker_checkout.Value = DateTime.Now.AddDays(1);
         }
     }
 }

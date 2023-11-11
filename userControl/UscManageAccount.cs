@@ -81,7 +81,7 @@ namespace quan_ly_resort_v2.userControl
 
                 txt_username.Text = selectedRow.Cells[0].Value.ToString();
                 txt_gmail.Text = selectedRow.Cells[3].Value.ToString();
-                combo_role.SelectedIndex = AccountDAO.getRoleIndex(selectedRow.Cells[4].Value.ToString());
+                combo_role.SelectedText = selectedRow.Cells[4].Value.ToString();
                 string create_date = selectedRow.Cells[2].Value.ToString();
                 try
                 {
@@ -160,7 +160,6 @@ namespace quan_ly_resort_v2.userControl
                ChangePasswordForm changePasswordForm = new ChangePasswordForm(username);
                changePasswordForm.ShowDialog();
                 LoadAccountData();
-
             }
             else
             {
@@ -182,7 +181,7 @@ namespace quan_ly_resort_v2.userControl
         {
             String username = txt_username.Text.Trim();
             String email = txt_gmail.Text.Trim();
-            int role = combo_role.SelectedIndex;
+            string role = combo_role.SelectedItem.ToString();
             string[] requiredFields = { username, email };
 
             if (requiredFields.Any(string.IsNullOrEmpty))
@@ -201,7 +200,7 @@ namespace quan_ly_resort_v2.userControl
             {
                 Username = username,
                 Email = email,
-                Role = AccountDAO.getRoleName(role)
+                Role = role
             };
 
             if (isAddMode) {

@@ -39,7 +39,8 @@ namespace quan_ly_resort_v2.forms
             }
             else
             {
-                AccountDAO.ChangePassword(username, password);
+                string hassPassword = PasswordUils.HashingPassword(password);
+                AccountDAO.ChangePassword(username, hassPassword);
                 MessageBox.Show("Đã đổi mật khẩu cho tài khoản " + username);
                 this.Close();
                 return;

@@ -52,6 +52,7 @@ namespace quan_ly_resort_v2.userControl
             txt_username.Text = string.Empty;
             txt_gmail.Text = string.Empty;
             date_create.Value = DateTime.Now;
+            //hello
         }
         private void disableControl()
         {

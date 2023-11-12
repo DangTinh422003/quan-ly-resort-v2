@@ -31,11 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sidebar = new Guna.UI.WinForms.GunaElipsePanel();
-<<<<<<< HEAD
             this.btn_manageAccount = new Guna.UI.WinForms.GunaAdvenceButton();
-=======
-            //this.btn_manageVoucher = new Guna.UI.WinForms.GunaAdvenceButton();
->>>>>>> master
             this.btn_bookingRoom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.currentUser = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_manageBill = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -78,7 +74,6 @@
             this.sidebar.Size = new System.Drawing.Size(308, 903);
             this.sidebar.TabIndex = 0;
             // 
-<<<<<<< HEAD
             // btn_manageAccount
             // 
             this.btn_manageAccount.AnimationHoverSpeed = 0.07F;
@@ -113,7 +108,6 @@
             this.btn_manageAccount.Text = "Quản lý tài khoản";
             this.btn_manageAccount.TextOffsetX = 10;
             this.btn_manageAccount.Click += new System.EventHandler(this.btn_manageAccount_Click);
-=======
             // btn_manageVoucher
             // 
             //this.btn_managevoucher.animationhoverspeed = 0.07f;
@@ -148,7 +142,6 @@
             //this.btn_managevoucher.text = "quản lý tài khoản";
             //this.btn_managevoucher.textoffsetx = 10;
             //this.btn_managevoucher.click += new system.eventhandler(this.btn_managevoucher_click);
->>>>>>> master
             // 
             // btn_bookingRoom
             // 

@@ -145,11 +145,7 @@
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-<<<<<<< HEAD
-            this.DataGridView.Size = new System.Drawing.Size(1285, 458);
-=======
             this.DataGridView.Size = new System.Drawing.Size(1285, 537);
->>>>>>> master
             this.DataGridView.TabIndex = 1;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -252,11 +248,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
-<<<<<<< HEAD
-            this.gunaLabel9.Location = new System.Drawing.Point(30, 18);
-=======
             this.gunaLabel9.Location = new System.Drawing.Point(30, 21);
->>>>>>> master
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(136, 28);
             this.gunaLabel9.TabIndex = 19;
@@ -275,11 +267,7 @@
             this.btnAll.ForeColor = System.Drawing.Color.White;
             this.btnAll.Image = null;
             this.btnAll.ImageSize = new System.Drawing.Size(20, 20);
-<<<<<<< HEAD
-            this.btnAll.Location = new System.Drawing.Point(1153, 9);
-=======
             this.btnAll.Location = new System.Drawing.Point(1153, 12);
->>>>>>> master
             this.btnAll.Name = "btnAll";
             this.btnAll.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnAll.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -306,11 +294,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = null;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-<<<<<<< HEAD
-            this.btnSearch.Location = new System.Drawing.Point(1036, 9);
-=======
             this.btnSearch.Location = new System.Drawing.Point(1036, 12);
->>>>>>> master
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -334,11 +318,7 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-<<<<<<< HEAD
-            this.txtSearch.Location = new System.Drawing.Point(455, 9);
-=======
             this.txtSearch.Location = new System.Drawing.Point(455, 12);
->>>>>>> master
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.txtSearch.PasswordChar = '\0';
@@ -354,11 +334,7 @@
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.White;
             this.gunaPanel1.Controls.Add(this.cbb_search);
-<<<<<<< HEAD
-            this.gunaPanel1.Location = new System.Drawing.Point(195, 9);
-=======
             this.gunaPanel1.Location = new System.Drawing.Point(195, 12);
->>>>>>> master
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(241, 49);
             this.gunaPanel1.TabIndex = 20;
@@ -426,25 +402,6 @@
             // 
             // txtState
             // 
-<<<<<<< HEAD
-            this.txtState.BackColor = System.Drawing.Color.Transparent;
-            this.txtState.BaseColor = System.Drawing.Color.White;
-            this.txtState.BorderColor = System.Drawing.Color.Silver;
-            this.txtState.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtState.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtState.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtState.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtState.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtState.Location = new System.Drawing.Point(194, 315);
-            this.txtState.Name = "txtState";
-            this.txtState.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.txtState.PasswordChar = '\0';
-            this.txtState.Radius = 8;
-            this.txtState.SelectedText = "";
-            this.txtState.Size = new System.Drawing.Size(422, 49);
-            this.txtState.TabIndex = 53;
-            this.txtState.TextOffsetX = 20;
-=======
             this.btnDetailBill.AnimationHoverSpeed = 0.07F;
             this.btnDetailBill.AnimationSpeed = 0.03F;
             this.btnDetailBill.BackColor = System.Drawing.Color.Transparent;
@@ -477,19 +434,9 @@
             this.btnDetailBill.Text = "Chi tiết";
             this.btnDetailBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDetailBill.TextOffsetX = 7;
->>>>>>> master
             // 
             // gunaLabel10
             // 
-<<<<<<< HEAD
-            this.gunaLabel10.AutoSize = true;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel10.Location = new System.Drawing.Point(48, 327);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(101, 28);
-            this.gunaLabel10.TabIndex = 52;
-            this.gunaLabel10.Text = "Tình trạng";
-=======
             this.btn_ExportExcel.AnimationHoverSpeed = 0.07F;
             this.btn_ExportExcel.AnimationSpeed = 0.03F;
             this.btn_ExportExcel.BackColor = System.Drawing.Color.Transparent;
@@ -576,7 +523,6 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
->>>>>>> master
             // 
             // txtTong
             // 
@@ -878,40 +824,6 @@
             // 
             // btn_ExportExcel
             // 
-<<<<<<< HEAD
-            this.btn_ExportExcel.AnimationHoverSpeed = 0.07F;
-            this.btn_ExportExcel.AnimationSpeed = 0.03F;
-            this.btn_ExportExcel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ExportExcel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_ExportExcel.BorderColor = System.Drawing.Color.Black;
-            this.btn_ExportExcel.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_ExportExcel.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_ExportExcel.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_ExportExcel.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_ExportExcel.CheckedImage")));
-            this.btn_ExportExcel.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_ExportExcel.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_ExportExcel.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_ExportExcel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ExportExcel.ForeColor = System.Drawing.Color.White;
-            this.btn_ExportExcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_ExportExcel.Image")));
-            this.btn_ExportExcel.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_ExportExcel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_ExportExcel.Location = new System.Drawing.Point(196, 390);
-            this.btn_ExportExcel.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_ExportExcel.Name = "btn_ExportExcel";
-            this.btn_ExportExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_ExportExcel.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_ExportExcel.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_ExportExcel.OnHoverImage = null;
-            this.btn_ExportExcel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_ExportExcel.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_ExportExcel.Radius = 8;
-            this.btn_ExportExcel.Size = new System.Drawing.Size(155, 45);
-            this.btn_ExportExcel.TabIndex = 4;
-            this.btn_ExportExcel.Text = "Xuất file ";
-            this.btn_ExportExcel.TextOffsetX = 7;
-            this.btn_ExportExcel.Click += new System.EventHandler(this.btn_ExportExcel_Click);
-=======
             this.gunaLabel10.AutoSize = true;
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel10.Location = new System.Drawing.Point(48, 325);
@@ -919,7 +831,6 @@
             this.gunaLabel10.Size = new System.Drawing.Size(101, 28);
             this.gunaLabel10.TabIndex = 52;
             this.gunaLabel10.Text = "Tình trạng";
->>>>>>> master
             // 
             // btnCancel
             // 

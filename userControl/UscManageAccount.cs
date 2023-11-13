@@ -86,8 +86,9 @@ namespace quan_ly_resort_v2.userControl
                 try
                 {
                     date_create.Value = DateTime.Parse(create_date);
-                }catch(Exception ex)
+                }catch(Exception err)
                 {
+                   Console.WriteLine(err.Message);
                     date_create.Value = DateTime.Now;
                 }
 

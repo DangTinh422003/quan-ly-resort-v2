@@ -197,7 +197,7 @@ namespace quan_ly_resort_v2.forms
             }
 
             // check time checkint
-            if (DateTime.Compare(dateCheckin, DateTime.Now) <= 0 )
+            if (dateCheckin < DateTime.Now.Date)
             {
                 MessageBox.Show("Ngày nhận phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -205,7 +205,7 @@ namespace quan_ly_resort_v2.forms
 
 
             // check time checkout
-            if (DateTime.Compare(dateCheckin,dateCheckout) > 0)
+            if (DateTime.Compare(dateCheckin.Date, dateCheckout.Date) > 0)
             {
                 MessageBox.Show("Ngày trả phòng không hợp lệ, vui lòng kiểm tra lại!", "Có lỗi xảy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -231,7 +231,15 @@ namespace quan_ly_resort_v2.forms
                 listRoomId += row.Cells[0].Value.ToString() + ",";
             listRoomId = listRoomId.Substring(0, listRoomId.Length - 1);
 
-            BookingRoomDAO.addNew(new BookingRoom("", DateTime.Now, listRoomId, customerId, dateCheckin, dateCheckout.Subtract(dateCheckin).Days, int.Parse(peopleCounter)));
+            BookingRoomDAO.addNew(
+                new BookingRoom("",
+                    DateTime.Now,
+                    listRoomId,
+                    customerId,
+                    dateCheckin,
+                    dateCheckout.Subtract(dateCheckin).Days == 0 ? 1 : dateCheckout.Subtract(dateCheckin).Days,
+                    int.Parse(peopleCounter))
+            );
 
             // update room state
             foreach (Room room in RoomDAO.GetRooms())

@@ -207,6 +207,28 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
+        public static bool upMoneyById(string billID, double value)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string updateQuery = "UPDATE hoadon set TongTien = @value where MaHD like @MaHD";
+                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                cmd.Parameters.AddWithValue("@MaHD", billID);
+                cmd.Parameters.AddWithValue("@value", value);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+                return rowsAffected > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
         public static Bill getBillByCustomerId(string customnerId)
         {
             try
@@ -219,7 +241,6 @@ namespace quan_ly_resort_v2.DAO
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaKH", customnerId);
                 MySqlDataReader reader = cmd.ExecuteReader();
-
 
                 if (reader.Read())
                 {
@@ -297,6 +318,5 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
     }
 }

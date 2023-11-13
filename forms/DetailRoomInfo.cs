@@ -44,7 +44,7 @@ namespace quan_ly_resort_v2.forms
             Room room = RoomDAO.getRoomByID(currentRoomId);
             if (room.State.Trim().ToLower() == "avaiable")
             {
-                btn_addServices.Enabled = false;
+                comboBoxServiceType.Enabled = false;
                 lb_roomState.Text = "Phòng trống";
                 lb_isConfirmRoom.Text = "Chưa nhận phòng";
                 lb_dayCounter.Text = "";
@@ -52,7 +52,7 @@ namespace quan_ly_resort_v2.forms
             }
             else if (room.State.Trim().ToLower() == "reserved")
             {
-                btn_addServices.Enabled = true;
+                comboBoxServiceType.Enabled = true;
 
                 BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
                 Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
@@ -63,10 +63,20 @@ namespace quan_ly_resort_v2.forms
                 comboBoxSelectRoomState.SelectedIndex = comboBoxSelectRoomState.Items.IndexOf("Phòng đã đặt");
                 comboBox_isClean.SelectedIndex = comboBox_isClean.Items.IndexOf(room.IsClean ? "Đã dọn dẹp" : "Chưa dọn dẹp");
             }
-            else
+            else if (room.State.Trim().ToLower() == "occupied")
             {
-                btn_addServices.Enabled = false;
+                comboBoxServiceType.Enabled = false;
                 btn_getRoom.Text = "Thanh toán";
+
+                BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
+                Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
+                lb_roomState.Text = customer.Fullname;
+                lb_isConfirmRoom.Text = bookingRoom.NgayCheckInDuKien.ToString("dd/MM/yyyy");
+                lb_dayCounter.Text = bookingRoom.SoNgayThue.ToString() + " ngày";
+                lb_peopleCounter.Text = bookingRoom.SoNguoiThue.ToString() + " người";
+                comboBoxSelectRoomState.SelectedIndex = comboBoxSelectRoomState.Items.IndexOf("Phòng đang thuê");
+                comboBox_isClean.SelectedIndex = comboBox_isClean.Items.IndexOf(room.IsClean ? "Đã dọn dẹp" : "Chưa dọn dẹp");
+                // load table service target
             }
         }
 
@@ -103,6 +113,29 @@ namespace quan_ly_resort_v2.forms
             }
             BillDAO.addNewBill(bill);
             BookingRoomDAO.updateBookingRoomConfirm(currentBookingRoomId, true);
+
+            /*
+             sau khi tạo hóa đơn, query lại hóa đơn vừa tạo để lấy mã hóa đơn từ mã khách hàng
+                =>  1. sau đó tạo hóa đơn dịch vụ từ mã hóa đơn vừa query và bảng dịch vụ đã chọn
+                =>  2. cập nhật lại tổng tiền của hóa đơn
+             */
+
+            /*** 1.tạo hóa đơn dịch vụ từ mã hóa đơn vừa query và bảng dịch vụ đã chọn ***/
+            string billId = BillDAO.getBillByCustomerId(customer.Id).MaHoaDon;
+            double newTotalMoney = bill.TongTien;
+            foreach (DataGridViewRow row in tableServiceTarget.Rows)
+            {
+                BillServiceDAO.add(new BillService(
+                    billId,
+                    row.Cells[0].Value.ToString(),
+                    int.Parse(row.Cells[1].Value.ToString())
+                ));
+                newTotalMoney += int.Parse(row.Cells[1].Value.ToString()) * int.Parse(row.Cells[3].Value.ToString());
+            }
+
+            /*** 2. cập nhật lại tổng tiền của hóa đơn ***/
+            BillDAO.upMoneyById(billId, newTotalMoney);
+
             MessageBox.Show("Nhận phòng thành công!");
             this.Close();
         }
@@ -134,16 +167,6 @@ namespace quan_ly_resort_v2.forms
                 actionWhenReserved();
             else if (room.State.ToLower() == "occupied")
                 actionWhenOccupied();
-        }
-
-        private void btn_addServices_Click(object sender, EventArgs e)
-        {
-            comboBoxServiceType.SelectedIndex = 0;
-            List<Service> services = ServiceDAO.GetServiceList();
-            foreach (Service service in services)
-            {
-                tableServiceSelect.Rows.Add(service.MaDV, service.TenDV, service.Gia);
-            }
         }
 
         private void comboBoxServiceType_SelectedIndexChanged(object sender, EventArgs e)

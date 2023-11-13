@@ -31,40 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailRoomInfo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailRoomInfo));
             this.lb_roomId = new System.Windows.Forms.Label();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.tableServiceTarget = new Guna.UI.WinForms.GunaDataGridView();
-            this.comboBoxServiceType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.comboBox_isClean = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.comboBoxSelectRoomState = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.tableServiceSelect = new Guna.UI.WinForms.GunaDataGridView();
-            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lb_peopleCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_dayCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_isConfirmRoom = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_roomState = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
-            this.uscManageCustomer2 = new quan_ly_resort_v2.resources.UscManageCustomer();
-            this.uscManageCustomer1 = new quan_ly_resort_v2.resources.UscManageCustomer();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btn_addServices = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btn_getRoom = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_CloseForm = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.lb_roomState = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableServiceTarget = new Guna.UI.WinForms.GunaDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,14 +48,37 @@
             this.btn_add = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_minus = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lb_peopleCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.comboBoxServiceType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.comboBox_isClean = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.comboBoxSelectRoomState = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lb_dayCounter = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btn_getRoom = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.lb_isConfirmRoom = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.tableServiceSelect = new Guna.UI.WinForms.GunaDataGridView();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_CloseForm = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.uscManageCustomer2 = new quan_ly_resort_v2.resources.UscManageCustomer();
+            this.uscManageCustomer1 = new quan_ly_resort_v2.resources.UscManageCustomer();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.gunaGradient2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableServiceTarget)).BeginInit();
-            this.gunaGradient2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableServiceSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableServiceTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.gunaGradient2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableServiceSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_roomId
@@ -87,7 +86,7 @@
             this.lb_roomId.AutoSize = true;
             this.lb_roomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_roomId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.lb_roomId.Location = new System.Drawing.Point(616, 0);
+            this.lb_roomId.Location = new System.Drawing.Point(480, 4);
             this.lb_roomId.Name = "lb_roomId";
             this.lb_roomId.Size = new System.Drawing.Size(139, 69);
             this.lb_roomId.TabIndex = 1;
@@ -95,6 +94,7 @@
             // 
             // gunaGradient2Panel1
             // 
+            this.gunaGradient2Panel1.AutoSize = true;
             this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradient2Panel1.Controls.Add(this.guna2PictureBox1);
             this.gunaGradient2Panel1.Controls.Add(this.guna2PictureBox4);
@@ -105,22 +105,54 @@
             this.gunaGradient2Panel1.Controls.Add(this.guna2PictureBox3);
             this.gunaGradient2Panel1.Controls.Add(this.gunaGradient2Panel2);
             this.gunaGradient2Panel1.Controls.Add(this.lb_dayCounter);
-            this.gunaGradient2Panel1.Controls.Add(this.btn_addServices);
             this.gunaGradient2Panel1.Controls.Add(this.guna2PictureBox2);
             this.gunaGradient2Panel1.Controls.Add(this.btn_getRoom);
             this.gunaGradient2Panel1.Controls.Add(this.lb_isConfirmRoom);
             this.gunaGradient2Panel1.Controls.Add(this.tableServiceSelect);
             this.gunaGradient2Panel1.Controls.Add(this.btn_CloseForm);
             this.gunaGradient2Panel1.Controls.Add(this.lb_roomId);
-            this.gunaGradient2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.Gainsboro;
             this.gunaGradient2Panel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(12, 12);
             this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
             this.gunaGradient2Panel1.Radius = 20;
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1385, 596);
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(1110, 640);
             this.gunaGradient2Panel1.TabIndex = 2;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_user_501;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(516, 387);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 43);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_group_100;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(517, 524);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(40, 43);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 7;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // lb_roomState
+            // 
+            this.lb_roomState.BackColor = System.Drawing.Color.Transparent;
+            this.lb_roomState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_roomState.Location = new System.Drawing.Point(562, 395);
+            this.lb_roomState.Name = "lb_roomState";
+            this.lb_roomState.Size = new System.Drawing.Size(109, 27);
+            this.lb_roomState.TabIndex = 0;
+            this.lb_roomState.Text = "Phòng trống";
             // 
             // tableServiceTarget
             // 
@@ -165,7 +197,7 @@
             this.tableServiceTarget.DefaultCellStyle = dataGridViewCellStyle3;
             this.tableServiceTarget.EnableHeadersVisualStyles = false;
             this.tableServiceTarget.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableServiceTarget.Location = new System.Drawing.Point(363, 182);
+            this.tableServiceTarget.Location = new System.Drawing.Point(515, 86);
             this.tableServiceTarget.Name = "tableServiceTarget";
             this.tableServiceTarget.ReadOnly = true;
             this.tableServiceTarget.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -177,7 +209,7 @@
             this.tableServiceTarget.ShowCellToolTips = false;
             this.tableServiceTarget.ShowEditingIcon = false;
             this.tableServiceTarget.ShowRowErrors = false;
-            this.tableServiceTarget.Size = new System.Drawing.Size(515, 297);
+            this.tableServiceTarget.Size = new System.Drawing.Size(578, 277);
             this.tableServiceTarget.TabIndex = 10;
             this.tableServiceTarget.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.tableServiceTarget.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -203,6 +235,81 @@
             this.tableServiceTarget.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tableServiceTarget.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableServiceTarget_CellContentClick_1);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.HeaderText = "MaDV";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Dịch Vụ";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Giá";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // btn_add
+            // 
+            this.btn_add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btn_add.HeaderText = "";
+            this.btn_add.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_plus_481;
+            this.btn_add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btn_add.MinimumWidth = 6;
+            this.btn_add.Name = "btn_add";
+            this.btn_add.ReadOnly = true;
+            this.btn_add.Width = 50;
+            // 
+            // btn_remove
+            // 
+            this.btn_remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btn_remove.HeaderText = "";
+            this.btn_remove.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_484;
+            this.btn_remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btn_remove.MinimumWidth = 6;
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.ReadOnly = true;
+            this.btn_remove.Width = 50;
+            // 
+            // btn_minus
+            // 
+            this.btn_minus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btn_minus.HeaderText = "";
+            this.btn_minus.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_minus_48;
+            this.btn_minus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btn_minus.MinimumWidth = 6;
+            this.btn_minus.Name = "btn_minus";
+            this.btn_minus.ReadOnly = true;
+            this.btn_minus.Width = 50;
+            // 
+            // lb_peopleCounter
+            // 
+            this.lb_peopleCounter.BackColor = System.Drawing.Color.Transparent;
+            this.lb_peopleCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_peopleCounter.Location = new System.Drawing.Point(572, 532);
+            this.lb_peopleCounter.Name = "lb_peopleCounter";
+            this.lb_peopleCounter.Size = new System.Drawing.Size(67, 27);
+            this.lb_peopleCounter.TabIndex = 6;
+            this.lb_peopleCounter.Text = "5 người";
+            // 
             // comboBoxServiceType
             // 
             this.comboBoxServiceType.BackColor = System.Drawing.Color.Transparent;
@@ -219,11 +326,23 @@
             "Đồ ăn",
             "Đồ uống",
             "Vận Chuyển"});
-            this.comboBoxServiceType.Location = new System.Drawing.Point(12, 110);
+            this.comboBoxServiceType.Location = new System.Drawing.Point(25, 27);
             this.comboBoxServiceType.Name = "comboBoxServiceType";
-            this.comboBoxServiceType.Size = new System.Drawing.Size(335, 46);
+            this.comboBoxServiceType.Size = new System.Drawing.Size(300, 46);
             this.comboBoxServiceType.TabIndex = 9;
             this.comboBoxServiceType.SelectedIndexChanged += new System.EventHandler(this.comboBoxServiceType_SelectedIndexChanged);
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_641;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(516, 474);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(40, 43);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 5;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // gunaGradient2Panel2
             // 
@@ -234,10 +353,10 @@
             this.gunaGradient2Panel2.Controls.Add(this.comboBoxSelectRoomState);
             this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.White;
             this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.White;
-            this.gunaGradient2Panel2.Location = new System.Drawing.Point(898, 182);
+            this.gunaGradient2Panel2.Location = new System.Drawing.Point(25, 384);
             this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
             this.gunaGradient2Panel2.Radius = 20;
-            this.gunaGradient2Panel2.Size = new System.Drawing.Size(466, 297);
+            this.gunaGradient2Panel2.Size = new System.Drawing.Size(465, 241);
             this.gunaGradient2Panel2.TabIndex = 8;
             // 
             // comboBox_isClean
@@ -256,7 +375,7 @@
             this.comboBox_isClean.Items.AddRange(new object[] {
             "Chưa dọn dẹp",
             "Đã dọn dẹp"});
-            this.comboBox_isClean.Location = new System.Drawing.Point(34, 217);
+            this.comboBox_isClean.Location = new System.Drawing.Point(32, 164);
             this.comboBox_isClean.Name = "comboBox_isClean";
             this.comboBox_isClean.Size = new System.Drawing.Size(402, 46);
             this.comboBox_isClean.Sorted = true;
@@ -268,7 +387,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(27, 24);
+            this.gunaLabel1.Location = new System.Drawing.Point(27, 11);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(394, 41);
             this.gunaLabel1.TabIndex = 0;
@@ -279,7 +398,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(27, 157);
+            this.gunaLabel2.Location = new System.Drawing.Point(27, 120);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(419, 41);
             this.gunaLabel2.TabIndex = 2;
@@ -303,12 +422,78 @@
             "Phòng đã đặt",
             "Phòng đang thuê",
             "Phòng trống"});
-            this.comboBoxSelectRoomState.Location = new System.Drawing.Point(34, 84);
+            this.comboBoxSelectRoomState.Location = new System.Drawing.Point(34, 55);
             this.comboBoxSelectRoomState.Name = "comboBoxSelectRoomState";
             this.comboBoxSelectRoomState.Size = new System.Drawing.Size(402, 46);
             this.comboBoxSelectRoomState.Sorted = true;
             this.comboBoxSelectRoomState.TabIndex = 1;
             this.comboBoxSelectRoomState.TextOffset = new System.Drawing.Point(30, 0);
+            // 
+            // lb_dayCounter
+            // 
+            this.lb_dayCounter.BackColor = System.Drawing.Color.Transparent;
+            this.lb_dayCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_dayCounter.Location = new System.Drawing.Point(562, 482);
+            this.lb_dayCounter.Name = "lb_dayCounter";
+            this.lb_dayCounter.Size = new System.Drawing.Size(62, 27);
+            this.lb_dayCounter.TabIndex = 4;
+            this.lb_dayCounter.Text = "3 ngày";
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_50;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(516, 431);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 43);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 3;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // btn_getRoom
+            // 
+            this.btn_getRoom.AnimationHoverSpeed = 0.07F;
+            this.btn_getRoom.AnimationSpeed = 0.03F;
+            this.btn_getRoom.BackColor = System.Drawing.Color.Transparent;
+            this.btn_getRoom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_getRoom.BorderColor = System.Drawing.Color.Black;
+            this.btn_getRoom.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_getRoom.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_getRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_getRoom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_getRoom.CheckedImage")));
+            this.btn_getRoom.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_getRoom.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_getRoom.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_getRoom.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_getRoom.ForeColor = System.Drawing.Color.White;
+            this.btn_getRoom.Image = null;
+            this.btn_getRoom.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_getRoom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_getRoom.Location = new System.Drawing.Point(515, 577);
+            this.btn_getRoom.Name = "btn_getRoom";
+            this.btn_getRoom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_getRoom.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_getRoom.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_getRoom.OnHoverImage = null;
+            this.btn_getRoom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_getRoom.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_getRoom.Radius = 12;
+            this.btn_getRoom.Size = new System.Drawing.Size(180, 48);
+            this.btn_getRoom.TabIndex = 3;
+            this.btn_getRoom.Text = "Nhận phòng";
+            this.btn_getRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_getRoom.Click += new System.EventHandler(this.btn_getRoom_Click);
+            // 
+            // lb_isConfirmRoom
+            // 
+            this.lb_isConfirmRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lb_isConfirmRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_isConfirmRoom.Location = new System.Drawing.Point(562, 439);
+            this.lb_isConfirmRoom.Name = "lb_isConfirmRoom";
+            this.lb_isConfirmRoom.Size = new System.Drawing.Size(160, 27);
+            this.lb_isConfirmRoom.TabIndex = 2;
+            this.lb_isConfirmRoom.Text = "Chưa nhận phòng";
             // 
             // tableServiceSelect
             // 
@@ -349,7 +534,7 @@
             this.tableServiceSelect.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableServiceSelect.EnableHeadersVisualStyles = false;
             this.tableServiceSelect.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableServiceSelect.Location = new System.Drawing.Point(12, 182);
+            this.tableServiceSelect.Location = new System.Drawing.Point(25, 86);
             this.tableServiceSelect.Name = "tableServiceSelect";
             this.tableServiceSelect.ReadOnly = true;
             this.tableServiceSelect.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -361,7 +546,7 @@
             this.tableServiceSelect.ShowCellToolTips = false;
             this.tableServiceSelect.ShowEditingIcon = false;
             this.tableServiceSelect.ShowRowErrors = false;
-            this.tableServiceSelect.Size = new System.Drawing.Size(335, 297);
+            this.tableServiceSelect.Size = new System.Drawing.Size(465, 277);
             this.tableServiceSelect.TabIndex = 1;
             this.tableServiceSelect.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.tableServiceSelect.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -410,45 +595,39 @@
             this.Gia.Name = "Gia";
             this.Gia.ReadOnly = true;
             // 
-            // lb_peopleCounter
+            // btn_CloseForm
             // 
-            this.lb_peopleCounter.BackColor = System.Drawing.Color.Transparent;
-            this.lb_peopleCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_peopleCounter.Location = new System.Drawing.Point(1299, 129);
-            this.lb_peopleCounter.Name = "lb_peopleCounter";
-            this.lb_peopleCounter.Size = new System.Drawing.Size(67, 27);
-            this.lb_peopleCounter.TabIndex = 6;
-            this.lb_peopleCounter.Text = "5 người";
-            // 
-            // lb_dayCounter
-            // 
-            this.lb_dayCounter.BackColor = System.Drawing.Color.Transparent;
-            this.lb_dayCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_dayCounter.Location = new System.Drawing.Point(1122, 129);
-            this.lb_dayCounter.Name = "lb_dayCounter";
-            this.lb_dayCounter.Size = new System.Drawing.Size(62, 27);
-            this.lb_dayCounter.TabIndex = 4;
-            this.lb_dayCounter.Text = "3 ngày";
-            // 
-            // lb_isConfirmRoom
-            // 
-            this.lb_isConfirmRoom.BackColor = System.Drawing.Color.Transparent;
-            this.lb_isConfirmRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_isConfirmRoom.Location = new System.Drawing.Point(803, 129);
-            this.lb_isConfirmRoom.Name = "lb_isConfirmRoom";
-            this.lb_isConfirmRoom.Size = new System.Drawing.Size(160, 27);
-            this.lb_isConfirmRoom.TabIndex = 2;
-            this.lb_isConfirmRoom.Text = "Chưa nhận phòng";
-            // 
-            // lb_roomState
-            // 
-            this.lb_roomState.BackColor = System.Drawing.Color.Transparent;
-            this.lb_roomState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_roomState.Location = new System.Drawing.Point(417, 121);
-            this.lb_roomState.Name = "lb_roomState";
-            this.lb_roomState.Size = new System.Drawing.Size(109, 27);
-            this.lb_roomState.TabIndex = 0;
-            this.lb_roomState.Text = "Phòng trống";
+            this.btn_CloseForm.AnimationHoverSpeed = 0.07F;
+            this.btn_CloseForm.AnimationSpeed = 0.03F;
+            this.btn_CloseForm.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CloseForm.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.btn_CloseForm.BorderColor = System.Drawing.Color.Black;
+            this.btn_CloseForm.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_CloseForm.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_CloseForm.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_CloseForm.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_CloseForm.CheckedImage")));
+            this.btn_CloseForm.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_CloseForm.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_CloseForm.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_CloseForm.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CloseForm.ForeColor = System.Drawing.Color.White;
+            this.btn_CloseForm.Image = null;
+            this.btn_CloseForm.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_CloseForm.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_CloseForm.Location = new System.Drawing.Point(710, 577);
+            this.btn_CloseForm.Name = "btn_CloseForm";
+            this.btn_CloseForm.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_CloseForm.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_CloseForm.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_CloseForm.OnHoverImage = null;
+            this.btn_CloseForm.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_CloseForm.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_CloseForm.Radius = 12;
+            this.btn_CloseForm.Size = new System.Drawing.Size(180, 48);
+            this.btn_CloseForm.TabIndex = 5;
+            this.btn_CloseForm.Text = "Thoát";
+            this.btn_CloseForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
             // 
             // gunaContextMenuStrip1
             // 
@@ -511,226 +690,12 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 86;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_user_501;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(371, 113);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 43);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_group_100;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(1244, 121);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(40, 43);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox4.TabIndex = 7;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_641;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1076, 121);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(40, 43);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 5;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // btn_addServices
-            // 
-            this.btn_addServices.AnimationHoverSpeed = 0.07F;
-            this.btn_addServices.AnimationSpeed = 0.03F;
-            this.btn_addServices.BackColor = System.Drawing.Color.Transparent;
-            this.btn_addServices.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_addServices.BorderColor = System.Drawing.Color.Black;
-            this.btn_addServices.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_addServices.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_addServices.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_addServices.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_addServices.CheckedImage")));
-            this.btn_addServices.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_addServices.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_addServices.Enabled = false;
-            this.btn_addServices.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_addServices.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addServices.ForeColor = System.Drawing.Color.White;
-            this.btn_addServices.Image = null;
-            this.btn_addServices.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_addServices.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_addServices.Location = new System.Drawing.Point(676, 494);
-            this.btn_addServices.Name = "btn_addServices";
-            this.btn_addServices.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_addServices.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_addServices.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_addServices.OnHoverImage = null;
-            this.btn_addServices.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_addServices.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_addServices.Radius = 12;
-            this.btn_addServices.Size = new System.Drawing.Size(199, 48);
-            this.btn_addServices.TabIndex = 6;
-            this.btn_addServices.Text = "Thêm dịch vụ";
-            this.btn_addServices.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_addServices.Click += new System.EventHandler(this.btn_addServices_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_50;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(757, 121);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 43);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 3;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // btn_getRoom
-            // 
-            this.btn_getRoom.AnimationHoverSpeed = 0.07F;
-            this.btn_getRoom.AnimationSpeed = 0.03F;
-            this.btn_getRoom.BackColor = System.Drawing.Color.Transparent;
-            this.btn_getRoom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_getRoom.BorderColor = System.Drawing.Color.Black;
-            this.btn_getRoom.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_getRoom.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_getRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_getRoom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_getRoom.CheckedImage")));
-            this.btn_getRoom.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_getRoom.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_getRoom.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_getRoom.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_getRoom.ForeColor = System.Drawing.Color.White;
-            this.btn_getRoom.Image = null;
-            this.btn_getRoom.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_getRoom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_getRoom.Location = new System.Drawing.Point(902, 494);
-            this.btn_getRoom.Name = "btn_getRoom";
-            this.btn_getRoom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_getRoom.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_getRoom.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_getRoom.OnHoverImage = null;
-            this.btn_getRoom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_getRoom.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_getRoom.Radius = 12;
-            this.btn_getRoom.Size = new System.Drawing.Size(180, 48);
-            this.btn_getRoom.TabIndex = 3;
-            this.btn_getRoom.Text = "Nhận phòng";
-            this.btn_getRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_getRoom.Click += new System.EventHandler(this.btn_getRoom_Click);
-            // 
-            // btn_CloseForm
-            // 
-            this.btn_CloseForm.AnimationHoverSpeed = 0.07F;
-            this.btn_CloseForm.AnimationSpeed = 0.03F;
-            this.btn_CloseForm.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CloseForm.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.btn_CloseForm.BorderColor = System.Drawing.Color.Black;
-            this.btn_CloseForm.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_CloseForm.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_CloseForm.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_CloseForm.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_CloseForm.CheckedImage")));
-            this.btn_CloseForm.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_CloseForm.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_CloseForm.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_CloseForm.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CloseForm.ForeColor = System.Drawing.Color.White;
-            this.btn_CloseForm.Image = null;
-            this.btn_CloseForm.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_CloseForm.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_CloseForm.Location = new System.Drawing.Point(1093, 494);
-            this.btn_CloseForm.Name = "btn_CloseForm";
-            this.btn_CloseForm.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_CloseForm.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_CloseForm.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_CloseForm.OnHoverImage = null;
-            this.btn_CloseForm.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_CloseForm.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_CloseForm.Radius = 12;
-            this.btn_CloseForm.Size = new System.Drawing.Size(180, 48);
-            this.btn_CloseForm.TabIndex = 5;
-            this.btn_CloseForm.Text = "Thoát";
-            this.btn_CloseForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.HeaderText = "MaDV";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Dịch Vụ";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Giá";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // btn_add
-            // 
-            this.btn_add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btn_add.HeaderText = "";
-            this.btn_add.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_plus_481;
-            this.btn_add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btn_add.MinimumWidth = 6;
-            this.btn_add.Name = "btn_add";
-            this.btn_add.ReadOnly = true;
-            this.btn_add.Width = 50;
-            // 
-            // btn_remove
-            // 
-            this.btn_remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btn_remove.HeaderText = "";
-            this.btn_remove.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_484;
-            this.btn_remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btn_remove.MinimumWidth = 6;
-            this.btn_remove.Name = "btn_remove";
-            this.btn_remove.ReadOnly = true;
-            this.btn_remove.Width = 50;
-            // 
-            // btn_minus
-            // 
-            this.btn_minus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btn_minus.HeaderText = "";
-            this.btn_minus.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_minus_48;
-            this.btn_minus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.btn_minus.MinimumWidth = 6;
-            this.btn_minus.Name = "btn_minus";
-            this.btn_minus.ReadOnly = true;
-            this.btn_minus.Width = 50;
-            // 
             // DetailRoomInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(1385, 596);
+            this.ClientSize = new System.Drawing.Size(1134, 668);
             this.ControlBox = false;
             this.Controls.Add(this.uscManageCustomer2);
             this.Controls.Add(this.uscManageCustomer1);
@@ -744,14 +709,14 @@
             this.Load += new System.EventHandler(this.DetailRoomInfo_Load);
             this.gunaGradient2Panel1.ResumeLayout(false);
             this.gunaGradient2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableServiceTarget)).EndInit();
-            this.gunaGradient2Panel2.ResumeLayout(false);
-            this.gunaGradient2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableServiceSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableServiceTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.gunaGradient2Panel2.ResumeLayout(false);
+            this.gunaGradient2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableServiceSelect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -773,7 +738,6 @@
         private Guna.UI.WinForms.GunaDataGridView tableServiceSelect;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxSelectRoomState;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_addServices;
         private Guna.UI2.WinForms.Guna2ComboBox comboBox_isClean;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
@@ -786,6 +750,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -793,7 +759,5 @@
         private System.Windows.Forms.DataGridViewImageColumn btn_add;
         private System.Windows.Forms.DataGridViewImageColumn btn_remove;
         private System.Windows.Forms.DataGridViewImageColumn btn_minus;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

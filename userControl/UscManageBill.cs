@@ -178,11 +178,11 @@ namespace quan_ly_resort_v2.userControl
 
             if (string.IsNullOrWhiteSpace(maHD))
             {
-                MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
+                MessageBox.Show("Vui lòng chọn hóa đơn để xóa.");
                 return;
             }
 
-            string message = "Bạn có chắc muốn xóa nhân viên có mã: " + maHD + " không?";
+            string message = "Bạn có chắc muốn xóa  hóa đơn có mã: " + maHD + " không?";
             string caption = "Xác nhận xóa";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 

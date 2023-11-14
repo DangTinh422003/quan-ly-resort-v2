@@ -73,7 +73,6 @@ namespace quan_ly_resort_v2.userControl
             txtSalary.Text = "";
             txtWorkDay.Value = DateTime.Now;
             txtUsername.Text = "";
-            txtRole.Text = "";
         }
         private void disableControl()
         {
@@ -99,7 +98,6 @@ namespace quan_ly_resort_v2.userControl
             txtEmail.Enabled = true;
             txtSalary.Enabled = true;
             txtUsername.Enabled = true;
-            txtRole.Enabled = true;
         }
         private void disableFormInput()
         {
@@ -113,7 +111,6 @@ namespace quan_ly_resort_v2.userControl
             txtSalary.Enabled = false;
             txtWorkDay.Enabled = false;
             txtUsername.Enabled = false;
-            txtRole.Enabled = false;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -135,8 +132,6 @@ namespace quan_ly_resort_v2.userControl
                 txtSalary.Text = selectedRow.Cells[7].Value.ToString();
                 string workday = selectedRow.Cells[8].Value.ToString();
                 txtUsername.Text = selectedRow.Cells[9].Value.ToString();
-                txtRole.Text = selectedRow.Cells[10].Value.ToString();
-
                 txtDate.Value = DateTime.Parse(birthday);
                 txtWorkDay.Value = DateTime.Parse(workday);
 
@@ -245,18 +240,6 @@ namespace quan_ly_resort_v2.userControl
             string username = txtUsername.Text.Trim();
             string luongStr = txtSalary.Text.Trim();
 
-            int role;
-
-            if (!int.TryParse(txtRole.Text, out role))
-            {
-                MessageBox.Show("Vai trò không hợp lệ. Vai trò phải là một số nguyên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (role < 0 || role > 2)
-            {
-                MessageBox.Show("Vai trò phải là 0, 1 hoặc 2.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             string[] requiredFields = { tenNV, sdt, email, diaChi, username };
             if (requiredFields.Any(string.IsNullOrEmpty) || ngaySinh == null || ngayVaoLam == null)
@@ -328,7 +311,7 @@ namespace quan_ly_resort_v2.userControl
                     return;
                 }
 
-                Employee newEmployee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username, role);
+                Employee newEmployee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username);
                 bool isAdded = EmployeeDAO.AddEmployee(newEmployee);
 
                 if (isAdded)
@@ -341,7 +324,7 @@ namespace quan_ly_resort_v2.userControl
             else if (btnUpdate.Enabled)
             {
                 string maNV = txtId.Text.Trim();
-                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username, role);
+                Employee employee = new Employee(maNV, tenNV, sdt, email, ngaySinh, diaChi, cccd, luong, ngayVaoLam, username);
                 bool isUpdated = EmployeeDAO.UpdateEmployee(employee);
 
                 if (isUpdated)

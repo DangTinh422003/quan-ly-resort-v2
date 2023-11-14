@@ -10,19 +10,17 @@ namespace quan_ly_resort_v2.model
     {
         public Service() { }
 
-        public Service(string maDV, string tenDV, string loaiDV, string chiTietDichVu, double gia)
+        public Service(string maDV, string tenDV, string loaiDV, double gia)
         {
             MaDV = maDV;
             TenDV = tenDV;
             LoaiDV = loaiDV;
-            ChiTietDichVu = chiTietDichVu;
             Gia = gia;
         }
 
         public string MaDV { get; set; }
         public string TenDV { get; set; }
         public string LoaiDV { get; set; }
-        public string ChiTietDichVu { get; set; }
         public double Gia { get; set; }
     }
 }

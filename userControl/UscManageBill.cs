@@ -103,7 +103,6 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableFormInput()
         {   
-            txtState.Enabled = false;
             txtIdBill.Enabled = false;
             txtIdKH.Enabled = false;
             txtIdNV.Enabled = false;
@@ -127,7 +126,6 @@ namespace quan_ly_resort_v2.userControl
                 txtListRoom.Text = selectedRow.Cells[3].Value.ToString();
                 txtNgayThue.Text = selectedRow.Cells[7].Value.ToString();
                 txtTong.Text = selectedRow.Cells[5].Value.ToString();
-                txtState.Text = selectedRow.Cells[8].Value.ToString();
 
                 string NgayTao = selectedRow.Cells[4].Value.ToString();
                 txtDateCrea.Value = DateTime.Parse(NgayTao);

@@ -14,17 +14,15 @@ namespace quan_ly_resort_v2.model
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int Count {  get; set; }
-        public int State { get; set; }
         public Voucher() { }
 
-        public Voucher(string maVoucher, float giamGia, DateTime startDate, DateTime endDate, int count, int state)
+        public Voucher(string maVoucher, float giamGia, DateTime startDate, DateTime endDate, int count)
         {
             MaVoucher = maVoucher;
             GiamGia = giamGia;
             StartDate = startDate;
             EndDate = endDate;
             Count = count;
-            State = state;
         }
     }
 }

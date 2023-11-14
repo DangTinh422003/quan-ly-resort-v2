@@ -21,7 +21,8 @@ namespace quan_ly_resort_v2.DAO
             List<Voucher> vouchers = new List<Voucher>();
             try
             {
-                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
                 string sql = "SELECT * FROM voucher";
@@ -36,9 +37,7 @@ namespace quan_ly_resort_v2.DAO
                         GiamGia = Convert.ToInt32(reader["GiamGia"]),
                         StartDate = Convert.ToDateTime(reader["StartDate"]),
                         EndDate = Convert.ToDateTime(reader["EndDate"]),
-                        Count = Convert.ToInt32(reader["SoLanDung"]),
-                        State = Convert.ToInt32(reader["State"])
-
+                        Count = Convert.ToInt32(reader["Count"])
                 };
 
                     vouchers.Add(voucher);
@@ -63,7 +62,7 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "insert into voucher values(@MaVoucher,@GiamGia,@StartDate,@EndDate,@SoLanDung,@State)";
+                string sql = "insert into voucher values(@MaVoucher,@GiamGia,@StartDate,@EndDate,@SoLanDung)";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaVoucher", maVoucher.MaVoucher);
@@ -71,7 +70,6 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Parameters.AddWithValue("@StartDate", maVoucher.StartDate);
                 cmd.Parameters.AddWithValue("@EndDate", maVoucher.EndDate);
                 cmd.Parameters.AddWithValue("@SoLanDung", maVoucher.Count);
-                cmd.Parameters.AddWithValue("@State", maVoucher.State);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -88,7 +86,7 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string updateQuery = "UPDATE voucher SET MaVoucher = @MaVoucher, GiamGia = @GiamGia, StartDate = @StartDate, EndDate = @EndDate, SoLanDung = @SoLanDung, State = @State WHERE MaVoucher = @MaVoucher";
+                string updateQuery = "UPDATE voucher SET MaVoucher = @MaVoucher, GiamGia = @GiamGia, StartDate = @StartDate, EndDate = @EndDate, Count = @SoLanDung WHERE MaVoucher = @MaVoucher";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@MaVoucher", voucher.MaVoucher);
@@ -96,7 +94,6 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Parameters.AddWithValue("@StartDate", voucher.StartDate);
                 cmd.Parameters.AddWithValue("@EndDate", voucher.EndDate);
                 cmd.Parameters.AddWithValue("@SoLanDung", voucher.Count);
-                cmd.Parameters.AddWithValue("@State", voucher.State);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 

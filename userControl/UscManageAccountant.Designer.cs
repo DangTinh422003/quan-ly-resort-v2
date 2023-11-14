@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageAccountant));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageAccountant));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.txtRole = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.btnCancel = new Guna.UI.WinForms.GunaButton();
+            this.btnDelete = new Guna.UI.WinForms.GunaButton();
+            this.btnUpdate = new Guna.UI.WinForms.GunaButton();
+            this.btnAdd = new Guna.UI.WinForms.GunaButton();
+            this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.txtUsername = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.txtWorkDay = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -75,13 +80,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancel = new Guna.UI.WinForms.GunaButton();
-            this.btnDelete = new Guna.UI.WinForms.GunaButton();
-            this.btnUpdate = new Guna.UI.WinForms.GunaButton();
-            this.btnAdd = new Guna.UI.WinForms.GunaButton();
-            this.btnSave = new Guna.UI.WinForms.GunaButton();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -92,8 +90,6 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.txtRole);
-            this.gunaGroupBox1.Controls.Add(this.gunaLabel1);
             this.gunaGroupBox1.Controls.Add(this.Label_Title);
             this.gunaGroupBox1.Controls.Add(this.gunaPanel3);
             this.gunaGroupBox1.Controls.Add(this.gunaPanel1);
@@ -130,36 +126,6 @@
             this.gunaGroupBox1.Text = "Thông tin nhân viên";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // txtRole
-            // 
-            this.txtRole.BackColor = System.Drawing.Color.Transparent;
-            this.txtRole.BaseColor = System.Drawing.Color.White;
-            this.txtRole.BorderColor = System.Drawing.Color.Silver;
-            this.txtRole.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRole.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtRole.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtRole.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtRole.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRole.Location = new System.Drawing.Point(771, 319);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.txtRole.PasswordChar = '\0';
-            this.txtRole.Radius = 8;
-            this.txtRole.SelectedText = "";
-            this.txtRole.Size = new System.Drawing.Size(422, 49);
-            this.txtRole.TabIndex = 31;
-            this.txtRole.TextOffsetX = 20;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel1.Location = new System.Drawing.Point(632, 332);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(53, 28);
-            this.gunaLabel1.TabIndex = 30;
-            this.gunaLabel1.Text = "Vị trí";
-            // 
             // Label_Title
             // 
             this.Label_Title.AutoSize = true;
@@ -168,6 +134,156 @@
             this.Label_Title.Name = "Label_Title";
             this.Label_Title.Size = new System.Drawing.Size(0, 28);
             this.Label_Title.TabIndex = 29;
+            // 
+            // gunaPanel3
+            // 
+            this.gunaPanel3.Location = new System.Drawing.Point(-3, 431);
+            this.gunaPanel3.Name = "gunaPanel3";
+            this.gunaPanel3.Size = new System.Drawing.Size(1282, 83);
+            this.gunaPanel3.TabIndex = 15;
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 431);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1279, 77);
+            this.gunaPanel1.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AnimationHoverSpeed = 0.07F;
+            this.btnCancel.AnimationSpeed = 0.03F;
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCancel.Location = new System.Drawing.Point(630, 380);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCancel.OnHoverImage = null;
+            this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCancel.Radius = 8;
+            this.btnCancel.Size = new System.Drawing.Size(135, 45);
+            this.btnCancel.TabIndex = 27;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AnimationHoverSpeed = 0.07F;
+            this.btnDelete.AnimationSpeed = 0.03F;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.Black;
+            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDelete.Location = new System.Drawing.Point(332, 380);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDelete.OnHoverImage = null;
+            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDelete.Radius = 8;
+            this.btnDelete.Size = new System.Drawing.Size(135, 45);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AnimationHoverSpeed = 0.07F;
+            this.btnUpdate.AnimationSpeed = 0.03F;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUpdate.Location = new System.Drawing.Point(180, 380);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUpdate.OnHoverImage = null;
+            this.btnUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUpdate.Radius = 8;
+            this.btnUpdate.Size = new System.Drawing.Size(135, 45);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AnimationHoverSpeed = 0.07F;
+            this.btnAdd.AnimationSpeed = 0.03F;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAdd.Location = new System.Drawing.Point(31, 380);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.OnHoverImage = null;
+            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAdd.Radius = 8;
+            this.btnAdd.Size = new System.Drawing.Size(135, 45);
+            this.btnAdd.TabIndex = 24;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(481, 380);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Radius = 8;
+            this.btnSave.Size = new System.Drawing.Size(135, 45);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtUsername
             // 
@@ -774,156 +890,6 @@
             this.Column9.ReadOnly = true;
             this.Column9.Width = 169;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.AnimationHoverSpeed = 0.07F;
-            this.btnCancel.AnimationSpeed = 0.03F;
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
-            this.btnCancel.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(630, 380);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCancel.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCancel.OnHoverImage = null;
-            this.btnCancel.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCancel.Radius = 8;
-            this.btnCancel.Size = new System.Drawing.Size(135, 45);
-            this.btnCancel.TabIndex = 27;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AnimationHoverSpeed = 0.07F;
-            this.btnDelete.AnimationSpeed = 0.03F;
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.Black;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(332, 380);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDelete.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDelete.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.OnHoverImage = null;
-            this.btnDelete.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDelete.Radius = 8;
-            this.btnDelete.Size = new System.Drawing.Size(135, 45);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AnimationHoverSpeed = 0.07F;
-            this.btnUpdate.AnimationSpeed = 0.03F;
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
-            this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUpdate.FocusedColor = System.Drawing.Color.Empty;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUpdate.Location = new System.Drawing.Point(180, 380);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnUpdate.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnUpdate.OnHoverImage = null;
-            this.btnUpdate.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUpdate.Radius = 8;
-            this.btnUpdate.Size = new System.Drawing.Size(135, 45);
-            this.btnUpdate.TabIndex = 25;
-            this.btnUpdate.Text = "Sửa";
-            this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AnimationHoverSpeed = 0.07F;
-            this.btnAdd.AnimationSpeed = 0.03F;
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.Black;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(31, 380);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAdd.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.OnHoverImage = null;
-            this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAdd.Radius = 8;
-            this.btnAdd.Size = new System.Drawing.Size(135, 45);
-            this.btnAdd.TabIndex = 24;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AnimationHoverSpeed = 0.07F;
-            this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(481, 380);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSave.OnHoverImage = null;
-            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSave.Radius = 8;
-            this.btnSave.Size = new System.Drawing.Size(135, 45);
-            this.btnSave.TabIndex = 23;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 431);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1279, 77);
-            this.gunaPanel1.TabIndex = 1;
-            // 
-            // gunaPanel3
-            // 
-            this.gunaPanel3.Location = new System.Drawing.Point(-3, 431);
-            this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(1282, 83);
-            this.gunaPanel3.TabIndex = 15;
-            // 
             // UscManageAccountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -996,8 +962,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI.WinForms.GunaLabel Label_Title;
-        private Guna.UI.WinForms.GunaTextBox txtRole;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
     }

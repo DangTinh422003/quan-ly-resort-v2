@@ -59,7 +59,6 @@ namespace quan_ly_resort_v2.userControl
             txtVoucher.Text = "";
             txtCount.Text = "";
             txtGiamgia.Text = "";
-            txtState.Text = "";
             StartDate.Value = DateTime.Now;
             EndDate.Value = DateTime.Now;
         }
@@ -83,7 +82,6 @@ namespace quan_ly_resort_v2.userControl
             txtVoucher.Enabled = true;
             txtCount.Enabled = true;
             txtGiamgia.Enabled = true;
-            txtState.Enabled = true;
             StartDate.Enabled = true;
             EndDate.Enabled = true;
         }
@@ -92,7 +90,6 @@ namespace quan_ly_resort_v2.userControl
             txtVoucher.Enabled = false;
             txtCount.Enabled = false;
             txtGiamgia.Enabled = false;
-            txtState.Enabled = false;
             StartDate.Enabled = false;
             EndDate.Enabled = false;
         }
@@ -113,8 +110,6 @@ namespace quan_ly_resort_v2.userControl
                 string startDate = selectedRow.Cells[2].Value.ToString();
                 string endDate = selectedRow.Cells[3].Value.ToString();
                 txtCount.Text = selectedRow.Cells[4].Value.ToString();
-                txtState.Text = selectedRow.Cells[5].Value.ToString();
-
                 StartDate.Value = DateTime.Parse(startDate);
                 EndDate.Value = DateTime.Parse(endDate);
 
@@ -216,7 +211,6 @@ namespace quan_ly_resort_v2.userControl
         {
             string maVoucher = txtVoucher.Text.Trim();
             string giamGia = txtGiamgia.Text.Trim();
-            string state = txtState.Text.Trim();
             string count = txtCount.Text.Trim();
             DateTime startDate = StartDate.Value;
             DateTime endDate = EndDate.Value;
@@ -236,19 +230,7 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            int stateValue;
-            if (!int.TryParse(state, out stateValue))
-            {
-                MessageBox.Show("Vai trò không hợp lệ. Vai trò phải là một số nguyên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else if (stateValue != 0 )
-            {
-                MessageBox.Show("Trình trạng phải là 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string[] requiredFields = { maVoucher, giamGia, state, count };
+            string[] requiredFields = { maVoucher, giamGia, count };
 
             if (requiredFields.Any(string.IsNullOrEmpty) || startDate == null || endDate == null)
             {
@@ -271,7 +253,7 @@ namespace quan_ly_resort_v2.userControl
                     return;
                 }
 
-                Voucher newVoucher = new Voucher(maVoucher, giamgia, startDate, endDate, countValue, stateValue);
+                Voucher newVoucher = new Voucher(maVoucher, giamgia, startDate, endDate, countValue);
                 bool isAdded = VoucherDAO.addNewVoucher(newVoucher);
                 if (isAdded)
                     MessageBox.Show("Thêm voucher thành công!", "Thêm voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -282,7 +264,7 @@ namespace quan_ly_resort_v2.userControl
             else if (btnModify.Enabled)
             {
 
-                Voucher voucher = new Voucher(maVoucher, giamgia, startDate, endDate, countValue, stateValue);
+                Voucher voucher = new Voucher(maVoucher, giamgia, startDate, endDate, countValue);
                 bool isUpdated = VoucherDAO.UpdateVoucher(voucher);
 
                 if (isUpdated)

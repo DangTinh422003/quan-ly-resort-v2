@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageBill));
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.DataGridView = new Guna.UI.WinForms.GunaDataGridView();
@@ -141,6 +142,14 @@
             this.DataGridView.Location = new System.Drawing.Point(0, 0);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView.RowHeadersVisible = false;
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
@@ -395,10 +404,40 @@
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
-            this.gunaGroupBox1.Size = new System.Drawing.Size(1285, 460);
+            this.gunaGroupBox1.Size = new System.Drawing.Size(1285, 468);
             this.gunaGroupBox1.TabIndex = 1;
             this.gunaGroupBox1.Text = "Thông tin hóa đơn";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel10.Location = new System.Drawing.Point(48, 325);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(101, 28);
+            this.gunaLabel10.TabIndex = 52;
+            this.gunaLabel10.Text = "Tình trạng";
+            // 
+            // btnDetailBill
+            // 
+            this.txtState.BackColor = System.Drawing.Color.Transparent;
+            this.txtState.BaseColor = System.Drawing.Color.White;
+            this.txtState.BorderColor = System.Drawing.Color.Silver;
+            this.txtState.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtState.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtState.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtState.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtState.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtState.Location = new System.Drawing.Point(194, 315);
+            this.txtState.Name = "txtState";
+            this.txtState.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.txtState.PasswordChar = '\0';
+            this.txtState.Radius = 8;
+            this.txtState.SelectedText = "";
+            this.txtState.Size = new System.Drawing.Size(422, 49);
+            this.txtState.TabIndex = 53;
+            this.txtState.TextOffsetX = 20;
             // 
             // gunaLabel10
             // 
@@ -797,26 +836,6 @@
             this.Label_Title.TabIndex = 30;
             this.Label_Title.Text = "test";
             // 
-            // txsState
-            // 
-            this.txsState.BackColor = System.Drawing.Color.Transparent;
-            this.txsState.BaseColor = System.Drawing.Color.White;
-            this.txsState.BorderColor = System.Drawing.Color.Silver;
-            this.txsState.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txsState.FocusedBaseColor = System.Drawing.Color.White;
-            this.txsState.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txsState.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txsState.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txsState.Location = new System.Drawing.Point(194, 315);
-            this.txsState.Name = "txsState";
-            this.txsState.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.txsState.PasswordChar = '\0';
-            this.txsState.Radius = 8;
-            this.txsState.SelectedText = "";
-            this.txsState.Size = new System.Drawing.Size(422, 49);
-            this.txsState.TabIndex = 53;
-            this.txsState.TextOffsetX = 20;
-            // 
             // UscManageBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -834,9 +853,7 @@
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
             this.ResumeLayout(false);
-
         }
-
         #endregion
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;

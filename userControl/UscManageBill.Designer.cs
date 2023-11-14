@@ -421,23 +421,6 @@
             // 
             // btnDetailBill
             // 
-            this.txtState.BackColor = System.Drawing.Color.Transparent;
-            this.txtState.BaseColor = System.Drawing.Color.White;
-            this.txtState.BorderColor = System.Drawing.Color.Silver;
-            this.txtState.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtState.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtState.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtState.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtState.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtState.Location = new System.Drawing.Point(194, 315);
-            this.txtState.Name = "txtState";
-            this.txtState.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.txtState.PasswordChar = '\0';
-            this.txtState.Radius = 8;
-            this.txtState.SelectedText = "";
-            this.txtState.Size = new System.Drawing.Size(422, 49);
-            this.txtState.TabIndex = 53;
-            this.txtState.TextOffsetX = 20;
             // 
             // gunaLabel10
             // 

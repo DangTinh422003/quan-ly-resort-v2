@@ -34,7 +34,6 @@ namespace quan_ly_resort_v2.userControl
             {
                 txtLoai.Text = service.LoaiDV;
                 txtName.Text = service.TenDV;
-                txtDetail.Text = service.ChiTietDichVu;
                 txtPrice.Text = service.Gia.ToString();
                 
             }

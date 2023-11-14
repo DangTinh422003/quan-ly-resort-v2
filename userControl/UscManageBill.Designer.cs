@@ -51,7 +51,6 @@
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.cbb_search = new Guna.UI.WinForms.GunaComboBox();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.txtState = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.btnDetailBill = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_ExportExcel = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -74,6 +73,7 @@
             this.txtIdBill = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
+            this.txsState = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -139,7 +139,7 @@
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 3);
+            this.DataGridView.Location = new System.Drawing.Point(0, 0);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -154,7 +154,7 @@
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView.Size = new System.Drawing.Size(1285, 519);
+            this.DataGridView.Size = new System.Drawing.Size(1285, 522);
             this.DataGridView.TabIndex = 1;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -377,7 +377,7 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.txtState);
+            this.gunaGroupBox1.Controls.Add(this.txsState);
             this.gunaGroupBox1.Controls.Add(this.gunaLabel10);
             this.gunaGroupBox1.Controls.Add(this.btnDetailBill);
             this.gunaGroupBox1.Controls.Add(this.btn_ExportExcel);
@@ -409,7 +409,17 @@
             this.gunaGroupBox1.Text = "Thông tin hóa đơn";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // txtState
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel10.Location = new System.Drawing.Point(48, 325);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(101, 28);
+            this.gunaLabel10.TabIndex = 52;
+            this.gunaLabel10.Text = "Tình trạng";
+            // 
+            // btnDetailBill
             // 
             this.txtState.BackColor = System.Drawing.Color.Transparent;
             this.txtState.BaseColor = System.Drawing.Color.White;
@@ -843,9 +853,7 @@
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
             this.ResumeLayout(false);
-
         }
-
         #endregion
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
@@ -887,6 +895,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private Guna.UI.WinForms.GunaTextBox txtState;
+        private Guna.UI.WinForms.GunaTextBox txsState;
     }
 }

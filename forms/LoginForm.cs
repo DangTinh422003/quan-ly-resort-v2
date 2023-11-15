@@ -89,5 +89,11 @@ namespace quan_ly_resort_v2
         {
             passwordTextBox.PasswordChar = checkBoxShowPassword.Checked ? '\0' : '*';
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            ForgetPasswordForm forgetPasswordForm = new ForgetPasswordForm();
+            forgetPasswordForm.ShowDialog();
+        }
     }
 }

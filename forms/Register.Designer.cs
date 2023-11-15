@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textboxEmail = new Guna.UI.WinForms.GunaTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new Guna.UI2.WinForms.Guna2CustomCheckBox();
@@ -52,18 +55,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textboxEmail = new Guna.UI.WinForms.GunaTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.formGroup_password.SuspendLayout();
             this.formGroup_userName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,6 +92,46 @@
             this.form.Name = "form";
             this.form.Size = new System.Drawing.Size(660, 672);
             this.form.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textboxEmail);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(19, 231);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(620, 99);
+            this.panel3.TabIndex = 3;
+            // 
+            // textboxEmail
+            // 
+            this.textboxEmail.BackColor = System.Drawing.Color.Transparent;
+            this.textboxEmail.BaseColor = System.Drawing.Color.White;
+            this.textboxEmail.BorderColor = System.Drawing.Color.Silver;
+            this.textboxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxEmail.FocusedBaseColor = System.Drawing.Color.White;
+            this.textboxEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textboxEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textboxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxEmail.ForeColor = System.Drawing.Color.Black;
+            this.textboxEmail.Location = new System.Drawing.Point(14, 34);
+            this.textboxEmail.Name = "textboxEmail";
+            this.textboxEmail.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.textboxEmail.PasswordChar = '\0';
+            this.textboxEmail.Radius = 12;
+            this.textboxEmail.SelectedText = "";
+            this.textboxEmail.Size = new System.Drawing.Size(606, 58);
+            this.textboxEmail.TabIndex = 1;
+            this.textboxEmail.TextOffsetX = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Email";
             // 
             // gunaPanel2
             // 
@@ -349,9 +389,10 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(821, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(592, 775);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -367,46 +408,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.textboxEmail);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(19, 231);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(620, 99);
-            this.panel3.TabIndex = 3;
-            // 
-            // textboxEmail
-            // 
-            this.textboxEmail.BackColor = System.Drawing.Color.Transparent;
-            this.textboxEmail.BaseColor = System.Drawing.Color.White;
-            this.textboxEmail.BorderColor = System.Drawing.Color.Silver;
-            this.textboxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textboxEmail.FocusedBaseColor = System.Drawing.Color.White;
-            this.textboxEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textboxEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textboxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxEmail.ForeColor = System.Drawing.Color.Black;
-            this.textboxEmail.Location = new System.Drawing.Point(14, 34);
-            this.textboxEmail.Name = "textboxEmail";
-            this.textboxEmail.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.textboxEmail.PasswordChar = '\0';
-            this.textboxEmail.Radius = 12;
-            this.textboxEmail.SelectedText = "";
-            this.textboxEmail.Size = new System.Drawing.Size(606, 58);
-            this.textboxEmail.TabIndex = 1;
-            this.textboxEmail.TextOffsetX = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 2);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 29);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Email";
             // 
             // RegisterForm
             // 
@@ -424,6 +425,8 @@
             this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -434,8 +437,6 @@
             this.formGroup_userName.ResumeLayout(false);
             this.formGroup_userName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

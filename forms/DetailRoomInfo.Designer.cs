@@ -65,9 +65,6 @@
             this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CloseForm = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
-            this.uscManageCustomer2 = new quan_ly_resort_v2.resources.UscManageCustomer();
-            this.uscManageCustomer1 = new quan_ly_resort_v2.resources.UscManageCustomer();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -629,39 +626,6 @@
             this.btn_CloseForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_CloseForm.Click += new System.EventHandler(this.btn_CloseForm_Click);
             // 
-            // gunaContextMenuStrip1
-            // 
-            this.gunaContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
-            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
-            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
-            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // uscManageCustomer2
-            // 
-            this.uscManageCustomer2.AutoSize = true;
-            this.uscManageCustomer2.BackColor = System.Drawing.Color.White;
-            this.uscManageCustomer2.Location = new System.Drawing.Point(0, 0);
-            this.uscManageCustomer2.Name = "uscManageCustomer2";
-            this.uscManageCustomer2.Size = new System.Drawing.Size(0, 829);
-            this.uscManageCustomer2.TabIndex = 7;
-            // 
-            // uscManageCustomer1
-            // 
-            this.uscManageCustomer1.AutoSize = true;
-            this.uscManageCustomer1.BackColor = System.Drawing.Color.White;
-            this.uscManageCustomer1.Location = new System.Drawing.Point(0, 0);
-            this.uscManageCustomer1.Name = "uscManageCustomer1";
-            this.uscManageCustomer1.Size = new System.Drawing.Size(0, 829);
-            this.uscManageCustomer1.TabIndex = 6;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -697,8 +661,6 @@
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1134, 668);
             this.ControlBox = false;
-            this.Controls.Add(this.uscManageCustomer2);
-            this.Controls.Add(this.uscManageCustomer1);
             this.Controls.Add(this.gunaGradient2Panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -741,9 +703,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBox_isClean;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
-        private resources.UscManageCustomer uscManageCustomer1;
-        private resources.UscManageCustomer uscManageCustomer2;
-        private Guna.UI.WinForms.GunaContextMenuStrip gunaContextMenuStrip1;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxServiceType;
         private Guna.UI.WinForms.GunaDataGridView tableServiceTarget;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;

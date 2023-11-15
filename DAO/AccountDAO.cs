@@ -85,7 +85,7 @@ namespace quan_ly_resort_v2.DAO
                 Console.WriteLine(e.Message);
                 return null;
             }
-            
+
 
             return accounts;
         }
@@ -120,7 +120,8 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
-        public static Boolean UpdateAccount(Account acc) {
+        public static Boolean UpdateAccount(Account acc)
+        {
             try
             {
                 // Tạo connection
@@ -158,10 +159,10 @@ namespace quan_ly_resort_v2.DAO
                 string sql = "DELETE FROM `account` WHERE username = @username";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@username", username);
-                int rowsAffected = cmd.ExecuteNonQuery(); 
+                int rowsAffected = cmd.ExecuteNonQuery();
 
                 // Kiểm tra xem có bản ghi nào bị xóa hay không
-                if(rowsAffected > 0)
+                if (rowsAffected > 0)
                 {
                     sql = "UPDATE `nhanvien` SET username = @new WHERE username = @username";
                     cmd = new MySqlCommand(sql, conn);
@@ -184,7 +185,7 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
-        public static void ChangePassword(String username,  String password)
+        public static void ChangePassword(String username, String password)
         {
             try
             {
@@ -205,6 +206,65 @@ namespace quan_ly_resort_v2.DAO
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        public static Account getByEmail(String email)
+        {
+            try
+            {
+                // Tạo connection
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                // Query data
+                string sql = "select * from account where account.Email = @email";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                Account account = null;
+                if (reader.Read())
+                {
+                    string accountUsername = reader["username"].ToString();
+                    string accountPassword = reader["password"].ToString();
+                    string emailAcc = reader["Email"].ToString();
+                    string role = reader["Role"].ToString();
+                    account = new Account(accountUsername, accountPassword, emailAcc, role);
+                }
+                conn.Close();
+                return account;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public static bool changePasswordByEmail(string email, string newPassword)
+        {
+            try
+            {
+                // Tạo connection
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                // Query data
+                string sql = "UPDATE `account` SET `password`=@newPassword WHERE Email = @email";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@newPassword", newPassword);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
     }

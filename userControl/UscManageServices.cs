@@ -61,7 +61,6 @@ namespace quan_ly_resort_v2.userControl
             txtMaDV.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtDetail.Text = "";
             ccbSelectService.SelectedIndex = 0;
             cbb_search.SelectedIndex = 0;
         }
@@ -86,7 +85,6 @@ namespace quan_ly_resort_v2.userControl
             txtMaDV.Enabled = false;
             txtName.Enabled = false;
             txtPrice.Enabled = false;
-            txtDetail.Enabled = false;
         }
         private void enableFormInput()
         {
@@ -107,8 +105,7 @@ namespace quan_ly_resort_v2.userControl
 
                 txtMaDV.Text = selectedRow.Cells[0].Value.ToString();
                 txtName.Text = selectedRow.Cells[1].Value.ToString();
-                txtDetail.Text = selectedRow.Cells[3].Value.ToString();
-                txtPrice.Text = selectedRow.Cells[4].Value.ToString();
+                txtPrice.Text = selectedRow.Cells[3].Value.ToString();
 
                 string selectedService = selectedRow.Cells[2].Value.ToString();
                 ccbSelectService.Text = selectedService;
@@ -203,10 +200,9 @@ namespace quan_ly_resort_v2.userControl
         {
             // Lấy giá trị từ các trường dữ liệu
             string tenDV = txtName.Text.Trim();
-            string chiTietDichVu = txtDetail.Text.Trim();
             double gia;
 
-            if (string.IsNullOrEmpty(tenDV) || string.IsNullOrEmpty(chiTietDichVu) || !double.TryParse(txtPrice.Text, out gia))
+            if (string.IsNullOrEmpty(tenDV) || !double.TryParse(txtPrice.Text, out gia))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin và kiểm tra giá dịch vụ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -225,8 +221,7 @@ namespace quan_ly_resort_v2.userControl
             {
                 TenDV = tenDV,
                 LoaiDV = loaiDV,
-                ChiTietDichVu = chiTietDichVu,
-                Gia = gia
+                Gia = gia,
             };
 
             if (btnAdd.Enabled)

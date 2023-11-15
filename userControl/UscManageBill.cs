@@ -103,7 +103,6 @@ namespace quan_ly_resort_v2.userControl
 
         private void disableFormInput()
         {   
-            txtState.Enabled = false;
             txtIdBill.Enabled = false;
             txtIdKH.Enabled = false;
             txtIdNV.Enabled = false;
@@ -127,7 +126,6 @@ namespace quan_ly_resort_v2.userControl
                 txtListRoom.Text = selectedRow.Cells[3].Value.ToString();
                 txtNgayThue.Text = selectedRow.Cells[7].Value.ToString();
                 txtTong.Text = selectedRow.Cells[5].Value.ToString();
-                txtState.Text = selectedRow.Cells[8].Value.ToString();
 
                 string NgayTao = selectedRow.Cells[4].Value.ToString();
                 txtDateCrea.Value = DateTime.Parse(NgayTao);
@@ -178,11 +176,11 @@ namespace quan_ly_resort_v2.userControl
 
             if (string.IsNullOrWhiteSpace(maHD))
             {
-                MessageBox.Show("Vui lòng chọn nhân viên để xóa.");
+                MessageBox.Show("Vui lòng chọn hóa đơn để xóa.");
                 return;
             }
 
-            string message = "Bạn có chắc muốn xóa nhân viên có mã: " + maHD + " không?";
+            string message = "Bạn có chắc muốn xóa  hóa đơn có mã: " + maHD + " không?";
             string caption = "Xác nhận xóa";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 

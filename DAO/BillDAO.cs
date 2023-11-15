@@ -55,7 +55,6 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
         public static bool UpdateBill(Bill bill)
         {
             try
@@ -87,7 +86,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static bool DeleteBill(string maHoaDon)
         {
             try
@@ -112,7 +110,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static DataTable FilterByField(string typeValue, string filterValue)
         {
             try
@@ -157,7 +154,6 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
         public static bool addNewBill(Bill bill)
         {
             try
@@ -185,8 +181,7 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
-        public static bool upBillState(string billID, string state)
+        public static bool updateBillState(string billID, string state)
         {
             try
             {
@@ -206,7 +201,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static bool updateMoneyById(string billID, double value)
         {
             try
@@ -228,7 +222,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static Bill getBillByCustomerId(string customnerId)
         {
             try

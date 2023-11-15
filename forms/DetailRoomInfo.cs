@@ -143,9 +143,17 @@ namespace quan_ly_resort_v2.forms
                 if (voucher == null)
                     MessageBox.Show("Mã voucher không tồn tại!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 else
-                    BillDAO.updateMoneyById(bill.MaHoaDon, bill.TongTien - voucher.GiamGia);
+                {
+                    if (voucher.Count <= 0)
+                        MessageBox.Show("Mã voucher đã hết lượt sử dụng!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    else
+                    {
+                        VoucherDAO.UpdateVoucher(new Voucher(voucher.MaVoucher, voucher.GiamGia, voucher.StartDate, voucher.EndDate, voucher.Count - 1 <= 0 ? 0 : voucher.Count - 1));
+                        BillDAO.updateMoneyById(bill.MaHoaDon, bill.TongTien - voucher.GiamGia);
+                    }
+                }
             }
-            BillDAO.upBillState(bill.MaHoaDon, "paid");
+            BillDAO.updateBillState(bill.MaHoaDon, "paid");
             foreach (string roomId in bookingRoom.DanhSachMaPhong.Trim().Split(','))
                 RoomDAO.updateRoomStateById(roomId, "avaiable");
             MessageBox.Show("Thanh toán thành công!");

@@ -14,7 +14,7 @@ namespace quan_ly_resort_v2.DAO
 {
     internal class VoucherDAO
     {
-        public VoucherDAO() {}
+        public VoucherDAO() { }
 
         public static List<Voucher> GetVouchers()
         {
@@ -38,7 +38,7 @@ namespace quan_ly_resort_v2.DAO
                         StartDate = Convert.ToDateTime(reader["StartDate"]),
                         EndDate = Convert.ToDateTime(reader["EndDate"]),
                         Count = Convert.ToInt32(reader["Count"])
-                };
+                    };
 
                     vouchers.Add(voucher);
                 }
@@ -53,7 +53,6 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
-
         public static bool addNewVoucher(Voucher maVoucher)
         {
             try
@@ -107,7 +106,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static bool DeleteVoucher(string mavoucher)
         {
             try
@@ -132,7 +130,6 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
-
         public static DataTable FilterByField(string typeValue, string filterValue)
         {
             try
@@ -171,6 +168,33 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+        public static Voucher getById(string id)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
 
+                string sql = "SELECT * FROM voucher WHERE MaVoucher = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (!reader.Read())
+                    return null;
+                return new Voucher(
+                    reader["MaVoucher"].ToString(),
+                    Convert.ToInt32(reader["GiamGia"]),
+                    Convert.ToDateTime(reader["StartDate"]),
+                    Convert.ToDateTime(reader["EndDate"]),
+                    Convert.ToInt32(reader["Count"])
+                        );
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                return null;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace quan_ly_resort_v2.model
         public float GiamGia { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public int Count {  get; set; }
+        public int Count { get; set; }
         public Voucher() { }
 
         public Voucher(string maVoucher, float giamGia, DateTime startDate, DateTime endDate, int count)
@@ -23,6 +23,11 @@ namespace quan_ly_resort_v2.model
             StartDate = startDate;
             EndDate = endDate;
             Count = count;
+        }
+
+        public override string ToString()
+        {
+            return MaVoucher + "#" + GiamGia + "#" + StartDate + "#" + EndDate + "#" + Count;
         }
     }
 }

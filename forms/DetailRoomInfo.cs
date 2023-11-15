@@ -67,6 +67,7 @@ namespace quan_ly_resort_v2.forms
             {
                 comboBoxServiceType.Enabled = false;
                 btn_getRoom.Text = "Thanh toán";
+                textbox_voucher.Enabled = true;
 
                 BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
                 Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
@@ -88,16 +89,12 @@ namespace quan_ly_resort_v2.forms
 
         private void actionWhenReserved()
         {
-            // taọ hóa đơn
-            // => cập nhật lại trạng thái của phòng
-            // => cập nhật lại trạng thái của đơn đặt phòng
-            //BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
             comboBoxSelectRoomState.SelectedIndex = comboBoxSelectRoomState.Items.IndexOf("Phòng đang thuê");
             BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByID(currentBookingRoomId);
             Customer customer = CustomerDAO.getCustomerById(bookingRoom.MaKhachHang);
             Employee employee = EmployeeDAO.GetEmployeeByUsername(LoginForm.accountLogined.Username);
             Bill bill = new Bill();
-            bill.MaHoaDon = new Random().Next(10000).ToString();
+            bill.MaHoaDon = new Random().Next(9999).ToString();
             bill.MaKhachHang = customer.Id;
             bill.MaNhanVien = employee.MaNV;
             bill.DanhSachMaPhong = bookingRoom.DanhSachMaPhong;
@@ -114,13 +111,6 @@ namespace quan_ly_resort_v2.forms
             BillDAO.addNewBill(bill);
             BookingRoomDAO.updateBookingRoomConfirm(currentBookingRoomId, true);
 
-            /*
-             sau khi tạo hóa đơn, query lại hóa đơn vừa tạo để lấy mã hóa đơn từ mã khách hàng
-                =>  1. sau đó tạo hóa đơn dịch vụ từ mã hóa đơn vừa query và bảng dịch vụ đã chọn
-                =>  2. cập nhật lại tổng tiền của hóa đơn
-             */
-
-            /*** 1.tạo hóa đơn dịch vụ từ mã hóa đơn vừa query và bảng dịch vụ đã chọn ***/
             string billId = BillDAO.getBillByCustomerId(customer.Id).MaHoaDon;
             double newTotalMoney = bill.TongTien;
             foreach (DataGridViewRow row in tableServiceTarget.Rows)
@@ -133,8 +123,7 @@ namespace quan_ly_resort_v2.forms
                 newTotalMoney += int.Parse(row.Cells[1].Value.ToString()) * int.Parse(row.Cells[3].Value.ToString());
             }
 
-            /*** 2. cập nhật lại tổng tiền của hóa đơn ***/
-            BillDAO.upMoneyById(billId, newTotalMoney);
+            BillDAO.updateMoneyById(billId, newTotalMoney);
 
             MessageBox.Show("Nhận phòng thành công!");
             this.Close();
@@ -146,11 +135,16 @@ namespace quan_ly_resort_v2.forms
         }
         private void actionWhenOccupied()
         {
-            // => cập nhật lại trạng thái của hóa đơn
-            // => cập nhật lại trạng thái của phòng
-            // => cập nhật lại trạng thái của đơn đặt phòng
             BookingRoom bookingRoom = BookingRoomDAO.GetBookingRoomByRoomID(currentRoomId);
             Bill bill = BillDAO.getBillByCustomerId(bookingRoom.MaKhachHang);
+            if (textbox_voucher.Text != "")
+            {
+                Voucher voucher = VoucherDAO.getById(textbox_voucher.Text);
+                if (voucher == null)
+                    MessageBox.Show("Mã voucher không tồn tại!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                else
+                    BillDAO.updateMoneyById(bill.MaHoaDon, bill.TongTien - voucher.GiamGia);
+            }
             BillDAO.upBillState(bill.MaHoaDon, "paid");
             foreach (string roomId in bookingRoom.DanhSachMaPhong.Trim().Split(','))
                 RoomDAO.updateRoomStateById(roomId, "avaiable");

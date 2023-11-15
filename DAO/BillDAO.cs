@@ -207,7 +207,7 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
-        public static bool upMoneyById(string billID, double value)
+        public static bool updateMoneyById(string billID, double value)
         {
             try
             {

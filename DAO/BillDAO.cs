@@ -110,6 +110,32 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
+
+        public static bool DeleteBillDV(string maHoaDon)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
+                conn.Open();
+
+                string deleteQuery = "DELETE FROM hoadondichvu WHERE MaHD = @MaHoaDon";
+
+                MySqlCommand cmd = new MySqlCommand(deleteQuery, conn);
+                cmd.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                return rowsAffected > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
         public static DataTable FilterByField(string typeValue, string filterValue)
         {
             try

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -97,18 +97,20 @@
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Panel2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Panel1);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(29, 24);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(23, 19);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1261, 583);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1009, 466);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.guna2GradientPanel2.BorderRadius = 12;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(457, 124);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(366, 99);
+            this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(8, 380);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(6, 304);
             this.guna2GradientPanel2.TabIndex = 2;
             // 
             // guna2Panel2
@@ -122,9 +124,10 @@
             this.guna2Panel2.Controls.Add(this.gunaPictureBox8);
             this.guna2Panel2.Controls.Add(this.gunaLabel2);
             this.guna2Panel2.Controls.Add(this.gunaPictureBox7);
-            this.guna2Panel2.Location = new System.Drawing.Point(484, 33);
+            this.guna2Panel2.Location = new System.Drawing.Point(387, 26);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(759, 534);
+            this.guna2Panel2.Size = new System.Drawing.Size(607, 427);
             this.guna2Panel2.TabIndex = 1;
             // 
             // tableRoomTarget
@@ -133,18 +136,18 @@
             this.tableRoomTarget.AllowUserToDeleteRows = false;
             this.tableRoomTarget.AllowUserToOrderColumns = true;
             this.tableRoomTarget.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.tableRoomTarget.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.tableRoomTarget.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.tableRoomTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tableRoomTarget.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableRoomTarget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRoomTarget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.tableRoomTarget.ColumnHeadersHeight = 34;
             this.tableRoomTarget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tableRoomTarget.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -152,23 +155,24 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableRoomTarget.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRoomTarget.DefaultCellStyle = dataGridViewCellStyle15;
             this.tableRoomTarget.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
-            this.tableRoomTarget.Location = new System.Drawing.Point(390, 143);
+            this.tableRoomTarget.Location = new System.Drawing.Point(312, 114);
+            this.tableRoomTarget.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableRoomTarget.Name = "tableRoomTarget";
             this.tableRoomTarget.ReadOnly = true;
             this.tableRoomTarget.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.tableRoomTarget.RowHeadersVisible = false;
             this.tableRoomTarget.RowHeadersWidth = 51;
             this.tableRoomTarget.RowTemplate.Height = 24;
-            this.tableRoomTarget.Size = new System.Drawing.Size(358, 381);
+            this.tableRoomTarget.Size = new System.Drawing.Size(286, 305);
             this.tableRoomTarget.TabIndex = 25;
             this.tableRoomTarget.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightBlue;
             this.tableRoomTarget.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
@@ -231,9 +235,10 @@
             this.lb_roomAvaialbeCounter.AutoSize = true;
             this.lb_roomAvaialbeCounter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_roomAvaialbeCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.lb_roomAvaialbeCounter.Location = new System.Drawing.Point(681, 27);
+            this.lb_roomAvaialbeCounter.Location = new System.Drawing.Point(545, 22);
+            this.lb_roomAvaialbeCounter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_roomAvaialbeCounter.Name = "lb_roomAvaialbeCounter";
-            this.lb_roomAvaialbeCounter.Size = new System.Drawing.Size(52, 41);
+            this.lb_roomAvaialbeCounter.Size = new System.Drawing.Size(42, 32);
             this.lb_roomAvaialbeCounter.TabIndex = 24;
             this.lb_roomAvaialbeCounter.Text = "13";
             // 
@@ -242,9 +247,10 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLabel3.Location = new System.Drawing.Point(419, 27);
+            this.gunaLabel3.Location = new System.Drawing.Point(335, 22);
+            this.gunaLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(259, 41);
+            this.gunaLabel3.Size = new System.Drawing.Size(211, 32);
             this.gunaLabel3.TabIndex = 23;
             this.gunaLabel3.Text = "Số Phòng Trống :";
             // 
@@ -254,18 +260,18 @@
             this.tableRoomAvaiable.AllowUserToDeleteRows = false;
             this.tableRoomAvaiable.AllowUserToOrderColumns = true;
             this.tableRoomAvaiable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.tableRoomAvaiable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.tableRoomAvaiable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.tableRoomAvaiable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tableRoomAvaiable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableRoomAvaiable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRoomAvaiable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.tableRoomAvaiable.ColumnHeadersHeight = 34;
             this.tableRoomAvaiable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tableRoomAvaiable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,23 +279,24 @@
             this.roomType,
             this.bedType,
             this.roomPrice});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableRoomAvaiable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRoomAvaiable.DefaultCellStyle = dataGridViewCellStyle18;
             this.tableRoomAvaiable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
-            this.tableRoomAvaiable.Location = new System.Drawing.Point(14, 143);
+            this.tableRoomAvaiable.Location = new System.Drawing.Point(11, 114);
+            this.tableRoomAvaiable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableRoomAvaiable.Name = "tableRoomAvaiable";
             this.tableRoomAvaiable.ReadOnly = true;
             this.tableRoomAvaiable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.tableRoomAvaiable.RowHeadersVisible = false;
             this.tableRoomAvaiable.RowHeadersWidth = 51;
             this.tableRoomAvaiable.RowTemplate.Height = 24;
-            this.tableRoomAvaiable.Size = new System.Drawing.Size(358, 381);
+            this.tableRoomAvaiable.Size = new System.Drawing.Size(286, 305);
             this.tableRoomAvaiable.TabIndex = 18;
             this.tableRoomAvaiable.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightBlue;
             this.tableRoomAvaiable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
@@ -356,7 +363,8 @@
             this.datetimePicker_checkout.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_checkout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datetimePicker_checkout.ForeColor = System.Drawing.Color.Black;
-            this.datetimePicker_checkout.Location = new System.Drawing.Point(463, 91);
+            this.datetimePicker_checkout.Location = new System.Drawing.Point(370, 73);
+            this.datetimePicker_checkout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datetimePicker_checkout.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetimePicker_checkout.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimePicker_checkout.Name = "datetimePicker_checkout";
@@ -364,9 +372,9 @@
             this.datetimePicker_checkout.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_checkout.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_checkout.OnPressedColor = System.Drawing.Color.Black;
-            this.datetimePicker_checkout.Size = new System.Drawing.Size(285, 46);
+            this.datetimePicker_checkout.Size = new System.Drawing.Size(228, 37);
             this.datetimePicker_checkout.TabIndex = 9;
-            this.datetimePicker_checkout.Text = "31 Tháng Mười 2023";
+            this.datetimePicker_checkout.Text = "Tuesday, October 31, 2023";
             this.datetimePicker_checkout.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
             // 
             // datetimePicker_Checkint
@@ -378,7 +386,8 @@
             this.datetimePicker_Checkint.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_Checkint.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datetimePicker_Checkint.ForeColor = System.Drawing.Color.Black;
-            this.datetimePicker_Checkint.Location = new System.Drawing.Point(86, 91);
+            this.datetimePicker_Checkint.Location = new System.Drawing.Point(69, 73);
+            this.datetimePicker_Checkint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datetimePicker_Checkint.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetimePicker_Checkint.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimePicker_Checkint.Name = "datetimePicker_Checkint";
@@ -386,18 +395,19 @@
             this.datetimePicker_Checkint.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_Checkint.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datetimePicker_Checkint.OnPressedColor = System.Drawing.Color.Black;
-            this.datetimePicker_Checkint.Size = new System.Drawing.Size(286, 46);
+            this.datetimePicker_Checkint.Size = new System.Drawing.Size(229, 37);
             this.datetimePicker_Checkint.TabIndex = 8;
-            this.datetimePicker_Checkint.Text = "31 Tháng Mười 2023";
+            this.datetimePicker_Checkint.Text = "Tuesday, October 31, 2023";
             this.datetimePicker_Checkint.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
             // 
             // gunaPictureBox8
             // 
             this.gunaPictureBox8.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox8.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox8.Location = new System.Drawing.Point(390, 91);
+            this.gunaPictureBox8.Location = new System.Drawing.Point(312, 73);
+            this.gunaPictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox8.Name = "gunaPictureBox8";
-            this.gunaPictureBox8.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox8.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox8.TabIndex = 16;
             this.gunaPictureBox8.TabStop = false;
@@ -407,9 +417,10 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(32, 27);
+            this.gunaLabel2.Location = new System.Drawing.Point(26, 22);
+            this.gunaLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(304, 41);
+            this.gunaLabel2.Size = new System.Drawing.Size(242, 32);
             this.gunaLabel2.TabIndex = 1;
             this.gunaLabel2.Text = "THÔNG TIN PHÒNG";
             // 
@@ -417,9 +428,10 @@
             // 
             this.gunaPictureBox7.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox7.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox7.Location = new System.Drawing.Point(14, 91);
+            this.gunaPictureBox7.Location = new System.Drawing.Point(11, 73);
+            this.gunaPictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox7.Name = "gunaPictureBox7";
-            this.gunaPictureBox7.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox7.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox7.TabIndex = 14;
             this.gunaPictureBox7.TabStop = false;
@@ -441,9 +453,10 @@
             this.guna2Panel1.Controls.Add(this.textbox_customerId);
             this.guna2Panel1.Controls.Add(this.gunaPictureBox1);
             this.guna2Panel1.Controls.Add(this.gunaLabel1);
-            this.guna2Panel1.Location = new System.Drawing.Point(15, 33);
+            this.guna2Panel1.Location = new System.Drawing.Point(12, 26);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(426, 534);
+            this.guna2Panel1.Size = new System.Drawing.Size(341, 427);
             this.guna2Panel1.TabIndex = 0;
             // 
             // textbox_peopleCounter
@@ -458,13 +471,13 @@
             this.textbox_peopleCounter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_peopleCounter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_peopleCounter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_peopleCounter.Location = new System.Drawing.Point(81, 478);
-            this.textbox_peopleCounter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_peopleCounter.Location = new System.Drawing.Point(65, 382);
+            this.textbox_peopleCounter.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_peopleCounter.Name = "textbox_peopleCounter";
             this.textbox_peopleCounter.PasswordChar = '\0';
             this.textbox_peopleCounter.PlaceholderText = "Số người thuê";
             this.textbox_peopleCounter.SelectedText = "";
-            this.textbox_peopleCounter.Size = new System.Drawing.Size(326, 46);
+            this.textbox_peopleCounter.Size = new System.Drawing.Size(261, 37);
             this.textbox_peopleCounter.TabIndex = 7;
             this.textbox_peopleCounter.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -472,9 +485,10 @@
             // 
             this.gunaPictureBox9.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox9.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_group_1001;
-            this.gunaPictureBox9.Location = new System.Drawing.Point(23, 478);
+            this.gunaPictureBox9.Location = new System.Drawing.Point(18, 382);
+            this.gunaPictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox9.Name = "gunaPictureBox9";
-            this.gunaPictureBox9.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox9.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox9.TabIndex = 15;
             this.gunaPictureBox9.TabStop = false;
@@ -488,7 +502,8 @@
             this.datePicker_dateOfBirth.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datePicker_dateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datePicker_dateOfBirth.ForeColor = System.Drawing.Color.Black;
-            this.datePicker_dateOfBirth.Location = new System.Drawing.Point(81, 221);
+            this.datePicker_dateOfBirth.Location = new System.Drawing.Point(65, 177);
+            this.datePicker_dateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datePicker_dateOfBirth.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker_dateOfBirth.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datePicker_dateOfBirth.Name = "datePicker_dateOfBirth";
@@ -496,9 +511,9 @@
             this.datePicker_dateOfBirth.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datePicker_dateOfBirth.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.datePicker_dateOfBirth.OnPressedColor = System.Drawing.Color.Black;
-            this.datePicker_dateOfBirth.Size = new System.Drawing.Size(326, 46);
+            this.datePicker_dateOfBirth.Size = new System.Drawing.Size(261, 37);
             this.datePicker_dateOfBirth.TabIndex = 3;
-            this.datePicker_dateOfBirth.Text = "31 Tháng Mười 2023";
+            this.datePicker_dateOfBirth.Text = "Tuesday, October 31, 2023";
             this.datePicker_dateOfBirth.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
             // 
             // textbox_address
@@ -513,13 +528,13 @@
             this.textbox_address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_address.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_address.Location = new System.Drawing.Point(81, 415);
-            this.textbox_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_address.Location = new System.Drawing.Point(65, 332);
+            this.textbox_address.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_address.Name = "textbox_address";
             this.textbox_address.PasswordChar = '\0';
             this.textbox_address.PlaceholderText = "Địa chỉ ";
             this.textbox_address.SelectedText = "";
-            this.textbox_address.Size = new System.Drawing.Size(326, 46);
+            this.textbox_address.Size = new System.Drawing.Size(261, 37);
             this.textbox_address.TabIndex = 6;
             this.textbox_address.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -527,9 +542,10 @@
             // 
             this.gunaPictureBox6.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox6.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_address_100;
-            this.gunaPictureBox6.Location = new System.Drawing.Point(23, 415);
+            this.gunaPictureBox6.Location = new System.Drawing.Point(18, 332);
+            this.gunaPictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox6.Name = "gunaPictureBox6";
-            this.gunaPictureBox6.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox6.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox6.TabIndex = 12;
             this.gunaPictureBox6.TabStop = false;
@@ -546,13 +562,13 @@
             this.textbox_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_email.Location = new System.Drawing.Point(81, 351);
-            this.textbox_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_email.Location = new System.Drawing.Point(65, 281);
+            this.textbox_email.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_email.Name = "textbox_email";
             this.textbox_email.PasswordChar = '\0';
             this.textbox_email.PlaceholderText = "Địa chỉ email";
             this.textbox_email.SelectedText = "";
-            this.textbox_email.Size = new System.Drawing.Size(326, 46);
+            this.textbox_email.Size = new System.Drawing.Size(261, 37);
             this.textbox_email.TabIndex = 5;
             this.textbox_email.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -560,9 +576,10 @@
             // 
             this.gunaPictureBox5.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox5.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_gmail_100;
-            this.gunaPictureBox5.Location = new System.Drawing.Point(23, 351);
+            this.gunaPictureBox5.Location = new System.Drawing.Point(18, 281);
+            this.gunaPictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox5.Name = "gunaPictureBox5";
-            this.gunaPictureBox5.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox5.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox5.TabIndex = 10;
             this.gunaPictureBox5.TabStop = false;
@@ -579,13 +596,13 @@
             this.textbox_phoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_phoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_phoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_phoneNumber.Location = new System.Drawing.Point(81, 286);
-            this.textbox_phoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_phoneNumber.Location = new System.Drawing.Point(65, 229);
+            this.textbox_phoneNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_phoneNumber.Name = "textbox_phoneNumber";
             this.textbox_phoneNumber.PasswordChar = '\0';
             this.textbox_phoneNumber.PlaceholderText = "Số điện thoại";
             this.textbox_phoneNumber.SelectedText = "";
-            this.textbox_phoneNumber.Size = new System.Drawing.Size(326, 46);
+            this.textbox_phoneNumber.Size = new System.Drawing.Size(261, 37);
             this.textbox_phoneNumber.TabIndex = 4;
             this.textbox_phoneNumber.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -593,9 +610,10 @@
             // 
             this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_phone_48;
-            this.gunaPictureBox3.Location = new System.Drawing.Point(23, 286);
+            this.gunaPictureBox3.Location = new System.Drawing.Point(18, 229);
+            this.gunaPictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox3.Name = "gunaPictureBox3";
-            this.gunaPictureBox3.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox3.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox3.TabIndex = 7;
             this.gunaPictureBox3.TabStop = false;
@@ -604,9 +622,10 @@
             // 
             this.gunaPictureBox4.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_list_642;
-            this.gunaPictureBox4.Location = new System.Drawing.Point(23, 221);
+            this.gunaPictureBox4.Location = new System.Drawing.Point(18, 177);
+            this.gunaPictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox4.Name = "gunaPictureBox4";
-            this.gunaPictureBox4.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox4.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox4.TabIndex = 5;
             this.gunaPictureBox4.TabStop = false;
@@ -623,13 +642,13 @@
             this.textbox_customerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_customerName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_customerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_customerName.Location = new System.Drawing.Point(81, 156);
-            this.textbox_customerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_customerName.Location = new System.Drawing.Point(65, 125);
+            this.textbox_customerName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_customerName.Name = "textbox_customerName";
             this.textbox_customerName.PasswordChar = '\0';
             this.textbox_customerName.PlaceholderText = "Họ và tên";
             this.textbox_customerName.SelectedText = "";
-            this.textbox_customerName.Size = new System.Drawing.Size(326, 46);
+            this.textbox_customerName.Size = new System.Drawing.Size(261, 37);
             this.textbox_customerName.TabIndex = 2;
             this.textbox_customerName.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -637,9 +656,10 @@
             // 
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_user_502;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(23, 156);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(18, 125);
+            this.gunaPictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox2.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox2.TabIndex = 3;
             this.gunaPictureBox2.TabStop = false;
@@ -656,13 +676,13 @@
             this.textbox_customerId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_customerId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_customerId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_customerId.Location = new System.Drawing.Point(81, 91);
-            this.textbox_customerId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_customerId.Location = new System.Drawing.Point(65, 73);
+            this.textbox_customerId.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textbox_customerId.Name = "textbox_customerId";
             this.textbox_customerId.PasswordChar = '\0';
             this.textbox_customerId.PlaceholderText = "Số căn cước công dân";
             this.textbox_customerId.SelectedText = "";
-            this.textbox_customerId.Size = new System.Drawing.Size(326, 46);
+            this.textbox_customerId.Size = new System.Drawing.Size(261, 37);
             this.textbox_customerId.TabIndex = 1;
             this.textbox_customerId.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -670,9 +690,10 @@
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_hotel_64;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(23, 91);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(18, 73);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(52, 46);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(42, 37);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 1;
             this.gunaPictureBox1.TabStop = false;
@@ -682,9 +703,10 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(3, 27);
+            this.gunaLabel1.Location = new System.Drawing.Point(2, 22);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(397, 41);
+            this.gunaLabel1.Size = new System.Drawing.Size(317, 32);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
@@ -698,9 +720,10 @@
             this.btn_Close.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_Close.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Close.ForeColor = System.Drawing.Color.White;
-            this.btn_Close.Location = new System.Drawing.Point(1087, 616);
+            this.btn_Close.Location = new System.Drawing.Point(870, 493);
+            this.btn_Close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(143, 42);
+            this.btn_Close.Size = new System.Drawing.Size(114, 34);
             this.btn_Close.TabIndex = 21;
             this.btn_Close.Text = "Hủy";
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
@@ -714,23 +737,25 @@
             this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_save.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(926, 616);
+            this.btn_save.Location = new System.Drawing.Point(741, 493);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(143, 42);
+            this.btn_save.Size = new System.Drawing.Size(114, 34);
             this.btn_save.TabIndex = 20;
             this.btn_save.Text = "Lưu";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // BookingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1307, 666);
+            this.ClientSize = new System.Drawing.Size(1042, 578);
             this.ControlBox = false;
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_Close);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookingForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

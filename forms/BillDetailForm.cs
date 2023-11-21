@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Drawing.Printing;
+using System.Globalization;
 
 namespace quan_ly_resort_v2.forms
 {
@@ -40,14 +41,51 @@ namespace quan_ly_resort_v2.forms
                 txtMaHD.Text = billDetails.MaHoaDon;
                 txtKH.Text = billDetails.TenKhachHang;
                 txtNV.Text = billDetails.TenNhanVien;
+
+                // Display room information
+                List<string> phongWithGia = new List<string>();
                 string[] maPhongArray = billDetails.DanhSachMaPhong.Split(',');
-                string phongText = string.Join(", ", maPhongArray);
-                txtPhong.Text = phongText;
+
+                for (int i = 0; i < maPhongArray.Length; i++)
+                {
+                    string maPhong = maPhongArray[i].Trim();
+                    double giaPhong = 0.0;
+
+                    if (billDetails.GiaPhong.Count > i)
+                    {
+                        giaPhong = billDetails.GiaPhong[i];
+                    }
+                    else
+                    {
+                        // Add debugging information
+                        Console.WriteLine($"No price found for room: {maPhong}");
+                    }
+
+                    phongWithGia.Add($"{maPhong} - {giaPhong.ToString("N0", CultureInfo.GetCultureInfo("vi-VN"))} VNĐ");
+                }
+
+                string phongText = string.Join("\n", phongWithGia);
+                txtThanhtoan.Text = phongText;
+
+                // Display additional service information
+                List<string> dichVuWithGia = new List<string>();
+                for (int i = 0; i < billDetails.DanhSachMaDichVu.Count; i++)
+                {
+                    string tenDichVu = billDetails.TenDichVu[i].Trim();
+                    int soLuong = billDetails.SoLuongDichVu[i];
+                    double giaDichVu = billDetails.GiaDichVu.Count > i ? billDetails.GiaDichVu[i] : 0.0;
+
+                    dichVuWithGia.Add($"{tenDichVu} x{soLuong} - {giaDichVu.ToString("N0", CultureInfo.GetCultureInfo("vi-VN"))} VNĐ");
+                }
+
+                string dichVuText = string.Join("\n", dichVuWithGia);
+                txtDichvu.Text = dichVuText;
+
+                // Display other information
                 txtCheckIn.Text = billDetails.NgayCheckIn.ToString("dd/MM/yyyy");
                 txtNgayO.Text = billDetails.SoNgayThue.ToString() + " ngày";
                 txtPay.Text = billDetails.State;
-                txtTien.Text = billDetails.TongTien.ToString();
-
+                txtTien.Text = billDetails.TongTien.ToString("N0", CultureInfo.GetCultureInfo("vi-VN")) + " VNĐ";
             }
             else
             {
@@ -56,6 +94,10 @@ namespace quan_ly_resort_v2.forms
                 this.Close();
             }
         }
+
+
+
+
 
         private void btn_ExportPDF_Click(object sender, EventArgs e)
         {

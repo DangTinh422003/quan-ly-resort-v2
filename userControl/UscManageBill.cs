@@ -126,7 +126,7 @@ namespace quan_ly_resort_v2.userControl
                 txtListRoom.Text = selectedRow.Cells[3].Value.ToString();
                 txtNgayThue.Text = selectedRow.Cells[7].Value.ToString();
                 txtTong.Text = selectedRow.Cells[5].Value.ToString();
-
+                txtState.Text = selectedRow.Cells[8].Value.ToString();
                 string NgayTao = selectedRow.Cells[4].Value.ToString();
                 txtDateCrea.Value = DateTime.Parse(NgayTao);
                 string CheckIn = selectedRow.Cells[6].Value.ToString();
@@ -188,31 +188,42 @@ namespace quan_ly_resort_v2.userControl
 
             if (result == DialogResult.Yes)
             {
-                bool deleted = BillDAO.DeleteBill(maHD);
 
+                bool deleted = BillDAO.DeleteBill(maHD);
                 if (deleted)
                 {
-                    MessageBox.Show("Hóa đơn đã được xóa thành công.");
-                    UscManageBill_Load(sender, e); // Tải lại danh sách nhân viên sau khi xóa
+                    // Xóa chi tiết dịch vụ của hóa đơn
+                    bool deletedDV = BillDAO.DeleteBillDV(maHD);
+
+                    if (deletedDV)
+                    {
+                        MessageBox.Show("Hóa đơn và chi tiết dịch vụ đã được xóa thành công.");
+                        UscManageBill_Load(sender, e); // Tải lại danh sách hóa đơn sau khi xóa
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xóa chi tiết dịch vụ của hóa đơn.");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Lỗi khi xóa hóa đơn.");
                 }
             }
+
         }
 
-/*        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
-            disableFormInput();
-            txtNgayThue.Enabled = true;
-            txtTong.Enabled = true;
-            btnSave.Enabled = true;
-            txtListRoom.Enabled = true;
-            btnDelete.Enabled = false;
-            txtListRoom.Focus();
-        }*/
+        /*        private void btnUpdate_Click(object sender, EventArgs e)
+                {
+                    Label_Title.Text = "Chức năng hiện tại : Sửa thông tin hóa đơn";
+                    disableFormInput();
+                    txtNgayThue.Enabled = true;
+                    txtTong.Enabled = true;
+                    btnSave.Enabled = true;
+                    txtListRoom.Enabled = true;
+                    btnDelete.Enabled = false;
+                    txtListRoom.Focus();
+                }*/
 
 
         /*private void btnSave_Click(object sender, EventArgs e)

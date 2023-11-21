@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace quan_ly_resort_v2.model
 {
@@ -11,23 +7,34 @@ namespace quan_ly_resort_v2.model
     {
         public BillDetails()
         {
+            GiaPhong = new List<double>();
+            DanhSachMaDichVu = new List<string>();
+            SoLuongDichVu = new List<int>();
+            GiaDichVu = new List<double>();
+            TenDichVu = new List<string>();
         }
 
-        public BillDetails(string maHoaDon, string maKhachHang, string maNhanVien, string danhSachMaPhong, DateTime ngayTaoHoaDon, double tongTien, DateTime ngayCheckIn, int soNgayThue, string state, string tenKhachHang, string tenNhanVien, string tenPhong)
+        public BillDetails(string maHoaDon, string maKhachHang, string maNhanVien, string danhSachMaPhong, DateTime ngayTaoHoaDon, double tongTien, DateTime ngayCheckIn, int soNgayThue, string state, string tenKhachHang, string tenNhanVien, string tenPhong, List<double> giaPhong, List<string> danhSachMaDichVu, List<int> soLuongDichVu, List<double> giaDichVu, List<string> tenDichVu)
         {
-            this.MaHoaDon = maHoaDon;
-            this.MaKhachHang = maKhachHang;
-            this.MaNhanVien = maNhanVien;
-            this.DanhSachMaPhong = danhSachMaPhong;
-            this.NgayTaoHoaDon = ngayTaoHoaDon;
-            this.TongTien = tongTien;
-            this.NgayCheckIn = ngayCheckIn;
-            this.SoNgayThue = soNgayThue;
-            this.State = state;
-            this.TenKhachHang = tenKhachHang;
-            this.TenNhanVien = tenNhanVien;
-            this.TenPhong = tenPhong;
+            MaHoaDon = maHoaDon;
+            MaKhachHang = maKhachHang;
+            MaNhanVien = maNhanVien;
+            DanhSachMaPhong = danhSachMaPhong;
+            NgayTaoHoaDon = ngayTaoHoaDon;
+            TongTien = tongTien;
+            NgayCheckIn = ngayCheckIn;
+            SoNgayThue = soNgayThue;
+            State = state;
+            TenKhachHang = tenKhachHang;
+            TenNhanVien = tenNhanVien;
+            TenPhong = tenPhong;
+            GiaPhong = giaPhong ?? new List<double>();
+            DanhSachMaDichVu = danhSachMaDichVu ?? new List<string>();
+            SoLuongDichVu = soLuongDichVu ?? new List<int>();
+            GiaDichVu = giaDichVu ?? new List<double>();
+            TenDichVu = tenDichVu ?? new List<string>();
         }
+
         public string MaHoaDon { get; set; }
         public string MaKhachHang { get; set; }
         public string MaNhanVien { get; set; }
@@ -40,5 +47,11 @@ namespace quan_ly_resort_v2.model
         public string TenKhachHang { get; set; }
         public string TenNhanVien { get; set; }
         public string TenPhong { get; set; }
+        public List<double> GiaPhong { get; set; }
+        public List<string> DanhSachMaDichVu { get; set; }
+        public List<int> SoLuongDichVu { get; set; }
+        public List<double> GiaDichVu { get; set; }
+        public List<string> TenDichVu { get; set; }
     }
+
 }

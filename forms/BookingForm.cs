@@ -55,14 +55,54 @@ namespace quan_ly_resort_v2.forms
 
         private void renderSelectRoomTable()
         {
-            this.tableRoomAvaiable.Rows.Clear();
+            /* this.tableRoomAvaiable.Rows.Clear();
             List<Room> rooms = RoomDAO.getRoomsByRoomState("avaiable");
             lb_roomAvaialbeCounter.Text = rooms.Count.ToString();
             foreach (Room room in rooms)
             {
                 if (!checkContainsRoomInTable(room.Id, tableRoomTarget))
                     this.tableRoomAvaiable.Rows.Add(room.Id, room.Type, room.BedStyle, room.Price);
+            } */
+
+            this.tableRoomAvaiable.Rows.Clear();
+            List<BookingRoom> bookingRooms = BookingRoomDAO.getBookingRooms();
+
+            DateTime from = datetimePicker_Checkint.Value;
+            DateTime to = datetimePicker_checkout.Value;
+            (DateTime, DateTime) fromTo = (from, to);
+
+            List<String> ignoreRooms = new List<string>();
+            foreach (BookingRoom bookingRoom in bookingRooms)
+            {
+                (DateTime, DateTime) tuppleCheck = (bookingRoom.NgayCheckInDuKien, bookingRoom.NgayCheckInDuKien.AddDays(bookingRoom.SoNgayThue));
+                bool isCheck = checkDateTimeContain(fromTo, tuppleCheck);
+                if (!isCheck)
+                {
+                    ignoreRooms.AddRange(bookingRoom.DanhSachMaPhong.Split(','));
+                }
             }
+
+            this.tableRoomAvaiable.Rows.Clear();
+            List<Room> rooms = RoomDAO.listRoom();
+            lb_roomAvaialbeCounter.Text = rooms.Count.ToString();
+            foreach (Room room in rooms)
+            {
+                if (!checkContainsRoomInTable(room.Id, tableRoomTarget) && !ignoreRooms.Contains(room.Id))
+                    this.tableRoomAvaiable.Rows.Add(room.Id, room.Type, room.BedStyle, room.Price);
+            }
+        }
+
+        private bool checkDateTimeContain((DateTime, DateTime) fromTo, (DateTime, DateTime) tuppleCheck)
+        {
+            if (fromTo.Item1.Date < tuppleCheck.Item1 && fromTo.Item2.Date >= tuppleCheck.Item1.Date)
+                return false;
+            else if (fromTo.Item1.Date >= tuppleCheck.Item1.Date && fromTo.Item1.Date <= tuppleCheck.Item2.Date)
+                return false;
+            else if (fromTo.Item1.Date < tuppleCheck.Item2.Date && fromTo.Item2.Date >= tuppleCheck.Item2.Date)
+                return false;
+            else if (fromTo.Item1.Date <= tuppleCheck.Item1.Date && fromTo.Item2.Date >= tuppleCheck.Item2.Date)
+                return false;
+            return true;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -242,7 +282,7 @@ namespace quan_ly_resort_v2.forms
             );
 
             // update room state
-            foreach (Room room in RoomDAO.GetRooms())
+            foreach (Room room in RoomDAO.GetRoomsLimit())
             {
                 if (room.State.ToLower() == "reserved" || room.State.ToLower() == "occupied")
                     continue;
@@ -261,6 +301,16 @@ namespace quan_ly_resort_v2.forms
         {
             datetimePicker_Checkint.Value = DateTime.Now;
             datetimePicker_checkout.Value = DateTime.Now.AddDays(1);
+        }
+
+        private void datetimePicker_Checkint_ValueChanged(object sender, EventArgs e)
+        {
+            renderSelectRoomTable();
+        }
+
+        private void datetimePicker_checkout_ValueChanged(object sender, EventArgs e)
+        {
+            renderSelectRoomTable();
         }
     }
 }

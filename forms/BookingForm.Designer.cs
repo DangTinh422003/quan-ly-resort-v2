@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -148,6 +154,18 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tableRoomTarget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.tableRoomTarget.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.tableRoomTarget.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableRoomTarget.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRoomTarget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tableRoomTarget.ColumnHeadersHeight = 34;
             this.tableRoomTarget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tableRoomTarget.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -163,6 +181,14 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tableRoomTarget.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRoomTarget.DefaultCellStyle = dataGridViewCellStyle9;
             this.tableRoomTarget.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.tableRoomTarget.Location = new System.Drawing.Point(312, 114);
             this.tableRoomTarget.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -272,6 +298,18 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tableRoomAvaiable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.tableRoomAvaiable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.tableRoomAvaiable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tableRoomAvaiable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableRoomAvaiable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.tableRoomAvaiable.ColumnHeadersHeight = 34;
             this.tableRoomAvaiable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tableRoomAvaiable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -287,6 +325,14 @@
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tableRoomAvaiable.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableRoomAvaiable.DefaultCellStyle = dataGridViewCellStyle12;
             this.tableRoomAvaiable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.tableRoomAvaiable.Location = new System.Drawing.Point(11, 114);
             this.tableRoomAvaiable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -376,6 +422,7 @@
             this.datetimePicker_checkout.TabIndex = 9;
             this.datetimePicker_checkout.Text = "Tuesday, October 31, 2023";
             this.datetimePicker_checkout.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
+            this.datetimePicker_checkout.ValueChanged += new System.EventHandler(this.datetimePicker_checkout_ValueChanged);
             // 
             // datetimePicker_Checkint
             // 
@@ -399,6 +446,7 @@
             this.datetimePicker_Checkint.TabIndex = 8;
             this.datetimePicker_Checkint.Text = "Tuesday, October 31, 2023";
             this.datetimePicker_Checkint.Value = new System.DateTime(2023, 10, 31, 10, 54, 11, 256);
+            this.datetimePicker_Checkint.ValueChanged += new System.EventHandler(this.datetimePicker_Checkint_ValueChanged);
             // 
             // gunaPictureBox8
             // 
@@ -750,6 +798,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1042, 578);
+            this.ClientSize = new System.Drawing.Size(1303, 662);
             this.ControlBox = false;
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btn_save);

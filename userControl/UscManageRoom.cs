@@ -33,7 +33,7 @@ namespace quan_ly_resort_v2.userControl
         {
             lb_currentPage.Text = "Trang 1/" + totalPage;
             flowLayoutPanel_ListRoom.Controls.Clear();
-            List<Room> rooms = RoomDAO.GetRooms(1, PAGE_LIMIT);
+            List<Room> rooms = RoomDAO.GetRoomsLimit(1, PAGE_LIMIT);
             foreach (Room room in rooms)
             {
                 RoomItem roomItem = new RoomItem();
@@ -51,7 +51,7 @@ namespace quan_ly_resort_v2.userControl
                 else
                     currentPageIndex--;
                 flowLayoutPanel_ListRoom.Controls.Clear();
-                List<Room> rooms = RoomDAO.GetRooms(currentPageIndex, PAGE_LIMIT);
+                List<Room> rooms = RoomDAO.GetRoomsLimit(currentPageIndex, PAGE_LIMIT);
                 foreach (Room room in rooms)
                 {
                     RoomItem roomItem = new RoomItem();
@@ -71,7 +71,7 @@ namespace quan_ly_resort_v2.userControl
                 else
                     currentPageIndex++;
                 flowLayoutPanel_ListRoom.Controls.Clear();
-                List<Room> rooms = RoomDAO.GetRooms(currentPageIndex, PAGE_LIMIT);
+                List<Room> rooms = RoomDAO.GetRoomsLimit(currentPageIndex, PAGE_LIMIT);
                 foreach (Room room in rooms)
                 {
                     RoomItem roomItem = new RoomItem();

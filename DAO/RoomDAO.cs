@@ -49,7 +49,44 @@ namespace quan_ly_resort_v2.DAO
             return -1;
         }
 
-        public static List<Room> GetRooms(int currentPageIndex = 1, int pageSize = 12)
+        public static List<Room> listRoom()
+        {
+            List<Room> rooms = new List<Room>();
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
+                {
+                    conn.Open();
+
+                    string sql = "SELECT * FROM phong ";
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Room room = new Room(
+                                reader["id"].ToString(),
+                                reader["LoaiPhong"].ToString(),
+                                reader["KieuGiuong"].ToString(),
+                                reader["TinhTrang"].ToString(),
+                                Convert.ToDouble(reader["Gia"]),
+                                (bool)reader["DonDep"],
+                                (bool)reader["SuaChua"]
+                            );
+                            rooms.Add(room);
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Error in GetRooms: " + err.Message);
+                return null;
+            }
+            return rooms;
+        }
+
+        public static List<Room> GetRoomsLimit(int currentPageIndex = 1, int pageSize = 12)
         {
             List<Room> rooms = new List<Room>();
 

@@ -52,12 +52,10 @@
             this.guna2RadioButton1 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textbox_searchRoom = new Guna.UI.WinForms.GunaTextBox();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
-            this.btn_load = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_filter = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.textbox_searchRoom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_load = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.btn_Nextpage = new Guna.UI.WinForms.GunaCircleButton();
             this.btn_Prevpage = new Guna.UI.WinForms.GunaCircleButton();
@@ -82,8 +80,6 @@
             this.panel_typeBedFilter.SuspendLayout();
             this.panel_typeRoomFilter.SuspendLayout();
             this.panel_stateFilter.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -99,7 +95,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 60);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(224, 843);
+            this.guna2Panel1.Size = new System.Drawing.Size(203, 843);
             this.guna2Panel1.TabIndex = 1;
             // 
             // panel_typeBedFilter
@@ -116,7 +112,7 @@
             this.panel_typeBedFilter.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel_typeBedFilter.Location = new System.Drawing.Point(0, 498);
             this.panel_typeBedFilter.Name = "panel_typeBedFilter";
-            this.panel_typeBedFilter.Size = new System.Drawing.Size(224, 297);
+            this.panel_typeBedFilter.Size = new System.Drawing.Size(203, 297);
             this.panel_typeBedFilter.TabIndex = 2;
             // 
             // guna2RadioButton15
@@ -128,7 +124,7 @@
             this.guna2RadioButton15.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton15.CheckedState.InnerOffset = -4;
             this.guna2RadioButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton15.Location = new System.Drawing.Point(62, 248);
+            this.guna2RadioButton15.Location = new System.Drawing.Point(31, 239);
             this.guna2RadioButton15.Name = "guna2RadioButton15";
             this.guna2RadioButton15.Size = new System.Drawing.Size(67, 29);
             this.guna2RadioButton15.TabIndex = 7;
@@ -147,7 +143,7 @@
             this.guna2RadioButton9.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton9.CheckedState.InnerOffset = -4;
             this.guna2RadioButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton9.Location = new System.Drawing.Point(62, 143);
+            this.guna2RadioButton9.Location = new System.Drawing.Point(31, 134);
             this.guna2RadioButton9.Name = "guna2RadioButton9";
             this.guna2RadioButton9.Size = new System.Drawing.Size(92, 29);
             this.guna2RadioButton9.TabIndex = 6;
@@ -166,7 +162,7 @@
             this.guna2RadioButton11.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton11.CheckedState.InnerOffset = -4;
             this.guna2RadioButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton11.Location = new System.Drawing.Point(62, 213);
+            this.guna2RadioButton11.Location = new System.Drawing.Point(31, 204);
             this.guna2RadioButton11.Name = "guna2RadioButton11";
             this.guna2RadioButton11.Size = new System.Drawing.Size(77, 29);
             this.guna2RadioButton11.TabIndex = 4;
@@ -185,7 +181,7 @@
             this.guna2RadioButton12.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton12.CheckedState.InnerOffset = -4;
             this.guna2RadioButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton12.Location = new System.Drawing.Point(62, 178);
+            this.guna2RadioButton12.Location = new System.Drawing.Point(31, 169);
             this.guna2RadioButton12.Name = "guna2RadioButton12";
             this.guna2RadioButton12.Size = new System.Drawing.Size(74, 29);
             this.guna2RadioButton12.TabIndex = 3;
@@ -204,7 +200,7 @@
             this.guna2RadioButton13.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton13.CheckedState.InnerOffset = -4;
             this.guna2RadioButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton13.Location = new System.Drawing.Point(62, 108);
+            this.guna2RadioButton13.Location = new System.Drawing.Point(31, 99);
             this.guna2RadioButton13.Name = "guna2RadioButton13";
             this.guna2RadioButton13.Size = new System.Drawing.Size(84, 29);
             this.guna2RadioButton13.TabIndex = 2;
@@ -224,7 +220,7 @@
             this.guna2RadioButton14.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton14.CheckedState.InnerOffset = -4;
             this.guna2RadioButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton14.Location = new System.Drawing.Point(62, 73);
+            this.guna2RadioButton14.Location = new System.Drawing.Point(31, 64);
             this.guna2RadioButton14.Name = "guna2RadioButton14";
             this.guna2RadioButton14.Size = new System.Drawing.Size(88, 29);
             this.guna2RadioButton14.TabIndex = 1;
@@ -259,7 +255,7 @@
             this.panel_typeRoomFilter.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel_typeRoomFilter.Location = new System.Drawing.Point(0, 230);
             this.panel_typeRoomFilter.Name = "panel_typeRoomFilter";
-            this.panel_typeRoomFilter.Size = new System.Drawing.Size(224, 268);
+            this.panel_typeRoomFilter.Size = new System.Drawing.Size(203, 268);
             this.panel_typeRoomFilter.TabIndex = 1;
             // 
             // guna2RadioButton10
@@ -271,11 +267,11 @@
             this.guna2RadioButton10.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton10.CheckedState.InnerOffset = -4;
             this.guna2RadioButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton10.Location = new System.Drawing.Point(62, 143);
+            this.guna2RadioButton10.Location = new System.Drawing.Point(31, 134);
             this.guna2RadioButton10.Name = "guna2RadioButton10";
-            this.guna2RadioButton10.Size = new System.Drawing.Size(107, 29);
+            this.guna2RadioButton10.Size = new System.Drawing.Size(103, 29);
             this.guna2RadioButton10.TabIndex = 6;
-            this.guna2RadioButton10.Text = "Superior";
+            this.guna2RadioButton10.Text = "superior";
             this.guna2RadioButton10.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2RadioButton10.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton10.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -290,11 +286,11 @@
             this.guna2RadioButton5.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton5.CheckedState.InnerOffset = -4;
             this.guna2RadioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton5.Location = new System.Drawing.Point(62, 213);
+            this.guna2RadioButton5.Location = new System.Drawing.Point(31, 204);
             this.guna2RadioButton5.Name = "guna2RadioButton5";
-            this.guna2RadioButton5.Size = new System.Drawing.Size(118, 29);
+            this.guna2RadioButton5.Size = new System.Drawing.Size(116, 29);
             this.guna2RadioButton5.TabIndex = 4;
-            this.guna2RadioButton5.Text = "Executive";
+            this.guna2RadioButton5.Text = "executive";
             this.guna2RadioButton5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2RadioButton5.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton5.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -309,11 +305,11 @@
             this.guna2RadioButton6.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton6.CheckedState.InnerOffset = -4;
             this.guna2RadioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton6.Location = new System.Drawing.Point(62, 178);
+            this.guna2RadioButton6.Location = new System.Drawing.Point(31, 169);
             this.guna2RadioButton6.Name = "guna2RadioButton6";
-            this.guna2RadioButton6.Size = new System.Drawing.Size(94, 29);
+            this.guna2RadioButton6.Size = new System.Drawing.Size(91, 29);
             this.guna2RadioButton6.TabIndex = 3;
-            this.guna2RadioButton6.Text = "Deluxe";
+            this.guna2RadioButton6.Text = "deluxe";
             this.guna2RadioButton6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2RadioButton6.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton6.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -328,11 +324,11 @@
             this.guna2RadioButton7.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton7.CheckedState.InnerOffset = -4;
             this.guna2RadioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton7.Location = new System.Drawing.Point(62, 108);
+            this.guna2RadioButton7.Location = new System.Drawing.Point(31, 99);
             this.guna2RadioButton7.Name = "guna2RadioButton7";
-            this.guna2RadioButton7.Size = new System.Drawing.Size(113, 29);
+            this.guna2RadioButton7.Size = new System.Drawing.Size(109, 29);
             this.guna2RadioButton7.TabIndex = 2;
-            this.guna2RadioButton7.Text = "Standard";
+            this.guna2RadioButton7.Text = "standard";
             this.guna2RadioButton7.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2RadioButton7.UncheckedState.BorderThickness = 2;
             this.guna2RadioButton7.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -348,7 +344,7 @@
             this.guna2RadioButton8.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton8.CheckedState.InnerOffset = -4;
             this.guna2RadioButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton8.Location = new System.Drawing.Point(62, 73);
+            this.guna2RadioButton8.Location = new System.Drawing.Point(31, 64);
             this.guna2RadioButton8.Name = "guna2RadioButton8";
             this.guna2RadioButton8.Size = new System.Drawing.Size(88, 29);
             this.guna2RadioButton8.TabIndex = 1;
@@ -382,7 +378,7 @@
             this.panel_stateFilter.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel_stateFilter.Location = new System.Drawing.Point(0, 0);
             this.panel_stateFilter.Name = "panel_stateFilter";
-            this.panel_stateFilter.Size = new System.Drawing.Size(224, 230);
+            this.panel_stateFilter.Size = new System.Drawing.Size(203, 230);
             this.panel_stateFilter.TabIndex = 0;
             // 
             // guna2RadioButton4
@@ -394,7 +390,7 @@
             this.guna2RadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton4.CheckedState.InnerOffset = -4;
             this.guna2RadioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton4.Location = new System.Drawing.Point(62, 178);
+            this.guna2RadioButton4.Location = new System.Drawing.Point(31, 169);
             this.guna2RadioButton4.Name = "guna2RadioButton4";
             this.guna2RadioButton4.Size = new System.Drawing.Size(112, 29);
             this.guna2RadioButton4.TabIndex = 4;
@@ -413,7 +409,7 @@
             this.guna2RadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton3.CheckedState.InnerOffset = -4;
             this.guna2RadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton3.Location = new System.Drawing.Point(62, 143);
+            this.guna2RadioButton3.Location = new System.Drawing.Point(31, 134);
             this.guna2RadioButton3.Name = "guna2RadioButton3";
             this.guna2RadioButton3.Size = new System.Drawing.Size(109, 29);
             this.guna2RadioButton3.TabIndex = 3;
@@ -432,7 +428,7 @@
             this.guna2RadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton2.CheckedState.InnerOffset = -4;
             this.guna2RadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton2.Location = new System.Drawing.Point(62, 108);
+            this.guna2RadioButton2.Location = new System.Drawing.Point(31, 99);
             this.guna2RadioButton2.Name = "guna2RadioButton2";
             this.guna2RadioButton2.Size = new System.Drawing.Size(106, 29);
             this.guna2RadioButton2.TabIndex = 2;
@@ -452,7 +448,7 @@
             this.guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2RadioButton1.CheckedState.InnerOffset = -4;
             this.guna2RadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2RadioButton1.Location = new System.Drawing.Point(62, 73);
+            this.guna2RadioButton1.Location = new System.Drawing.Point(31, 64);
             this.guna2RadioButton1.Name = "guna2RadioButton1";
             this.guna2RadioButton1.Size = new System.Drawing.Size(88, 29);
             this.guna2RadioButton1.TabIndex = 1;
@@ -479,64 +475,23 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(68, 14);
+            this.label1.Location = new System.Drawing.Point(223, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ PHÒNG";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textbox_searchRoom);
-            this.panel1.Location = new System.Drawing.Point(799, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(464, 45);
-            this.panel1.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textbox_searchRoom
-            // 
-            this.textbox_searchRoom.BackColor = System.Drawing.Color.Transparent;
-            this.textbox_searchRoom.BaseColor = System.Drawing.Color.White;
-            this.textbox_searchRoom.BorderColor = System.Drawing.Color.Silver;
-            this.textbox_searchRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textbox_searchRoom.FocusedBaseColor = System.Drawing.Color.White;
-            this.textbox_searchRoom.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textbox_searchRoom.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textbox_searchRoom.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_searchRoom.Location = new System.Drawing.Point(0, 0);
-            this.textbox_searchRoom.Name = "textbox_searchRoom";
-            this.textbox_searchRoom.PasswordChar = '\0';
-            this.textbox_searchRoom.Radius = 8;
-            this.textbox_searchRoom.SelectedText = "";
-            this.textbox_searchRoom.Size = new System.Drawing.Size(366, 45);
-            this.textbox_searchRoom.TabIndex = 0;
-            this.textbox_searchRoom.TextOffsetX = 50;
-            this.textbox_searchRoom.TextChanged += new System.EventHandler(this.textbox_searchRoom_TextChanged);
-            // 
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaShadowPanel1.Controls.Add(this.btn_load);
             this.gunaShadowPanel1.Controls.Add(this.btn_filter);
+            this.gunaShadowPanel1.Controls.Add(this.textbox_searchRoom);
+            this.gunaShadowPanel1.Controls.Add(this.btn_load);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel5);
             this.gunaShadowPanel1.Controls.Add(this.gunaPanel4);
             this.gunaShadowPanel1.Controls.Add(this.lb_currentPage);
             this.gunaShadowPanel1.Controls.Add(this.pictureBox2);
-            this.gunaShadowPanel1.Controls.Add(this.panel1);
             this.gunaShadowPanel1.Controls.Add(this.label1);
             this.gunaShadowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaShadowPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -547,6 +502,61 @@
             this.gunaShadowPanel1.ShadowShift = 0;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1279, 60);
             this.gunaShadowPanel1.TabIndex = 0;
+            // 
+            // btn_filter
+            // 
+            this.btn_filter.AnimationHoverSpeed = 0.07F;
+            this.btn_filter.AnimationSpeed = 0.03F;
+            this.btn_filter.BackColor = System.Drawing.Color.Transparent;
+            this.btn_filter.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_filter.BorderColor = System.Drawing.Color.Black;
+            this.btn_filter.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_filter.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_filter.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_filter.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_filter.CheckedImage")));
+            this.btn_filter.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_filter.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_filter.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_filter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_filter.ForeColor = System.Drawing.Color.White;
+            this.btn_filter.Image = ((System.Drawing.Image)(resources.GetObject("btn_filter.Image")));
+            this.btn_filter.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_filter.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_filter.Location = new System.Drawing.Point(9, 9);
+            this.btn_filter.Name = "btn_filter";
+            this.btn_filter.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_filter.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_filter.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_filter.OnHoverImage = null;
+            this.btn_filter.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_filter.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_filter.Radius = 8;
+            this.btn_filter.Size = new System.Drawing.Size(156, 42);
+            this.btn_filter.TabIndex = 7;
+            this.btn_filter.Text = "Tìm kiếm";
+            this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
+            // 
+            // textbox_searchRoom
+            // 
+            this.textbox_searchRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textbox_searchRoom.DefaultText = "";
+            this.textbox_searchRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textbox_searchRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textbox_searchRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textbox_searchRoom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textbox_searchRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textbox_searchRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textbox_searchRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textbox_searchRoom.Location = new System.Drawing.Point(916, 12);
+            this.textbox_searchRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textbox_searchRoom.Name = "textbox_searchRoom";
+            this.textbox_searchRoom.PasswordChar = '\0';
+            this.textbox_searchRoom.PlaceholderText = "Nhập mã phòng";
+            this.textbox_searchRoom.SelectedText = "";
+            this.textbox_searchRoom.Size = new System.Drawing.Size(333, 41);
+            this.textbox_searchRoom.TabIndex = 6;
+            this.textbox_searchRoom.TextOffset = new System.Drawing.Point(10, 0);
+            this.textbox_searchRoom.TextChanged += new System.EventHandler(this.textbox_searchRoom_TextChanged);
             // 
             // btn_load
             // 
@@ -567,7 +577,7 @@
             this.btn_load.Image = ((System.Drawing.Image)(resources.GetObject("btn_load.Image")));
             this.btn_load.ImageSize = new System.Drawing.Size(40, 40);
             this.btn_load.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_load.Location = new System.Drawing.Point(510, 12);
+            this.btn_load.Location = new System.Drawing.Point(716, 13);
             this.btn_load.Name = "btn_load";
             this.btn_load.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_load.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -580,44 +590,12 @@
             this.btn_load.TabIndex = 5;
             this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
-            // btn_filter
-            // 
-            this.btn_filter.AnimationHoverSpeed = 0.07F;
-            this.btn_filter.AnimationSpeed = 0.03F;
-            this.btn_filter.BackColor = System.Drawing.Color.Transparent;
-            this.btn_filter.BaseColor = System.Drawing.Color.Transparent;
-            this.btn_filter.BorderColor = System.Drawing.Color.Black;
-            this.btn_filter.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_filter.CheckedBorderColor = System.Drawing.Color.Bisque;
-            this.btn_filter.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_filter.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_filter.CheckedImage")));
-            this.btn_filter.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_filter.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_filter.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_filter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_filter.ForeColor = System.Drawing.Color.White;
-            this.btn_filter.Image = ((System.Drawing.Image)(resources.GetObject("btn_filter.Image")));
-            this.btn_filter.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_filter.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_filter.Location = new System.Drawing.Point(583, 12);
-            this.btn_filter.Name = "btn_filter";
-            this.btn_filter.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_filter.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_filter.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_filter.OnHoverImage = null;
-            this.btn_filter.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_filter.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_filter.Radius = 8;
-            this.btn_filter.Size = new System.Drawing.Size(63, 38);
-            this.btn_filter.TabIndex = 3;
-            this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
-            // 
             // gunaPanel5
             // 
             this.gunaPanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaPanel5.Controls.Add(this.btn_Nextpage);
             this.gunaPanel5.Controls.Add(this.btn_Prevpage);
-            this.gunaPanel5.Location = new System.Drawing.Point(661, 13);
+            this.gunaPanel5.Location = new System.Drawing.Point(796, 13);
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Size = new System.Drawing.Size(102, 37);
             this.gunaPanel5.TabIndex = 1;
@@ -681,7 +659,7 @@
             // 
             this.lb_currentPage.AutoSize = true;
             this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(390, 18);
+            this.lb_currentPage.Location = new System.Drawing.Point(568, 19);
             this.lb_currentPage.Name = "lb_currentPage";
             this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
             this.lb_currentPage.TabIndex = 2;
@@ -691,7 +669,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(171, 9);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -728,10 +706,10 @@
             this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem11);
             this.flowLayoutPanel_ListRoom.Controls.Add(this.roomItem12);
             this.flowLayoutPanel_ListRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(224, 60);
+            this.flowLayoutPanel_ListRoom.Location = new System.Drawing.Point(203, 60);
             this.flowLayoutPanel_ListRoom.Name = "flowLayoutPanel_ListRoom";
             this.flowLayoutPanel_ListRoom.Padding = new System.Windows.Forms.Padding(5, 5, 0, 0);
-            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1055, 843);
+            this.flowLayoutPanel_ListRoom.Size = new System.Drawing.Size(1076, 843);
             this.flowLayoutPanel_ListRoom.TabIndex = 3;
             // 
             // roomItem1
@@ -871,8 +849,6 @@
             this.panel_typeRoomFilter.PerformLayout();
             this.panel_stateFilter.ResumeLayout(false);
             this.panel_stateFilter.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
@@ -885,10 +861,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_filter;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaTextBox textbox_searchRoom;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private Guna.UI.WinForms.GunaPanel panel_stateFilter;
@@ -932,5 +904,7 @@
         private RoomItem roomItem11;
         private RoomItem roomItem12;
         private Guna.UI.WinForms.GunaAdvenceButton btn_load;
+        private Guna.UI2.WinForms.Guna2TextBox textbox_searchRoom;
+        private Guna.UI.WinForms.GunaAdvenceButton btn_filter;
     }
 }

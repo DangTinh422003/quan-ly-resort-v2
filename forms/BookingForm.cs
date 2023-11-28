@@ -55,15 +55,6 @@ namespace quan_ly_resort_v2.forms
 
         private void renderSelectRoomTable()
         {
-            /* this.tableRoomAvaiable.Rows.Clear();
-            List<Room> rooms = RoomDAO.getRoomsByRoomState("avaiable");
-            lb_roomAvaialbeCounter.Text = rooms.Count.ToString();
-            foreach (Room room in rooms)
-            {
-                if (!checkContainsRoomInTable(room.Id, tableRoomTarget))
-                    this.tableRoomAvaiable.Rows.Add(room.Id, room.Type, room.BedStyle, room.Price);
-            } */
-
             this.tableRoomAvaiable.Rows.Clear();
             List<BookingRoom> bookingRooms = BookingRoomDAO.getBookingRooms();
 

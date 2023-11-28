@@ -140,8 +140,33 @@ namespace quan_ly_resort_v2.userControl
 
         private void btn_filter_Click(object sender, EventArgs e)
         {
-            string valueFilterString = getStringValueFilter();
-            MessageBox.Show(valueFilterString.ToString());
+            string filter = getStringValueFilter();
+            string roomState = filter.Split(',')[0];
+            string roomType = filter.Split(',')[1];
+            string bedType = filter.Split(',')[2];
+
+            if (roomState == "Tất cả" && roomType == "Tất cả" && bedType == "Tất cả")
+            {
+                renderListRoom();
+                return;
+            }
+
+            flowLayoutPanel_ListRoom.Controls.Clear();
+
+            List<Room> rooms = RoomDAO.filterRoom(
+                roomType == "Tất cả" ? "" : roomType,
+                bedType == "Tất cả" ? "" : bedType,
+                roomState == "Tất cả" ? "" : roomState
+            );
+
+            foreach (Room room in rooms)
+            {
+                RoomItem roomItem = new RoomItem();
+                roomItem.SetRoomInfo(room);
+                flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+
+                Console.WriteLine(room.Id);
+            }
         }
     }
 }

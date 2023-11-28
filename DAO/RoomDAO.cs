@@ -259,5 +259,46 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
+        public static List<Room> filterRoom(string loaiPhong, string kieuGiuong, string tinhTrang)
+        {
+            List<Room> rooms = new List<Room>();
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString()))
+                {
+                    conn.Open();
+
+                    string sql = "SELECT * FROM phong where LoaiPhong like @LoaiPhong and " +
+                                                           "KieuGiuong like @KieuGiuong and " +
+                                                           "TinhTrang like @TinhTrang";
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+                    command.Parameters.AddWithValue("@LoaiPhong", "%" + loaiPhong + "%");
+                    command.Parameters.AddWithValue("@KieuGiuong", "%" + kieuGiuong + "%");
+                    command.Parameters.AddWithValue("@TinhTrang", "%" + tinhTrang + "%");
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Room room = new Room(
+                                reader["id"].ToString(),
+                                reader["LoaiPhong"].ToString(),
+                                reader["KieuGiuong"].ToString(),
+                                reader["TinhTrang"].ToString(),
+                                Convert.ToDouble(reader["Gia"]),
+                                (bool)reader["DonDep"],
+                                (bool)reader["SuaChua"]
+                            );
+                            rooms.Add(room);
+                        }
+                    }
+                }
+                return rooms;
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Error in GetRooms: " + err.Message);
+                return null;
+            }
+        }
     }
 }

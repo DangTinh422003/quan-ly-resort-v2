@@ -71,14 +71,26 @@ namespace quan_ly_resort_v2.forms
             DateTime to = datetimePicker_checkout.Value;
             (DateTime, DateTime) fromTo = (from, to);
 
-            List<String> ignoreRooms = new List<string>();
+            List<string> ignoreRooms = new List<string>();
             foreach (BookingRoom bookingRoom in bookingRooms)
             {
                 (DateTime, DateTime) tuppleCheck = (bookingRoom.NgayCheckInDuKien, bookingRoom.NgayCheckInDuKien.AddDays(bookingRoom.SoNgayThue));
                 bool isCheck = checkDateTimeContain(fromTo, tuppleCheck);
                 if (!isCheck)
                 {
-                    ignoreRooms.AddRange(bookingRoom.DanhSachMaPhong.Split(','));
+                    if (bookingRoom.IsConfirm != "Đã xử lý")
+                    {
+                        ignoreRooms.AddRange(bookingRoom.DanhSachMaPhong.Split(','));
+                    }
+                    else
+                    {
+                        foreach (string id in bookingRoom.DanhSachMaPhong.Split(','))
+                        {
+                            Room currentRoom = RoomDAO.getRoomByID(id);
+                            if (currentRoom.State.ToLower() != "avaiable")
+                                ignoreRooms.Add(id);
+                        }
+                    }
                 }
             }
 

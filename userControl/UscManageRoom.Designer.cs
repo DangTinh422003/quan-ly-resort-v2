@@ -475,7 +475,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(223, 13);
+            this.label1.Location = new System.Drawing.Point(261, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 38);
             this.label1.TabIndex = 0;
@@ -531,7 +531,7 @@
             this.btn_filter.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btn_filter.OnPressedColor = System.Drawing.Color.Black;
             this.btn_filter.Radius = 8;
-            this.btn_filter.Size = new System.Drawing.Size(156, 42);
+            this.btn_filter.Size = new System.Drawing.Size(194, 42);
             this.btn_filter.TabIndex = 7;
             this.btn_filter.Text = "Tìm kiếm";
             this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
@@ -659,7 +659,7 @@
             // 
             this.lb_currentPage.AutoSize = true;
             this.lb_currentPage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_currentPage.Location = new System.Drawing.Point(568, 19);
+            this.lb_currentPage.Location = new System.Drawing.Point(595, 18);
             this.lb_currentPage.Name = "lb_currentPage";
             this.lb_currentPage.Size = new System.Drawing.Size(76, 28);
             this.lb_currentPage.TabIndex = 2;
@@ -669,7 +669,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(171, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(209, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(46, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

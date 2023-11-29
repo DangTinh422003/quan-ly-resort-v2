@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillDetailForm));
             this.PanelHD = new Guna.UI.WinForms.GunaPanel();
+            this.txtDichvu = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.txtTien = new Guna.UI.WinForms.GunaLabel();
             this.txtPay = new Guna.UI.WinForms.GunaLabel();
             this.txtNgayO = new Guna.UI.WinForms.GunaLabel();
@@ -43,6 +45,7 @@
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
@@ -50,9 +53,6 @@
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
             this.btn_ExportPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPrint = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
-            this.txtDichvu = new Guna.UI.WinForms.GunaLabel();
             this.PanelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,14 +82,34 @@
             this.PanelHD.Controls.Add(this.Label_Title);
             this.PanelHD.Location = new System.Drawing.Point(0, -3);
             this.PanelHD.Name = "PanelHD";
-            this.PanelHD.Size = new System.Drawing.Size(728, 954);
+            this.PanelHD.Size = new System.Drawing.Size(728, 866);
             this.PanelHD.TabIndex = 0;
+            // 
+            // txtDichvu
+            // 
+            this.txtDichvu.AutoSize = true;
+            this.txtDichvu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDichvu.Location = new System.Drawing.Point(264, 448);
+            this.txtDichvu.Name = "txtDichvu";
+            this.txtDichvu.Size = new System.Drawing.Size(127, 28);
+            this.txtDichvu.TabIndex = 70;
+            this.txtDichvu.Text = "Mã hóa đơn";
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel10.Location = new System.Drawing.Point(51, 448);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(169, 28);
+            this.gunaLabel10.TabIndex = 69;
+            this.gunaLabel10.Text = "Danh sách dịch vụ";
             // 
             // txtTien
             // 
             this.txtTien.AutoSize = true;
             this.txtTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTien.Location = new System.Drawing.Point(264, 815);
+            this.txtTien.Location = new System.Drawing.Point(264, 749);
             this.txtTien.Name = "txtTien";
             this.txtTien.Size = new System.Drawing.Size(127, 28);
             this.txtTien.TabIndex = 68;
@@ -99,7 +119,7 @@
             // 
             this.txtPay.AutoSize = true;
             this.txtPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPay.Location = new System.Drawing.Point(264, 771);
+            this.txtPay.Location = new System.Drawing.Point(264, 705);
             this.txtPay.Name = "txtPay";
             this.txtPay.Size = new System.Drawing.Size(127, 28);
             this.txtPay.TabIndex = 67;
@@ -109,7 +129,7 @@
             // 
             this.txtNgayO.AutoSize = true;
             this.txtNgayO.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgayO.Location = new System.Drawing.Point(264, 727);
+            this.txtNgayO.Location = new System.Drawing.Point(264, 661);
             this.txtNgayO.Name = "txtNgayO";
             this.txtNgayO.Size = new System.Drawing.Size(127, 28);
             this.txtNgayO.TabIndex = 66;
@@ -119,7 +139,7 @@
             // 
             this.txtCheckIn.AutoSize = true;
             this.txtCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCheckIn.Location = new System.Drawing.Point(264, 682);
+            this.txtCheckIn.Location = new System.Drawing.Point(264, 616);
             this.txtCheckIn.Name = "txtCheckIn";
             this.txtCheckIn.Size = new System.Drawing.Size(127, 28);
             this.txtCheckIn.TabIndex = 65;
@@ -169,7 +189,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel9.Location = new System.Drawing.Point(51, 890);
+            this.gunaLabel9.Location = new System.Drawing.Point(51, 832);
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(557, 28);
             this.gunaLabel9.TabIndex = 60;
@@ -179,7 +199,7 @@
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel5.Location = new System.Drawing.Point(51, 815);
+            this.gunaLabel5.Location = new System.Drawing.Point(51, 749);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(95, 28);
             this.gunaLabel5.TabIndex = 59;
@@ -189,7 +209,7 @@
             // 
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel6.Location = new System.Drawing.Point(51, 771);
+            this.gunaLabel6.Location = new System.Drawing.Point(51, 705);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(197, 28);
             this.gunaLabel6.TabIndex = 58;
@@ -199,7 +219,7 @@
             // 
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel7.Location = new System.Drawing.Point(51, 727);
+            this.gunaLabel7.Location = new System.Drawing.Point(51, 661);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(100, 28);
             this.gunaLabel7.TabIndex = 57;
@@ -209,11 +229,21 @@
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel8.Location = new System.Drawing.Point(51, 682);
+            this.gunaLabel8.Location = new System.Drawing.Point(51, 616);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(166, 28);
             this.gunaLabel8.TabIndex = 56;
             this.gunaLabel8.Text = "Thời gian CheckIn";
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel3.Location = new System.Drawing.Point(51, 305);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(164, 28);
+            this.gunaLabel3.TabIndex = 55;
+            this.gunaLabel3.Text = "Danh sách phòng";
             // 
             // gunaLabel4
             // 
@@ -285,7 +315,7 @@
             this.btn_ExportPDF.Image = ((System.Drawing.Image)(resources.GetObject("btn_ExportPDF.Image")));
             this.btn_ExportPDF.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_ExportPDF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_ExportPDF.Location = new System.Drawing.Point(124, 977);
+            this.btn_ExportPDF.Location = new System.Drawing.Point(114, 871);
             this.btn_ExportPDF.Margin = new System.Windows.Forms.Padding(5);
             this.btn_ExportPDF.Name = "btn_ExportPDF";
             this.btn_ExportPDF.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -320,7 +350,7 @@
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
             this.btnPrint.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPrint.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPrint.Location = new System.Drawing.Point(421, 977);
+            this.btnPrint.Location = new System.Drawing.Point(440, 871);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(5);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -336,42 +366,12 @@
             this.btnPrint.TextOffsetX = 7;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel3.Location = new System.Drawing.Point(51, 305);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(164, 28);
-            this.gunaLabel3.TabIndex = 55;
-            this.gunaLabel3.Text = "Danh sách phòng";
-            // 
-            // gunaLabel10
-            // 
-            this.gunaLabel10.AutoSize = true;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel10.Location = new System.Drawing.Point(51, 448);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(169, 28);
-            this.gunaLabel10.TabIndex = 69;
-            this.gunaLabel10.Text = "Danh sách dịch vụ";
-            // 
-            // txtDichvu
-            // 
-            this.txtDichvu.AutoSize = true;
-            this.txtDichvu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDichvu.Location = new System.Drawing.Point(264, 448);
-            this.txtDichvu.Name = "txtDichvu";
-            this.txtDichvu.Size = new System.Drawing.Size(127, 28);
-            this.txtDichvu.TabIndex = 70;
-            this.txtDichvu.Text = "Mã hóa đơn";
-            // 
             // BillDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(728, 1050);
+            this.ClientSize = new System.Drawing.Size(728, 926);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btn_ExportPDF);
             this.Controls.Add(this.PanelHD);

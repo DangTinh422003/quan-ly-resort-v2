@@ -3,6 +3,7 @@ using quan_ly_resort_v2.common.constants;
 using quan_ly_resort_v2.model;
 using quan_ly_resort_v2.utils;
 using System;
+using System.Data;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -265,6 +266,48 @@ namespace quan_ly_resort_v2.DAO
             {
                 Console.WriteLine(e.Message);
                 return false;
+            }
+        }
+
+        public static DataTable FilterByField(string typeValue, string filterValue)
+        {
+            try
+            {
+                typeValue = typeValue.Trim();
+                filterValue = filterValue.Trim();
+
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "SELECT * FROM account";
+                switch (typeValue)
+                {
+                    case "Username":
+                        sql += " WHERE username LIKE @filterValue";
+                        break;
+                    case "Email":
+                        sql += " WHERE Email LIKE @filterValue";
+                        break;
+                    default:
+                        sql += " WHERE " + typeValue + " like @filterValue";
+                        break;
+                }
+
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@filterValue", "%" + filterValue + "%");
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                conn.Close();
+
+                return table;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
             }
         }
     }

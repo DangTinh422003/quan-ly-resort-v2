@@ -29,6 +29,7 @@ namespace quan_ly_resort_v2.userControl
             LoadAccountData();
             cleanForm();
             disableControl();
+            cbb_search.SelectedIndex = 0;
         }
 
         private void LoadAccountData()
@@ -221,6 +222,37 @@ namespace quan_ly_resort_v2.userControl
             }
 
             LoadAccountData();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string typeSelectValue = cbb_search.Text.Trim();
+            string textSearchValue = txtSearch.Text.Trim();
+            if (typeSelectValue == "" || textSearchValue == "")
+            {
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+                DataGridView.DataSource = AccountDAO.FilterByField(typeSelectValue, textSearchValue);
+        }
+
+        private void btnAll_Click_1(object sender, EventArgs e)
+        {
+            LoadAccountData();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string textSearchValue = txtSearch.Text.Trim();
+            if (textSearchValue != "")
+                btnSearch_Click(sender, e);
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnSearch_Click(sender, e);
         }
     }
 }

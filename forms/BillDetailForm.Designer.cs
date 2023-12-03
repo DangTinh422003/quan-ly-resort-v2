@@ -278,13 +278,14 @@
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.logo_removebg_preview2;
             this.gunaPictureBox1.Location = new System.Drawing.Point(12, 3);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
             this.gunaPictureBox1.Size = new System.Drawing.Size(576, 119);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gunaPictureBox1.TabIndex = 51;
             this.gunaPictureBox1.TabStop = false;
+            this.gunaPictureBox1.Click += new System.EventHandler(this.gunaPictureBox1_Click);
             // 
             // Label_Title
             // 
@@ -379,6 +380,7 @@
             this.MinimizeBox = false;
             this.Name = "BillDetailForm";
             this.Text = "Hóa đơn thanh toán";
+            this.Load += new System.EventHandler(this.BillDetailForm_Load);
             this.PanelHD.ResumeLayout(false);
             this.PanelHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();

@@ -28,31 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
-            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
-            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
-            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
-            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_TongDoanhThu = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_TongLuotDatPhong = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_TongTienDichVu = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_TongSoKhachHang = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -63,10 +67,6 @@
             this.cTienDichVu = new Guna.Charts.WinForms.GunaLineDataset();
             this.cTienPhong = new Guna.Charts.WinForms.GunaLineDataset();
             this.cTongKhachHang = new Guna.Charts.WinForms.GunaLineDataset();
-            this.lb_TongDoanhThu = new Guna.UI.WinForms.GunaLabel();
-            this.lb_TongTienDichVu = new Guna.UI.WinForms.GunaLabel();
-            this.lb_TongLuotDatPhong = new Guna.UI.WinForms.GunaLabel();
-            this.lb_TongSoKhachHang = new Guna.UI.WinForms.GunaLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -91,6 +91,16 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(430, 75);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // lb_TongDoanhThu
+            // 
+            this.lb_TongDoanhThu.AutoSize = true;
+            this.lb_TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongDoanhThu.Location = new System.Drawing.Point(271, 23);
+            this.lb_TongDoanhThu.Name = "lb_TongDoanhThu";
+            this.lb_TongDoanhThu.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongDoanhThu.TabIndex = 4;
+            this.lb_TongDoanhThu.Text = "99 000 000";
             // 
             // pictureBox1
             // 
@@ -126,6 +136,16 @@
             this.guna2Panel2.Size = new System.Drawing.Size(430, 75);
             this.guna2Panel2.TabIndex = 1;
             // 
+            // lb_TongLuotDatPhong
+            // 
+            this.lb_TongLuotDatPhong.AutoSize = true;
+            this.lb_TongLuotDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongLuotDatPhong.Location = new System.Drawing.Point(287, 26);
+            this.lb_TongLuotDatPhong.Name = "lb_TongLuotDatPhong";
+            this.lb_TongLuotDatPhong.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongLuotDatPhong.TabIndex = 5;
+            this.lb_TongLuotDatPhong.Text = "99 000 000";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
@@ -160,6 +180,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(430, 75);
             this.guna2Panel3.TabIndex = 1;
             // 
+            // lb_TongTienDichVu
+            // 
+            this.lb_TongTienDichVu.AutoSize = true;
+            this.lb_TongTienDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongTienDichVu.Location = new System.Drawing.Point(274, 23);
+            this.lb_TongTienDichVu.Name = "lb_TongTienDichVu";
+            this.lb_TongTienDichVu.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongTienDichVu.TabIndex = 5;
+            this.lb_TongTienDichVu.Text = "99 000 000";
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
@@ -193,6 +223,16 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(430, 75);
             this.guna2Panel4.TabIndex = 1;
+            // 
+            // lb_TongSoKhachHang
+            // 
+            this.lb_TongSoKhachHang.AutoSize = true;
+            this.lb_TongSoKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongSoKhachHang.Location = new System.Drawing.Point(298, 23);
+            this.lb_TongSoKhachHang.Name = "lb_TongSoKhachHang";
+            this.lb_TongSoKhachHang.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongSoKhachHang.TabIndex = 6;
+            this.lb_TongSoKhachHang.Text = "99 000 000";
             // 
             // pictureBox4
             // 
@@ -232,11 +272,12 @@
             this.lb_TiLeNhanPhong.AutoSize = true;
             this.lb_TiLeNhanPhong.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TiLeNhanPhong.ForeColor = System.Drawing.Color.Black;
-            this.lb_TiLeNhanPhong.Location = new System.Drawing.Point(73, 73);
+            this.lb_TiLeNhanPhong.Location = new System.Drawing.Point(71, 70);
             this.lb_TiLeNhanPhong.Name = "lb_TiLeNhanPhong";
             this.lb_TiLeNhanPhong.Size = new System.Drawing.Size(149, 62);
             this.lb_TiLeNhanPhong.TabIndex = 3;
             this.lb_TiLeNhanPhong.Text = "100%";
+            this.lb_TiLeNhanPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaLabel5
             // 
@@ -267,37 +308,37 @@
             this.cTongKhachHang});
             this.gunaChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaChart1.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
-            chartFont1.FontName = "Arial";
-            this.gunaChart1.Legend.LabelFont = chartFont1;
+            chartFont9.FontName = "Arial";
+            this.gunaChart1.Legend.LabelFont = chartFont9;
             this.gunaChart1.Location = new System.Drawing.Point(0, 0);
             this.gunaChart1.Name = "gunaChart1";
             this.gunaChart1.Size = new System.Drawing.Size(1184, 691);
             this.gunaChart1.TabIndex = 0;
-            chartFont2.FontName = "Arial";
-            chartFont2.Size = 12;
-            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Title.Font = chartFont2;
-            chartFont3.FontName = "Arial";
-            this.gunaChart1.Tooltips.BodyFont = chartFont3;
-            chartFont4.FontName = "Arial";
-            chartFont4.Size = 9;
-            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
-            this.gunaChart1.Tooltips.TitleFont = chartFont4;
-            this.gunaChart1.XAxes.GridLines = grid1;
-            chartFont5.FontName = "Arial";
-            tick1.Font = chartFont5;
-            this.gunaChart1.XAxes.Ticks = tick1;
-            this.gunaChart1.YAxes.GridLines = grid2;
-            chartFont6.FontName = "Arial";
-            tick2.Font = chartFont6;
-            this.gunaChart1.YAxes.Ticks = tick2;
-            this.gunaChart1.ZAxes.GridLines = grid3;
-            chartFont7.FontName = "Arial";
-            pointLabel1.Font = chartFont7;
-            this.gunaChart1.ZAxes.PointLabels = pointLabel1;
-            chartFont8.FontName = "Arial";
-            tick3.Font = chartFont8;
-            this.gunaChart1.ZAxes.Ticks = tick3;
+            chartFont10.FontName = "Arial";
+            chartFont10.Size = 12;
+            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Title.Font = chartFont10;
+            chartFont11.FontName = "Arial";
+            this.gunaChart1.Tooltips.BodyFont = chartFont11;
+            chartFont12.FontName = "Arial";
+            chartFont12.Size = 9;
+            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Tooltips.TitleFont = chartFont12;
+            this.gunaChart1.XAxes.GridLines = grid4;
+            chartFont13.FontName = "Arial";
+            tick4.Font = chartFont13;
+            this.gunaChart1.XAxes.Ticks = tick4;
+            this.gunaChart1.YAxes.GridLines = grid5;
+            chartFont14.FontName = "Arial";
+            tick5.Font = chartFont14;
+            this.gunaChart1.YAxes.Ticks = tick5;
+            this.gunaChart1.ZAxes.GridLines = grid6;
+            chartFont15.FontName = "Arial";
+            pointLabel2.Font = chartFont15;
+            this.gunaChart1.ZAxes.PointLabels = pointLabel2;
+            chartFont16.FontName = "Arial";
+            tick6.Font = chartFont16;
+            this.gunaChart1.ZAxes.Ticks = tick6;
             this.gunaChart1.Zoom = Guna.Charts.WinForms.ZoomMode.Y;
             // 
             // cTienDichVu
@@ -326,46 +367,6 @@
             this.cTongKhachHang.LegendBoxBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
             this.cTongKhachHang.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
             this.cTongKhachHang.TargetChart = this.gunaChart1;
-            // 
-            // lb_TongDoanhThu
-            // 
-            this.lb_TongDoanhThu.AutoSize = true;
-            this.lb_TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongDoanhThu.Location = new System.Drawing.Point(271, 23);
-            this.lb_TongDoanhThu.Name = "lb_TongDoanhThu";
-            this.lb_TongDoanhThu.Size = new System.Drawing.Size(120, 28);
-            this.lb_TongDoanhThu.TabIndex = 4;
-            this.lb_TongDoanhThu.Text = "99 000 000";
-            // 
-            // lb_TongTienDichVu
-            // 
-            this.lb_TongTienDichVu.AutoSize = true;
-            this.lb_TongTienDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongTienDichVu.Location = new System.Drawing.Point(274, 23);
-            this.lb_TongTienDichVu.Name = "lb_TongTienDichVu";
-            this.lb_TongTienDichVu.Size = new System.Drawing.Size(120, 28);
-            this.lb_TongTienDichVu.TabIndex = 5;
-            this.lb_TongTienDichVu.Text = "99 000 000";
-            // 
-            // lb_TongLuotDatPhong
-            // 
-            this.lb_TongLuotDatPhong.AutoSize = true;
-            this.lb_TongLuotDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongLuotDatPhong.Location = new System.Drawing.Point(287, 26);
-            this.lb_TongLuotDatPhong.Name = "lb_TongLuotDatPhong";
-            this.lb_TongLuotDatPhong.Size = new System.Drawing.Size(120, 28);
-            this.lb_TongLuotDatPhong.TabIndex = 5;
-            this.lb_TongLuotDatPhong.Text = "99 000 000";
-            // 
-            // lb_TongSoKhachHang
-            // 
-            this.lb_TongSoKhachHang.AutoSize = true;
-            this.lb_TongSoKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TongSoKhachHang.Location = new System.Drawing.Point(298, 23);
-            this.lb_TongSoKhachHang.Name = "lb_TongSoKhachHang";
-            this.lb_TongSoKhachHang.Size = new System.Drawing.Size(120, 28);
-            this.lb_TongSoKhachHang.TabIndex = 6;
-            this.lb_TongSoKhachHang.Text = "99 000 000";
             // 
             // UscManageStatistic
             // 

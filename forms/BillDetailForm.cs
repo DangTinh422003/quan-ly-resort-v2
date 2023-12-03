@@ -178,5 +178,14 @@ namespace quan_ly_resort_v2.forms
             }
         }
 
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BillDetailForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -141,6 +141,7 @@
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridView.Location = new System.Drawing.Point(0, 0);
+            this.DataGridView.Location = new System.Drawing.Point(0, 65);
             this.DataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
@@ -157,6 +158,7 @@
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView.Size = new System.Drawing.Size(1285, 522);
+            this.DataGridView.Size = new System.Drawing.Size(1285, 457);
             this.DataGridView.TabIndex = 1;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -413,6 +415,7 @@
             this.gunaGroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
             this.gunaGroupBox1.Size = new System.Drawing.Size(1285, 468);
+            this.gunaGroupBox1.Size = new System.Drawing.Size(1285, 470);
             this.gunaGroupBox1.TabIndex = 1;
             this.gunaGroupBox1.Text = "Thông tin hóa đơn";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);

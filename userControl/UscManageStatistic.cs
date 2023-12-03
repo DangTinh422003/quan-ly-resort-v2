@@ -30,6 +30,15 @@ namespace quan_ly_resort_v2.userControl
             lb_TongDoanhThu.Text = FormatCurrency.FormatMoney(BillDAO.totalMoney());
             lb_TongTienDichVu.Text = FormatCurrency.FormatMoney(BillServiceDAO.totalMoney());
 
+            int count = 0;
+            foreach (BookingRoom item in BookingRoomDAO.getBookingRooms())
+            {
+                if (item.IsConfirm != "Đã xử lý")
+                    count++;
+            }
+            lb_TiLeNhanPhong.Text = (100 - (((double)count / (double)BookingRoomDAO.getBookingRooms().Count) * 100)) + "%";
+
+
             cTienDichVu.DataPoints.Add("Tháng 1", 250000);
             cTienDichVu.DataPoints.Add("Tháng 2", 335000);
             cTienDichVu.DataPoints.Add("Tháng 3", 401000);

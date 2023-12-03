@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.combo_role = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbb_search = new Guna.UI.WinForms.GunaComboBox();
             this.txt_role = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.txt_gmail = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.Label_Title = new Guna.UI.WinForms.GunaLabel();
@@ -52,7 +54,12 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.DataGridView = new Guna.UI.WinForms.GunaDataGridView();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.btnAll = new Guna.UI.WinForms.GunaButton();
+            this.btnSearch = new Guna.UI.WinForms.GunaButton();
+            this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGroupBox1.SuspendLayout();
+            this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +88,7 @@
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
-            this.gunaGroupBox1.Size = new System.Drawing.Size(1279, 459);
+            this.gunaGroupBox1.Size = new System.Drawing.Size(1279, 371);
             this.gunaGroupBox1.TabIndex = 0;
             this.gunaGroupBox1.Text = "Thông tin tài khoản";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
@@ -106,9 +113,32 @@
             this.combo_role.Location = new System.Drawing.Point(171, 204);
             this.combo_role.Name = "combo_role";
             this.combo_role.Size = new System.Drawing.Size(422, 36);
-            this.combo_role.StartIndex = 2;
             this.combo_role.TabIndex = 34;
             this.combo_role.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
+            // cbb_search
+            // 
+            this.cbb_search.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_search.BaseColor = System.Drawing.Color.White;
+            this.cbb_search.BorderColor = System.Drawing.Color.Silver;
+            this.cbb_search.BorderSize = 0;
+            this.cbb_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_search.FocusedColor = System.Drawing.Color.Empty;
+            this.cbb_search.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbb_search.ForeColor = System.Drawing.Color.Black;
+            this.cbb_search.FormattingEnabled = true;
+            this.cbb_search.Items.AddRange(new object[] {
+            "Username",
+            "Email"});
+            this.cbb_search.Location = new System.Drawing.Point(0, 8);
+            this.cbb_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbb_search.Name = "cbb_search";
+            this.cbb_search.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbb_search.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbb_search.Radius = 8;
+            this.cbb_search.Size = new System.Drawing.Size(241, 31);
+            this.cbb_search.TabIndex = 1;
             // 
             // txt_role
             // 
@@ -119,6 +149,16 @@
             this.txt_role.Size = new System.Drawing.Size(50, 28);
             this.txt_role.TabIndex = 32;
             this.txt_role.Text = "Role";
+            // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.BackColor = System.Drawing.Color.White;
+            this.gunaPanel2.Controls.Add(this.cbb_search);
+            this.gunaPanel2.Location = new System.Drawing.Point(191, 380);
+            this.gunaPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(241, 49);
+            this.gunaPanel2.TabIndex = 25;
             // 
             // txt_gmail
             // 
@@ -161,7 +201,7 @@
             // 
             this.gunaPanel3.Location = new System.Drawing.Point(-3, 431);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(1282, 83);
+            this.gunaPanel3.Size = new System.Drawing.Size(1282, 96);
             this.gunaPanel3.TabIndex = 15;
             // 
             // gunaPanel1
@@ -394,44 +434,44 @@
             this.DataGridView.AllowUserToOrderColumns = true;
             this.DataGridView.AllowUserToResizeColumns = false;
             this.DataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DataGridView.BackgroundColor = System.Drawing.Color.White;
             this.DataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.DataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.DataGridView.ColumnHeadersHeight = 30;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView.DefaultCellStyle = dataGridViewCellStyle18;
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 380);
+            this.DataGridView.Location = new System.Drawing.Point(0, 437);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
             this.DataGridView.RowHeadersVisible = false;
             this.DataGridView.RowHeadersWidth = 51;
             this.DataGridView.RowTemplate.Height = 24;
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView.Size = new System.Drawing.Size(1285, 523);
+            this.DataGridView.Size = new System.Drawing.Size(1285, 466);
             this.DataGridView.TabIndex = 14;
             this.DataGridView.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -457,12 +497,106 @@
             this.DataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gunaLabel9.Location = new System.Drawing.Point(49, 388);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(136, 28);
+            this.gunaLabel9.TabIndex = 24;
+            this.gunaLabel9.Text = "Tìm kiếm theo";
+            // 
+            // btnAll
+            // 
+            this.btnAll.AnimationHoverSpeed = 0.07F;
+            this.btnAll.AnimationSpeed = 0.03F;
+            this.btnAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnAll.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnAll.BorderColor = System.Drawing.Color.Black;
+            this.btnAll.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAll.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAll.ForeColor = System.Drawing.Color.White;
+            this.btnAll.Image = null;
+            this.btnAll.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnAll.Location = new System.Drawing.Point(1136, 379);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAll.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAll.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAll.OnHoverImage = null;
+            this.btnAll.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAll.Radius = 8;
+            this.btnAll.Size = new System.Drawing.Size(111, 49);
+            this.btnAll.TabIndex = 28;
+            this.btnAll.Text = "Tất cả";
+            this.btnAll.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click_1);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AnimationHoverSpeed = 0.07F;
+            this.btnSearch.AnimationSpeed = 0.03F;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSearch.BorderColor = System.Drawing.Color.Black;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = null;
+            this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSearch.Location = new System.Drawing.Point(1019, 380);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSearch.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverImage = null;
+            this.btnSearch.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSearch.Radius = 8;
+            this.btnSearch.Size = new System.Drawing.Size(111, 49);
+            this.btnSearch.TabIndex = 27;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearch.BaseColor = System.Drawing.Color.White;
+            this.txtSearch.BorderColor = System.Drawing.Color.Silver;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearch.Location = new System.Drawing.Point(438, 380);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.Radius = 8;
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(575, 49);
+            this.txtSearch.TabIndex = 26;
+            this.txtSearch.TextOffsetX = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // UscManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this.gunaLabel9);
+            this.Controls.Add(this.gunaPanel2);
+            this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.gunaGroupBox1);
             this.Name = "UscManageAccount";
@@ -470,8 +604,10 @@
             this.Load += new System.EventHandler(this.UscManageAccount_Load);
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
+            this.gunaPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -497,5 +633,11 @@
         private Guna.UI.WinForms.GunaTextBox txt_gmail;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox combo_role;
+        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI.WinForms.GunaComboBox cbb_search;
+        private Guna.UI.WinForms.GunaButton btnAll;
+        private Guna.UI.WinForms.GunaButton btnSearch;
+        private Guna.UI.WinForms.GunaTextBox txtSearch;
     }
 }

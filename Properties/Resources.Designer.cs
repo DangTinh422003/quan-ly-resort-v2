@@ -83,6 +83,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dasdasdasdas_removebg_preview2 {
+            get {
+                object obj = ResourceManager.GetObject("dasdasdasdas-removebg-preview2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frame {
             get {
                 object obj = ResourceManager.GetObject("Frame", resourceCulture);
@@ -636,6 +646,16 @@ namespace quan_ly_resort_v2.Properties {
         internal static System.Drawing.Bitmap logo_removebg_preview1 {
             get {
                 object obj = ResourceManager.GetObject("logo-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_removebg_preview2 {
+            get {
+                object obj = ResourceManager.GetObject("logo-removebg-preview2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

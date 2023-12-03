@@ -28,9 +28,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "select * from khachhang";
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                //string sql = "select * from khachhang";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetCustomers";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 return table;
@@ -57,10 +61,15 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "delete from khachhang where Cccd = @id";
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@id", id);
-                MySqlDataReader reader = command.ExecuteReader();
+                //string sql = "delete from khachhang where Cccd = @id";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DeleteCustomerById";
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
                 return true;
             }
             catch (Exception err)
@@ -78,10 +87,15 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "select * from khachhang where Cccd = @id";
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@id", id);
-                MySqlDataReader reader = command.ExecuteReader();
+                //string sql = "select * from khachhang where Cccd = @id";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetCustomerById";
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
                 Customer customer = null;
                 if (reader.Read())
@@ -117,8 +131,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "insert into khachhang values(@id,@name,@dateOfBirth,@phoneNumber,@email,@address)";
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                //string sql = "insert into khachhang values(@id,@name,@dateOfBirth,@phoneNumber,@email,@address)";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "AddNewCustomer";
                 command.Parameters.AddWithValue("@id", ctm.Id);
                 command.Parameters.AddWithValue("@name", ctm.Fullname);
                 command.Parameters.AddWithValue("@dateOfBirth", ctm.DateOfBirth.ToString("yyyy-MM-dd"));
@@ -197,8 +216,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "update khachhang set HoTen = @name, NgaySinh = @dateOfBirth, Sdt = @phoneNumber, Email = @email, DiaChi = @address where Cccd = @id";
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                //string sql = "update khachhang set HoTen = @name, NgaySinh = @dateOfBirth, Sdt = @phoneNumber, Email = @email, DiaChi = @address where Cccd = @id";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "UpdateCustomer";
                 command.Parameters.AddWithValue("@id", ctm.Id);
                 command.Parameters.AddWithValue("@name", ctm.Fullname);
                 command.Parameters.AddWithValue("@dateOfBirth", ctm.DateOfBirth);

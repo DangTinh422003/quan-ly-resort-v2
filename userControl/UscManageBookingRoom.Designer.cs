@@ -34,11 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageBookingRoom));
             this.textbox_seatchCustomerId = new Guna.UI2.WinForms.Guna2TextBox();
             this.table_BookingRoomList = new Guna.UI.WinForms.GunaDataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_refresh = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.btn_booking = new Guna.UI.WinForms.GunaAdvenceButton();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaydat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DsMaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +44,11 @@
             this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_modify = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_refresh = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.btn_booking = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.table_BookingRoomList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.textbox_seatchCustomerId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textbox_seatchCustomerId.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textbox_seatchCustomerId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textbox_seatchCustomerId.Location = new System.Drawing.Point(68, 49);
+            this.textbox_seatchCustomerId.Location = new System.Drawing.Point(12, 49);
             this.textbox_seatchCustomerId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textbox_seatchCustomerId.Name = "textbox_seatchCustomerId";
             this.textbox_seatchCustomerId.PasswordChar = '\0';
@@ -124,14 +124,14 @@
             this.table_BookingRoomList.DefaultCellStyle = dataGridViewCellStyle3;
             this.table_BookingRoomList.EnableHeadersVisualStyles = false;
             this.table_BookingRoomList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.table_BookingRoomList.Location = new System.Drawing.Point(42, 133);
+            this.table_BookingRoomList.Location = new System.Drawing.Point(3, 133);
             this.table_BookingRoomList.Name = "table_BookingRoomList";
             this.table_BookingRoomList.ReadOnly = true;
             this.table_BookingRoomList.RowHeadersVisible = false;
             this.table_BookingRoomList.RowHeadersWidth = 51;
             this.table_BookingRoomList.RowTemplate.Height = 24;
             this.table_BookingRoomList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_BookingRoomList.Size = new System.Drawing.Size(1205, 695);
+            this.table_BookingRoomList.Size = new System.Drawing.Size(1273, 767);
             this.table_BookingRoomList.TabIndex = 6;
             this.table_BookingRoomList.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.table_BookingRoomList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -156,107 +156,6 @@
             this.table_BookingRoomList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.table_BookingRoomList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.table_BookingRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_BookingRoomList_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_482;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 150;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_pencil_48;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 140;
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.AnimationHoverSpeed = 0.07F;
-            this.btn_refresh.AnimationSpeed = 0.03F;
-            this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
-            this.btn_refresh.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.btn_refresh.BorderColor = System.Drawing.Color.Black;
-            this.btn_refresh.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_refresh.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_refresh.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_refresh.CheckedImage = null;
-            this.btn_refresh.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_refresh.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_refresh.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_refresh.Image")));
-            this.btn_refresh.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_refresh.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_refresh.Location = new System.Drawing.Point(634, 49);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_refresh.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_refresh.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_refresh.OnHoverImage = null;
-            this.btn_refresh.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_refresh.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_refresh.Radius = 12;
-            this.btn_refresh.Size = new System.Drawing.Size(303, 51);
-            this.btn_refresh.TabIndex = 5;
-            this.btn_refresh.Text = "Làm mới danh sách";
-            this.btn_refresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_search_403;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(477, 49);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(45, 51);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 3;
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // btn_booking
-            // 
-            this.btn_booking.AnimationHoverSpeed = 0.07F;
-            this.btn_booking.AnimationSpeed = 0.03F;
-            this.btn_booking.BackColor = System.Drawing.Color.Transparent;
-            this.btn_booking.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_booking.BorderColor = System.Drawing.Color.Black;
-            this.btn_booking.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_booking.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_booking.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_booking.CheckedImage = null;
-            this.btn_booking.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_booking.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_booking.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_booking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_booking.ForeColor = System.Drawing.Color.White;
-            this.btn_booking.Image = ((System.Drawing.Image)(resources.GetObject("btn_booking.Image")));
-            this.btn_booking.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_booking.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_booking.Location = new System.Drawing.Point(958, 49);
-            this.btn_booking.Name = "btn_booking";
-            this.btn_booking.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_booking.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_booking.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_booking.OnHoverImage = null;
-            this.btn_booking.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_booking.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_booking.Radius = 12;
-            this.btn_booking.Size = new System.Drawing.Size(245, 51);
-            this.btn_booking.TabIndex = 1;
-            this.btn_booking.Text = "Đặt phòng";
-            this.btn_booking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_booking.Click += new System.EventHandler(this.gunaAdvenceButton2_Click);
             // 
             // Id
             // 
@@ -337,6 +236,107 @@
             this.btn_modify.Name = "btn_modify";
             this.btn_modify.ReadOnly = true;
             this.btn_modify.Width = 50;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_cancel_482;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 150;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_pencil_48;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 140;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.AnimationHoverSpeed = 0.07F;
+            this.btn_refresh.AnimationSpeed = 0.03F;
+            this.btn_refresh.BackColor = System.Drawing.Color.Transparent;
+            this.btn_refresh.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.btn_refresh.BorderColor = System.Drawing.Color.Black;
+            this.btn_refresh.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_refresh.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_refresh.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_refresh.CheckedImage = null;
+            this.btn_refresh.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_refresh.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_refresh.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_refresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.ForeColor = System.Drawing.Color.White;
+            this.btn_refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_refresh.Image")));
+            this.btn_refresh.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_refresh.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_refresh.Location = new System.Drawing.Point(702, 49);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_refresh.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_refresh.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_refresh.OnHoverImage = null;
+            this.btn_refresh.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_refresh.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_refresh.Radius = 12;
+            this.btn_refresh.Size = new System.Drawing.Size(303, 51);
+            this.btn_refresh.TabIndex = 5;
+            this.btn_refresh.Text = "Làm mới danh sách";
+            this.btn_refresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_search_403;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(431, 49);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(45, 51);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 3;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // btn_booking
+            // 
+            this.btn_booking.AnimationHoverSpeed = 0.07F;
+            this.btn_booking.AnimationSpeed = 0.03F;
+            this.btn_booking.BackColor = System.Drawing.Color.Transparent;
+            this.btn_booking.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_booking.BorderColor = System.Drawing.Color.Black;
+            this.btn_booking.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_booking.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_booking.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_booking.CheckedImage = null;
+            this.btn_booking.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_booking.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_booking.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_booking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_booking.ForeColor = System.Drawing.Color.White;
+            this.btn_booking.Image = ((System.Drawing.Image)(resources.GetObject("btn_booking.Image")));
+            this.btn_booking.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_booking.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_booking.Location = new System.Drawing.Point(1020, 49);
+            this.btn_booking.Name = "btn_booking";
+            this.btn_booking.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_booking.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_booking.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_booking.OnHoverImage = null;
+            this.btn_booking.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_booking.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_booking.Radius = 12;
+            this.btn_booking.Size = new System.Drawing.Size(245, 51);
+            this.btn_booking.TabIndex = 1;
+            this.btn_booking.Text = "Đặt phòng";
+            this.btn_booking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_booking.Click += new System.EventHandler(this.gunaAdvenceButton2_Click);
             // 
             // UscManageBookingRoom
             // 

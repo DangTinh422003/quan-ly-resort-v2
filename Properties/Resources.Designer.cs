@@ -153,6 +153,16 @@ namespace quan_ly_resort_v2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-48", resourceCulture);
@@ -276,6 +286,16 @@ namespace quan_ly_resort_v2.Properties {
         internal static System.Drawing.Bitmap icons8_info_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-info-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_info_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-info-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

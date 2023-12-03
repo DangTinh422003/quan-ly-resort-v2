@@ -337,5 +337,31 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+
+        public static long totalMoney()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select sum(TongTien) from hoadon";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                long total = 0;
+                if (reader.Read())
+                {
+                    total = Convert.ToInt64(reader[0]);
+                }
+                conn.Close();
+                return total;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("totalMoney ", e.Message);
+                return 0;
+            }
+        }
     }
 }

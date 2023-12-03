@@ -33,5 +33,31 @@ namespace quan_ly_resort_v2.DAO
                 return false;
             }
         }
+
+        public static long totalMoney()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select sum(dichvu.Gia * hoadondichvu.Soluong) from hoadondichvu join dichvu on hoadondichvu.MaDichVu = dichvu.MaDV";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                long total = 0;
+                if (reader.Read())
+                {
+                    total = long.Parse(reader[0].ToString());
+                }
+                conn.Close();
+                return total;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("totalMoney: " + e.Message);
+                return 0;
+            }
+        }
     }
 }

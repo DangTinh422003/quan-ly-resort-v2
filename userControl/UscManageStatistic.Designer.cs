@@ -28,238 +28,403 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.LabelTitle = new Guna.UI.WinForms.GunaLabel();
-            this.cbbYears = new Guna.UI.WinForms.GunaComboBox();
-            this.TextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.btnFilter = new Guna.UI.WinForms.GunaButton();
-            this.ccbSelectMonth = new Guna.UI.WinForms.GunaComboBox();
-            this.TextBox = new Guna.UI.WinForms.GunaTextBox();
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.labelTotalRevenue = new Guna.UI.WinForms.GunaLabel();
-            this.chartStatistic = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).BeginInit();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_TiLeNhanPhong = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
+            this.cTienDichVu = new Guna.Charts.WinForms.GunaLineDataset();
+            this.cTienPhong = new Guna.Charts.WinForms.GunaLineDataset();
+            this.cTongKhachHang = new Guna.Charts.WinForms.GunaLineDataset();
+            this.lb_TongDoanhThu = new Guna.UI.WinForms.GunaLabel();
+            this.lb_TongTienDichVu = new Guna.UI.WinForms.GunaLabel();
+            this.lb_TongLuotDatPhong = new Guna.UI.WinForms.GunaLabel();
+            this.lb_TongSoKhachHang = new Guna.UI.WinForms.GunaLabel();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.guna2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.guna2Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // LabelTitle
+            // guna2Panel1
             // 
-            this.LabelTitle.AutoSize = true;
-            this.LabelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.LabelTitle.Location = new System.Drawing.Point(63, 40);
-            this.LabelTitle.Name = "LabelTitle";
-            this.LabelTitle.Size = new System.Drawing.Size(112, 28);
-            this.LabelTitle.TabIndex = 27;
-            this.LabelTitle.Text = "Doanh thu";
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(173)))), ((int)(((byte)(75)))));
+            this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.lb_TongDoanhThu);
+            this.guna2Panel1.Controls.Add(this.pictureBox1);
+            this.guna2Panel1.Controls.Add(this.gunaLabel1);
+            this.guna2Panel1.Location = new System.Drawing.Point(25, 12);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(430, 75);
+            this.guna2Panel1.TabIndex = 0;
             // 
-            // cbbYears
+            // pictureBox1
             // 
-            this.cbbYears.BackColor = System.Drawing.Color.Transparent;
-            this.cbbYears.BaseColor = System.Drawing.Color.White;
-            this.cbbYears.BorderColor = System.Drawing.Color.Silver;
-            this.cbbYears.BorderSize = 0;
-            this.cbbYears.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbYears.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbYears.FocusedColor = System.Drawing.Color.Empty;
-            this.cbbYears.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbYears.ForeColor = System.Drawing.Color.Black;
-            this.cbbYears.FormattingEnabled = true;
-            this.cbbYears.Items.AddRange(new object[] {
-            "Năm 2023",
-            "Năm 2024",
-            "Năm 2025"});
-            this.cbbYears.Location = new System.Drawing.Point(141, 107);
-            this.cbbYears.Name = "cbbYears";
-            this.cbbYears.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbbYears.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbbYears.Size = new System.Drawing.Size(331, 31);
-            this.cbbYears.TabIndex = 36;
-            // 
-            // TextBox1
-            // 
-            this.TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.TextBox1.BaseColor = System.Drawing.Color.White;
-            this.TextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.TextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBox1.Location = new System.Drawing.Point(128, 98);
-            this.TextBox1.Name = "TextBox1";
-            this.TextBox1.PasswordChar = '\0';
-            this.TextBox1.Radius = 8;
-            this.TextBox1.SelectedText = "";
-            this.TextBox1.Size = new System.Drawing.Size(356, 49);
-            this.TextBox1.TabIndex = 35;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel2.Location = new System.Drawing.Point(68, 105);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(54, 28);
-            this.gunaLabel2.TabIndex = 34;
-            this.gunaLabel2.Text = "Năm";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.AnimationHoverSpeed = 0.07F;
-            this.btnFilter.AnimationSpeed = 0.03F;
-            this.btnFilter.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilter.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnFilter.BorderColor = System.Drawing.Color.Black;
-            this.btnFilter.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnFilter.FocusedColor = System.Drawing.Color.Empty;
-            this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Image = null;
-            this.btnFilter.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnFilter.Location = new System.Drawing.Point(1029, 98);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnFilter.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnFilter.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnFilter.OnHoverImage = null;
-            this.btnFilter.OnPressedColor = System.Drawing.Color.Black;
-            this.btnFilter.Radius = 8;
-            this.btnFilter.Size = new System.Drawing.Size(135, 49);
-            this.btnFilter.TabIndex = 33;
-            this.btnFilter.Text = "Lọc";
-            this.btnFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // ccbSelectMonth
-            // 
-            this.ccbSelectMonth.BackColor = System.Drawing.Color.Transparent;
-            this.ccbSelectMonth.BaseColor = System.Drawing.Color.White;
-            this.ccbSelectMonth.BorderColor = System.Drawing.Color.Silver;
-            this.ccbSelectMonth.BorderSize = 0;
-            this.ccbSelectMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ccbSelectMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ccbSelectMonth.FocusedColor = System.Drawing.Color.Empty;
-            this.ccbSelectMonth.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ccbSelectMonth.ForeColor = System.Drawing.Color.Black;
-            this.ccbSelectMonth.FormattingEnabled = true;
-            this.ccbSelectMonth.Items.AddRange(new object[] {
-            "Tháng 1",
-            "Tháng 2",
-            "Tháng 3",
-            "Tháng 4",
-            "Tháng 5",
-            "Tháng 6",
-            "Tháng 7",
-            "Tháng 8",
-            "Tháng 9",
-            "Tháng 10",
-            "Tháng 11",
-            "Tháng 12",
-            "Quý 1",
-            "Quý 2",
-            "Quý 3",
-            "Quý 4"});
-            this.ccbSelectMonth.Location = new System.Drawing.Point(573, 107);
-            this.ccbSelectMonth.Name = "ccbSelectMonth";
-            this.ccbSelectMonth.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.ccbSelectMonth.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.ccbSelectMonth.Size = new System.Drawing.Size(435, 31);
-            this.ccbSelectMonth.TabIndex = 32;
-            // 
-            // TextBox
-            // 
-            this.TextBox.BackColor = System.Drawing.Color.Transparent;
-            this.TextBox.BaseColor = System.Drawing.Color.White;
-            this.TextBox.BorderColor = System.Drawing.Color.Silver;
-            this.TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox.FocusedBaseColor = System.Drawing.Color.White;
-            this.TextBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TextBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBox.Location = new System.Drawing.Point(562, 98);
-            this.TextBox.Name = "TextBox";
-            this.TextBox.PasswordChar = '\0';
-            this.TextBox.Radius = 8;
-            this.TextBox.SelectedText = "";
-            this.TextBox.Size = new System.Drawing.Size(461, 49);
-            this.TextBox.TabIndex = 31;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
+            this.pictureBox1.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_501;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel1.Location = new System.Drawing.Point(490, 107);
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel1.Location = new System.Drawing.Point(96, 23);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(66, 28);
-            this.gunaLabel1.TabIndex = 30;
-            this.gunaLabel1.Text = "Tháng";
+            this.gunaLabel1.Size = new System.Drawing.Size(169, 28);
+            this.gunaLabel1.TabIndex = 1;
+            this.gunaLabel1.Text = "Tổng doanh thu ";
             // 
-            // labelTotalRevenue
+            // guna2Panel2
             // 
-            this.labelTotalRevenue.AutoSize = true;
-            this.labelTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.labelTotalRevenue.Location = new System.Drawing.Point(508, 196);
-            this.labelTotalRevenue.Name = "labelTotalRevenue";
-            this.labelTotalRevenue.Size = new System.Drawing.Size(48, 28);
-            this.labelTotalRevenue.TabIndex = 37;
-            this.labelTotalRevenue.Text = "Tiền";
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BorderRadius = 20;
+            this.guna2Panel2.Controls.Add(this.lb_TongLuotDatPhong);
+            this.guna2Panel2.Controls.Add(this.pictureBox2);
+            this.guna2Panel2.Controls.Add(this.gunaLabel2);
+            this.guna2Panel2.Location = new System.Drawing.Point(25, 93);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(430, 75);
+            this.guna2Panel2.TabIndex = 1;
             // 
-            // chartStatistic
+            // pictureBox2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartStatistic.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartStatistic.Legends.Add(legend2);
-            this.chartStatistic.Location = new System.Drawing.Point(12, 246);
-            this.chartStatistic.Name = "chartStatistic";
-            this.chartStatistic.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Doanh thu";
-            this.chartStatistic.Series.Add(series2);
-            this.chartStatistic.Size = new System.Drawing.Size(1259, 656);
-            this.chartStatistic.TabIndex = 38;
-            this.chartStatistic.Text = "chart";
-            this.chartStatistic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chartStatistic_MouseMove);
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
+            this.pictureBox2.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_501;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel2.Location = new System.Drawing.Point(96, 23);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(185, 28);
+            this.gunaLabel2.TabIndex = 2;
+            this.gunaLabel2.Text = "Số lượt đặt phòng";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.White;
+            this.guna2Panel3.BorderRadius = 20;
+            this.guna2Panel3.Controls.Add(this.lb_TongTienDichVu);
+            this.guna2Panel3.Controls.Add(this.pictureBox3);
+            this.guna2Panel3.Controls.Add(this.gunaLabel3);
+            this.guna2Panel3.Location = new System.Drawing.Point(472, 12);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(430, 75);
+            this.guna2Panel3.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
+            this.pictureBox3.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_501;
+            this.pictureBox3.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel3.Location = new System.Drawing.Point(90, 23);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(178, 28);
+            this.gunaLabel3.TabIndex = 3;
+            this.gunaLabel3.Text = "Tổng tiền dịch vụ";
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.White;
+            this.guna2Panel4.BorderRadius = 20;
+            this.guna2Panel4.Controls.Add(this.lb_TongSoKhachHang);
+            this.guna2Panel4.Controls.Add(this.pictureBox4);
+            this.guna2Panel4.Controls.Add(this.gunaLabel4);
+            this.guna2Panel4.Location = new System.Drawing.Point(472, 93);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(430, 75);
+            this.guna2Panel4.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(42)))), ((int)(((byte)(241)))));
+            this.pictureBox4.Image = global::quan_ly_resort_v2.Properties.Resources.icons8_calendar_501;
+            this.pictureBox4.Location = new System.Drawing.Point(8, 5);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(64, 65);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel4.Location = new System.Drawing.Point(90, 23);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(202, 28);
+            this.gunaLabel4.TabIndex = 4;
+            this.gunaLabel4.Text = "Tổng số khách hàng";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.White;
+            this.guna2Panel5.BorderRadius = 20;
+            this.guna2Panel5.Controls.Add(this.lb_TiLeNhanPhong);
+            this.guna2Panel5.Controls.Add(this.gunaLabel5);
+            this.guna2Panel5.Location = new System.Drawing.Point(919, 12);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(290, 156);
+            this.guna2Panel5.TabIndex = 2;
+            // 
+            // lb_TiLeNhanPhong
+            // 
+            this.lb_TiLeNhanPhong.AutoSize = true;
+            this.lb_TiLeNhanPhong.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TiLeNhanPhong.ForeColor = System.Drawing.Color.Black;
+            this.lb_TiLeNhanPhong.Location = new System.Drawing.Point(73, 73);
+            this.lb_TiLeNhanPhong.Name = "lb_TiLeNhanPhong";
+            this.lb_TiLeNhanPhong.Size = new System.Drawing.Size(149, 62);
+            this.lb_TiLeNhanPhong.TabIndex = 3;
+            this.lb_TiLeNhanPhong.Text = "100%";
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel5.Location = new System.Drawing.Point(49, 30);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(195, 31);
+            this.gunaLabel5.TabIndex = 2;
+            this.gunaLabel5.Text = "Tỉ lệ nhận phòng";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.guna2Panel7.Controls.Add(this.gunaChart1);
+            this.guna2Panel7.Location = new System.Drawing.Point(25, 193);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(1184, 691);
+            this.guna2Panel7.TabIndex = 4;
+            // 
+            // gunaChart1
+            // 
+            this.gunaChart1.BackColor = System.Drawing.SystemColors.Window;
+            this.gunaChart1.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] {
+            this.cTienDichVu,
+            this.cTienPhong,
+            this.cTongKhachHang});
+            this.gunaChart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaChart1.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            chartFont1.FontName = "Arial";
+            this.gunaChart1.Legend.LabelFont = chartFont1;
+            this.gunaChart1.Location = new System.Drawing.Point(0, 0);
+            this.gunaChart1.Name = "gunaChart1";
+            this.gunaChart1.Size = new System.Drawing.Size(1184, 691);
+            this.gunaChart1.TabIndex = 0;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.gunaChart1.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart1.Tooltips.TitleFont = chartFont4;
+            this.gunaChart1.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.gunaChart1.XAxes.Ticks = tick1;
+            this.gunaChart1.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.gunaChart1.YAxes.Ticks = tick2;
+            this.gunaChart1.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.gunaChart1.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.gunaChart1.ZAxes.Ticks = tick3;
+            this.gunaChart1.Zoom = Guna.Charts.WinForms.ZoomMode.Y;
+            // 
+            // cTienDichVu
+            // 
+            this.cTienDichVu.BorderColor = System.Drawing.Color.Empty;
+            this.cTienDichVu.FillColor = System.Drawing.Color.Empty;
+            this.cTienDichVu.Label = "Tiền dịch vụ";
+            this.cTienDichVu.LegendBoxBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(227)))), ((int)(((byte)(142)))));
+            this.cTienDichVu.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(227)))), ((int)(((byte)(142)))));
+            this.cTienDichVu.TargetChart = this.gunaChart1;
+            // 
+            // cTienPhong
+            // 
+            this.cTienPhong.BorderColor = System.Drawing.Color.Empty;
+            this.cTienPhong.FillColor = System.Drawing.Color.Empty;
+            this.cTienPhong.Label = "Tổng tiền phòng";
+            this.cTienPhong.LegendBoxBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(56)))));
+            this.cTienPhong.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(56)))));
+            this.cTienPhong.TargetChart = this.gunaChart1;
+            // 
+            // cTongKhachHang
+            // 
+            this.cTongKhachHang.BorderColor = System.Drawing.Color.Empty;
+            this.cTongKhachHang.FillColor = System.Drawing.Color.Empty;
+            this.cTongKhachHang.Label = "Tổng khách hàng";
+            this.cTongKhachHang.LegendBoxBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.cTongKhachHang.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.cTongKhachHang.TargetChart = this.gunaChart1;
+            // 
+            // lb_TongDoanhThu
+            // 
+            this.lb_TongDoanhThu.AutoSize = true;
+            this.lb_TongDoanhThu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongDoanhThu.Location = new System.Drawing.Point(271, 23);
+            this.lb_TongDoanhThu.Name = "lb_TongDoanhThu";
+            this.lb_TongDoanhThu.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongDoanhThu.TabIndex = 4;
+            this.lb_TongDoanhThu.Text = "99 000 000";
+            // 
+            // lb_TongTienDichVu
+            // 
+            this.lb_TongTienDichVu.AutoSize = true;
+            this.lb_TongTienDichVu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongTienDichVu.Location = new System.Drawing.Point(274, 23);
+            this.lb_TongTienDichVu.Name = "lb_TongTienDichVu";
+            this.lb_TongTienDichVu.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongTienDichVu.TabIndex = 5;
+            this.lb_TongTienDichVu.Text = "99 000 000";
+            // 
+            // lb_TongLuotDatPhong
+            // 
+            this.lb_TongLuotDatPhong.AutoSize = true;
+            this.lb_TongLuotDatPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongLuotDatPhong.Location = new System.Drawing.Point(287, 26);
+            this.lb_TongLuotDatPhong.Name = "lb_TongLuotDatPhong";
+            this.lb_TongLuotDatPhong.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongLuotDatPhong.TabIndex = 5;
+            this.lb_TongLuotDatPhong.Text = "99 000 000";
+            // 
+            // lb_TongSoKhachHang
+            // 
+            this.lb_TongSoKhachHang.AutoSize = true;
+            this.lb_TongSoKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TongSoKhachHang.Location = new System.Drawing.Point(298, 23);
+            this.lb_TongSoKhachHang.Name = "lb_TongSoKhachHang";
+            this.lb_TongSoKhachHang.Size = new System.Drawing.Size(120, 28);
+            this.lb_TongSoKhachHang.TabIndex = 6;
+            this.lb_TongSoKhachHang.Text = "99 000 000";
             // 
             // UscManageStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.chartStatistic);
-            this.Controls.Add(this.labelTotalRevenue);
-            this.Controls.Add(this.cbbYears);
-            this.Controls.Add(this.TextBox1);
-            this.Controls.Add(this.gunaLabel2);
-            this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.ccbSelectMonth);
-            this.Controls.Add(this.TextBox);
-            this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.LabelTitle);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.guna2Panel7);
+            this.Controls.Add(this.guna2Panel5);
+            this.Controls.Add(this.guna2Panel4);
+            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "UscManageStatistic";
-            this.Size = new System.Drawing.Size(1285, 984);
-            ((System.ComponentModel.ISupportInitialize)(this.chartStatistic)).EndInit();
+            this.Size = new System.Drawing.Size(1228, 903);
+            this.Load += new System.EventHandler(this.UscManageStatistic_Load);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Guna.UI.WinForms.GunaLabel LabelTitle;
-        private Guna.UI.WinForms.GunaComboBox cbbYears;
-        private Guna.UI.WinForms.GunaTextBox TextBox1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaButton btnFilter;
-        private Guna.UI.WinForms.GunaComboBox ccbSelectMonth;
-        private Guna.UI.WinForms.GunaTextBox TextBox;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel labelTotalRevenue;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartStatistic;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaLabel lb_TiLeNhanPhong;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.Charts.WinForms.GunaLineDataset cTienDichVu;
+        private Guna.Charts.WinForms.GunaLineDataset cTienPhong;
+        private Guna.Charts.WinForms.GunaLineDataset cTongKhachHang;
+        private Guna.Charts.WinForms.GunaChart gunaChart1;
+        private Guna.UI.WinForms.GunaLabel lb_TongDoanhThu;
+        private Guna.UI.WinForms.GunaLabel lb_TongLuotDatPhong;
+        private Guna.UI.WinForms.GunaLabel lb_TongTienDichVu;
+        private Guna.UI.WinForms.GunaLabel lb_TongSoKhachHang;
     }
 }

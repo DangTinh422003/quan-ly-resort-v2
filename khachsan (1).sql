@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 07:47 AM
+-- Generation Time: Nov 29, 2023 at 10:16 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,200 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `khachsan`
 --
-CREATE DATABASE khachsan;
-USE khachsan;
-
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`%` PROCEDURE `proc_addNewBill` (IN `@MaHD` VARCHAR(20) CHARSET utf8, IN `@MaKH` VARCHAR(20) CHARSET utf8, IN `@MaNV` VARCHAR(20) CHARSET utf8, IN `@NgayTao` DATE, IN `@TongTien` DOUBLE, IN `@MaPhong` VARCHAR(50) CHARSET utf8, IN `@ThoiGianThue` INT, IN `@NgayCheckIn` DATE)   BEGIN
-    INSERT INTO hoadon (MaHD, MaKH, MaNV, NgayTao, TongTien, DSMaPhong, NgayCheckIn, ThoiGianThue) VALUES (@MaHD, @MaKH, @MaNV, @NgayTao, @TongTien, @MaPhong, @ThoiGianThue, @NgayCheckIn);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addNewCustomer` (IN `@hoten` VARCHAR(100) CHARSET utf8, IN `@ngaysinh` DATE, IN `@sdt` VARCHAR(12) CHARSET utf8, IN `@email` VARCHAR(100) CHARSET utf8, IN `@diachi` TEXT CHARSET utf8, IN `@username` VARCHAR(50) CHARSET utf8)   BEGIN
-    DECLARE isUsername VARCHAR(50);
-    SELECT username INTO isUsername FROM Account WHERE Account.username = @username;
-
-    IF isUsername IS NOT NULL THEN
-        SET @result = -1;
-    ELSE
-        SET @newID = GenerateCustomerID();
-        INSERT INTO khachhang (MaKH, HoTen, NgaySinh, Sdt, Email, DiaChi, Username)
-        VALUES (@newID, @hoten, @ngaysinh, @sdt, @email, @diachi, @username);
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addStaff` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@fullname` VARCHAR(500) CHARSET utf8, IN `@phone` VARCHAR(15) CHARSET utf8, IN `@email` VARCHAR(20) CHARSET utf8, IN `@address` TEXT CHARSET utf8, IN `@username` VARCHAR(50) CHARSET utf8, IN `@dateCheckin` DATE, IN `@cccd` VARCHAR(50) CHARSET utf8, IN `@dateOfBirth` DATE, IN `@salary` FLOAT, IN `@role` INT)   BEGIN
-    INSERT INTO NhanVien (MaNV, TenNV, Sdt, Email, NgaySinh, DiaChi, username, NgayVaoLam, Luong, Cccd, Role)
-    VALUES (@id, @fullname, @phone, @email, @dateOfBirth, @address, @username, @dateCheckin, @salary, @cccd, @role);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_ChangeCustomer` (IN `@Cccd` VARCHAR(50) CHARSET utf8, IN `@hoten` VARCHAR(100) CHARSET utf8, IN `@ngaysinh` DATE, IN `@sdt` VARCHAR(12) CHARSET utf8, IN `@email` VARCHAR(100) CHARSET utf8, IN `@diachi` TEXT CHARSET utf8, OUT `@result` INT)   BEGIN
-    DECLARE isUsername VARCHAR(50);
-    SELECT isUsername = username FROM account WHERE account.MaKH = @MaKH;
-
-    IF isUsername IS NULL THEN
-        SET @result = -1;
-    END IF;
-
-    UPDATE khachhang
-    SET HoTen = @hoten, NgaySinh = @ngaysinh, Sdt = @sdt, Email = @email, DiaChi = @diachi
-    WHERE khachhang.Cccd = @Cccd;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_changePassword` (IN `@username` VARCHAR(20) CHARSET utf8, IN `@newPassword` VARCHAR(20) CHARSET utf8)   BEGIN
-    DECLARE currentPassword VARCHAR(500);
-    SELECT password INTO currentPassword FROM Account WHERE username = @username;
-
-    IF currentPassword = @newPassword THEN
-        SELECT -1 AS result; -- Return -1 as a result
-    ELSE
-        BEGIN
-            UPDATE Account SET hashPassword = @newPassword WHERE username = @username;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteBill` (IN `@id` VARCHAR(20) CHARSET utf8)   BEGIN
-    DELETE FROM hoadon WHERE hoadon.MaHD = @id;
-    DELETE FROM hoadonDV WHERE hoadonDV.MaHD = @id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_DeleteCustomer` (IN `@Cccd` VARCHAR(50) CHARSET utf8, OUT `@result` INT)   BEGIN
-    DECLARE makh VARCHAR(50);
-    SELECT makh = khachhang.Cccd FROM khachhang WHERE khachhang.Cccd = @Cccd;
-
-    IF makh IS NULL THEN
-        SET @result = -1;
-    ELSE
-        DELETE FROM khachhang WHERE khachhang.Cccd = @Cccd;
-        SET @result = 0; -- Success
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteRoom` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		DELETE FROM Phong WHERE Phong.id = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteStaff` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-			DELETE FROM NhanVien
-			WHERE MaNV = @id;
-		END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getBillInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM hoadon, HoaDonPhong, HoaDonDV WHERE hoadon.MaHD = @id and hoadonphong.MaHD =  hoadon.MaHD and hoadonDV.MaHD =  hoadon.MaHD;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getCustomerInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM khachhang WHERE khachhang.MaKH = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getManager` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-SELECT * FROM quanly, nhanvien WHERE quanly.MaNV = @id and quanly.MaNV = nhanvien.MaNV;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getRoomInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM Phong WHERE Phong.id = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateBill` (IN `@MaHD` VARCHAR(20) CHARSET utf8, IN `@MaKH` VARCHAR(20) CHARSET utf8, IN `@MaNV` VARCHAR(20) CHARSET utf8, IN `@NgayTao` DATE, IN `@TongTien` DOUBLE)   BEGIN
-    UPDATE hoadon
-    SET MaKH = @MaKH, MaNV = @MaNV, NgayTao = @NgayTao, TongTien = @TongTien
-    WHERE hoadon.MaHD = @MaHD;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateStaff` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@fullname` VARCHAR(20) CHARSET utf8, IN `@phone` VARCHAR(15) CHARSET utf8, IN `@email` VARCHAR(20) CHARSET utf8, IN `@address` VARCHAR(30) CHARSET utf8, IN `@username` VARCHAR(20) CHARSET utf8, IN `@dateCheckin` DATE, IN `@cccd` VARCHAR(50) CHARSET utf8, IN `@dateOfBirth` DATE, IN `@salary` FLOAT(50), IN `@role` INT)   BEGIN
-    UPDATE NhanVien
-    SET
-        NhanVien.MaNV = @fullname,
-        NhanVien.Sdt = @phone,
-        NhanVien.Email = @email,
-        NhanVien.DiaChi = @address,
-        NhanVien.Username = @username,
-        NhanVien.DateCheckin = @dateCheckin,
-        NhanVien.DateOfBirth = @dateOfBirth,
-        NhanVien.NgaySinh = @dateOfBirth,  -- You had a typo in the column name here
-        NhanVien.cccd = @cccd,
-        NhanVien.salary = @salary,
-        nhanvien.role = @role
-    WHERE NhanVien.ID = @id;  -- Added NhanVien. before ID to specify the table
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_ComparePassword` (IN `@username` VARCHAR(50) CHARSET utf8, IN `@password` VARCHAR(500) CHARSET utf8)   BEGIN
-    DECLARE currentUsername VARCHAR(50);
-    DECLARE currentPassword VARCHAR(500);
-    DECLARE lengthSearchAccount INT;
-
-    SELECT COUNT(*) INTO lengthSearchAccount
-    FROM ACCOUNT
-    WHERE username = p_username;
-
-    IF lengthSearchAccount <= 0 THEN
-        SELECT -1 AS result;
-    ELSE
-        BEGIN
-            SELECT password, username INTO currentPassword, currentUsername
-            FROM ACCOUNT
-            WHERE username = @username;
-
-            IF currentPassword != @password OR currentUsername != @username THEN
-                SELECT -1 AS result;
-            ELSE
-                SELECT 1 AS result;
-            END IF;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_searchRoomById` (IN `@id` VARCHAR(20) CHARSET utf8)   BEGIN
-    DECLARE searchID VARCHAR(20);
-    DECLARE lengthSearchRoom INT;
-
-    SELECT COUNT(*) INTO lengthSearchRoom
-    FROM Phong
-    WHERE id like @id;
-
-    IF lengthSearchRoom <= 0 THEN
-        SELECT -1 AS result;
-    ELSE
-        BEGIN
-            SELECT * FROM phong
-            WHERE Phong.id like @id;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_updateRoom` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@LoaiPhong` VARCHAR(50) CHARSET utf8, IN `@TinhTrang` VARCHAR(40) CHARSET utf8, IN `@KieuGiuong` VARCHAR(40) CHARSET utf8, IN `@Gia` DOUBLE, IN `@SuaChua` BOOLEAN, IN `@DonDep` BOOLEAN)   BEGIN
-    UPDATE Phong
-    SET Phong.LoaiPhong = @LoaiPhong, Phong.TinhTrang = @TinhTrang, Phong.Gia = @Gia, phong.LoaiPhong = @LoaiPhong, phong.SuaChua = @SuaChua, phong.DonDep = @DonDep
-    WHERE Phong.id = @id;
-END$$
-
---
--- Functions
---
-CREATE DEFINER=`root`@`localhost` FUNCTION `GenerateCustomerID` () RETURNS VARCHAR(10) CHARSET utf8 COLLATE utf8_general_ci  BEGIN
-    DECLARE nextID INT;
-    DECLARE newCustomerID VARCHAR(10);
-
-    -- Tìm ID lớn nhất hiện có trong bảng KhachHang
-    SELECT MAX(CAST(SUBSTRING(MaKH, 3) AS SIGNED)) INTO nextID FROM KhachHang;
-
-    -- Nếu không tìm thấy ID nào, thì gán giá trị đầu tiên
-    IF nextID IS NULL THEN
-        SET newCustomerID = 'KH001';
-    ELSE
-        -- Tạo ID mới bằng cách tăng số sau 'KH' lên 1 đơn vị và định dạng lại
-        SET nextID = nextID + 1;
-        SET newCustomerID = CONCAT('KH', LPAD(nextID, 3, '0'));
-    END IF;
-
-    RETURN newCustomerID;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -234,6 +40,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VALUES
+('admintest', '$2a$12$K/UQm9MEgmXJPOpxxCHxBOxz3NsDylDPN4zgMtQ6M39UJN.JVh1lq', 'caodangtinh@gmail.com', '2023-11-29 16:15:36', 'employee'),
 ('buitamvien', '$2a$12$rm61IU7YcqqaaGatGGV9M.fjXVCoR9l1nGycNqgLAbQZpilE4RlL2', 'bui.tam123@gmail.com', '0000-00-00 00:00:00', 'admin'),
 ('danglinh01', '$2a$12$P0gV2CNxgUZX6wYFZCO35em.grGOgBjbed75Jq8e3nCNnPPubIyA2', 'dang.linh123@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('gruhaha9', '$2a$12$FNZhHSZHxFQGFwpezOoTG.IwWJpZOHoSMdNU9tneNrJwCOY8ruFDG', '', '0000-00-00 00:00:00', 'employee'),
@@ -244,6 +51,7 @@ INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VAL
 ('longdunguyen', 'passwordlongdunguyen', 'bui.tamHaiLong@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('oanh1234', 'passwordoanh1234', 'bui.tamOanh@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('phamquanqchien', 'passwordphamquanqchien', 'pham.quan123@gmail.com', '2023-10-28 00:00:00', 'employee'),
+('quanghuytest', '$2a$12$1aOthlOb40TWjNbLOq3CKeCvg.5vyGwNmXkCfHpbJcnLmNftzbBPW', 'huyquangvo11.2000@gmail.com', '2023-11-21 16:31:22', 'employee'),
 ('tinhdangcao', 'passwordtinhdangcao', 'bui.tamHai@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('trannamthnh01', 'trannamthnh01', 'tran.nam123@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('tvh050423', 'passwordtvh050423', 'bui.tamHai@gmail.com', '2023-10-28 00:00:00', 'employee'),
@@ -272,7 +80,10 @@ CREATE TABLE `datphong` (
 --
 
 INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien`, `SoNgayThue`, `SoNguoiThue`, `TinhTrang`) VALUES
-('DP001', '2023-11-05', 'P01,P02,P03', '077203007853', '2023-11-06', 3, 2, 'Đã xử lý');
+('DP001', '2023-11-28', 'P01,P02,P03', '099898888888', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP002', '2023-11-28', 'P01,P02,P03', '077898778675', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP003', '2023-11-28', 'P01,P02,P03,P05,P04', '098098098098', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP004', '2023-11-28', 'P03,P02', '098765342536', '2023-11-28', 1, 2, 'Đã xử lý');
 
 --
 -- Triggers `datphong`
@@ -371,8 +182,20 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`, `NgayCheckIn`, `ThoiGianThue`, `state`) VALUES
-('1175', '077203007853', 'NV08', 'P01,P02,P03', '2023-11-05', 2700000, '2023-11-06', 3, ''),
-('7393', '077203007853', 'NV08', 'P01,P02,P03', '2023-11-05', 1800000, '2023-11-06', 2, '');
+('1611', '077209000000', 'NV08', 'P01,P02,P03', '2023-11-27', 1180000, '2023-11-27', 1, 'paid'),
+('3282', '090000000000', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-27', 1, 'paid'),
+('4147', '090989887676', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('4415', '099898888888', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('4854', '077203997867', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('5211', '077898778675', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('5275', '786765665456', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
+('5997', '077203998878', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('6761', '098765342536', 'NV08', 'P03,P02', '2023-11-29', 697000, '2023-11-28', 1, 'paid'),
+('6964', '077878776565', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
+('7194', '051222222222', 'NV08', 'P01,P02,P03', '2023-11-28', 1180000, '2023-11-28', 1, 'paid'),
+('7877', '098098098098', 'NV08', 'P01,P02,P03,P05,P04', '2023-11-28', 1600000, '2023-11-28', 1, 'paid'),
+('9619', '088987667876', 'NV08', 'P02,P03,P04', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('9981', '077777777878', 'NV08', 'P04,P05', '2023-11-27', 775000, '2023-11-27', 1, 'paid');
 
 -- --------------------------------------------------------
 
@@ -382,8 +205,34 @@ INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`
 
 CREATE TABLE `hoadondichvu` (
   `MaHD` varchar(50) NOT NULL,
-  `MaDichVu` varchar(50) NOT NULL
+  `MaDichVu` varchar(50) NOT NULL,
+  `Soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `hoadondichvu`
+--
+
+INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
+('3384', 'DV01', 1),
+('3384', 'DV03', 1),
+('1291', 'DV07', 1),
+('1291', 'DV09', 1),
+('1291', 'DV11', 1),
+('4979', 'DV18', 3),
+('4979', 'DV20', 1),
+('4979', 'DV19', 2),
+('1699', 'DV18', 5),
+('1699', 'DV04', 3),
+('1699', 'DV29', 1),
+('1611', 'DV01', 1),
+('1611', 'DV02', 1),
+('9981', 'DV19', 3),
+('7194', 'DV01', 1),
+('7194', 'DV02', 1),
+('6761', 'DV03', 1),
+('6761', 'DV04', 5),
+('6761', 'DV05', 1);
 
 -- --------------------------------------------------------
 
@@ -506,10 +355,27 @@ INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) 
 ('777777777777', 'cao dang tinh', '2000-02-02', '0876252452', 'cdt@gmail.com', 'hcm'),
 ('066000000000', 'cao hoang oanh', '2000-02-02', '0866666666', 'oanh@gmail.com', 'hcm'),
 ('077282888888', 'cao dnag tinhbn', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
-('000000000000', 'cao dang tinh', '2000-02-02', '0862080987', 'hcmj@gmail.com', 'hcm'),
 ('111111111111', 'cao dang tinh', '2000-02-02', '0822222222', 'hcm@gmail.com', 'hcm'),
 ('077777777777', 'cao dang tinh', '2000-02-02', '0888888888', 'cain@gmail.com', 'hcm'),
-('077203007853', 'cao đăng tình', '2003-02-05', '0862040542', 'hcm@gmail.com', 'hcm');
+('077203007853', 'cao đăng tình', '2003-02-05', '0862040542', 'hcm@gmail.com', 'hcm'),
+('123456789999', 'Quang Huy', '2000-02-01', '0847727477', 'huy@gmail.com', 'sSD'),
+('000000000000', 'gdfgdf', '2000-02-01', '0847727477', 'h@gmail.com', 'sds'),
+('077209000000', 'cao dang tinh', '2000-02-02', '0876777777', 'hcm@gmail.com', 'chcm'),
+('077777777878', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('077878776565', 'cao dang tinh', '2000-03-01', '0862040542', 'hcm@gmail.com', 'hcm'),
+('786765665456', 'casohjiu', '2000-02-02', '0876765654', 'ghcn@gmail.com', 'hcm'),
+('090000000000', 'cao dang tinh', '2000-02-02', '0862567654', 'hcm@gmail.com', 'hcm'),
+('090989887676', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('051222222222', 'cadas tinh', '2000-02-02', '0521452356', 'hcm@gmail.com', 'hcm'),
+('088987667876', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('088798667564', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('077203997867', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('999999999999', 'dhlkjas', '2000-02-02', '0899999999', 'gcn@gmail.com', 'hcm'),
+('077203998878', 'cao dang tinh', '2000-02-03', '0876786756', 'hcm@gmail.com', 'hcm'),
+('099898888888', 'cao dang tinh', '2000-02-02', '0876767876', 'gcn@gmail.com', 'hcm'),
+('077898778675', 'cao dang tinh', '2000-02-02', '0897876765', 'hcm@gmail.com', 'hcm'),
+('098098098098', 'cao dang tinh', '2000-02-02', '0898999876', 'ch@gmail.com', 'hcm'),
+('098765342536', 'nguyen van a', '2000-02-02', '0862040523', 'hcm@gmail.com', 'hcm');
 
 -- --------------------------------------------------------
 
@@ -571,9 +437,9 @@ CREATE TABLE `phong` (
 --
 
 INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDep`, `SuaChua`) VALUES
-('P01', 'standard', 'single', 'occupied', 300000, 1, 0),
-('P02', 'standard', 'single', 'occupied', 300000, 1, 0),
-('P03', 'standard', 'single', 'occupied', 300000, 1, 0),
+('P01', 'standard', 'single', 'avaiable', 300000, 1, 0),
+('P02', 'standard', 'single', 'avaiable', 300000, 1, 0),
+('P03', 'standard', 'single', 'avaiable', 300000, 1, 0),
 ('P04', 'standard', 'single', 'avaiable', 300000, 1, 0),
 ('P05', 'standard', 'twin', 'avaiable', 400000, 1, 0),
 ('P06', 'superior', 'twin', 'avaiable', 420000, 1, 0),

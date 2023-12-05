@@ -27,8 +27,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "select * from account where account.username = @username";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "select * from account where account.username = @username";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetAccount";
                 cmd.Parameters.AddWithValue("@username", username);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -62,8 +67,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "select * from account";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "select * from account";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetAccounts";
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -103,8 +113,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "INSERT INTO `account` (`username`, `password`, `email`, `create_at`, `Role`) VALUES (@username, @password, @email, @create_at, @role);";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "INSERT INTO `account` (`username`, `password`, `email`, `create_at`, `Role`) VALUES (@username, @password, @email, @create_at, @role);";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "AddNewAccount";
                 cmd.Parameters.AddWithValue("@username", acc.Username);
                 cmd.Parameters.AddWithValue("@password", acc.Password);
                 cmd.Parameters.AddWithValue("@email", acc.Email);
@@ -131,8 +146,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "UPDATE `account` SET `Email`=@email,`Role`=@role WHERE username = @username";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "UPDATE `account` SET `Email`=@email,`Role`=@role WHERE username = @username";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "UpdateAccount";
                 cmd.Parameters.AddWithValue("@email", acc.Email);
                 cmd.Parameters.AddWithValue("@role", acc.Role);
                 cmd.Parameters.AddWithValue("@username", acc.Username);
@@ -157,15 +177,20 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "DELETE FROM `account` WHERE username = @username";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "DELETE FROM `account` WHERE username = @username";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DeleteAccount";
                 cmd.Parameters.AddWithValue("@username", username);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 // Kiểm tra xem có bản ghi nào bị xóa hay không
                 if (rowsAffected > 0)
                 {
-                    sql = "UPDATE `nhanvien` SET username = @new WHERE username = @username";
+                    var sql = "UPDATE `nhanvien` SET username = @new WHERE username = @username";
                     cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@new", "");
@@ -197,8 +222,13 @@ namespace quan_ly_resort_v2.DAO
 
                 string hassPassword = PasswordUils.HashingPassword(password);
                 // Query data
-                string sql = "UPDATE `account` SET `password`=@password WHERE username = @username";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "UPDATE `account` SET `password`=@password WHERE username = @username";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ChangePassword";
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", hassPassword);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -220,8 +250,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "select * from account where account.Email = @email";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "select * from account where account.Email = @email";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "GetByEmail";
                 cmd.Parameters.AddWithValue("@email", email);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -254,8 +289,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Query data
-                string sql = "UPDATE `account` SET `password`=@newPassword WHERE Email = @email";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "UPDATE `account` SET `password`=@newPassword WHERE Email = @email";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ChangePasswordByEmail";
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@newPassword", newPassword);
                 MySqlDataReader reader = cmd.ExecuteReader();

@@ -23,8 +23,13 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string sql = "SELECT * FROM hoadon";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "SELECT * FROM hoadon";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "getAllBill";
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -62,9 +67,14 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string updateQuery = "UPDATE hoadon SET MaKH = @MaKhachHang, MaNV = @MaNhanVien, DSMaPhong = @DanhSachMaPhong, NgayTao = @NgayTaoHoaDon, TongTien = @TongTien, NgayCheckIn = @NgayCheckIn, ThoiGianThue = @SoNgayThue WHERE MaHD = @MaHoaDon";
+                //string updateQuery = "UPDATE hoadon SET MaKH = @MaKhachHang, MaNV = @MaNhanVien, DSMaPhong = @DanhSachMaPhong, NgayTao = @NgayTaoHoaDon, TongTien = @TongTien, NgayCheckIn = @NgayCheckIn, ThoiGianThue = @SoNgayThue WHERE MaHD = @MaHoaDon";
 
-                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                //MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "addNewBill";
                 cmd.Parameters.AddWithValue("@MaHoaDon", bill.MaHoaDon);
                 cmd.Parameters.AddWithValue("@MaKhachHang", bill.MaKhachHang);
                 cmd.Parameters.AddWithValue("@MaNhanVien", bill.MaNhanVien);
@@ -93,9 +103,14 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string deleteQuery = "DELETE FROM hoadon WHERE MaHD = @MaHoaDon";
+                //string deleteQuery = "DELETE FROM hoadon WHERE MaHD = @MaHoaDon";
 
-                MySqlCommand cmd = new MySqlCommand(deleteQuery, conn);
+                //MySqlCommand cmd = new MySqlCommand(deleteQuery, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "deleteBill";
                 cmd.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -118,9 +133,14 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string deleteQuery = "DELETE FROM hoadondichvu WHERE MaHD = @MaHoaDon";
+                //string deleteQuery = "DELETE FROM hoadondichvu WHERE MaHD = @MaHoaDon";
 
-                MySqlCommand cmd = new MySqlCommand(deleteQuery, conn);
+                //MySqlCommand cmd = new MySqlCommand(deleteQuery, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "deleteBillDV";
                 cmd.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -188,8 +208,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "insert into hoadon(MaHD,MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaHD,@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
-                MySqlCommand command = new MySqlCommand(sql, conn);
+                //string sql = "insert into hoadon(MaHD,MaKH,MaNV,DSMaPhong,NgayTao,TongTien,NgayCheckIn,ThoiGianThue) values(@MaHD,@MaKH,@MaNV,@DSMaPhong,@NgayTao,@TongTien,@NgayCheckIn,@ThoiGianThue)";
+                //MySqlCommand command = new MySqlCommand(sql, conn);
+
+                MySqlCommand command = new MySqlCommand();
+                command.Connection = conn;
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "addNewBill";
                 command.Parameters.AddWithValue("@MaHD", bill.MaHoaDon);
                 command.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
                 command.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
@@ -214,9 +239,15 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string updateQuery = "UPDATE hoadon set state = @state";
-                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                //string updateQuery = "UPDATE hoadon set state = @state where MaHD = @maHD";
+                //MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "updateBillState";
                 cmd.Parameters.AddWithValue("@state", state);
+                cmd.Parameters.AddWithValue("@maHD", billID);
                 int rowsAffected = cmd.ExecuteNonQuery();
                 conn.Close();
                 return rowsAffected > 0;
@@ -234,8 +265,13 @@ namespace quan_ly_resort_v2.DAO
                 MySqlConnection conn = new MySqlConnection(MyConstants.getInstance().getConnectionString());
                 conn.Open();
 
-                string updateQuery = "UPDATE hoadon set TongTien = @value where MaHD like @MaHD";
-                MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                //string updateQuery = "UPDATE hoadon set TongTien = @value where MaHD like @MaHD";
+                //MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "updateMoneyById";
                 cmd.Parameters.AddWithValue("@MaHD", billID);
                 cmd.Parameters.AddWithValue("@value", value);
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -256,8 +292,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
                 conn.Open();
 
-                string sql = "select * from hoadon where MaKH = @MaKH";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string sql = "select * from hoadon where MaKH = @MaKH";
+                //MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "getBillByCustomerId";
                 cmd.Parameters.AddWithValue("@MaKH", customnerId);
                 MySqlDataReader reader = cmd.ExecuteReader();
 

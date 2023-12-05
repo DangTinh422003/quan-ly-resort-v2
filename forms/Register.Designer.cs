@@ -32,7 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textboxEmail = new Guna.UI.WinForms.GunaTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.confirmPasswordTextbox = new Guna.UI.WinForms.GunaTextBox();
@@ -51,9 +55,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.form.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
@@ -70,12 +74,13 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(821, 753);
+            this.panel1.Size = new System.Drawing.Size(821, 775);
             this.panel1.TabIndex = 0;
             // 
             // form
             // 
             this.form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(54)))), ((int)(((byte)(58)))));
+            this.form.Controls.Add(this.panel3);
             this.form.Controls.Add(this.gunaPanel2);
             this.form.Controls.Add(this.panel2);
             this.form.Controls.Add(this.gunaPanel1);
@@ -85,17 +90,67 @@
             this.form.Controls.Add(this.mainTitle);
             this.form.Location = new System.Drawing.Point(89, 62);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(660, 609);
+            this.form.Size = new System.Drawing.Size(660, 672);
             this.form.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textboxEmail);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(19, 231);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(620, 99);
+            this.panel3.TabIndex = 3;
+            // 
+            // textboxEmail
+            // 
+            this.textboxEmail.BackColor = System.Drawing.Color.Transparent;
+            this.textboxEmail.BaseColor = System.Drawing.Color.White;
+            this.textboxEmail.BorderColor = System.Drawing.Color.Silver;
+            this.textboxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxEmail.FocusedBaseColor = System.Drawing.Color.White;
+            this.textboxEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textboxEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textboxEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxEmail.ForeColor = System.Drawing.Color.Black;
+            this.textboxEmail.Location = new System.Drawing.Point(14, 34);
+            this.textboxEmail.Name = "textboxEmail";
+            this.textboxEmail.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
+            this.textboxEmail.PasswordChar = '\0';
+            this.textboxEmail.Radius = 12;
+            this.textboxEmail.SelectedText = "";
+            this.textboxEmail.Size = new System.Drawing.Size(606, 58);
+            this.textboxEmail.TabIndex = 1;
+            this.textboxEmail.TextOffsetX = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Email";
             // 
             // gunaPanel2
             // 
             this.gunaPanel2.Controls.Add(this.label4);
             this.gunaPanel2.Controls.Add(this.checkBoxShowPassword);
-            this.gunaPanel2.Location = new System.Drawing.Point(22, 480);
+            this.gunaPanel2.Location = new System.Drawing.Point(19, 546);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(620, 36);
             this.gunaPanel2.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(162, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hiển thị mật khẩu";
             // 
             // checkBoxShowPassword
             // 
@@ -118,7 +173,7 @@
             // 
             this.panel2.Controls.Add(this.confirmPasswordTextbox);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(22, 368);
+            this.panel2.Location = new System.Drawing.Point(19, 441);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 99);
             this.panel2.TabIndex = 4;
@@ -159,7 +214,7 @@
             // 
             this.gunaPanel1.Controls.Add(this.btn_backToLogin);
             this.gunaPanel1.Controls.Add(this.btnRegister);
-            this.gunaPanel1.Location = new System.Drawing.Point(22, 529);
+            this.gunaPanel1.Location = new System.Drawing.Point(19, 595);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(620, 58);
             this.gunaPanel1.TabIndex = 4;
@@ -231,7 +286,7 @@
             // 
             this.formGroup_password.Controls.Add(this.passwordTextBox);
             this.formGroup_password.Controls.Add(this.label2);
-            this.formGroup_password.Location = new System.Drawing.Point(19, 269);
+            this.formGroup_password.Location = new System.Drawing.Point(19, 336);
             this.formGroup_password.Name = "formGroup_password";
             this.formGroup_password.Size = new System.Drawing.Size(620, 99);
             this.formGroup_password.TabIndex = 3;
@@ -272,7 +327,7 @@
             // 
             this.formGroup_userName.Controls.Add(this.userNameTextBox);
             this.formGroup_userName.Controls.Add(this.label1);
-            this.formGroup_userName.Location = new System.Drawing.Point(19, 154);
+            this.formGroup_userName.Location = new System.Drawing.Point(19, 119);
             this.formGroup_userName.Name = "formGroup_userName";
             this.formGroup_userName.Size = new System.Drawing.Size(620, 111);
             this.formGroup_userName.TabIndex = 2;
@@ -334,9 +389,10 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(821, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 753);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(592, 775);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -353,34 +409,24 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Hiển thị mật khẩu";
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.ClientSize = new System.Drawing.Size(1413, 775);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.MaximumSize = new System.Drawing.Size(1400, 800);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1400, 800);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -420,5 +466,8 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI2.WinForms.Guna2CustomCheckBox checkBoxShowPassword;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI.WinForms.GunaTextBox textboxEmail;
+        private System.Windows.Forms.Label label5;
     }
 }

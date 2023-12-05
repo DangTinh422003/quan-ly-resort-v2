@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Guna.UI.WinForms;
 using quan_ly_resort_v2.resources;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Guna.UI2.WinForms;
 
 namespace quan_ly_resort_v2.userControl
 {
@@ -23,17 +24,21 @@ namespace quan_ly_resort_v2.userControl
         public UscManageServices()
         {
             InitializeComponent();
-        }
-        private void UscManageServices_Load(object sender, EventArgs e)
-        {
+            TextBox.Enabled = false;
             txtMaDV.Visible = false;
-            GroupBox3.Visible = false;
             LoadServiceData();
             cleanForm();
             disableControl();
             disableFormInput();
-
-
+        }
+        private void UscManageServices_Load(object sender, EventArgs e)
+        {
+            TextBox.Enabled = false;
+            txtMaDV.Visible = false;
+            LoadServiceData();
+            cleanForm();
+            disableControl();
+            disableFormInput();
         }
         private void LoadServiceData()
         {
@@ -47,7 +52,7 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu dịch vụ để hiển thị.");
+                DataGridView.DataSource = null;
             }
         }
 
@@ -56,8 +61,8 @@ namespace quan_ly_resort_v2.userControl
             txtMaDV.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtDetail.Text = "";
             ccbSelectService.SelectedIndex = 0;
+            cbb_search.SelectedIndex = 0;
         }
 
         private void disableControl()
@@ -65,7 +70,7 @@ namespace quan_ly_resort_v2.userControl
             btnSave.Enabled = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
-            btnDetail.Enabled = false;
+
         }
         private void enableControl()
         {
@@ -76,24 +81,22 @@ namespace quan_ly_resort_v2.userControl
         }
         private void disableFormInput()
         {
+            TextBox.Enabled = false;
             txtMaDV.Enabled = false;
             txtName.Enabled = false;
             txtPrice.Enabled = false;
-            txtDetail.Enabled = false;
         }
         private void enableFormInput()
         {
             txtMaDV.Enabled = true;
             txtName.Enabled = true;
             txtPrice.Enabled = true;
-            txtDetail.Enabled = true;
         }
 
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   
             txtMaDV.ReadOnly = true;
-            btnDetail.Enabled = true;
 
             if (e.RowIndex >= 0)
             {
@@ -102,8 +105,7 @@ namespace quan_ly_resort_v2.userControl
 
                 txtMaDV.Text = selectedRow.Cells[0].Value.ToString();
                 txtName.Text = selectedRow.Cells[1].Value.ToString();
-                txtDetail.Text = selectedRow.Cells[3].Value.ToString();
-                txtPrice.Text = selectedRow.Cells[4].Value.ToString();
+                txtPrice.Text = selectedRow.Cells[3].Value.ToString();
 
                 string selectedService = selectedRow.Cells[2].Value.ToString();
                 ccbSelectService.Text = selectedService;
@@ -112,8 +114,8 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string typeSelectValue = cbb_search.Text;
-            string textSearchValue = txtSearch.Text;
+            string typeSelectValue = cbb_search.Text.Trim();
+            string textSearchValue = txtSearch.Text.Trim();
             if (typeSelectValue == "" || textSearchValue == "")
             {
                 MessageBox.Show("Vui lòng chọn loại tìm kiếm và nhập thông tin tìm kiếm", "Nhập lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -126,7 +128,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string textSearchValue = txtSearch.Text;
+            string textSearchValue = txtSearch.Text.Trim();
             if (textSearchValue != "")
                 btnSearch_Click(sender, e);
         }
@@ -168,7 +170,7 @@ namespace quan_ly_resort_v2.userControl
 
             if (confirmation == DialogResult.Yes)
             {
-                string maDV = txtMaDV.Text;
+                string maDV = txtMaDV.Text.Trim();
                 bool isDeleted = ServiceDAO.DeleteService(maDV);
 
                 if (isDeleted)
@@ -197,8 +199,7 @@ namespace quan_ly_resort_v2.userControl
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Lấy giá trị từ các trường dữ liệu
-            string tenDV = txtName.Text;
-            string chiTietDichVu = txtDetail.Text;
+            string tenDV = txtName.Text.Trim();
             double gia;
 
             if (string.IsNullOrEmpty(tenDV) || !double.TryParse(txtPrice.Text, out gia))
@@ -207,14 +208,20 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            string loaiDV = ccbSelectService.Text; // Lấy giá trị từ ComboBox
+            if (gia < 1000 || gia > 1000000)
+            {
+                MessageBox.Show("Giá dịch vụ phải nằm trong khoảng từ 1,000 đến 1,000,000.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            string loaiDV = ccbSelectService.Text.Trim(); // Lấy giá trị từ ComboBox
 
             Service service = new Service
             {
                 TenDV = tenDV,
                 LoaiDV = loaiDV,
-                ChiTietDichVu = chiTietDichVu,
-                Gia = gia
+                Gia = gia,
             };
 
             if (btnAdd.Enabled)
@@ -233,7 +240,7 @@ namespace quan_ly_resort_v2.userControl
             else if (btnUpdate.Enabled)
             {   
 
-                service.MaDV = txtMaDV.Text; // Lấy giá trị MaDV từ trường ẩn
+                service.MaDV = txtMaDV.Text.Trim(); // Lấy giá trị MaDV từ trường ẩn
                 bool isUpdated = ServiceDAO.UpdateService(service);
                 if (isUpdated)
                 {
@@ -247,36 +254,5 @@ namespace quan_ly_resort_v2.userControl
             }
         }
 
-        private void addUserControll(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            GroupBox3.Controls.Clear();
-            GroupBox3.Controls.Add(userControl);
-            userControl.BringToFront();
-        }
-
-        private void btnDetail_Click(object sender, EventArgs e)
-        {
-            GroupBox3.Visible = true;
-            UscServiceDetail detailControl = new UscServiceDetail();
-            detailControl.MaDVValue = txtMaDV.Text;
-            detailControl.BackButtonClicked += (s, args) => {
-                // Xử lý khi người dùng ấn nút "back" ở UscServiceDetail
-                ShowUscManageServices(); // Đây là phương thức bạn tự định nghĩa để hiển thị lại trang UscManageServices
-            };
-            addUserControll(detailControl);
-        }
-
-        private void ShowUscManageServices()
-        {
-            // Xóa bất kỳ điều khiển nào đang hiển thị trong gunaGroupBox2
-            GroupBox3.Controls.Clear();
-
-            // Hiển thị lại trang UscManageServices
-            UscManageServices manageServicesControl = new UscManageServices();
-            manageServicesControl.Dock = DockStyle.Fill;
-            GroupBox3.Controls.Add(manageServicesControl);
-            manageServicesControl.BringToFront();
-        }
     }
 }

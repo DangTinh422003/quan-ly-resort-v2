@@ -1,11 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
 using quan_ly_resort_v2.common.constants;
 using quan_ly_resort_v2.model;
+using quan_ly_resort_v2.utils;
 using System;
+using System.Data;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace quan_ly_resort_v2.DAO
@@ -38,7 +42,9 @@ namespace quan_ly_resort_v2.DAO
                 {
                     string accountUsername = reader["username"].ToString();
                     string accountPassword = reader["password"].ToString();
-                    account = new Account(accountUsername, accountPassword);
+                    string email = reader["Email"].ToString();
+                    string role = reader["Role"].ToString();
+                    account = new Account(accountUsername, accountPassword, email, role);
                 }
                 conn.Close();
                 return account;
@@ -99,6 +105,8 @@ namespace quan_ly_resort_v2.DAO
         {
             try
             {
+                DateTime dateTime = DateTime.Now;
+
                 // Tạo connection
                 MySqlConnection conn = new MySqlConnection();
                 conn.ConnectionString = MyConstants.getInstance().getConnectionString();
@@ -114,7 +122,11 @@ namespace quan_ly_resort_v2.DAO
                 cmd.CommandText = "AddNewAccount";
                 cmd.Parameters.AddWithValue("@username", acc.Username);
                 cmd.Parameters.AddWithValue("@password", acc.Password);
+                cmd.Parameters.AddWithValue("@email", acc.Email);
+                cmd.Parameters.AddWithValue("@role", acc.Role);
+                cmd.Parameters.AddWithValue("@create_at", dateTime.ToString("yyyy-MM-dd H:mm:ss"));
                 MySqlDataReader reader = cmd.ExecuteReader();
+                conn.Close();
                 return acc;
             }
             catch (Exception e)

@@ -17,7 +17,8 @@ namespace quan_ly_resort_v2.common.constants
             = "server=" + serverName + ";" +
                 "uid=" + uid + ";" +
                 "pwd=" + pwd + ";" +
-                "database=" + database;
+                "database=" + database + ";" +
+                " convert zero datetime=True";
 
         public static MyConstants getInstance()
         {

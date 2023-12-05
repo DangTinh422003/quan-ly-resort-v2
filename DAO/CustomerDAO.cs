@@ -18,6 +18,33 @@ namespace quan_ly_resort_v2.DAO
 {
     public class CustomerDAO
     {
+        public static int countCustomer()
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "select count(*) from khachhang";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                int count = 0;
+                if (reader.Read())
+                {
+                    count = int.Parse(reader[0].ToString());
+                }
+                conn.Close();
+                return count;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("countCustomer: " + e.Message);
+                return 0;
+            }
+        }
+
+
         public static DataTable getCustomers()
         {
             try
@@ -175,17 +202,11 @@ namespace quan_ly_resort_v2.DAO
                     case "Họ và tên":
                         sql += " where HoTen like @filterValue";
                         break;
-                    case "Ngày sinh":
-                        sql += " where NgaySinh like @filterValue";
-                        break;
                     case "Số điện thoại":
                         sql += " where Sdt like @filterValue";
                         break;
                     case "Địa chỉ":
                         sql += " where DiaChi like @filterValue";
-                        break;
-                    case "Tên người dùng":
-                        sql += " where username like @filterValue";
                         break;
                     case "Email":
                         sql += " where email like @filterValue";
@@ -195,7 +216,7 @@ namespace quan_ly_resort_v2.DAO
                         break;
                 }
                 MySqlCommand command = new MySqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@filterValue", "%" + filterValue + "%");
+                command.Parameters.AddWithValue("@filterValue", "%" + filterValue.ToString() + "%");
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adapter.Fill(table);

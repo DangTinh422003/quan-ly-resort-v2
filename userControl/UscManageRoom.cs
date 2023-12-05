@@ -1,5 +1,7 @@
-﻿using quan_ly_resort_v2.DAO;
+﻿using Guna.UI2.WinForms;
+using quan_ly_resort_v2.DAO;
 using quan_ly_resort_v2.model;
+using quan_ly_resort_v2.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace quan_ly_resort_v2.userControl
 {
     public partial class UscManageRoom : UserControl
     {
+        private DebounceHandler debounceHandler = new DebounceHandler(100);
+
         private int currentPageIndex = 1;
         private int roomCounter = RoomDAO.countListRoom();
         private int totalPage = (int)(RoomDAO.countListRoom() / PAGE_LIMIT) + 1;
@@ -22,45 +26,147 @@ namespace quan_ly_resort_v2.userControl
         public UscManageRoom()
         {
             InitializeComponent();
+            renderListRoom();
         }
 
-        private void UscManageRoom_Load(object sender, EventArgs e)
+        private void renderListRoom()
         {
+            lb_currentPage.Text = "Trang 1/" + totalPage;
             flowLayoutPanel_ListRoom.Controls.Clear();
-            List<Room> rooms = RoomDAO.GetRooms(1, PAGE_LIMIT);
+            List<Room> rooms = RoomDAO.GetRoomsLimit(1, PAGE_LIMIT);
             foreach (Room room in rooms)
             {
                 RoomItem roomItem = new RoomItem();
                 roomItem.SetRoomInfo(room);
                 flowLayoutPanel_ListRoom.Controls.Add(roomItem);
             }
-        }
-
-        private void flowLayoutPanel_ListRoom_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btn_Prevpage_Click(object sender, EventArgs e)
         {
-            if (currentPageIndex - 1 < 1)
-                currentPageIndex = totalPage;
-            else
-                currentPageIndex--;
+            debounceHandler.Debounce(() =>
+            {
+                if (currentPageIndex - 1 < 1)
+                    currentPageIndex = totalPage;
+                else
+                    currentPageIndex--;
+                flowLayoutPanel_ListRoom.Controls.Clear();
+                List<Room> rooms = RoomDAO.GetRoomsLimit(currentPageIndex, PAGE_LIMIT);
+                foreach (Room room in rooms)
+                {
+                    RoomItem roomItem = new RoomItem();
+                    roomItem.SetRoomInfo(room);
+                    flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+                }
+                lb_currentPage.Text = "Trang " + currentPageIndex.ToString() + "/" + totalPage;
+            });
+        }
+
+        private void btn_Nextpage_Click(object sender, EventArgs e)
+        {
+            debounceHandler.Debounce(() =>
+            {
+                if (currentPageIndex + 1 > totalPage)
+                    currentPageIndex = 1;
+                else
+                    currentPageIndex++;
+                flowLayoutPanel_ListRoom.Controls.Clear();
+                List<Room> rooms = RoomDAO.GetRoomsLimit(currentPageIndex, PAGE_LIMIT);
+                foreach (Room room in rooms)
+                {
+                    RoomItem roomItem = new RoomItem();
+                    roomItem.SetRoomInfo(room);
+                    flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+                }
+                lb_currentPage.Text = "Trang " + currentPageIndex.ToString() + "/" + totalPage;
+            });
+        }
+
+        private void textbox_searchRoom_TextChanged(object sender, EventArgs e)
+        {
+            debounceHandler.Debounce(() =>
+            {
+                if (textbox_searchRoom.Text.Trim() != "")
+                {
+                    List<Room> rooms = RoomDAO.getRoomsByID(textbox_searchRoom.Text.Trim());
+                    flowLayoutPanel_ListRoom.Controls.Clear();
+                    foreach (Room room in rooms)
+                    {
+                        RoomItem roomItem = new RoomItem();
+                        roomItem.SetRoomInfo(room);
+                        flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+                    }
+                }
+                else
+                {
+                    renderListRoom();
+                }
+            });
+        }
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+            renderListRoom();
+        }
+
+        private string getStringValueFilter()
+        {
+            string roomState = "Tất cả";
+            string roomType = "Tất cả";
+            string bedType = "Tất cả";
+
+            foreach (Control item in panel_stateFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        roomState = ((Guna2RadioButton)item).Text;
+            }
+
+            foreach (Control item in panel_typeRoomFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        roomType = ((Guna2RadioButton)item).Text;
+            }
+
+            foreach (Control item in panel_typeBedFilter.Controls)
+            {
+                if (item.GetType() == typeof(Guna2RadioButton))
+                    if (((Guna2RadioButton)item).Checked)
+                        bedType = ((Guna2RadioButton)item).Text;
+            }
+
+            return roomState + "," + roomType + "," + bedType;
+        }
+
+        private void btn_filter_Click(object sender, EventArgs e)
+        {
+            string filter = getStringValueFilter();
+            string roomState = filter.Split(',')[0];
+            string roomType = filter.Split(',')[1];
+            string bedType = filter.Split(',')[2];
+
+            if (roomState == "Tất cả" && roomType == "Tất cả" && bedType == "Tất cả")
+            {
+                renderListRoom();
+                return;
+            }
+
             flowLayoutPanel_ListRoom.Controls.Clear();
-            List<Room> rooms = RoomDAO.GetRooms(currentPageIndex, PAGE_LIMIT);
+
+            List<Room> rooms = RoomDAO.filterRoom(
+                roomType == "Tất cả" ? "" : roomType,
+                bedType == "Tất cả" ? "" : bedType,
+                roomState == "Tất cả" ? "" : roomState
+            );
+
             foreach (Room room in rooms)
             {
                 RoomItem roomItem = new RoomItem();
                 roomItem.SetRoomInfo(room);
                 flowLayoutPanel_ListRoom.Controls.Add(roomItem);
+
+                Console.WriteLine(room.Id);
             }
-            lb_currentPage.Text = "Trang " + currentPageIndex.ToString() + "/" + totalPage;
-        }
-
-        private void btn_Nextpage_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

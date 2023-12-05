@@ -43,9 +43,9 @@ namespace quan_ly_resort_v2.DAO
                         Email = reader["Email"].ToString(),
                         NgaySinh = (DateTime)reader["NgaySinh"],
                         DiaChi = reader["DiaChi"].ToString(),
-                        Cccd = Convert.ToInt32(reader["Cccd"]),
+                        Cccd = reader["Cccd"].ToString(),
                         Luong = Convert.ToDouble(reader["Luong"]),
-                        NgayVaoLam = (DateTime)reader["NgayVaoLam"],    
+                        NgayVaoLam = (DateTime)reader["NgayVaoLam"],
                         Username = reader["username"].ToString(),
                     };
 
@@ -161,9 +161,6 @@ namespace quan_ly_resort_v2.DAO
             }
         }
 
-
-
-
         public static bool UpdateEmployee(Employee employee)
         {
             try
@@ -173,7 +170,7 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Xây dựng truy vấn UPDATE
-                string updateQuery = "UPDATE nhanvien SET TenNV = @TenNV, Sdt = @Sdt, Email = @Email, NgaySinh = @NgaySinh, DiaChi = @DiaChi, Cccd = @Cccd, Luong = @Luong, NgayVaoLam = @NgayVaoLam, username = @Username WHERE MaNV = @MaNV";
+                string updateQuery = "UPDATE nhanvien SET TenNV = @TenNV, Sdt = @Sdt, Email = @Email, NgaySinh = @NgaySinh, DiaChi = @DiaChi, Cccd = @Cccd, Luong = @Luong, username = @Username WHERE MaNV = @MaNV";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@MaNV", employee.MaNV);
@@ -184,7 +181,6 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Parameters.AddWithValue("@DiaChi", employee.DiaChi);
                 cmd.Parameters.AddWithValue("@Cccd", employee.Cccd);
                 cmd.Parameters.AddWithValue("@Luong", employee.Luong);
-                cmd.Parameters.AddWithValue("@NgayVaoLam", employee.NgayVaoLam);
                 cmd.Parameters.AddWithValue("@Username", employee.Username); // Bổ sung trường username
 
                 // Thực hiện truy vấn UPDATE
@@ -308,7 +304,7 @@ namespace quan_ly_resort_v2.DAO
                         reader["Email"].ToString(),
                         DateTime.Parse(reader["NgaySinh"].ToString()),
                         reader["DiaChi"].ToString(),
-                        Convert.ToInt32(reader["Cccd"]), // Thêm Cccd ở đây
+                        reader["Cccd"].ToString(), // Thêm Cccd ở đây
                         double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
                         DateTime.Parse(reader["NgayVaoLam"].ToString()),
                         reader["username"].ToString()
@@ -329,6 +325,44 @@ namespace quan_ly_resort_v2.DAO
         }
 
 
+        public static Employee GetEmployeeByUsername(string username)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
 
+                string sql = "select * from nhanvien where username = @username";
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.Parameters.AddWithValue("@username", username);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                Employee employee = null;
+                if (reader.Read())
+                {
+                    employee = new Employee(
+                        reader["MaNV"].ToString(),
+                        reader["TenNV"].ToString(),
+                        reader["Sdt"].ToString(),
+                        reader["Email"].ToString(),
+                        DateTime.Parse(reader["NgaySinh"].ToString()),
+                        reader["DiaChi"].ToString(),
+                        reader["Cccd"].ToString(), // Thêm Cccd ở đây
+                        double.Parse(reader["Luong"].ToString()), // Đảm bảo Luong là kiểu số
+                        DateTime.Parse(reader["NgayVaoLam"].ToString()),
+                        reader["username"].ToString()
+                    );
+                    return employee;
+                }
+                conn.Close();
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("GetEmployeeById: " + e.Message);
+                return null;
+            }
+        }
     }
 }

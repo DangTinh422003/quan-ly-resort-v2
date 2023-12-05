@@ -37,7 +37,6 @@ namespace quan_ly_resort_v2.DAO
                         MaDV = reader["MaDV"].ToString(),
                         TenDV = reader["TenDV"].ToString(),
                         LoaiDV = reader["LoaiDV"].ToString(),
-                        ChiTietDichVu = reader["ChiTietDichVu"].ToString(),
                         Gia = Convert.ToDouble(reader["Gia"])
                     };
 
@@ -52,6 +51,43 @@ namespace quan_ly_resort_v2.DAO
                 return null;
             }
         }
+        public static List<Service> GetServicesByType(string type)
+        {
+            List<Service> services = new List<Service>();
+
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = MyConstants.getInstance().getConnectionString();
+                conn.Open();
+
+                string sql = "SELECT * FROM dichvu where LoaiDV LIKE @LoaiDV";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@LoaiDV", "%" + type + "%");
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Service service = new Service
+                    {
+                        MaDV = reader["MaDV"].ToString(),
+                        TenDV = reader["TenDV"].ToString(),
+                        LoaiDV = reader["LoaiDV"].ToString(),
+                        Gia = Convert.ToDouble(reader["Gia"])
+                    };
+
+                    services.Add(service);
+                }
+                conn.Close();
+                return services;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         public static string GetNextMaDV()
         {
             try
@@ -102,13 +138,12 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 // Thêm dịch vụ mới với MaDV mới
-                string insertQuery = "INSERT INTO dichvu (MaDV, TenDV, LoaiDV, ChiTietDichVu, Gia) " +
-                    "VALUES (@MaDV, @TenDV, @LoaiDV, @ChiTietDichVu, @Gia)";
+                string insertQuery = "INSERT INTO dichvu (MaDV, TenDV, LoaiDV, Gia) " +
+                    "VALUES (@MaDV, @TenDV, @LoaiDV, @Gia)";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
                 cmd.Parameters.AddWithValue("@MaDV", newMaDV);
                 cmd.Parameters.AddWithValue("@TenDV", service.TenDV);
                 cmd.Parameters.AddWithValue("@LoaiDV", service.LoaiDV);
-                cmd.Parameters.AddWithValue("@ChiTietDichVu", service.ChiTietDichVu);
                 cmd.Parameters.AddWithValue("@Gia", service.Gia);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -132,14 +167,13 @@ namespace quan_ly_resort_v2.DAO
                 conn.Open();
 
                 string updateQuery = "UPDATE dichvu " +
-                    "SET TenDV = @TenDV, LoaiDV = @LoaiDV, ChiTietDichVu = @ChiTietDichVu, Gia = @Gia " +
+                    "SET TenDV = @TenDV, LoaiDV = @LoaiDV, Gia = @Gia " +
                     "WHERE MaDV = @MaDV";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
                 cmd.Parameters.AddWithValue("@MaDV", service.MaDV);
                 cmd.Parameters.AddWithValue("@TenDV", service.TenDV);
                 cmd.Parameters.AddWithValue("@LoaiDV", service.LoaiDV);
-                cmd.Parameters.AddWithValue("@ChiTietDichVu", service.ChiTietDichVu);
                 cmd.Parameters.AddWithValue("@Gia", service.Gia);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -201,7 +235,6 @@ namespace quan_ly_resort_v2.DAO
                         MaDV = reader["MaDV"].ToString(),
                         TenDV = reader["TenDV"].ToString(),
                         LoaiDV = reader["LoaiDV"].ToString(),
-                        ChiTietDichVu = reader["ChiTietDichVu"].ToString(),
                         Gia = Convert.ToDouble(reader["Gia"])
                     };
 

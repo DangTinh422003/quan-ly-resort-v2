@@ -357,6 +357,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnDetailBill_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(selectedBillId.ToString());
             if (!string.IsNullOrEmpty(selectedBillId))
             {
                 var BillDetailForm = new BillDetailForm(selectedBillId);

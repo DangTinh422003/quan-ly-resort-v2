@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 04, 2023 lúc 07:32 AM
+-- Thời gian đã tạo: Th12 10, 2023 lúc 06:26 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -42,30 +42,30 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `AddNewCustomer` (`id` VARCHAR(255),
     INSERT INTO khachhang VALUES (id, name, dateOfBirth, phoneNumber, email, address);
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePassword` (`username` VARCHAR(255), `password` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `password`=password WHERE username = username;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePassword` (IN `username` VARCHAR(255), IN `password` VARCHAR(255))   BEGIN
+    UPDATE `account` SET `password`=password WHERE account.username = username;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePasswordByEmail` (`email` VARCHAR(255), `newPassword` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `password`=newPassword WHERE Email = email;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePasswordByEmail` (IN `email` VARCHAR(255), IN `newPassword` VARCHAR(255))   BEGIN
+    UPDATE `account` SET `password`=newPassword WHERE account.Email = email;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteAccount` (`username` VARCHAR(255))   BEGIN
-    DELETE FROM `account` WHERE username = username;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteAccount` (IN `username` VARCHAR(255))   BEGIN
+    DELETE FROM `account` WHERE account.username = username;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteBill` (IN `MaHoaDon` VARCHAR(255))   BEGIN
     DELETE FROM hoadon
-    WHERE MaHD = @MaHoaDon;
+    WHERE hoadon.MaHD = @MaHoaDon;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteBillDV` (IN `MaHoaDon` VARCHAR(255))   BEGIN
     DELETE FROM hoadondichvu
-    WHERE MaHD = MaHoaDon;
+    WHERE hoadondichvu.MaHD = MaHoaDon;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCustomerById` (`id` VARCHAR(255))   BEGIN
-    DELETE FROM khachhang WHERE Cccd = id;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCustomerById` (IN `id` VARCHAR(255))   BEGIN
+    DELETE FROM khachhang WHERE khachhang.Cccd = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAccount` (`username` VARCHAR(255))   BEGIN
@@ -84,7 +84,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `getBillByCustomerId` (IN `customner
     SELECT *
     FROM hoadon
     WHERE 
-    MaKH = customnerId;
+    hoadon.MaKH = customnerId;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetByEmail` (`email` VARCHAR(255))   BEGIN
@@ -266,8 +266,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_updateRoom` (IN `@id` VARCHAR(5
     WHERE Phong.id = @id;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateAccount` (`username` VARCHAR(255), `email` VARCHAR(255), `role` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `Email`=email,`Role`=role WHERE username = username;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateAccount` (IN `username` VARCHAR(255), IN `email` VARCHAR(255), IN `role` VARCHAR(255))   BEGIN
+    UPDATE `account` SET `Email`=email,`Role`=role WHERE account.username = username;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `updateBill` (IN `MaHoaDon` VARCHAR(255), IN `MaKhachHang` VARCHAR(255), IN `MaNhanVien` VARCHAR(255), IN `DanhSachMaPhong` VARCHAR(255), IN `NgayTaoHoaDon` DATETIME, IN `TongTien` DOUBLE, IN `NgayCheckIn` DATETIME, IN `SoNgayThue` INT)   BEGIN
@@ -285,45 +285,23 @@ END$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `updateBillState` (IN `MaHD` VARCHAR(255), IN `state` VARCHAR(255))   BEGIN
     UPDATE hoadon
     SET state = state
-    WHERE MaHD LIKE MaHD;
+    WHERE hoadon.MaHD LIKE MaHD;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateCustomer` (`id` VARCHAR(255), `name` VARCHAR(255), `dateOfBirth` DATE, `phoneNumber` VARCHAR(255), `email` VARCHAR(255), `address` VARCHAR(255))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateCustomer` (IN `id` VARCHAR(255), IN `name` VARCHAR(255), IN `dateOfBirth` DATE, IN `phoneNumber` VARCHAR(255), IN `email` VARCHAR(255), IN `address` VARCHAR(255))   BEGIN
     UPDATE khachhang
     SET HoTen = name,
         NgaySinh = dateOfBirth,
         Sdt = phoneNumber,
         Email = email,
         DiaChi = address
-    WHERE Cccd = id;
+    WHERE khachhang.Cccd = id;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `updateMoneyById` (IN `MaHD` VARCHAR(255), IN `value` DOUBLE)   BEGIN
     UPDATE hoadon
     SET TongTien = value
     WHERE MaHD LIKE MaHD;
-END$$
-
---
--- Các hàm
---
-CREATE DEFINER=`root`@`localhost` FUNCTION `GenerateCustomerID` () RETURNS VARCHAR(10) CHARSET utf8 COLLATE utf8_general_ci  BEGIN
-    DECLARE nextID INT;
-    DECLARE newCustomerID VARCHAR(10);
-
-    -- Tìm ID lớn nhất hiện có trong bảng KhachHang
-    SELECT MAX(CAST(SUBSTRING(MaKH, 3) AS SIGNED)) INTO nextID FROM KhachHang;
-
-    -- Nếu không tìm thấy ID nào, thì gán giá trị đầu tiên
-    IF nextID IS NULL THEN
-        SET newCustomerID = 'KH001';
-    ELSE
-        -- Tạo ID mới bằng cách tăng số sau 'KH' lên 1 đơn vị và định dạng lại
-        SET nextID = nextID + 1;
-        SET newCustomerID = CONCAT('KH', LPAD(nextID, 3, '0'));
-    END IF;
-
-    RETURN newCustomerID;
 END$$
 
 DELIMITER ;
@@ -347,6 +325,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VALUES
+('admintest', '$2a$12$K/UQm9MEgmXJPOpxxCHxBOxz3NsDylDPN4zgMtQ6M39UJN.JVh1lq', 'caodangtinh@gmail.com', '2023-11-29 16:15:36', 'employee'),
 ('buitamvien', '$2a$12$rm61IU7YcqqaaGatGGV9M.fjXVCoR9l1nGycNqgLAbQZpilE4RlL2', 'bui.tam123@gmail.com', '0000-00-00 00:00:00', 'admin'),
 ('danglinh01', '$2a$12$P0gV2CNxgUZX6wYFZCO35em.grGOgBjbed75Jq8e3nCNnPPubIyA2', 'dang.linh123@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('gruhaha9', '$2a$12$FNZhHSZHxFQGFwpezOoTG.IwWJpZOHoSMdNU9tneNrJwCOY8ruFDG', '', '0000-00-00 00:00:00', 'employee'),
@@ -357,6 +336,7 @@ INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VAL
 ('longdunguyen', 'passwordlongdunguyen', 'bui.tamHaiLong@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('oanh1234', 'passwordoanh1234', 'bui.tamOanh@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('phamquanqchien', 'passwordphamquanqchien', 'pham.quan123@gmail.com', '2023-10-28 00:00:00', 'employee'),
+('quanghuytest', '$2a$12$1aOthlOb40TWjNbLOq3CKeCvg.5vyGwNmXkCfHpbJcnLmNftzbBPW', 'huyquangvo11.2000@gmail.com', '2023-11-21 16:31:22', 'employee'),
 ('tinhdangcao', 'passwordtinhdangcao', 'bui.tamHai@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('trannamthnh01', 'trannamthnh01', 'tran.nam123@gmail.com', '2023-10-28 00:00:00', 'employee'),
 ('tvh050423', 'passwordtvh050423', 'bui.tamHai@gmail.com', '2023-10-28 00:00:00', 'employee'),
@@ -385,7 +365,12 @@ CREATE TABLE `datphong` (
 --
 
 INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien`, `SoNgayThue`, `SoNguoiThue`, `TinhTrang`) VALUES
-('DP001', '2023-11-05', 'P01,P02,P03', '077203007853', '2023-11-06', 3, 2, 'Đã xử lý');
+('DP001', '2023-11-28', 'P01,P02,P03', '099898888888', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP002', '2023-11-28', 'P01,P02,P03', '077898778675', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP003', '2023-11-28', 'P01,P02,P03,P05,P04', '098098098098', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP004', '2023-11-28', 'P03,P02', '098765342536', '2023-11-28', 1, 2, 'Đã xử lý'),
+('DP005', '2023-12-10', 'P01,P02,P04,P06', '098098098098', '2023-12-10', 1, 2, 'Đã xử lý'),
+('DP006', '2023-12-11', 'P03,P05', '098098098098', '2023-12-11', 1, 2, 'Đã xử lý');
 
 --
 -- Bẫy `datphong`
@@ -484,8 +469,22 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`, `NgayCheckIn`, `ThoiGianThue`, `state`) VALUES
-('1175', '077203007853', 'NV08', 'P01,P02,P03', '2023-11-05', 2700000, '2023-11-06', 3, ''),
-('7393', '077203007853', 'NV08', 'P01,P02,P03', '2023-11-05', 1800000, '2023-11-06', 2, '');
+('1611', '077209000000', 'NV08', 'P01,P02,P03', '2023-11-27', 1180000, '2023-11-27', 1, 'paid'),
+('3282', '090000000000', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-27', 1, 'paid'),
+('4147', '090989887676', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('4415', '099898888888', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('4854', '077203997867', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('5211', '077898778675', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('5275', '786765665456', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
+('5997', '077203998878', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('6761', '098765342536', 'NV08', 'P03,P02', '2023-11-29', 697000, '2023-11-28', 1, 'paid'),
+('6964', '077878776565', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
+('7194', '051222222222', 'NV08', 'P01,P02,P03', '2023-11-28', 1180000, '2023-11-28', 1, 'paid'),
+('7877', '098098098098', 'NV08', 'P01,P02,P03,P05,P04', '2023-11-28', 700000, '2023-11-28', 1, 'paid'),
+('8425', '098098098098', 'NV08', 'P03,P05', '2023-12-11', 700000, '2023-12-11', 1, 'paid'),
+('8947', '098098098098', 'NV08', 'P01,P02,P04,P06', '2023-12-10', 1320000, '2023-12-10', 1, 'paid'),
+('9619', '088987667876', 'NV08', 'P02,P03,P04', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
+('9981', '077777777878', 'NV08', 'P04,P05', '2023-11-27', 775000, '2023-11-27', 1, 'paid');
 
 -- --------------------------------------------------------
 
@@ -495,8 +494,37 @@ INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`
 
 CREATE TABLE `hoadondichvu` (
   `MaHD` varchar(50) NOT NULL,
-  `MaDichVu` varchar(50) NOT NULL
+  `MaDichVu` varchar(50) NOT NULL,
+  `Soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadondichvu`
+--
+
+INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
+('3384', 'DV01', 1),
+('3384', 'DV03', 1),
+('1291', 'DV07', 1),
+('1291', 'DV09', 1),
+('1291', 'DV11', 1),
+('4979', 'DV18', 3),
+('4979', 'DV20', 1),
+('4979', 'DV19', 2),
+('1699', 'DV18', 5),
+('1699', 'DV04', 3),
+('1699', 'DV29', 1),
+('1611', 'DV01', 1),
+('1611', 'DV02', 1),
+('9981', 'DV19', 3),
+('7194', 'DV01', 1),
+('7194', 'DV02', 1),
+('6761', 'DV03', 1),
+('6761', 'DV04', 5),
+('6761', 'DV05', 1),
+('7877', 'DV05', 1),
+('7877', 'DV06', 1),
+('7877', 'DV07', 1);
 
 -- --------------------------------------------------------
 
@@ -619,10 +647,26 @@ INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) 
 ('777777777777', 'cao dang tinh', '2000-02-02', '0876252452', 'cdt@gmail.com', 'hcm'),
 ('066000000000', 'cao hoang oanh', '2000-02-02', '0866666666', 'oanh@gmail.com', 'hcm'),
 ('077282888888', 'cao dnag tinhbn', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
-('000000000000', 'cao dang tinh', '2000-02-02', '0862080987', 'hcmj@gmail.com', 'hcm'),
 ('111111111111', 'cao dang tinh', '2000-02-02', '0822222222', 'hcm@gmail.com', 'hcm'),
 ('077777777777', 'cao dang tinh', '2000-02-02', '0888888888', 'cain@gmail.com', 'hcm'),
-('077203007853', 'cao đăng tình', '2003-02-05', '0862040542', 'hcm@gmail.com', 'hcm');
+('077203007853', 'cao đăng tình', '2003-02-05', '0862040542', 'hcm@gmail.com', 'hcm'),
+('123456789999', 'Quang Huy', '2000-02-01', '0847727477', 'huy@gmail.com', 'sSD'),
+('077209000000', 'cao dang tinh', '2000-02-02', '0876777777', 'hcm@gmail.com', 'chcm'),
+('077777777878', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('077878776565', 'cao dang tinh', '2000-03-01', '0862040542', 'hcm@gmail.com', 'hcm'),
+('786765665456', 'casohjiu', '2000-02-02', '0876765654', 'ghcn@gmail.com', 'hcm'),
+('090000000000', 'cao dang tinh', '2000-02-02', '0862567654', 'hcm@gmail.com', 'hcm'),
+('090989887676', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('051222222222', 'cadas tinh', '2000-02-02', '0521452356', 'hcm@gmail.com', 'hcm'),
+('088987667876', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('088798667564', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('077203997867', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
+('999999999999', 'dhlkjas', '2000-02-02', '0899999999', 'gcn@gmail.com', 'hcm'),
+('077203998878', 'cao dang tinh', '2000-02-03', '0876786756', 'hcm@gmail.com', 'hcm'),
+('099898888888', 'cao dang tinh', '2000-02-02', '0876767876', 'gcn@gmail.com', 'hcm'),
+('077898778675', 'cao dang tinh', '2000-02-02', '0897876765', 'hcm@gmail.com', 'hcm'),
+('098765342536', 'nguyen van a', '2000-02-02', '0862040523', 'hcm@gmail.com', 'hcm'),
+('098098098098', 'cao dang tinh', '2000-02-29', '0862040542', 'hcm@gmail.com', 'hcm');
 
 -- --------------------------------------------------------
 
@@ -684,11 +728,11 @@ CREATE TABLE `phong` (
 --
 
 INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDep`, `SuaChua`) VALUES
-('P01', 'standard', 'single', 'occupied', 300000, 1, 0),
-('P02', 'standard', 'single', 'occupied', 300000, 1, 0),
+('P01', 'standard', 'single', 'avaiable', 300000, 1, 0),
+('P02', 'standard', 'single', 'avaiable', 300000, 1, 0),
 ('P03', 'standard', 'single', 'occupied', 300000, 1, 0),
 ('P04', 'standard', 'single', 'avaiable', 300000, 1, 0),
-('P05', 'standard', 'twin', 'avaiable', 400000, 1, 0),
+('P05', 'standard', 'twin', 'occupied', 400000, 1, 0),
 ('P06', 'superior', 'twin', 'avaiable', 420000, 1, 0),
 ('P07', 'superior', 'twin', 'avaiable', 420000, 1, 0),
 ('P08', 'superior', 'double', 'avaiable', 450000, 1, 0),

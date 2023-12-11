@@ -270,7 +270,7 @@ namespace quan_ly_resort_v2.userControl
                 if (isUpdated)
                     MessageBox.Show("Cập nhật Voucher thành công!", "Cập nhật thông tin Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Có lỗi xảy ra!", "Cập nhật thông tin nhân viên Voucher", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi xảy ra!", "Cập nhật thông tin Voucher", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 getDataVoucher();
             }

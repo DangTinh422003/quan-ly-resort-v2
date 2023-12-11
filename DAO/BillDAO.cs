@@ -75,10 +75,10 @@ namespace quan_ly_resort_v2.DAO
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "addNewBill";
-                cmd.Parameters.AddWithValue("@MaHoaDon", bill.MaHoaDon);
-                cmd.Parameters.AddWithValue("@MaKhachHang", bill.MaKhachHang);
-                cmd.Parameters.AddWithValue("@MaNhanVien", bill.MaNhanVien);
-                cmd.Parameters.AddWithValue("@DanhSachMaPhong", bill.DanhSachMaPhong);
+                cmd.Parameters.AddWithValue("@MaHD", bill.MaHoaDon);
+                cmd.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
+                cmd.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
+                cmd.Parameters.AddWithValue("@DsMaPhong", bill.DanhSachMaPhong);
                 cmd.Parameters.AddWithValue("@NgayTaoHoaDon", bill.NgayTaoHoaDon);
                 cmd.Parameters.AddWithValue("@TongTien", bill.TongTien);
                 cmd.Parameters.AddWithValue("@NgayCheckIn", bill.NgayCheckIn);
@@ -219,10 +219,10 @@ namespace quan_ly_resort_v2.DAO
                 command.Parameters.AddWithValue("@MaKH", bill.MaKhachHang);
                 command.Parameters.AddWithValue("@MaNV", bill.MaNhanVien);
                 command.Parameters.AddWithValue("@DSMaPhong", bill.DanhSachMaPhong);
-                command.Parameters.AddWithValue("@NgayTao", bill.NgayTaoHoaDon);
+                command.Parameters.AddWithValue("@NgayTaoHoaDon", bill.NgayTaoHoaDon);
                 command.Parameters.AddWithValue("@TongTien", bill.TongTien);
                 command.Parameters.AddWithValue("@NgayCheckIn", bill.NgayCheckIn);
-                command.Parameters.AddWithValue("@ThoiGianThue", bill.SoNgayThue);
+                command.Parameters.AddWithValue("@SoNgayThue", bill.SoNgayThue);
                 command.ExecuteNonQuery();
                 return true;
             }

@@ -102,7 +102,7 @@ namespace quan_ly_resort_v2.DAO
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("UpdateVoucher :" + e.Message);
                 return false;
             }
         }

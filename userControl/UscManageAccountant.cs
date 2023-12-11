@@ -248,12 +248,12 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            // Validate email
-            /*if (tenNV != tenNV.Trim() || diaChi != diaChi.Trim() || username != username.Trim() || email != email.Trim() || cccd != cccd.Trim())
+            bool hasNumbers = ValidateData.ContainsNumber(tenNV);
+            if (hasNumbers)
             {
-                MessageBox.Show("Không được chứa khoảng trắng ở đầu hoặc cuối.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên nhân viên không được chứa số!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             if (!ValidateData.IsValidEmail(email))
             {

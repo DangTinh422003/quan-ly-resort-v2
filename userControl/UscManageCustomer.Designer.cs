@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UscManageCustomer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.label_functionName = new Guna.UI.WinForms.GunaLabel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -54,22 +54,21 @@
             this.textbox_id = new Guna.UI.WinForms.GunaTextBox();
             this.lb_id = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.customerTable = new Guna.UI.WinForms.GunaDataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.cbb_search = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.textbox_search = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.btn_search = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_PrintCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_SaveCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_AddCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_CancelCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_ModifyCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_DeleteCustomer = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.customerTable = new Guna.UI.WinForms.GunaDataGridView();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.cbb_search = new Guna.UI.WinForms.GunaComboBox();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.btn_search = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.textbox_search = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gunaGroupBox1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -312,7 +311,7 @@
             this.dateOfBirthPicker.Radius = 8;
             this.dateOfBirthPicker.Size = new System.Drawing.Size(352, 49);
             this.dateOfBirthPicker.TabIndex = 1;
-            this.dateOfBirthPicker.Text = "Friday, October 27, 2023";
+            this.dateOfBirthPicker.Text = "27 Tháng Mười 2023";
             this.dateOfBirthPicker.Value = new System.DateTime(2023, 10, 27, 16, 58, 39, 378);
             // 
             // lb_dateOfBirth
@@ -370,7 +369,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btn_PrintCustomer);
             this.panel1.Controls.Add(this.btn_SaveCustomer);
             this.panel1.Controls.Add(this.btn_AddCustomer);
             this.panel1.Controls.Add(this.btn_CancelCustomer);
@@ -380,243 +378,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 56);
             this.panel1.TabIndex = 8;
-            // 
-            // customerTable
-            // 
-            this.customerTable.AllowUserToAddRows = false;
-            this.customerTable.AllowUserToDeleteRows = false;
-            this.customerTable.AllowUserToOrderColumns = true;
-            this.customerTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.customerTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.customerTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.customerTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.customerTable.BackgroundColor = System.Drawing.Color.White;
-            this.customerTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.customerTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.customerTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.customerTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.customerTable.ColumnHeadersHeight = 40;
-            this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customerTable.DefaultCellStyle = dataGridViewCellStyle6;
-            this.customerTable.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customerTable.EnableHeadersVisualStyles = false;
-            this.customerTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.customerTable.Location = new System.Drawing.Point(0, 412);
-            this.customerTable.Name = "customerTable";
-            this.customerTable.ReadOnly = true;
-            this.customerTable.RowHeadersVisible = false;
-            this.customerTable.RowHeadersWidth = 51;
-            this.customerTable.RowTemplate.Height = 24;
-            this.customerTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customerTable.Size = new System.Drawing.Size(1279, 491);
-            this.customerTable.TabIndex = 1;
-            this.customerTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.customerTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.customerTable.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.customerTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.customerTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.customerTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.customerTable.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.customerTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.customerTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.customerTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.customerTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.customerTable.ThemeStyle.HeaderStyle.Height = 40;
-            this.customerTable.ThemeStyle.ReadOnly = true;
-            this.customerTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.customerTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.customerTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.customerTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.customerTable.ThemeStyle.RowsStyle.Height = 24;
-            this.customerTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.customerTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.customerTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerTable_CellContentClick);
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel9.Controls.Add(this.gunaPanel1);
-            this.panel9.Controls.Add(this.gunaAdvenceButton1);
-            this.panel9.Controls.Add(this.gunaLabel1);
-            this.panel9.Controls.Add(this.btn_search);
-            this.panel9.Controls.Add(this.textbox_search);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 338);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1279, 74);
-            this.panel9.TabIndex = 2;
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.White;
-            this.gunaPanel1.Controls.Add(this.cbb_search);
-            this.gunaPanel1.Location = new System.Drawing.Point(167, 11);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(241, 49);
-            this.gunaPanel1.TabIndex = 10;
-            // 
-            // cbb_search
-            // 
-            this.cbb_search.AllowDrop = true;
-            this.cbb_search.BackColor = System.Drawing.Color.Transparent;
-            this.cbb_search.BaseColor = System.Drawing.Color.White;
-            this.cbb_search.BorderColor = System.Drawing.Color.Silver;
-            this.cbb_search.BorderSize = 0;
-            this.cbb_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbb_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_search.DropDownWidth = 234;
-            this.cbb_search.FocusedColor = System.Drawing.Color.Empty;
-            this.cbb_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_search.ForeColor = System.Drawing.Color.Black;
-            this.cbb_search.FormattingEnabled = true;
-            this.cbb_search.Items.AddRange(new object[] {
-            "Căn cước công dân",
-            "Email",
-            "Họ và tên",
-            "Số điện thoại",
-            "Địa chỉ"});
-            this.cbb_search.Location = new System.Drawing.Point(0, 7);
-            this.cbb_search.Name = "cbb_search";
-            this.cbb_search.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbb_search.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbb_search.Radius = 8;
-            this.cbb_search.Size = new System.Drawing.Size(241, 35);
-            this.cbb_search.TabIndex = 1;
-            this.cbb_search.SelectedValueChanged += new System.EventHandler(this.cbb_search_SelectedValueChanged);
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(16, 21);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(136, 28);
-            this.gunaLabel1.TabIndex = 8;
-            this.gunaLabel1.Text = "Tìm kiếm theo";
-            // 
-            // textbox_search
-            // 
-            this.textbox_search.BackColor = System.Drawing.Color.Transparent;
-            this.textbox_search.BaseColor = System.Drawing.Color.White;
-            this.textbox_search.BorderColor = System.Drawing.Color.Silver;
-            this.textbox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textbox_search.FocusedBaseColor = System.Drawing.Color.White;
-            this.textbox_search.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.textbox_search.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.textbox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_search.Location = new System.Drawing.Point(424, 11);
-            this.textbox_search.Name = "textbox_search";
-            this.textbox_search.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.textbox_search.PasswordChar = '\0';
-            this.textbox_search.Radius = 8;
-            this.textbox_search.SelectedText = "";
-            this.textbox_search.Size = new System.Drawing.Size(575, 49);
-            this.textbox_search.TabIndex = 7;
-            this.textbox_search.TextOffsetX = 20;
-            this.textbox_search.TextChanged += new System.EventHandler(this.textbox_search_TextChanged);
-            this.textbox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_search_KeyDown);
-            // 
-            // gunaContextMenuStrip1
-            // 
-            this.gunaContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
-            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
-            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
-            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // btn_search
-            // 
-            this.btn_search.AnimationHoverSpeed = 0.07F;
-            this.btn_search.AnimationSpeed = 0.03F;
-            this.btn_search.BackColor = System.Drawing.Color.Transparent;
-            this.btn_search.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_search.BorderColor = System.Drawing.Color.Black;
-            this.btn_search.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_search.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_search.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_search.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_search.CheckedImage")));
-            this.btn_search.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_search.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_search.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Image = null;
-            this.btn_search.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_search.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_search.Location = new System.Drawing.Point(1019, 11);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_search.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_search.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_search.OnHoverImage = null;
-            this.btn_search.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_search.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_search.Radius = 8;
-            this.btn_search.Size = new System.Drawing.Size(111, 49);
-            this.btn_search.TabIndex = 4;
-            this.btn_search.Text = "Tìm kiếm";
-            this.btn_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // btn_PrintCustomer
-            // 
-            this.btn_PrintCustomer.AnimationHoverSpeed = 0.07F;
-            this.btn_PrintCustomer.AnimationSpeed = 0.03F;
-            this.btn_PrintCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.btn_PrintCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_PrintCustomer.BorderColor = System.Drawing.Color.Black;
-            this.btn_PrintCustomer.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_PrintCustomer.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_PrintCustomer.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_PrintCustomer.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_PrintCustomer.CheckedImage")));
-            this.btn_PrintCustomer.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_PrintCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_PrintCustomer.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_PrintCustomer.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PrintCustomer.ForeColor = System.Drawing.Color.White;
-            this.btn_PrintCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btn_PrintCustomer.Image")));
-            this.btn_PrintCustomer.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_PrintCustomer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_PrintCustomer.Location = new System.Drawing.Point(612, 6);
-            this.btn_PrintCustomer.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_PrintCustomer.Name = "btn_PrintCustomer";
-            this.btn_PrintCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_PrintCustomer.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_PrintCustomer.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_PrintCustomer.OnHoverImage = null;
-            this.btn_PrintCustomer.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_PrintCustomer.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_PrintCustomer.Radius = 8;
-            this.btn_PrintCustomer.Size = new System.Drawing.Size(155, 45);
-            this.btn_PrintCustomer.TabIndex = 3;
-            this.btn_PrintCustomer.Text = "Xuất file ";
-            this.btn_PrintCustomer.TextOffsetX = 7;
-            this.btn_PrintCustomer.Click += new System.EventHandler(this.btn_PrintCustomer_Click);
             // 
             // btn_SaveCustomer
             // 
@@ -709,7 +470,7 @@
             this.btn_CancelCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btn_CancelCustomer.Image")));
             this.btn_CancelCustomer.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_CancelCustomer.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_CancelCustomer.Location = new System.Drawing.Point(780, 6);
+            this.btn_CancelCustomer.Location = new System.Drawing.Point(615, 5);
             this.btn_CancelCustomer.Margin = new System.Windows.Forms.Padding(5);
             this.btn_CancelCustomer.Name = "btn_CancelCustomer";
             this.btn_CancelCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -798,6 +559,126 @@
             this.btn_DeleteCustomer.TextOffsetX = 20;
             this.btn_DeleteCustomer.Click += new System.EventHandler(this.btn_DeleteCustomer_Click);
             // 
+            // customerTable
+            // 
+            this.customerTable.AllowUserToAddRows = false;
+            this.customerTable.AllowUserToDeleteRows = false;
+            this.customerTable.AllowUserToOrderColumns = true;
+            this.customerTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.customerTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.customerTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customerTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.customerTable.BackgroundColor = System.Drawing.Color.White;
+            this.customerTable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.customerTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.customerTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.customerTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.customerTable.ColumnHeadersHeight = 40;
+            this.customerTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customerTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.customerTable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.customerTable.EnableHeadersVisualStyles = false;
+            this.customerTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.customerTable.Location = new System.Drawing.Point(0, 412);
+            this.customerTable.Name = "customerTable";
+            this.customerTable.ReadOnly = true;
+            this.customerTable.RowHeadersVisible = false;
+            this.customerTable.RowHeadersWidth = 51;
+            this.customerTable.RowTemplate.Height = 24;
+            this.customerTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.customerTable.Size = new System.Drawing.Size(1279, 491);
+            this.customerTable.TabIndex = 1;
+            this.customerTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.customerTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.customerTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.customerTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.customerTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.customerTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.customerTable.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.customerTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.customerTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.customerTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.customerTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.customerTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.customerTable.ThemeStyle.HeaderStyle.Height = 40;
+            this.customerTable.ThemeStyle.ReadOnly = true;
+            this.customerTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.customerTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.customerTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.customerTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.customerTable.ThemeStyle.RowsStyle.Height = 24;
+            this.customerTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.customerTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.customerTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerTable_CellContentClick);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel9.Controls.Add(this.gunaPanel1);
+            this.panel9.Controls.Add(this.gunaAdvenceButton1);
+            this.panel9.Controls.Add(this.gunaLabel1);
+            this.panel9.Controls.Add(this.btn_search);
+            this.panel9.Controls.Add(this.textbox_search);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 338);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1279, 74);
+            this.panel9.TabIndex = 2;
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.White;
+            this.gunaPanel1.Controls.Add(this.cbb_search);
+            this.gunaPanel1.Location = new System.Drawing.Point(167, 11);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(241, 49);
+            this.gunaPanel1.TabIndex = 10;
+            // 
+            // cbb_search
+            // 
+            this.cbb_search.AllowDrop = true;
+            this.cbb_search.BackColor = System.Drawing.Color.Transparent;
+            this.cbb_search.BaseColor = System.Drawing.Color.White;
+            this.cbb_search.BorderColor = System.Drawing.Color.Silver;
+            this.cbb_search.BorderSize = 0;
+            this.cbb_search.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbb_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_search.DropDownWidth = 234;
+            this.cbb_search.FocusedColor = System.Drawing.Color.Empty;
+            this.cbb_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_search.ForeColor = System.Drawing.Color.Black;
+            this.cbb_search.FormattingEnabled = true;
+            this.cbb_search.Items.AddRange(new object[] {
+            "Căn cước công dân",
+            "Email",
+            "Họ và tên",
+            "Số điện thoại",
+            "Địa chỉ"});
+            this.cbb_search.Location = new System.Drawing.Point(0, 7);
+            this.cbb_search.Name = "cbb_search";
+            this.cbb_search.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cbb_search.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbb_search.Radius = 8;
+            this.cbb_search.Size = new System.Drawing.Size(241, 35);
+            this.cbb_search.TabIndex = 1;
+            this.cbb_search.SelectedValueChanged += new System.EventHandler(this.cbb_search_SelectedValueChanged);
+            // 
             // gunaAdvenceButton1
             // 
             this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
@@ -832,6 +713,88 @@
             this.gunaAdvenceButton1.Text = "Tất cả";
             this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(16, 21);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(136, 28);
+            this.gunaLabel1.TabIndex = 8;
+            this.gunaLabel1.Text = "Tìm kiếm theo";
+            // 
+            // btn_search
+            // 
+            this.btn_search.AnimationHoverSpeed = 0.07F;
+            this.btn_search.AnimationSpeed = 0.03F;
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_search.BorderColor = System.Drawing.Color.Black;
+            this.btn_search.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_search.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_search.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_search.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_search.CheckedImage")));
+            this.btn_search.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_search.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_search.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Image = null;
+            this.btn_search.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_search.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_search.Location = new System.Drawing.Point(1019, 11);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_search.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_search.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_search.OnHoverImage = null;
+            this.btn_search.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_search.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_search.Radius = 8;
+            this.btn_search.Size = new System.Drawing.Size(111, 49);
+            this.btn_search.TabIndex = 4;
+            this.btn_search.Text = "Tìm kiếm";
+            this.btn_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // textbox_search
+            // 
+            this.textbox_search.BackColor = System.Drawing.Color.Transparent;
+            this.textbox_search.BaseColor = System.Drawing.Color.White;
+            this.textbox_search.BorderColor = System.Drawing.Color.Silver;
+            this.textbox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textbox_search.FocusedBaseColor = System.Drawing.Color.White;
+            this.textbox_search.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textbox_search.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.textbox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_search.Location = new System.Drawing.Point(424, 11);
+            this.textbox_search.Name = "textbox_search";
+            this.textbox_search.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.textbox_search.PasswordChar = '\0';
+            this.textbox_search.Radius = 8;
+            this.textbox_search.SelectedText = "";
+            this.textbox_search.Size = new System.Drawing.Size(575, 49);
+            this.textbox_search.TabIndex = 7;
+            this.textbox_search.TextOffsetX = 20;
+            this.textbox_search.TextChanged += new System.EventHandler(this.textbox_search_TextChanged);
+            this.textbox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox_search_KeyDown);
+            // 
+            // gunaContextMenuStrip1
+            // 
+            this.gunaContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
+            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // UscManageCustomer
             // 
@@ -874,7 +837,6 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaAdvenceButton btn_AddCustomer;
         private Guna.UI.WinForms.GunaDataGridView customerTable;
-        private Guna.UI.WinForms.GunaAdvenceButton btn_PrintCustomer;
         private Guna.UI.WinForms.GunaAdvenceButton btn_SaveCustomer;
         private Guna.UI.WinForms.GunaAdvenceButton btn_CancelCustomer;
         private Guna.UI.WinForms.GunaAdvenceButton btn_ModifyCustomer;

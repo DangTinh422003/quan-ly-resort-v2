@@ -223,6 +223,12 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
+            if(maVoucher.Contains(" "))
+            {
+                MessageBox.Show("Mã voucher không được chứa khoảng trắng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int countValue;
             if (!int.TryParse(count, out countValue) || countValue > 100 )
             {

@@ -116,14 +116,12 @@ namespace quan_ly_resort_v2.DAO
                 //string sql = "INSERT INTO `account` (`username`, `password`, `email`, `create_at`, `Role`) VALUES (@username, @password, @email, @create_at, @role);";
                 //MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                string hassPassword = PasswordUils.HashingPassword(acc.Password);
-
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "AddNewAccount";
                 cmd.Parameters.AddWithValue("@username", acc.Username);
-                cmd.Parameters.AddWithValue("@password", hassPassword);
+                cmd.Parameters.AddWithValue("@password", acc.Password);
                 cmd.Parameters.AddWithValue("@email", acc.Email);
                 cmd.Parameters.AddWithValue("@role", acc.Role);
                 cmd.Parameters.AddWithValue("@create_at", dateTime.ToString("yyyy-MM-dd H:mm:ss"));

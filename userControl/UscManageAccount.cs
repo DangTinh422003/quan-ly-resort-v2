@@ -101,16 +101,17 @@ namespace quan_ly_resort_v2.userControl
                 try
                 {
                     date_create.Value = DateTime.Parse(create_date);
-                }catch(Exception err)
+                }
+                catch (Exception err)
                 {
-                   Console.WriteLine(err.Message);
+                    Console.WriteLine(err.Message);
                     date_create.Value = DateTime.Now;
                 }
 
             }
             enableControl();
         }
-        
+
 
         private void btnAll_Click(object sender, EventArgs e)
         {
@@ -177,11 +178,11 @@ namespace quan_ly_resort_v2.userControl
                 MessageBox.Show("Bạn chưa chọn tài khoản!");
                 return;
             }
-           String username = txt_username.Text;
+            String username = txt_username.Text;
             if (!username.Equals(String.Empty))
             {
-               ChangePasswordForm changePasswordForm = new ChangePasswordForm(username);
-               changePasswordForm.ShowDialog();
+                ChangePasswordForm changePasswordForm = new ChangePasswordForm(username);
+                changePasswordForm.ShowDialog();
                 LoadAccountData();
             }
             else
@@ -238,11 +239,12 @@ namespace quan_ly_resort_v2.userControl
                 Role = role
             };
 
-            if (isAddMode) {
+            if (isAddMode)
+            {
                 account.Password = username;
 
                 Account result = AccountDAO.AddNewAccount(account);
-                if(result != null) MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định sẽ là tên tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result != null) MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định sẽ là tên tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Có lỗi xảy ra khi thêm tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

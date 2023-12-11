@@ -231,6 +231,29 @@ namespace quan_ly_resort_v2.resources
                 return;
             }
 
+            if (!ValidateData.IsValidFullName(name))
+            {
+                MessageBox.Show("Tên khách hàng không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool hasNumbers = ValidateData.ContainsNumber(name);
+            if (hasNumbers)
+            {
+                MessageBox.Show("Tên khách hàng không được chứa số!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int currentYear = DateTime.Now.Year;
+            int requiredMinBirthYear = currentYear - 60;
+            int requiredMaxBirthYear = currentYear - 18;
+
+            if (birthday.Year > requiredMaxBirthYear || birthday.Year < requiredMinBirthYear)
+            {
+                MessageBox.Show("Nhân viên phải từ 18 tuổi đến 70 tuổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // validate email
             if (!ValidateData.IsValidEmail(email))
             {
@@ -247,8 +270,6 @@ namespace quan_ly_resort_v2.resources
                 MessageBox.Show("CCCD không hợp lệ!, Vui lòng nhập đủ 12 số", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-
 
             // check type function
             if (btn_ModifyCustomer.Enabled)
@@ -272,12 +293,6 @@ namespace quan_ly_resort_v2.resources
                 //UscManageCustomer_Load(sender, e);
                 renderFomr();
             }
-        }
-
-        private void btn_PrintCustomer_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Chức năng đang được phát triển!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //ExportExcelFile((DataTable)customerTable.DataSource, "Danh sách khách hàng", "Danh sách khách hàng");
         }
 
         private void ExportExcelFile(DataTable dataGridTable, string sheetname, string title)

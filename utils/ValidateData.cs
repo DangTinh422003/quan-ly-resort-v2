@@ -85,6 +85,17 @@ namespace quan_ly_resort_v2.utils
             }
 
         }
+        public static bool ContainsNumber(string input)
+        {
+            return input.Any(char.IsDigit);
+        }
+        public static bool IsValidFullName(string input)
+        {
+            // Regular expression to match only letters and spaces
+            Regex regex = new Regex("^[A-Za-z ]+$");
 
+            // Check if the input matches the regular expression
+            return regex.IsMatch(input);
+        }
     }
 }

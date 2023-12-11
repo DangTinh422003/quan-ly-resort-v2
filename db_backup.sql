@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 10, 2023 lúc 06:26 PM
--- Phiên bản máy phục vụ: 10.4.27-MariaDB
--- Phiên bản PHP: 8.2.0
+-- Host: 127.0.0.1
+-- Generation Time: Dec 10, 2023 at 06:07 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,298 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `khachsan`
+-- Database: `khachsan`
 --
-CREATE DATABASE IF NOT EXISTS `khachsan` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `khachsan`;
-
-DELIMITER $$
---
--- Thủ tục
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddNewAccount` (`username` VARCHAR(255), `password` VARCHAR(255), `email` VARCHAR(255), `role` VARCHAR(255), `create_at` DATETIME)   BEGIN
-    INSERT INTO `account` (`username`, `password`, `email`, `create_at`, `Role`)
-    VALUES (username, password, email, create_at, role);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addNewBill` (IN `MaHoaDon` VARCHAR(255), IN `MaKhachHang` VARCHAR(255), IN `MaNhanVien` VARCHAR(255), IN `DanhSachMaPhong` VARCHAR(255), IN `NgayTaoHoaDon` DATETIME, IN `TongTien` DOUBLE, IN `NgayCheckIn` DATETIME, IN `SoNgayThue` INT)   BEGIN
-    INSERT INTO hoadon
-    (MaHD, MaKhachHang, MaNhanVien, DanhSachMaPhong, NgayTao, TongTien, NgayCheckIn, ThoiGianThue)
-    VALUES (MaHoaDon, MaKhachHang, MaNhanVien, DanhSachMaPhong, NgayTaoHoaDon, TongTien, NgayCheckIn, SoNgayThue);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `AddNewCustomer` (`id` VARCHAR(255), `name` VARCHAR(255), `dateOfBirth` DATE, `phoneNumber` VARCHAR(255), `email` VARCHAR(255), `address` VARCHAR(255))   BEGIN
-    INSERT INTO khachhang VALUES (id, name, dateOfBirth, phoneNumber, email, address);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePassword` (IN `username` VARCHAR(255), IN `password` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `password`=password WHERE account.username = username;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ChangePasswordByEmail` (IN `email` VARCHAR(255), IN `newPassword` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `password`=newPassword WHERE account.Email = email;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteAccount` (IN `username` VARCHAR(255))   BEGIN
-    DELETE FROM `account` WHERE account.username = username;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteBill` (IN `MaHoaDon` VARCHAR(255))   BEGIN
-    DELETE FROM hoadon
-    WHERE hoadon.MaHD = @MaHoaDon;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteBillDV` (IN `MaHoaDon` VARCHAR(255))   BEGIN
-    DELETE FROM hoadondichvu
-    WHERE hoadondichvu.MaHD = MaHoaDon;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DeleteCustomerById` (IN `id` VARCHAR(255))   BEGIN
-    DELETE FROM khachhang WHERE khachhang.Cccd = id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAccount` (`username` VARCHAR(255))   BEGIN
-    SELECT * FROM account WHERE account.username = username;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetAccounts` ()   BEGIN
-    SELECT * FROM account;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllBill` ()   BEGIN
-    SELECT * FROM hoadon;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getBillByCustomerId` (IN `customnerId` VARCHAR(255))   BEGIN
-    SELECT *
-    FROM hoadon
-    WHERE 
-    hoadon.MaKH = customnerId;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetByEmail` (`email` VARCHAR(255))   BEGIN
-    SELECT * FROM account WHERE account.Email = email;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetCustomerById` (`id` VARCHAR(255))   BEGIN
-    SELECT * FROM khachhang WHERE Cccd = id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GetCustomers` ()   BEGIN
-    SELECT * FROM khachhang;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `GET_EMPLOYEES` ()   BEGIN
-  SELECT * FROM nhanvien;
-END$$
-
-CREATE DEFINER=`root`@`%` PROCEDURE `proc_addNewBill` (IN `@MaHD` VARCHAR(20) CHARSET utf8, IN `@MaKH` VARCHAR(20) CHARSET utf8, IN `@MaNV` VARCHAR(20) CHARSET utf8, IN `@NgayTao` DATE, IN `@TongTien` DOUBLE, IN `@MaPhong` VARCHAR(50) CHARSET utf8, IN `@ThoiGianThue` INT, IN `@NgayCheckIn` DATE)   BEGIN
-    INSERT INTO hoadon (MaHD, MaKH, MaNV, NgayTao, TongTien, DSMaPhong, NgayCheckIn, ThoiGianThue) VALUES (@MaHD, @MaKH, @MaNV, @NgayTao, @TongTien, @MaPhong, @ThoiGianThue, @NgayCheckIn);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addNewCustomer` (IN `@hoten` VARCHAR(100) CHARSET utf8, IN `@ngaysinh` DATE, IN `@sdt` VARCHAR(12) CHARSET utf8, IN `@email` VARCHAR(100) CHARSET utf8, IN `@diachi` TEXT CHARSET utf8, IN `@username` VARCHAR(50) CHARSET utf8)   BEGIN
-    DECLARE isUsername VARCHAR(50);
-    SELECT username INTO isUsername FROM Account WHERE Account.username = @username;
-
-    IF isUsername IS NOT NULL THEN
-        SET @result = -1;
-    ELSE
-        SET @newID = GenerateCustomerID();
-        INSERT INTO khachhang (MaKH, HoTen, NgaySinh, Sdt, Email, DiaChi, Username)
-        VALUES (@newID, @hoten, @ngaysinh, @sdt, @email, @diachi, @username);
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addStaff` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@fullname` VARCHAR(500) CHARSET utf8, IN `@phone` VARCHAR(15) CHARSET utf8, IN `@email` VARCHAR(20) CHARSET utf8, IN `@address` TEXT CHARSET utf8, IN `@username` VARCHAR(50) CHARSET utf8, IN `@dateCheckin` DATE, IN `@cccd` VARCHAR(50) CHARSET utf8, IN `@dateOfBirth` DATE, IN `@salary` FLOAT, IN `@role` INT)   BEGIN
-    INSERT INTO NhanVien (MaNV, TenNV, Sdt, Email, NgaySinh, DiaChi, username, NgayVaoLam, Luong, Cccd, Role)
-    VALUES (@id, @fullname, @phone, @email, @dateOfBirth, @address, @username, @dateCheckin, @salary, @cccd, @role);
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_ChangeCustomer` (IN `@Cccd` VARCHAR(50) CHARSET utf8, IN `@hoten` VARCHAR(100) CHARSET utf8, IN `@ngaysinh` DATE, IN `@sdt` VARCHAR(12) CHARSET utf8, IN `@email` VARCHAR(100) CHARSET utf8, IN `@diachi` TEXT CHARSET utf8, OUT `@result` INT)   BEGIN
-    DECLARE isUsername VARCHAR(50);
-    SELECT isUsername = username FROM account WHERE account.MaKH = @MaKH;
-
-    IF isUsername IS NULL THEN
-        SET @result = -1;
-    END IF;
-
-    UPDATE khachhang
-    SET HoTen = @hoten, NgaySinh = @ngaysinh, Sdt = @sdt, Email = @email, DiaChi = @diachi
-    WHERE khachhang.Cccd = @Cccd;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_changePassword` (IN `@username` VARCHAR(20) CHARSET utf8, IN `@newPassword` VARCHAR(20) CHARSET utf8)   BEGIN
-    DECLARE currentPassword VARCHAR(500);
-    SELECT password INTO currentPassword FROM Account WHERE username = @username;
-
-    IF currentPassword = @newPassword THEN
-        SELECT -1 AS result; -- Return -1 as a result
-    ELSE
-        BEGIN
-            UPDATE Account SET hashPassword = @newPassword WHERE username = @username;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteBill` (IN `@id` VARCHAR(20) CHARSET utf8)   BEGIN
-    DELETE FROM hoadon WHERE hoadon.MaHD = @id;
-    DELETE FROM hoadonDV WHERE hoadonDV.MaHD = @id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_DeleteCustomer` (IN `@Cccd` VARCHAR(50) CHARSET utf8, OUT `@result` INT)   BEGIN
-    DECLARE makh VARCHAR(50);
-    SELECT makh = khachhang.Cccd FROM khachhang WHERE khachhang.Cccd = @Cccd;
-
-    IF makh IS NULL THEN
-        SET @result = -1;
-    ELSE
-        DELETE FROM khachhang WHERE khachhang.Cccd = @Cccd;
-        SET @result = 0; -- Success
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteRoom` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		DELETE FROM Phong WHERE Phong.id = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_deleteStaff` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-			DELETE FROM NhanVien
-			WHERE MaNV = @id;
-		END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getBillInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM hoadon, HoaDonPhong, HoaDonDV WHERE hoadon.MaHD = @id and hoadonphong.MaHD =  hoadon.MaHD and hoadonDV.MaHD =  hoadon.MaHD;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getCustomerInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM khachhang WHERE khachhang.MaKH = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getManager` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-SELECT * FROM quanly, nhanvien WHERE quanly.MaNV = @id and quanly.MaNV = nhanvien.MaNV;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_getRoomInfo` (IN `@id` VARCHAR(50) CHARSET utf8)   BEGIN
-		SELECT * FROM Phong WHERE Phong.id = @id;
-	END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateBill` (IN `@MaHD` VARCHAR(20) CHARSET utf8, IN `@MaKH` VARCHAR(20) CHARSET utf8, IN `@MaNV` VARCHAR(20) CHARSET utf8, IN `@NgayTao` DATE, IN `@TongTien` DOUBLE)   BEGIN
-    UPDATE hoadon
-    SET MaKH = @MaKH, MaNV = @MaNV, NgayTao = @NgayTao, TongTien = @TongTien
-    WHERE hoadon.MaHD = @MaHD;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateStaff` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@fullname` VARCHAR(20) CHARSET utf8, IN `@phone` VARCHAR(15) CHARSET utf8, IN `@email` VARCHAR(20) CHARSET utf8, IN `@address` VARCHAR(30) CHARSET utf8, IN `@username` VARCHAR(20) CHARSET utf8, IN `@dateCheckin` DATE, IN `@cccd` VARCHAR(50) CHARSET utf8, IN `@dateOfBirth` DATE, IN `@salary` FLOAT(50), IN `@role` INT)   BEGIN
-    UPDATE NhanVien
-    SET
-        NhanVien.MaNV = @fullname,
-        NhanVien.Sdt = @phone,
-        NhanVien.Email = @email,
-        NhanVien.DiaChi = @address,
-        NhanVien.Username = @username,
-        NhanVien.DateCheckin = @dateCheckin,
-        NhanVien.DateOfBirth = @dateOfBirth,
-        NhanVien.NgaySinh = @dateOfBirth,  -- You had a typo in the column name here
-        NhanVien.cccd = @cccd,
-        NhanVien.salary = @salary,
-        nhanvien.role = @role
-    WHERE NhanVien.ID = @id;  -- Added NhanVien. before ID to specify the table
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_ComparePassword` (IN `@username` VARCHAR(50) CHARSET utf8, IN `@password` VARCHAR(500) CHARSET utf8)   BEGIN
-    DECLARE currentUsername VARCHAR(50);
-    DECLARE currentPassword VARCHAR(500);
-    DECLARE lengthSearchAccount INT;
-
-    SELECT COUNT(*) INTO lengthSearchAccount
-    FROM ACCOUNT
-    WHERE username = p_username;
-
-    IF lengthSearchAccount <= 0 THEN
-        SELECT -1 AS result;
-    ELSE
-        BEGIN
-            SELECT password, username INTO currentPassword, currentUsername
-            FROM ACCOUNT
-            WHERE username = @username;
-
-            IF currentPassword != @password OR currentUsername != @username THEN
-                SELECT -1 AS result;
-            ELSE
-                SELECT 1 AS result;
-            END IF;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_searchRoomById` (IN `@id` VARCHAR(20) CHARSET utf8)   BEGIN
-    DECLARE searchID VARCHAR(20);
-    DECLARE lengthSearchRoom INT;
-
-    SELECT COUNT(*) INTO lengthSearchRoom
-    FROM Phong
-    WHERE id like @id;
-
-    IF lengthSearchRoom <= 0 THEN
-        SELECT -1 AS result;
-    ELSE
-        BEGIN
-            SELECT * FROM phong
-            WHERE Phong.id like @id;
-        END;
-    END IF;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_updateRoom` (IN `@id` VARCHAR(50) CHARSET utf8, IN `@LoaiPhong` VARCHAR(50) CHARSET utf8, IN `@TinhTrang` VARCHAR(40) CHARSET utf8, IN `@KieuGiuong` VARCHAR(40) CHARSET utf8, IN `@Gia` DOUBLE, IN `@SuaChua` BOOLEAN, IN `@DonDep` BOOLEAN)   BEGIN
-    UPDATE Phong
-    SET Phong.LoaiPhong = @LoaiPhong, Phong.TinhTrang = @TinhTrang, Phong.Gia = @Gia, phong.LoaiPhong = @LoaiPhong, phong.SuaChua = @SuaChua, phong.DonDep = @DonDep
-    WHERE Phong.id = @id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateAccount` (IN `username` VARCHAR(255), IN `email` VARCHAR(255), IN `role` VARCHAR(255))   BEGIN
-    UPDATE `account` SET `Email`=email,`Role`=role WHERE account.username = username;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `updateBill` (IN `MaHoaDon` VARCHAR(255), IN `MaKhachHang` VARCHAR(255), IN `MaNhanVien` VARCHAR(255), IN `DanhSachMaPhong` VARCHAR(255), IN `NgayTaoHoaDon` DATETIME, IN `TongTien` DOUBLE, IN `NgayCheckIn` DATETIME, IN `SoNgayThue` INT)   BEGIN
-    UPDATE hoadon
-    SET MaKhachHang = @MaKhachHang,
-        MaNhanVien = @MaNhanVien,
-        DanhSachMaPhong = @DanhSachMaPhong,
-        NgayTao = @NgayTaoHoaDon,
-        TongTien = @TongTien,
-        NgayCheckIn = @NgayCheckIn,
-        ThoiGianThue = @SoNgayThue
-    WHERE MaHD = @MaHoaDon;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `updateBillState` (IN `MaHD` VARCHAR(255), IN `state` VARCHAR(255))   BEGIN
-    UPDATE hoadon
-    SET state = state
-    WHERE hoadon.MaHD LIKE MaHD;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateCustomer` (IN `id` VARCHAR(255), IN `name` VARCHAR(255), IN `dateOfBirth` DATE, IN `phoneNumber` VARCHAR(255), IN `email` VARCHAR(255), IN `address` VARCHAR(255))   BEGIN
-    UPDATE khachhang
-    SET HoTen = name,
-        NgaySinh = dateOfBirth,
-        Sdt = phoneNumber,
-        Email = email,
-        DiaChi = address
-    WHERE khachhang.Cccd = id;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `updateMoneyById` (IN `MaHD` VARCHAR(255), IN `value` DOUBLE)   BEGIN
-    UPDATE hoadon
-    SET TongTien = value
-    WHERE MaHD LIKE MaHD;
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account`
+-- Table structure for table `account`
 --
 
 CREATE TABLE `account` (
@@ -321,7 +36,7 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `account`
+-- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VALUES
@@ -346,7 +61,7 @@ INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VAL
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `datphong`
+-- Table structure for table `datphong`
 --
 
 CREATE TABLE `datphong` (
@@ -361,7 +76,7 @@ CREATE TABLE `datphong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `datphong`
+-- Dumping data for table `datphong`
 --
 
 INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien`, `SoNgayThue`, `SoNguoiThue`, `TinhTrang`) VALUES
@@ -373,7 +88,7 @@ INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien
 ('DP006', '2023-12-11', 'P03,P05', '098098098098', '2023-12-11', 1, 2, 'Đã xử lý');
 
 --
--- Bẫy `datphong`
+-- Triggers `datphong`
 --
 DELIMITER $$
 CREATE TRIGGER `Add_new_order` BEFORE INSERT ON `datphong` FOR EACH ROW BEGIN
@@ -400,7 +115,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `dichvu`
+-- Table structure for table `dichvu`
 --
 
 CREATE TABLE `dichvu` (
@@ -412,7 +127,7 @@ CREATE TABLE `dichvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `dichvu`
+-- Dumping data for table `dichvu`
 --
 
 INSERT INTO `dichvu` (`MaDV`, `TenDV`, `LoaiDV`, `ChiTietDichVu`, `Gia`) VALUES
@@ -449,7 +164,7 @@ INSERT INTO `dichvu` (`MaDV`, `TenDV`, `LoaiDV`, `ChiTietDichVu`, `Gia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -465,7 +180,7 @@ CREATE TABLE `hoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadon`
+-- Dumping data for table `hoadon`
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`, `NgayCheckIn`, `ThoiGianThue`, `state`) VALUES
@@ -489,7 +204,7 @@ INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadondichvu`
+-- Table structure for table `hoadondichvu`
 --
 
 CREATE TABLE `hoadondichvu` (
@@ -499,7 +214,7 @@ CREATE TABLE `hoadondichvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadondichvu`
+-- Dumping data for table `hoadondichvu`
 --
 
 INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
@@ -529,7 +244,7 @@ INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon_voucher`
+-- Table structure for table `hoadon_voucher`
 --
 
 CREATE TABLE `hoadon_voucher` (
@@ -540,7 +255,7 @@ CREATE TABLE `hoadon_voucher` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -553,7 +268,7 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) VALUES
@@ -651,6 +366,7 @@ INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) 
 ('077777777777', 'cao dang tinh', '2000-02-02', '0888888888', 'cain@gmail.com', 'hcm'),
 ('077203007853', 'cao đăng tình', '2003-02-05', '0862040542', 'hcm@gmail.com', 'hcm'),
 ('123456789999', 'Quang Huy', '2000-02-01', '0847727477', 'huy@gmail.com', 'sSD'),
+('000000000000', 'gdfgdf', '2000-02-01', '0847727477', 'h@gmail.com', 'sds'),
 ('077209000000', 'cao dang tinh', '2000-02-02', '0876777777', 'hcm@gmail.com', 'chcm'),
 ('077777777878', 'cao dang tinh', '2000-02-02', '0862040542', 'hcm@gmail.com', 'hcm'),
 ('077878776565', 'cao dang tinh', '2000-03-01', '0862040542', 'hcm@gmail.com', 'hcm'),
@@ -671,7 +387,7 @@ INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -689,7 +405,7 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Sdt`, `Email`, `NgaySinh`, `DiaChi`, `Cccd`, `Luong`, `NgayVaoLam`, `username`, `role`) VALUES
@@ -710,7 +426,7 @@ INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Sdt`, `Email`, `NgaySinh`, `DiaChi`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phong`
+-- Table structure for table `phong`
 --
 
 CREATE TABLE `phong` (
@@ -724,7 +440,7 @@ CREATE TABLE `phong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phong`
+-- Dumping data for table `phong`
 --
 
 INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDep`, `SuaChua`) VALUES
@@ -757,7 +473,7 @@ INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDe
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `voucher`
+-- Table structure for table `voucher`
 --
 
 CREATE TABLE `voucher` (
@@ -769,47 +485,47 @@ CREATE TABLE `voucher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `account`
+-- Indexes for table `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`username`);
 
 --
--- Chỉ mục cho bảng `datphong`
+-- Indexes for table `datphong`
 --
 ALTER TABLE `datphong`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Chỉ mục cho bảng `dichvu`
+-- Indexes for table `dichvu`
 --
 ALTER TABLE `dichvu`
   ADD PRIMARY KEY (`MaDV`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHD`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
--- Chỉ mục cho bảng `phong`
+-- Indexes for table `phong`
 --
 ALTER TABLE `phong`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Chỉ mục cho bảng `voucher`
+-- Indexes for table `voucher`
 --
 ALTER TABLE `voucher`
   ADD PRIMARY KEY (`MaVoucher`);

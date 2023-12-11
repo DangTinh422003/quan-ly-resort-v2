@@ -215,7 +215,6 @@ namespace quan_ly_resort_v2.userControl
             }
             else
             {
-
                 Boolean result = AccountDAO.UpdateAccount(account);
                 if (result) MessageBox.Show("Chỉnh sửa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Có lỗi xảy ra khi sửa thông tin tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

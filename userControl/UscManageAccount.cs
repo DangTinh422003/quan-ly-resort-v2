@@ -29,6 +29,7 @@ namespace quan_ly_resort_v2.userControl
             LoadAccountData();
             cleanForm();
             disableControl();
+            disableForm();
             cbb_search.SelectedIndex = 0;
         }
 
@@ -65,6 +66,18 @@ namespace quan_ly_resort_v2.userControl
             btnSave.Enabled = true;
         }
 
+        private void disableForm()
+        {
+            txt_username.Enabled = false;
+            txt_gmail.Enabled = false;
+        }
+
+        private void enableForm()
+        {
+            txt_username.Enabled = true;
+            txt_gmail.Enabled = true;
+        }
+
         public void enableSaveButton()
         {
             btnSave.Enabled = true;
@@ -73,6 +86,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            enableForm();
             isAddMode = false;
             txt_username.Enabled = false;
             Label_Title.Text = "Chức năng hiện tại : Sửa thông tin";
@@ -108,14 +122,16 @@ namespace quan_ly_resort_v2.userControl
             cleanForm();
             Label_Title.Text = "Chức năng hiện tại : Thêm tài khoản";
             txt_username.Focus();
-            txt_username.Enabled = true;
+            enableForm();
             isAddMode = true;
             enableSaveButton();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            disableForm();
             isAddMode = false;
+            btnSave.Enabled = false;
             UscManageAccount_Load(sender, e);
         }
 
@@ -156,6 +172,11 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (isAddMode)
+            {
+                MessageBox.Show("Bạn chưa chọn tài khoản!");
+                return;
+            }
            String username = txt_username.Text;
             if (!username.Equals(String.Empty))
             {
@@ -183,8 +204,14 @@ namespace quan_ly_resort_v2.userControl
         {
             String username = txt_username.Text.Trim();
             String email = txt_gmail.Text.Trim();
-            string role = combo_role.SelectedItem.ToString();
+            string role = combo_role.SelectedItem?.ToString();
             string[] requiredFields = { username, email };
+
+            if (username.Contains(" ") || email.Contains(" "))
+            {
+                MessageBox.Show("Không được tồn tại khoảng trắng trong tên tài khoản hoặc email", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (requiredFields.Any(string.IsNullOrEmpty))
             {
@@ -195,6 +222,12 @@ namespace quan_ly_resort_v2.userControl
             if (!ValidateData.IsValidEmail(email))
             {
                 MessageBox.Show("Email không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (role == null)
+            {
+                MessageBox.Show("Chưa chọn role", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -221,6 +254,9 @@ namespace quan_ly_resort_v2.userControl
             }
 
             LoadAccountData();
+            txt_username.Text = "";
+            txt_gmail.Text = "";
+            disableForm();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -246,6 +282,10 @@ namespace quan_ly_resort_v2.userControl
             string textSearchValue = txtSearch.Text.Trim();
             if (textSearchValue != "")
                 btnSearch_Click(sender, e);
+            else
+            {
+                LoadAccountData();
+            }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)

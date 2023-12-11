@@ -180,7 +180,7 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            string message = "Bạn có chắc muốn xóa  hóa đơn có mã: " + maHD + " không?";
+            string message = "Bạn có chắc muốn xóa hóa đơn có mã: " + maHD + " không?";
             string caption = "Xác nhận xóa";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
@@ -194,21 +194,13 @@ namespace quan_ly_resort_v2.userControl
                 {
                     // Xóa chi tiết dịch vụ của hóa đơn
                     bool deletedDV = BillDAO.DeleteBillDV(maHD);
-
-                    if (deletedDV)
-                    {
-                        MessageBox.Show("Hóa đơn và chi tiết dịch vụ đã được xóa thành công.");
-                        UscManageBill_Load(sender, e); // Tải lại danh sách hóa đơn sau khi xóa
-                    }
-                    else
-                    {
-                        MessageBox.Show("Lỗi khi xóa chi tiết dịch vụ của hóa đơn.");
-                    }
+                    MessageBox.Show("Hóa đơn và chi tiết dịch vụ đã được xóa thành công.");
                 }
                 else
                 {
                     MessageBox.Show("Lỗi khi xóa hóa đơn.");
                 }
+                UscManageBill_Load(sender, e); // Tải lại danh sách hóa đơn sau khi xóa
             }
 
         }

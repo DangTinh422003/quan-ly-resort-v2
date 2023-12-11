@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2023 lúc 07:05 PM
--- Phiên bản máy phục vụ: 10.4.27-MariaDB
--- Phiên bản PHP: 8.2.0
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2023 at 07:04 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,14 +18,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `khachsan`
+-- Database: `khachsan`
 --
-CREATE DATABASE IF NOT EXISTS `khachsan` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `khachsan`;
 
 DELIMITER $$
 --
--- Thủ tục
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AddNewAccount` (`username` VARCHAR(255), `password` VARCHAR(255), `email` VARCHAR(255), `role` VARCHAR(255), `create_at` DATETIME)   BEGIN
     INSERT INTO `account` (`username`, `password`, `email`, `create_at`, `Role`)
@@ -80,11 +78,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `getAllBill` ()   BEGIN
     SELECT * FROM hoadon;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getBillByCustomerId` (IN `customnerId` VARCHAR(255))   BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getBillByCustomerId` (IN `MaKH` VARCHAR(255))   BEGIN
     SELECT *
     FROM hoadon
     WHERE 
-    hoadon.MaKH = customnerId;
+    hoadon.MaKH = MaKH;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `GetByEmail` (`email` VARCHAR(255))   BEGIN
@@ -309,7 +307,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account`
+-- Table structure for table `account`
 --
 
 CREATE TABLE `account` (
@@ -321,7 +319,7 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `account`
+-- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VALUES
@@ -346,7 +344,7 @@ INSERT INTO `account` (`username`, `password`, `Email`, `create_at`, `Role`) VAL
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `datphong`
+-- Table structure for table `datphong`
 --
 
 CREATE TABLE `datphong` (
@@ -361,7 +359,7 @@ CREATE TABLE `datphong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `datphong`
+-- Dumping data for table `datphong`
 --
 
 INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien`, `SoNgayThue`, `SoNguoiThue`, `TinhTrang`) VALUES
@@ -370,10 +368,12 @@ INSERT INTO `datphong` (`Id`, `NgayDat`, `DSMaPhong`, `MaKH`, `NgayCheckInDuKien
 ('DP003', '2023-11-28', 'P01,P02,P03,P05,P04', '098098098098', '2023-11-28', 1, 2, 'Đã xử lý'),
 ('DP004', '2023-11-28', 'P03,P02', '098765342536', '2023-11-28', 1, 2, 'Đã xử lý'),
 ('DP005', '2023-12-10', 'P01,P02,P04,P06', '098098098098', '2023-12-10', 1, 2, 'Đã xử lý'),
-('DP006', '2023-12-11', 'P03,P05', '098098098098', '2023-12-11', 1, 2, 'Đã xử lý');
+('DP006', '2023-12-11', 'P03,P05', '098098098098', '2023-12-11', 1, 2, 'Đã xử lý'),
+('DP007', '2023-12-12', 'P01,P03,P04,P05', '098098098098', '2023-12-12', 1, 2, 'Đã xử lý'),
+('DP008', '2023-12-12', 'P01,P02,P03,P04', '098098098098', '2023-12-12', 1, 2, 'Đã xử lý');
 
 --
--- Bẫy `datphong`
+-- Triggers `datphong`
 --
 DELIMITER $$
 CREATE TRIGGER `Add_new_order` BEFORE INSERT ON `datphong` FOR EACH ROW BEGIN
@@ -400,7 +400,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `dichvu`
+-- Table structure for table `dichvu`
 --
 
 CREATE TABLE `dichvu` (
@@ -412,7 +412,7 @@ CREATE TABLE `dichvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `dichvu`
+-- Dumping data for table `dichvu`
 --
 
 INSERT INTO `dichvu` (`MaDV`, `TenDV`, `LoaiDV`, `ChiTietDichVu`, `Gia`) VALUES
@@ -449,7 +449,7 @@ INSERT INTO `dichvu` (`MaDV`, `TenDV`, `LoaiDV`, `ChiTietDichVu`, `Gia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -465,26 +465,31 @@ CREATE TABLE `hoadon` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadon`
+-- Dumping data for table `hoadon`
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `DSMaPhong`, `NgayTao`, `TongTien`, `NgayCheckIn`, `ThoiGianThue`, `state`) VALUES
-('4854', '077203997867', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
-('5211', '077898778675', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
-('5275', '786765665456', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
-('5997', '077203998878', 'NV08', 'P01,P02,P03', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
-('6761', '098765342536', 'NV08', 'P03,P02', '2023-11-29', 697000, '2023-11-28', 1, 'paid'),
-('6964', '077878776565', 'NV08', 'P01,P02,P03', '2023-11-27', 900000, '2023-11-27', 1, 'paid'),
-('7194', '051222222222', 'NV08', 'P01,P02,P03', '2023-11-28', 1180000, '2023-11-28', 1, 'paid'),
-('8425', '098098098098', 'NV08', 'P03,P05', '2023-12-11', 700000, '2023-12-11', 1, 'paid'),
-('8947', '098098098098', 'NV08', 'P01,P02,P04,P06', '2023-12-10', 1320000, '2023-12-10', 1, 'paid'),
-('9619', '088987667876', 'NV08', 'P02,P03,P04', '2023-11-28', 900000, '2023-11-28', 1, 'paid'),
-('9981', '077777777878', 'NV08', 'P04,P05', '2023-11-27', 775000, '2023-11-27', 1, 'paid');
+('1611', '077209000000', 'NV08', 'P01,P02,P03', '2023-11-27', 1265000, '2023-11-27', 1, 'paid'),
+('3282', '090000000000', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-27', 1, 'paid'),
+('4147', '090989887676', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('4415', '099898888888', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('4854', '077203997867', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('5211', '077898778675', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('5275', '786765665456', 'NV08', 'P01,P02,P03', '2023-11-27', 1265000, '2023-11-27', 1, 'paid'),
+('5997', '077203998878', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('6761', '098765342536', 'NV08', 'P03,P02', '2023-11-29', 1265000, '2023-11-28', 1, 'paid'),
+('6964', '077878776565', 'NV08', 'P01,P02,P03', '2023-11-27', 1265000, '2023-11-27', 1, 'paid'),
+('7194', '051222222222', 'NV08', 'P01,P02,P03', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('7877', '098098098098', 'NV08', 'P01,P02,P03,P05,P04', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('8425', '098098098098', 'NV08', 'P03,P05', '2023-12-11', 1265000, '2023-12-11', 1, 'paid'),
+('8947', '098098098098', 'NV08', 'P01,P02,P04,P06', '2023-12-10', 1265000, '2023-12-10', 1, 'paid'),
+('9619', '088987667876', 'NV08', 'P02,P03,P04', '2023-11-28', 1265000, '2023-11-28', 1, 'paid'),
+('9981', '077777777878', 'NV08', 'P04,P05', '2023-11-27', 1265000, '2023-11-27', 1, 'paid');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadondichvu`
+-- Table structure for table `hoadondichvu`
 --
 
 CREATE TABLE `hoadondichvu` (
@@ -494,7 +499,7 @@ CREATE TABLE `hoadondichvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `hoadondichvu`
+-- Dumping data for table `hoadondichvu`
 --
 
 INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
@@ -514,12 +519,18 @@ INSERT INTO `hoadondichvu` (`MaHD`, `MaDichVu`, `Soluong`) VALUES
 ('7194', 'DV02', 1),
 ('6761', 'DV03', 1),
 ('6761', 'DV04', 5),
-('6761', 'DV05', 1);
+('6761', 'DV05', 1),
+('7877', 'DV05', 1),
+('7877', 'DV06', 1),
+('7877', 'DV07', 1),
+('7877', 'DV20', 1),
+('7877', 'DV21', 1),
+('7877', 'DV22', 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon_voucher`
+-- Table structure for table `hoadon_voucher`
 --
 
 CREATE TABLE `hoadon_voucher` (
@@ -530,7 +541,7 @@ CREATE TABLE `hoadon_voucher` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -543,7 +554,7 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) VALUES
@@ -656,12 +667,12 @@ INSERT INTO `khachhang` (`Cccd`, `HoTen`, `NgaySinh`, `Sdt`, `Email`, `DiaChi`) 
 ('099898888888', 'cao dang tinh', '2000-02-02', '0876767876', 'gcn@gmail.com', 'hcm'),
 ('077898778675', 'cao dang tinh', '2000-02-02', '0897876765', 'hcm@gmail.com', 'hcm'),
 ('098765342536', 'nguyen van a', '2000-02-02', '0862040523', 'hcm@gmail.com', 'hcm'),
-('098098098098', 'cao dang tinh', '2000-02-29', '0862040542', 'hcm@gmail.com', 'hcm');
+('098098098098', 'cao dang tinh', '2000-02-02', '0898098098', 'cao@gmail.com', 'hakjsd');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -679,7 +690,7 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Sdt`, `Email`, `NgaySinh`, `DiaChi`, `Cccd`, `Luong`, `NgayVaoLam`, `username`, `role`) VALUES
@@ -700,7 +711,7 @@ INSERT INTO `nhanvien` (`MaNV`, `TenNV`, `Sdt`, `Email`, `NgaySinh`, `DiaChi`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phong`
+-- Table structure for table `phong`
 --
 
 CREATE TABLE `phong` (
@@ -714,15 +725,15 @@ CREATE TABLE `phong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phong`
+-- Dumping data for table `phong`
 --
 
 INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDep`, `SuaChua`) VALUES
 ('P01', 'standard', 'single', 'avaiable', 300000, 1, 0),
 ('P02', 'standard', 'single', 'avaiable', 300000, 1, 0),
-('P03', 'standard', 'single', 'occupied', 300000, 1, 0),
+('P03', 'standard', 'single', 'avaiable', 300000, 1, 0),
 ('P04', 'standard', 'single', 'avaiable', 300000, 1, 0),
-('P05', 'standard', 'twin', 'occupied', 400000, 1, 0),
+('P05', 'standard', 'twin', 'avaiable', 400000, 1, 0),
 ('P06', 'superior', 'twin', 'avaiable', 420000, 1, 0),
 ('P07', 'superior', 'twin', 'avaiable', 420000, 1, 0),
 ('P08', 'superior', 'double', 'avaiable', 450000, 1, 0),
@@ -747,7 +758,7 @@ INSERT INTO `phong` (`Id`, `LoaiPhong`, `KieuGiuong`, `TinhTrang`, `Gia`, `DonDe
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `voucher`
+-- Table structure for table `voucher`
 --
 
 CREATE TABLE `voucher` (
@@ -759,47 +770,47 @@ CREATE TABLE `voucher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `account`
+-- Indexes for table `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`username`);
 
 --
--- Chỉ mục cho bảng `datphong`
+-- Indexes for table `datphong`
 --
 ALTER TABLE `datphong`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Chỉ mục cho bảng `dichvu`
+-- Indexes for table `dichvu`
 --
 ALTER TABLE `dichvu`
   ADD PRIMARY KEY (`MaDV`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHD`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
--- Chỉ mục cho bảng `phong`
+-- Indexes for table `phong`
 --
 ALTER TABLE `phong`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Chỉ mục cho bảng `voucher`
+-- Indexes for table `voucher`
 --
 ALTER TABLE `voucher`
   ADD PRIMARY KEY (`MaVoucher`);

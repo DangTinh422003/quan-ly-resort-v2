@@ -58,11 +58,11 @@
             this.btnAll = new Guna.UI.WinForms.GunaButton();
             this.btnSearch = new Guna.UI.WinForms.GunaButton();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaGroupBox1
@@ -202,7 +202,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(717, 231);
+            this.btnCancel.Location = new System.Drawing.Point(712, 259);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -230,7 +230,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = null;
             this.btnDelete.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDelete.Location = new System.Drawing.Point(717, 106);
+            this.btnDelete.Location = new System.Drawing.Point(712, 121);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -258,7 +258,7 @@
             this.btnChangePassword.ForeColor = System.Drawing.Color.White;
             this.btnChangePassword.Image = null;
             this.btnChangePassword.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnChangePassword.Location = new System.Drawing.Point(717, 189);
+            this.btnChangePassword.Location = new System.Drawing.Point(712, 212);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -286,7 +286,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = null;
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAdd.Location = new System.Drawing.Point(717, 65);
+            this.btnAdd.Location = new System.Drawing.Point(712, 76);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -315,7 +315,7 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = null;
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(717, 148);
+            this.btnSave.Location = new System.Drawing.Point(712, 166);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -342,7 +342,7 @@
             this.date_create.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.date_create.ForeColor = System.Drawing.Color.Black;
             this.date_create.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_create.Location = new System.Drawing.Point(128, 200);
+            this.date_create.Location = new System.Drawing.Point(130, 207);
             this.date_create.Margin = new System.Windows.Forms.Padding(2);
             this.date_create.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date_create.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -426,7 +426,7 @@
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.White;
             this.gunaPanel2.Controls.Add(this.cbb_search);
-            this.gunaPanel2.Location = new System.Drawing.Point(115, 2);
+            this.gunaPanel2.Location = new System.Drawing.Point(123, 12);
             this.gunaPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(181, 40);
@@ -484,7 +484,7 @@
             this.DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DataGridView.EnableHeadersVisualStyles = false;
             this.DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridView.Location = new System.Drawing.Point(0, 356);
+            this.DataGridView.Location = new System.Drawing.Point(0, 362);
             this.DataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
@@ -522,7 +522,7 @@
             // 
             this.gunaLabel9.AutoSize = true;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.gunaLabel9.Location = new System.Drawing.Point(2, 0);
+            this.gunaLabel9.Location = new System.Drawing.Point(10, 23);
             this.gunaLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel9.Name = "gunaLabel9";
             this.gunaLabel9.Size = new System.Drawing.Size(109, 21);
@@ -542,7 +542,7 @@
             this.btnAll.ForeColor = System.Drawing.Color.White;
             this.btnAll.Image = null;
             this.btnAll.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAll.Location = new System.Drawing.Point(822, 2);
+            this.btnAll.Location = new System.Drawing.Point(830, 12);
             this.btnAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -570,7 +570,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = null;
             this.btnSearch.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSearch.Location = new System.Drawing.Point(735, 2);
+            this.btnSearch.Location = new System.Drawing.Point(743, 12);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -595,7 +595,7 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(300, 2);
+            this.txtSearch.Location = new System.Drawing.Point(308, 12);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -608,18 +608,18 @@
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.gunaLabel9);
-            this.flowLayoutPanel1.Controls.Add(this.gunaPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.txtSearch);
-            this.flowLayoutPanel1.Controls.Add(this.btnSearch);
-            this.flowLayoutPanel1.Controls.Add(this.btnAll);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 301);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(964, 55);
-            this.flowLayoutPanel1.TabIndex = 29;
+            this.panel1.Controls.Add(this.gunaLabel9);
+            this.panel1.Controls.Add(this.gunaPanel2);
+            this.panel1.Controls.Add(this.btnAll);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 301);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(964, 61);
+            this.panel1.TabIndex = 30;
             // 
             // UscManageAccount
             // 
@@ -627,19 +627,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.gunaGroupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UscManageAccount";
-            this.Size = new System.Drawing.Size(964, 736);
+            this.Size = new System.Drawing.Size(964, 742);
             this.Load += new System.EventHandler(this.UscManageAccount_Load);
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -672,6 +672,6 @@
         private Guna.UI.WinForms.GunaButton btnAll;
         private Guna.UI.WinForms.GunaButton btnSearch;
         private Guna.UI.WinForms.GunaTextBox txtSearch;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -162,9 +162,16 @@ namespace quan_ly_resort_v2.userControl
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //cleanForm();
+            //disableControl();
+            //btnAdd.Enabled = true;
+
+            getDataVoucher();
+            disableControl();
+            disableFormInput();
             cleanForm();
             btnAdd.Enabled = true;
-            disableControl();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -223,14 +230,14 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
-            if(maVoucher.Contains(" "))
+            if (maVoucher.Contains(" "))
             {
                 MessageBox.Show("Mã voucher không được chứa khoảng trắng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             int countValue;
-            if (!int.TryParse(count, out countValue) || countValue > 100 )
+            if (!int.TryParse(count, out countValue) || countValue > 100)
             {
                 MessageBox.Show("Số lần còn lại không hợp lệ! Số lần phải nằm trong khoảng từ 100.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -247,15 +254,15 @@ namespace quan_ly_resort_v2.userControl
             // check type function
             if (btnAdd.Enabled)
             {
-        
-                if ( startDate < now )
+
+                if (startDate < now)
                 {
                     MessageBox.Show("Ngày bắt đầu voucher lớn ngày hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if  (endDate < startDate )
+                if (endDate < startDate)
                 {
-                   MessageBox.Show("Ngày kết thúc voucher lớn hơn ngày bắt đầu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ngày kết thúc voucher lớn hơn ngày bắt đầu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

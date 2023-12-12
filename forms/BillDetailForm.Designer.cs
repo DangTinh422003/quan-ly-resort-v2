@@ -326,7 +326,7 @@
             this.btn_ExportPDF.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btn_ExportPDF.OnPressedColor = System.Drawing.Color.Black;
             this.btn_ExportPDF.Radius = 8;
-            this.btn_ExportPDF.Size = new System.Drawing.Size(155, 45);
+            this.btn_ExportPDF.Size = new System.Drawing.Size(181, 45);
             this.btn_ExportPDF.TabIndex = 5;
             this.btn_ExportPDF.Text = "Xuất PDF";
             this.btn_ExportPDF.TextOffsetX = 7;
@@ -361,7 +361,7 @@
             this.btnPrint.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnPrint.OnPressedColor = System.Drawing.Color.Black;
             this.btnPrint.Radius = 8;
-            this.btnPrint.Size = new System.Drawing.Size(155, 45);
+            this.btnPrint.Size = new System.Drawing.Size(179, 45);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "In hóa đơn";
             this.btnPrint.TextOffsetX = 7;

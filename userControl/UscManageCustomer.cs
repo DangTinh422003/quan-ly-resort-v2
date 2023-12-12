@@ -250,7 +250,7 @@ namespace quan_ly_resort_v2.resources
 
             if (birthday.Year > requiredMaxBirthYear || birthday.Year < requiredMinBirthYear)
             {
-                MessageBox.Show("Nhân viên phải từ 18 tuổi đến 70 tuổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Khách hàng phải từ 18 tuổi đến 70 tuổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

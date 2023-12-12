@@ -248,6 +248,12 @@ namespace quan_ly_resort_v2.userControl
                 return;
             }
 
+            if (ValidateData.IsValidFullName(tenNV))
+            {
+                MessageBox.Show(tenNV + " không hợp lệ!", "Có lỗi xãy ra!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             bool hasNumbers = ValidateData.ContainsNumber(tenNV);
             if (hasNumbers)
             {

@@ -96,7 +96,7 @@ namespace quan_ly_resort_v2.userControl
 
         private void voucherTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtVoucher.ReadOnly = true;
+            txtVoucher.ReadOnly = false;
 
             if (e.RowIndex >= 0)
             {

@@ -187,7 +187,6 @@ namespace quan_ly_resort_v2.resources
         {
             //UscManageCustomer_Load(sender, e);
             renderFomr();
-
         }
 
         private void btn_DeleteCustomer_Click(object sender, EventArgs e)

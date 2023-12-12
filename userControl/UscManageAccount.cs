@@ -241,8 +241,7 @@ namespace quan_ly_resort_v2.userControl
 
             if (isAddMode)
             {
-                account.Password = username;
-
+                account.Password = PasswordUils.HashingPassword(username);
                 Account result = AccountDAO.AddNewAccount(account);
                 if (result != null) MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định sẽ là tên tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Có lỗi xảy ra khi thêm tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
